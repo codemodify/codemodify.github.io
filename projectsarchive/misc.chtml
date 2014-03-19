@@ -1,0 +1,49 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Contributions</p>
+    </div>
+
+    <div id="articleContent">
+        Here is a list of tech startups that I have made a very humble contribution to
+    </div>
+    
+    <div id="articleHeader">
+        <p id="moto3">U-Translate</p>
+    </div>
+    <div id="articleContent">
+        U-Translate is a startup that I worked with, have provided guidance to set it up + first 
+        devs to POC the "Glossary Search" and "Glossary Exchange".
+    </div>    
+    
+    <div id="articleHeader">
+        <p id="moto3">Tyche</p>
+    </div>
+    <div id="articleContent">
+        XemantiX was distributed group of 4 people that simulated the behavior of a startup.
+        The aim is to create a product caled Tyche, a social sentiment analyses tool with 
+        the ability to predict markets. Besides the tool itself, the innovation sits at the base
+        of the startup. The conribution consists in creating the first version of the app's 
+        architecture using a shifted approach in creating apps for one-single-development that 
+        is deployable on the Web & Desktop.
+        
+        <br/><br/>
+        <a href="#" target="_blank"><img class="imageframe" src="projectsarchive/misc-xemantix.png" /></a>
+        <a href="#" target="_blank"><img class="imageframe" src="projectsarchive/misc-xemantix-lockscreennotifications.png" /></a>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Sentivio</p>
+    </div>
+    <div id="articleContent">
+        Sentivio has a very capable CEO that I was glad to work with in my quest to get to know more
+        about semantics. The conribution consists in creating a POC Android mobile app for the product.
+        
+        <br/><br/>
+        
+        <a href="http://sentivio.com" target="_blank"><img class="imageframe" src="projectsarchive/misc-sentivio.png" /></a>
+
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Hamachi on FreeBSD</p>
+    </div>
+
+    <div id="articleContent">
+        <pre>
+- get the hamachi for Linux from <a href="hacks/hamachi-0.9.9.9-15-lnx.tar.gz" class="button">here</a> and hamachi for FreeBSD/Mac OS X from <a href="hacks/hamachi-0.9.9.9-15-osx.tar.gz" class="button">here</a>
+- unpack both
+- mkdir hamachiOnFreeBsd
+- cp ./hamachi-0.9.9.9-15-lnx/hamachi ./hamachiOnFreeBsd/
+- cd ./hamachi-0.9.9.9-15-osx/tuncfg; rm ./tuncfg; make; cd ../..
+- cp ./hamachi-0.9.9.9-15-osx/tuncfg ./hamachiOnFreeBsd/
+        </pre>
+    </div>
+
+    <div id="articleContent">
+        <pre>
+so far the hamachi is ready for use except few more things needs to be done:
+- cd /usr/ports/archivers/upx; make install clean; rehash
+- upx -d ./hamachiOnFreeBsd/hamachi
+- you have to be able to run linux binaries, by installing corresponding layer
+- cd ./hamachiOnFreeBsd; ln -s hamachi-init hamchi
+- done, now you can use your zero-config VPN solution
+        </pre>
+    </div>
+
+    <div id="articleContent">
+        <pre>
+to generate hamachi keys run this: hamachi-init
+to start hamachi: hamachi start
+to connect to hamachi server: hamachi login
+to join a network: hamachi join "SuperDuperNetwork"
+for a list of other commands: hamachi --help
+ </pre>
+    </div>
+    
+</div>

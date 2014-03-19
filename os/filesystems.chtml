@@ -1,0 +1,24 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Filesystems</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - FileSystems - On SourceForge ]</p>
+    </div>
+    
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/uffs">UFFS</a><br/>
+        UFFS: Ultra-low-cost Flash File System, designed for NAND flash working in embedded system.
+        UFFS typically consumes less then 200K ram for 1Gb(page 512)/4Gb(page 2K) NAND flash.
+        It supports direct flash interface, works with or without OS.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/talpa">TALPA Filesystem Interceptor</a><br/>
+        TALPA is a high-performance filesystem access interception package providing facilities 
+        for user-mode programs to 'vet' filesystem operations before they are executed.
+    </div>
+
+</div>

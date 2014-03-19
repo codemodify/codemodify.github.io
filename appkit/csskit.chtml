@@ -1,0 +1,22 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">CssKit</p>
+    </div>
+
+    <div id="articleContent">
+        <pre>
+The Idea
+------------------------------------------------------------
+The idea is to have a framework of style-sheets to be used 
+within a high qulity application development framework.
+        </pre>
+    </div>
+
+    <div id="articleContent">
+        <img src="appkit/csskit.png" style="vertical-align: middle;" />
+        <a href="appkit/CssKit.7z" class="button">Donwload a glympse</a>
+    </div>
+
+</div>

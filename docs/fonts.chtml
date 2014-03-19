@@ -1,0 +1,153 @@
+		<style type="text/css">
+			.monospace10 {
+				font-family: monospace;
+				font-size: 10px; }
+			.monospace12 {
+				font-family: monospace;
+				font-size: 12px; }
+			.monospaceCourierNew10 {
+				font-family: "Courier New";
+				font-size: 10px; }
+			.monospaceCourierNew12 {
+				font-family: "Courier New";
+				font-size: 12px; }
+			.monospaceCourier10 {
+				font-family: Courier;
+				font-size: 10px; }
+			.monospaceCourier12 {
+				font-family: Courier;
+				font-size: 12px; }
+				
+			.sansSerif10 {
+				font-family: sans-serif;
+				font-size: 10px; }
+			.sansSerif12 {
+				font-family: sans-serif;
+				font-size: 12px; }
+			.sansSerifArial10 {
+				font-family: Arial;
+				font-size: 10px; }
+			.sansSerifArial12 {
+				font-family: Arial;
+				font-size: 12px; }
+			.sansSerifVerdana10 {
+				font-family: Verdana;
+				font-size: 10px; }
+			.sansSerifVerdana12 {
+				font-family: Verdana;
+				font-size: 12px; }
+			.sansSerifGeneva10 {
+				font-family: Geneva;
+				font-size: 10px; }
+			.sansSerifGeneva12 {
+				font-family: Geneva;
+				font-size: 12px; }
+			.sansSerifHelvetica10 {
+				font-family: Helvetica;
+				font-size: 10px; }
+			.sansSerifHelvetica12 {
+				font-family: Helvetica;
+				font-size: 12px; }
+		</style>
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Fonts</p>
+    </div>
+
+    <div id="articleContent">
+        
+		<div class="monospace10">
+			<h3>This is a header (monospace10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you. 
+		</div>
+		<div class="monospaceCourierNew10">
+			<h3>This is a header (monospaceCourierNew10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="monospaceCourier10">
+			<h3>This is a header (monospaceCourier10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div><hr/>
+		<div class="monospace12">
+			<h3>This is a header (monospace12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you. 
+		</div>
+		<div class="monospaceCourierNew12">
+			<h3>This is a header (monospaceCourierNew12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="monospaceCourier12">
+			<h3>This is a header (monospaceCourier12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+
+
+		
+		<hr/><hr/><hr/><hr/>
+
+		
+		
+		<div class="sansSerif10">
+			<h3>This is a header (sansSerif10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifArial10">
+			<h3>This is a header (sansSerifArial10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifVerdana10">
+			<h3>This is a header (sansSerifVerdana10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifGeneva10">
+			<h3>This is a header (sansSerifGeneva10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifHelvetica10">
+			<h3>This is a header (sansSerifHelvetica10)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div><hr/>
+		<div class="sansSerif12">
+			<h3>This is a header (sansSerif12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifArial12">
+			<h3>This is a header (sansSerifArial12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifVerdana12">
+			<h3>This is a header (sansSerifVerdana12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifGeneva12">
+			<h3>This is a header (sansSerifGeneva12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		<div class="sansSerifHelvetica12">
+			<h3>This is a header (sansSerifHelvetica12)</h3>
+			Simple text written here to compare different fonts,
+			you can take a look and decide which best fits you.   
+		</div>
+		
+    </div>
+
+</div>
+
+

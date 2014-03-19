@@ -1,0 +1,253 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">C++</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Part 1</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+Can inline functions have a recursion?
+no.
+Syntax wise It is allowed. But then the function is no longer Inline.
+As the compiler will never know how deep the recursion is at compilation time.
+
+How do you link a C++ program to C functions?
+By using the extern "C" linkage specification around the C function declarations.
+Programmers should know about mangled function names and type-safe linkages.
+Then they should explain how the extern "C" linkage specification statement turns
+that feature off during compilation so that the linker properly links function calls
+to C functions.
+
+How many ways are there to initialize an int with a constant?
+int foo = 123;
+int bar(123);
+
+What is your reaction to this line of code?  "delete this;"
+It is not a good programming Practice.
+A good programmer will insist that you should absolutely never use the statement if 
+the class is to be used by other programmers and instantiated as static, extern, or 
+automatic objects. That much should be obvious. 
+The code has two built-in pitfalls. First, if it executes in a member function for an 
+extern, static, or automatic object, the program will probably crash as soon as the 
+delete statement executes. There is no portable way for an object to tell that it was 
+instantiated on the heap, so the class cannot assert that its object is properly 
+instantiated. Second, when an object commits suicide this way, the using program might 
+not know about its demise. As far as the instantiating program is concerned, the object 
+remains in scope and continues to exist even though the object did itself in. Subsequent 
+dereferencing of the pointer can and usually does lead to disaster. I think that the 
+language rules should disallow the idiom, but that's another matter.
+
+What is a virtual destructor?
+The simple answer is that a virtual destructor is one that is declared with the virtual
+attribute. The behavior of a virtual destructor is what is important. If you destroy
+an object through a pointer or reference to a base class, and the base-class destructor
+is not virtual, the derived-class destructors are not executed, and the destruction might
+not be comple.
+
+Explain the ISA and HASA class relationships. How would you implement each in a class design?
+A specialized class "is" a specialization of another class and, therefore, has the 
+ISA relationship with the other class. This relationship is best implemented by embedding
+an object of the Salary class in the Employee class. 
+
+What are the differences between a C++ struct and C++ class?
+The default member and base-class access specifies are different. 
+This is one of the commonly misunderstood aspects of C++. Believe it or not, many 
+programmers think that a C++ struct is just like a C struct, while a C++ class has
+inheritance, access specifies, member functions, overloaded operators, and so on.
+Actually, the C++ struct has all the features of the class. The only differences are
+that a struct defaults to public member access and public base-class inheritance, and
+a class defaults to the private access specified and private base-class inheritance.
+
+What is the difference between new/delete and malloc/free?
+Malloc/free do not know about constructors and destructors. New and delete create 
+and destroy objects, while malloc and free allocate and deallocate memory
+
+What happens when a function throws an exception that was not specified by an
+exception specification for this function?
+Unexpected() is called, which, by default, will eventually trigger abort().
+
+Can you think of a situation where your program would crash without reaching the breakpoint,
+which you set at the beginning of main()?
+Ans: C++ allows for dynamic initialization of global variables before main() is invoked.
+It is possible that initialization of global will invoke some function. If this function
+crashes the crash will occur before main() is entered.
+
+What issue do auto_ptr objects address?
+If you use auto_ptr objects you would not have to be concerned with heap objects
+not being deleted even if the exception is thrown.
+
+Is there any problem with the following:  char *a=NULL; char& p = *a;?
+The result is undefined. You should never do this. A reference must always refer to some object.
+
+Why do C++ compilers need name mangling?
+Name mangling is the rule according to which C++ changes function's name into function
+signature before passing that function to a linker. This is how the linker
+differentiates between different functions with the same name.
+
+Is there anything you can do in C++ that you cannot do in C?
+No. There is nothing you can do in C++ that you cannot do in C. After all you can
+write a C++ compiler in C.
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Part 2</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+1.What is encapsulation?
+Is the inclusion of one thing into another thing. OOP defines it as an object includes in 
+it all the data/methods in it so it can function properly and implement its scope.
+
+
+2.What is inheritance?
+The process to inherit from one or more classes all their properties and behavior.
+
+
+3.What is Polymorphism?
+The way a method behaves differently in different object types
+
+
+4.What is a destructor?
+A way to cleanup after when an object is not needed and gets removed from the memory
+
+
+5.What is a default constructor?
+- The one that is generated by the compiler when it is not explicitly written by hand
+-  has no params
+
+
+6.What is a copy constructor?
+Takes an object of the same type as parameter and does a copy operation
+ex:
+
+A a;
+B b;
+
+   a = b; // assignment ( operator==() ) is called
+C c = b; // copy constructor ( C(C&) )  is called 
+
+
+7.What is the difference between a pointer and a reference?
+int value = 0;
+
+int*  a = &value;   //  keeps the address where something begins
+      *a = 10;
+
+int& b = value;     //  alias to the variable
+       b = 10;
+
+- b needs to be initialized when declared and can't be changed, while a no
+- a reference must always point to a valid object, a pointer may be 0, this is useful when
+  coding, it allows you to not check for NULL pointer and then continue
+- a reference is automatically dereferenced, no need to use *ref to access the actual object
+- you can't create a reference to a reference, but it is possible to create a pointer to a pointer
+
+
+8.How can I handle a destructor that fails?
+you're in trouble then. best is to check the code and have a handy logging  framework to use and
+write some logs. If you try to throw exception then most probably a dialog will appear informing
+that the program performed something strange it was closed.
+
+
+9.Can you think of a situation where a program would crash without reaching the breakpoint which you set at the beginning of main()?
+yes, that can happen if there is some strange stuff happening already before the main() is invoked.
+usually there are allowed some initialization related to global variables, if that fails then there is a need to debug at different level of what went wrong ...
+
+
+10.Name two cases where you MUST use initialisation list as opposed to assignment in constructors.
+a)  class A{};
+        class B : public A{};
+        B::B() : A(){}
+
+b)  class A
+{
+    publuc:
+        A( int* value );
+        int& _value;
+};
+
+A::A( int* value ) : _value( *value )
+{}        
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">90 min tasks</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+1. ----------------------------------------------------------------------------------------
+Write the function that will reverse doubly-linked list,
+where only input parameter is pointer to the list's head element.
+
+Function prototype is:
+void Reverse(CNode*& pHead);
+
+CNode class declaration is:
+class CNode {
+    public:
+        CNode* pPrev;
+        CNode* pNext;
+};
+
+
+2. ----------------------------------------------------------------------------------------
+You have the following function prototype:
+int compactArray(int * p, int size);
+
+Write a function that will take a sorted array, possibly with duplicates, 
+and compact the array, returning the new length of the array. That is, if p points to 
+an array containing: 1, 3, 7, 7, 8, 9, 9, 9, 10, when the function returns, the contents 
+of p should be: 1, 3, 7, 8, 9, 10, with a length of 5 returned.
+
+
+
+(Logical solution required)
+3. ----------------------------------------------------------------------------------------
+Assume you have an array that contains a number of strings (perhaps char * a[100]).
+Each string is a word from the dictionary. Your task is to devise a way to determine 
+and display all of the anagrams within the array (two words are anagrams if they contain 
+the same characters; for example, tales and slate are anagrams.)
+
+4. ----------------------------------------------------------------------------------------
+Presume that you have received the weight scale with which you should measure eight balls.
+Seven of these balls have the same weight: the eigth ball is heavier than the rest. The scale 
+has two plates for holding objects, and when you load both plates it tells you which of the 
+two sides being weighed is heavier (like the scale that lady of justice statue holds up).
+So, for example you could place one ball on each end of the scale. If ball one was heavier 
+than ball two, it would tip in ball one's direction; if ball two were heavier, it would tip 
+io ball three's direction; if the balls were of equal weight, the scale would not tip at all.
+What is the minimum number of weighs you could perform to find the heaviest of the eight balls?
+
+5. ----------------------------------------------------------------------------------------
+Presume that you have 26 constants, labelled A through Z. Each constant is assigned a value 
+in the following way: A = 1; the rest of the values equal their position in the alphabet (
+B corresponds to the second position so it equals 2, C = 3, etc.) raised to the power of the 
+preceeding constant value. So, B = 2 ^ (A's value), or B = 2^1 = 2. C = 3^2 = 9. D = 4^9, 
+etc., etc. Find the exact numerical value to the following equation:
+
+(X - A) * (X - B) * (X - C) * ... * (X - Y) * (X - Z)
+
+
+6. ----------------------------------------------------------------------------------------
+There are four people who need to cross a bridge at night. The bridge is only wide enough 
+for two people to cross at once. There is only one flashlight for the entire group. When 
+two people cross, they must cross at the slower member's speed. All four people must cross 
+the bridge in 17 minutes, since the bridge will collapse in exactly that amount of time.
+Here are the times each member takes to cross the bridge:
+
+Person A: 1 minute
+Person B: 2 minutes
+Person C: 5 minutes
+Person D: 10 minutes
+
+How can all four people get across the bridge within 17 minutes? Note: there is no 
+trick-answer to this problem, it has proper solution
+        </pre>
+    </div>
+</div>

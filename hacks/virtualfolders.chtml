@@ -1,0 +1,46 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Virtual Folders</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Implementing Virtual Folders using FreeBSD's nullfs</p>
+    </div>
+    <div id="articleContent">
+        I had a situation when was needing a way to share files to people but in the most restricitive way.
+        I turned to "vsftpd", the first ftp tool that I had a pleasure to work with. But during the time,
+        there was a feature I needed the most - virtual folders. An example of these vritual folders can be - 
+        I want to have an anonymous download-only ftp, this public ftp has on my server the root folder in /home/ftp.
+        I want that folder to be populated by people who have accounts on that server and they manage their sites
+        using chrooted SFTP and do not interfer with each other. So how do I collect each user's files that are 
+        supposed to be published on ftp for download so that the /home/ftp becomes a fusion of all the files and folders?
+    </div>
+        
+    <div id="articleHeader">
+        <p id="moto3">The Solution</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+        Here is what I did:
+         - install vsftpd and configure it to let the download happen only by hitting direct link in ftp client
+         - add /home/ftp if not present already
+         - as example having few users that will want their sites to have "FTP" capability I did as below:
+        for user "user1" - 
+            "mkdir /home/user1/ftp; mount_nullfs -o union /home/user1/ftp /home/ftp"
+
+        for user "user2" - 
+             "mkdir /home/user2/ftp; mount_nullfs -o union /home/user2/ftp /home/ftp"
+
+        for user "user3" - 
+             "mkdir /home/user3/ftp; mount_nullfs -o union /home/user3/ftp /home/ftp"
+        </pre>
+    </div>
+
+    <div id="articleContent">
+        As a result the /home/ftp becomes a place where you can see all the files that people 
+        have been putting for sharing. No duplication.
+    </div>
+
+</div>

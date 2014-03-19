@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">WSS 3</p>
+    </div>
+
+    <div id="articleContent">
+        SharePoint is a very neat solution for the enterprises. Love the concept.
+        While passing the ceritification I made small notes for the coding part. Have fun.
+    </div>
+
+    <div id="articleContent">
+        <a href="sharepoint/wss3.7z" class="button">Donwload</a>
+    </div>
+
+</div>

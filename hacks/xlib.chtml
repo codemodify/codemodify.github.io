@@ -1,0 +1,22 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Xlib</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Little boost in Xlib coding</p>
+    </div>
+    <div id="articleContent">
+        <a href="hacks/mousetester.tar.gz" class="button">here</a> you can find a program that will help to get started in xlib with keyboard handling
+    </div>
+    <div id="articleContent">
+        <a href="hacks/keyboardtester.tar.gz" class="button">here</a> you can find a program that will help to get started in xlib with mouse handling
+    </div>
+
+    <div id="articleContent">
+        any ways, you must be crazy enough to do this, if so welcome then.
+    </div>
+
+</div>

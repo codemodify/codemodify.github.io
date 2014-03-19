@@ -1,0 +1,42 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Computers</p>
+    </div>
+
+    <div id="articleContent">
+        <br/>What a developer needs ?
+        <br/>    o it depends on the development platform
+        <br/>    o it depends on the project it works on
+        <br/>    o it depends on developer's philosophy on things
+        <br/>    o it depends on developer's skills
+        <br/>
+        <br/>What needs an user who from time to time "touches" the computer ?
+        <br/>    o power-on
+        <br/>    o a friendly desktop with all the shortcuts it might need
+        <br/>    o check e-mail
+        <br/>    o ICQ some one
+        <br/>    o write some docs in some office-suite
+        <br/>    o power-off
+        <br/>
+        <br/>What needs an an experienced user ?
+        <br/>    o the fastest computer, faster than his friend's computer, 
+        <br/>      at least the feeling that it is so
+        <br/>    o full of the things that can be installed from internet, 
+        <br/>      at the same time to not crash/slow-down when some trash is installed
+        <br/>    o a computer that becomes music, video and all the multimedia center
+        <br/>    o the feeling that the computer is completely managed by him
+        <br/>
+        <br/>What needs a professional that works with one of the PhotoShop-GIMP/3DMAX-Maya/Premiere
+        <br/>    o they have already quite powerful computers
+        <br/>    o some "menu" from where to start their applications
+        <br/>    o a file system browser for file-operations on their media files
+        <br/>
+        <br/>What needs a system/network administrator ?
+        <br/>    o usually a desktop-environement to stay on
+        <br/>    o "ssh" for administring his network
+        <br/>    o a music player
+    </div>
+
+</div>

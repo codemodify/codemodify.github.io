@@ -1,0 +1,33 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">MUSIC MD</p>
+    </div>
+
+    <div id="articleContent">
+        MusicMD - was a platform to help music culture in Moldova.
+        
+        <br/><br/>
+        Provided services<br/>
+        - name in form of : [name].music-md.eu<br/>
+        - storage space<br/>
+        - site creating consulting
+
+        <br/><br/>
+        Makin' music & need help ? write to request.music.md@gmail.com
+        
+        <img src="projectsarchive/musicmd-mendance.png" style="position: absolute; right: 50px; top: 60px;" />
+        
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Example Projects</p>
+    </div>
+    <div id="articleContent">
+        <img class="imageframe" src="projectsarchive/musicmd-inox.png" />
+        <img class="imageframe" src="projectsarchive/musicmd-probachus.png" />
+        <img class="imageframe" src="projectsarchive/musicmd-eugenia.png" />
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Comment Box</p>
+    </div>
+
+    <div id="articleContent">
+        Comment Box is a light, clean and easy way to add social networking to a site without 
+        any complications on server side. Thecnically it is a set of JavaScript and XHTML files 
+        that will allow one to integrate user feedback into a site or page. 
+    </div>
+
+    <div id="articleContent">
+        <img src="tools/commentbox.png" />
+    </div>
+
+    <div id="articleContent">
+        <a href="tools/commentbox.7z" class="button">Donwload</a> a glympse 
+    </div>
+
+</div>

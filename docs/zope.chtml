@@ -1,0 +1,112 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Zope</p>
+    </div>
+
+    <div id="articleContent">
+        Each instance has its own configuration file, products folder, and service you can use to start it.
+    </div>
+
+    
+    
+    <div id="articleHeader">
+        <p id="moto3">Zope Page Templates</p>
+    </div>
+    <div id="articleContent">
+        The goal of Page Templates is to allow designers and programmers to work together easily. 
+        A designer can use a WYSIWYG HTML editor to create a template, then a programmer can edit 
+        it to make it part of an application.
+    </div>
+
+    
+    
+    <div id="articleHeader">
+        <p id="moto3">DHTML</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+Common DTML Tags
+
+---------------------------------------------------------
+&lt;dtml-var variableName&gt;
+
+
+Attributes:
+
+html_quote - 
+causes the inserted values to be HTML quoted. 
+This means that '&lt;', '&gt; and &' are escaped. Note that as of Zope 2.6, all 
+string values which are retrieved from the REQUEST namespace are HTML-quoted by default.
+
+missing - 
+allows you to specify a default value to use in case Zope 
+can't find the variable. 
+For example: &lt;dtml-var bananas missing="We have no bananas"&gt;
+
+fmt -
+allows you to control the format of the var tags output.
+One use of the fmt attribute is to format monetary values. 
+
+For example, create a float property in your root folder called adult_rate. 
+This property will represent the cost for one adult to visit the Zoo. 
+Give this property the value 2.2. You can display this cost in a DTML Document or Method like so:
+One Adult pass: &lt;dtml-var adult_rate fmt=dollars-and-cents&gt;
+This will correctly print "$2.20". It will round more precise decimal numbers to the nearest penny.
+
+
+
+---------------------------------------------------------
+&lt;dtml-if variableName&gt;
+
+This if tag lets you evaluate a condition and carry out different actions based on the result.
+There is allowed also nested IF tags.
+
+Examlpe:
+&lt;p&gt;How many monkeys are there?&lt;/p&gt;
+&lt;dtml-if expr="monkeys &gt; monkey_limit"&gt;
+    &lt;p&gt;There are too many monkeys!&lt;/p&gt;
+&lt;/dtml-if&gt;
+
+&lt;dtml-if expr="monkeys &gt; monkey_limit"&gt;
+  &lt;p&gt;There are too many monkeys!&lt;/p&gt;
+&lt;dtml-else&gt;
+  &lt;p&gt;The monkeys are happy!&lt;/p&gt;
+&lt;/dtml-if&gt;
+
+# using cookies with IF tag
+&lt;dtml-if userHasVisitedThePage&gt;
+  &lt;p&gt;You have visited the page&lt;/p&gt;
+&lt;dtml-else&gt;
+  &lt;p&gt;This is the first time when you visit this page&lt;/p&gt;
+&lt;/dtml-if&gt;
+
+# Script(Python) "userHasVisitedThePage"
+request = context.REQUEST
+response = request.RESPONSE
+if request.has_key('haveVisitedThePageCookie'):
+    return 1
+else:
+    response.setCookie('haveVisitedThePageCookie', '1')
+    return 0
+
+
+
+---------------------------------------------------------
+&lt;dtml-in todo_list&gt;
+
+The DTML in tag iterates over a sequence of objects, carrying out one block of 
+execution for each item in the sequence.
+
+Inside the IN tag we can use the following:
+sequence-item
+sequence-index
+sequence-number
+sequence-start
+sequence-end
+        
+        </pre>
+    </div>
+
+</div>

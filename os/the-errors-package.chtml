@@ -1,0 +1,14 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Fun</p>
+    </div>
+
+    <div id="articleContent">
+        <img style="width: 713px; height: 243px;" alt="" src="os/after_reboot.png">
+        <img style="width: 1223px; height: 86px;" alt="" src="os/screenshot_1.png"><br>
+        <img style="width: 621px; height: 385px;" alt="" src="os/screenshot_2.png"><br>
+        <img style="width: 399px; height: 108px;" alt="" src="os/screenshot_3.png"><br>
+    </div>
+
+</div>

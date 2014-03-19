@@ -1,0 +1,283 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Boot Loaders</p>
+    </div>
+    
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - SourceForge ]</p>
+    </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/gag">GAG, the Graphical Boot Manager</a><br/>
+        GAG is a graphical boot manager, designed to be easy-to-use and intuitive, but without 
+        loosing advanced features, like passwords or swapping drives.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/gujin">gujin boot/system loader</a><br/>
+        This software boots your PC and analyse your filesystems. It displays a graphical menu 
+        for you to select which system to boot. Intended to replace LILO and Loadlin, written 
+        in C with GCC, fully real mode.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/elilo">ELILO: EFI Linux Boot Loader</a><br/>
+        ELILO is the EFI linux boot loader for IA-64(IPF), IA-32(x86), and x86_64 EFI-based platforms.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/refit">rEFIt</a><br/>
+        rEFIt is a boot menu and maintenance toolkit for EFI-based machines like the Intel Macs.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/kernelloader">Kernelloader</a><br/>
+        Kernelloader is a free bootloader for PS2 Linux and other Playstation 2 operating systems.
+        Loading can be done by "Action Replay Media Player", by "memory card exploit", by "Memor32" 
+        or any other homebrew loading method.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/mbldr">mbldr (Master Boot LoaDeR)</a><br/>
+        mbldr is a boot loader which fits into first sector of an HDD (MBR). It allows to choose 
+        which partition to boot and is intended to replace an MBR coming with DOS/Windows (fdisk /mbr).
+        It may boot OSes above 1024cyl, Linux/BSD are also supported.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/cult-thinclient">cult</a><br/>
+        CULT is an Open Source software-only network bootable thin client Operating System that 
+        provides a complete solution for thin clients, PCs or virtualized hardware.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/ubl">Universal BootLoader Tool</a><br/>
+        Universal BootLoader Tool helps you easily recover from a failed rom flash, and is known 
+        to turn an free update rom into a full rom. (e.g. from the free WM5 update rom available 
+        for hx4700 Pocket PCs on HP.com) Only tested with HP iPAQ Pocket PCs.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/sdboot">SDBoot</a><br/>
+        SDBoot is a complete bootloader solution (MCU side and PC side), free, with source code 
+        for AVR MCU chip. It features a checksumed protocol for safe programming.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/air-boot">AiR-Boot</a><br/>
+        AiR-Boot is a x86 boot-loader that resides completely in track 0 of the harddrive. It's 
+        also independent of any operating system, features a BIOS-like built-in setup, is localized 
+        to German, Dutch, French, Italian and Russian (including Cyrillic).
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/u-boot">Das U-Boot - Universal Bootloader</a><br/>
+        The "U-Boot" Universal Bootloader project provides firmware for many CPU architectures and 
+        boards with full source code under GPL. See http://www.denx.de/wiki/UBoot for more 
+        information and http://www.denx.de/wiki/UBoot/SourceCode for current source co
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/spfdisk">SPecial FDisk</a><br/>
+        The SPFDisk is Boot manager and Partition tools
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/tripleboot">TripleBoot</a><br/>
+        A triple boot solution for intel based macs.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/btmgr">Smart BootManager</a><br/>
+        Smart BootManager is an os independent BootManager which has easy to use interface and 
+        many other features. The main goals of SBM are to be absolutely OS independent, flexible 
+        and full-featured. It has all of the features needed to boot a variety of OS.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/runnix">Runnix</a><br/>
+        Runnix is a kexec/syslinux based loader for booting linux systems. It supports a wide range 
+        of unique features and can be easily customized and extended. Automatic updates (even over a 
+        network), image verification, and failover are all supported.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/ranish">Ranish Boot and Partitioning Tools</a><br/>
+        Ranish Boot and Partitioning Tools
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/ub2lb">U-Boot Second Level Bootloader</a><br/>
+        The aim of this project is to provide an open source GPLv2 version of U-Boot second level 
+        bootloader, which will load, initialize and start the PowerPC-native version of AROS Research 
+        Operating System.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/init4boot">init4boot</a><br/>
+        init4boot provides iSCSI boot for Xen Guest Systems - currently for Debian and Fedora. It's 
+        an extensible tool set for creating initramfs, with support for: iSCSI, multipath, network, 
+        tftp config.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/blob">blob, a StrongARM boot loader</a><br/>
+        Blob is a boot loader for SA11x0 (StrongARM) platforms. Blob is able to boot a Linux kernel
+        stored in flash or RAM and provide that kernel with a ramdisk (again from flash or RAM).
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/xosl2">XOSL2</a><br/>
+        XOSL2 is a free, full-featured boot manager with an easy-to-use and full-blown graphical 
+        user interface built off the original XOSL by Geurt Vos. XOSL2 will allow installation from 
+        CD, new hardware support and more. http://www.XOSL2.com
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/bootsagem">Sagem Bootstrap Loader Utility</a><br/>
+        This software can be used to enter the bootstrap mode on Sagem (TM) GSM mobile phones and 
+        execute some program on their internal CPU. This might be useful for writing into the flash 
+        memory, repairing EEPROM contents or just for educational purposes.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/armboot">ARMboot</a><br/>
+        ARMboot is an Open-Source firmware suite for ARM based platforms. ARMboot is heavily based 
+        on the sister-project PPCboot, which provides similar functionality on PowerPC based systems.
+        ARMboot shall be a common, easy-to-use and easy-to-port boot platform
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/jboot">JBOOT</a><br/>
+        JBOOT is an open source bootloader. Each floppy can have multiple kernels and JBOOT allows
+        the user to choose which kernel they wish to load. JBOOT also allows booting from a network 
+        and chainloading. However these features are still being worked upon
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/aboot">aboot</a><br/>
+        aboot is the Linux bootloader for Alpha systems using the SRM console. This package also 
+        includes the utilities isomarkboot, swriteboot and sdisklabel.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/xosl">Extended Oprating System Loader</a><br/>
+        XOSL is a graphical boot manager that supports multi-booting of various operating systems.
+        Development is currently done under the XOSL2 title. See www.XOSL2.com to download the 
+        current version or for more information. Historical version download below:
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/boot360">68360 Boot Loader</a><br/>
+        Boot loader and FLASH burner for the Motorola 68360 processor (aka Power QUICC). Based 
+        on CoLILO linux loader for Motorola Coldfire processors, however this boot loader is OS 
+        independent. Supports systems with multiple FLASH devices, runs from RAM for f
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/c1boot">C-ONE boot code</a><br/>
+        This project develops and maintains the C-ONE boot code.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/xboot">XBOOT-Multi Boot Manager for Boot Master</a><br/>
+        Multi Boot Manager allow chang the boot, this version need be insert into MASTER BOOT 
+        RECORD (MBR, track 0, side 0, sector 0), and the original content need be insert into
+        last sector (Sector B3F or Physical address Track 4f, Side 1, Sector 12h). Made in
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/silo">SPARC/UltraSPARC Boot Loader</a><br/>
+        This project has not yet submitted a description.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/chos">Choose-OS</a><br/>
+        Choose-OS bootloader. This is an old bootloader. If anyone wants to adopt this project,
+        please notify me.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/openboot">openboot</a><br/>
+        OpenBoot is a boot loader supporting multi CPU-architectures. It is configurable and 
+        portable, and its source codes are enough clear to read.
+        </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - SourceForge - Network ]</p>
+    </div>
+    
+        <div id="articleContent"><a href="http://sourceforge.net/projects/tftp-server">TFTP Server</a><br/>
+        MultiThreaded TFTP Server Open Source Freeware for PXEBOOT, Router image load, support 
+        tsize, blksize, timeout and Server Port Ranges, Block Number Rollover for Large Files. 
+        Can be installed as Service/daemon. Single Port version also available.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/netbootd">netbootd</a><br/>
+        netbootd adds network boot (PXE and BSDP) support to networks with an existing DHCP 
+        service that can not be reconfigured with the appropriate DHCP options.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/netboot">netboot Network booting environment</a><br/>
+        The netboot project allows booting a diskless PC over a TCP/IP based network using 
+        standard protocols like BOOTP, DHCP and TFTP. It is able to boot Linux, FreeBSD, multiple 
+        DOS variants (including MS-DOS, PC-DOS, PTS-DOS, OpenDOS, NovellDOS, FreeDOS)
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/etherboot">Etherboot</a><br/>
+        Etherboot is Open Source code for creating boot ROMs for network booting x86, AMD64, Itanium,
+        Hammer, Hyperstone and ARM (noMMU) platforms.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/bootd">bootd Network Boot Server</a><br/>
+        The bootd project allows netbooting a wide variety of clients using different protocols 
+        using one configuration and one server daemon, with good configurability and diagnostics.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/bootpdnis">bootpd_nis</a><br/>
+        This is a really simple BOOTP server, which uses NIS maps to retrieve host information 
+        (host name, IP address).
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/remotebios">RemoteBIOS</a><br/>
+        RemoteBIOS is a set of tools that helps you to writen LinuxBIOS bios, test it flashing only 
+        one time the ROM, with remotebios.bin. And you can remotely execute a ELF binary, or a script,
+        for example memory initialization script,etc through Serial Port.
+        </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - SourceForge - Useful ]</p>
+    </div>
+    
+        <div id="articleContent"><a href="http://sourceforge.net/projects/awdbedit">Award BIOS Editor</a><br/>
+        Awdbedit is a BIOS editor for Award BIOSes. It supports unpacking, replacing, and repacking 
+        of components within a BIOS image, and allows settings to be changed and tweaks to be applied 
+        to the actual BIOS itself.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/lxbios">lxbios</a><br/>
+        lxbios is a utility for reading/writing LinuxBIOS parameters and displaying information from 
+        the LinuxBIOS table. It is intended for x86-based Linux systems (either 32-bit or 64-bit)
+        that use LinuxBIOS.
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/biosconfig">biosconfig</a><br/>
+        biosconfig is a flexible tool to automate CMOS non-volatile store parameter modification.
+        As of 2004-09-22 19:15, this project may now be found at: 
+        http://savannah.nongnu.org/projects/biosconfig
+
+        </div>
+
+        <div id="articleContent"><a href="http://sourceforge.net/projects/edd-utils">EDD utilities</a><br/>
+        BIOS EDD device link creator
+        </div>
+        
+</div>

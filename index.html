@@ -1,7 +1,132 @@
 <!DOCTYPE html>
+
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+    <head>
+
+        <title>YAPC - Yet Another Programmer Corner</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link type="text/css" rel="stylesheet" media="all" href="rc/css.css">
+        <link rel="image_src" href="http://rockthecode.net/rc/profilephoto.png" />
+        
+        <script type="text/javascript" src="rc/require.js"></script>
+        <script type="text/javascript" src="rc/fil.js"></script>
+        <script type="text/javascript" src="rc/jquery.js"></script>
+        <script type="text/javascript" src="rc/js.js"></script>
+
+        <!-- link type="text/css" href="rc/jquery.mCustomScrollbar.css" rel="stylesheet" />
+        <script type="text/javascript" src="rc/jquery.mCustomScrollbar.concat.min.js"></script -->
+
+    </head>
+    <body class="clearfix">
+    
+        <div id="categoryArea">
+            <div id="topbg"></div>
+            <img src="rc/logo.png" id="logo" />
+            <img src="rc/yapc.png" id="yapc" />
+            <img src="rc/profilephoto.png" id="photo" />
+            <div id="glow"></div>
+
+            <div id="profile" style="position: absolute; top: 280px; left: 20px; z-index: 200;">
+                <a href="mailto:nicolae.carabut@gmail.com"                target="_blank" id="profile1"><img src="rc/pack-mail.png"      style="height: 30px; width: 30px;" /></a>
+                <a href="http://www.facebook.com/NicolaeCarabut"          target="_blank" id="profile2"><img src="rc/pack-facebook.png"  style="height: 30px; width: 30px;" /></a>
+                <a href="http://twitter.com/nicuOnTvitter"                target="_blank" id="profile3"><img src="rc/pack-twitter.png"   style="height: 30px; width: 30px;" /></a>
+                <a href="http://www.linkedin.com/in/nicolaeonlinkedin"    target="_blank" id="profile4"><img src="rc/pack-in.png"        style="height: 30px; width: 30px;" /></a>
+                <a href="http://500px.com/nicu"                           target="_blank" id="profile5"><img src="rc/pack-500.png"       style="height: 30px; width: 30px;" /></a>
+            </div>
+
+            <div id="menu" class="menu">
+                <ul>
+                    <li><a href="#" alt="alm" class="activeMenuItem">
+                        ALM
+                        </a></li>
+
+                    <li><a href="#" alt="sharepoint">
+                        SharePoint
+                        </a></li>
+
+                    <li><a href="#" alt="hacks">
+                        Hacks
+                        </a></li>
+
+                    <li><a href="#" alt="tools">
+                        Tools
+                        </a></li>
+
+                    <li><a href="#" alt="appkit">
+                        AppKit()
+                        </a></li>                        
+                        
+                    <li><a href="#" alt="sd">
+                        Sofware Distro
+                        </a></li>
+
+                    <li><a href="#" alt="os">
+                        OS R&D
+                        </a></li>
+
+                    <li><a href="#" alt="security">
+                        Security
+                        </a></li>
+
+                    <li><a href="#" alt="docs" >
+                        Docs
+                        </a></li>
+
+                    <li><a href="#" alt="freebsd">
+                        FreeBSD
+                        </a></li>
+
+                    <li><a href="#" alt="math">
+                        Math
+                        </a></li>
+
+                    <li><a href="#" alt="projectsarchive">
+                        Archive Projects
+                        </a></li>
+                        
+                    <li><a href="#" alt="misc">
+                        Misc
+                        </a></li>
+                </ul>
+            </div>
+            
+            <span id="activeMenuItemMark" style="top: 200px;"></span>
+
+            <div id="right-border"></div>
+        </div>
+
+        <div id="subCategoryArea">
+
+            <div id="canvas"><canvas></canvas></div>
+        
+            <span id="menu" class="subMenu">
+            </span>
+            
+            <span id="activeMenuItemMark" style="top: 200px;"></span>
+
+            <div id="right-border"></div>
+        </div>
+
+        <div id="contentArea">
+        </div>
+
+        
+        <script type="text/javascript">
+        Nicolae.Site.OnPageLoaded();
+        /*(function($){
+                    $(window).load(function(){
+                        $("#contentArea").mCustomScrollbar({
+                            scrollButtons:{
+                                enable:true
+                            },
+                            theme:"dark",
+                            autoHideScrollbar:true
+                        });
+                    });
+                })(jQuery);*/
+        </script>
+
+    </body>
 </html>

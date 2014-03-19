@@ -1,0 +1,7 @@
+
+/**********************************************************************
+*   Defines mouse cursor
+**********************************************************************/
+.cursorArrow{ cursor: default; }
+.cursorHand { cursor: pointer; }
+.cursorHelp { cursor: help;    }

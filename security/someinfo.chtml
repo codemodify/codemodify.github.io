@@ -1,0 +1,70 @@
+<div id="article">
+
+    <div id="articleHeader">
+        <p id="moto3">Some (Extern Info)</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+~user/.rhosts  -  says who can be user without passwords
+/etc/hosts.equiv  -  has global machine permissions and user mapping.
+
+
+
+--------------------------------------------------------------------------------------
+
+Example Firewall Protection: Denying Inbound `ping`
+The `ping` command sends out ICMP Echo Request messages and expects ICMP Echo Reply messages in response.
+If you configure a firewall between the source and the destination to block ICMP Echo Request messages from the source 
+to the destination, the `ping` command will fail.
+Similarly, if you configure a firewall between the source and the destination to block ICMP Echo Reply messages from the 
+destination to the source, the `ping` command will also fail.
+The `ping` command can allow a potential attacker to map your network. Disabling inbound Echo Request messages 
+prevents the use of the `ping` command to map your network.
+
+
+--------------------------------------------------------------------------------------
+
+Example Firewall Protection: Blocking Outbound E-mail
+Internet e-mail uses the SMTP protocol. SMTP servers answer on TCP port 25.
+
+If you block outbound TCP port 25 from your network, users will not be able to send outbound e-mail -- except 
+through your approved e-mail servers.
+
+--------------------------------------------------------------------------------------
+
+Configure Wireless Security:
+
+Disabling SSID Broadcast
+Some devices allow you to disable "SSID Broadcast". Although this helps to limit who might see which networks are
+available to attack, knowledgeable attackers do not rely on SSID values to attack systems. SSID values can also be 
+determined if an attacker is using a network sniffer with wireless capabilities. Disabling SSID broadcast also makes 
+it more difficult for the intended users of the wireless network to configure and connect to the wireless network. 
+This is considered to be a "security through obscurity" technique.
+
+
+WEP or Wired Equivalent Privacy
+WEP is usually found in 64bit, 128bit, and 256bit implementations. 
+WEP has been found to be weak cryptographically, and should not be used for any wireless infrastructure you would like 
+to have secured. Choosing a good passphrase or password does not increase the level of security offered by WEP.
+
+WPA - Wifi Protected Access
+WPA is based on WEP, but the WPA algorithm changes the effective key more often. WPA is still weak cryptographically, 
+so choosing a passphrase or password of 20 characters or more is important to keep your wireless network secure. 
+If you use a good passphrase with WPA is it believed that attacks are impractical.
+
+WPA2 - the Second Generation of Wifi Protected Access
+WPA2 uses new encryption technologies called AES or TKIP which are not based on WEP. WPA2 is the preferred encryption 
+technology if it is available. As of March 13, 2006, all equipment using the WiFi trademark must be certified for WPA2.
+
+Mixing WPA and WPA2 clients
+Devices that support WPA2 mixed mode allow clients using both AES and WEP configurations to interoperate. 
+This does not include broadcast and multicast traffic.
+
+
+
+--------------------------------------------------------------------------------------
+
+        </pre>
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+
+/**********************************************************************
+*   Defines border properties
+**********************************************************************/
+.noBorder              { border-style: none;                                   }
+.bordered              { border-style: solid; border-width: 1px;               }
+.borderedWithDashedLine{ border-style: dashed; border-width: 1px;              }
+.borderTop             { border-top-style: solid; border-top-width: 1px;       }
+.borderBottom          { border-bottom-style: solid; border-bottom-width: 1px; }
+.borderLeft            { border-left-style: solid; border-left-width: 1px;     } 
+.borderRight           { border-right-style: solid; border-right-width: 1px;   }
+.borderColorWhite      { border-color: rgb(255,255,255);                       }
+.borderColorBlack      { border-color: rgb(0,0,0);                             }
+.borderClolorGrey      { background-color: rgb(192,192,192);                   }
+.borderClolorGoogleBlue{ background-color: #c9d7f1;                            }

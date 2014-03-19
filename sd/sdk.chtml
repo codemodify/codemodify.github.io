@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">SDK</p>
+    </div>
+
+    <div id="articleContent">
+        A strategy, a view-point, an attitude in providing SDK used to build complex entities.
+    </div>
+
+    <div id="articleContent">
+        <img src="sd/sdk.png" style="vertical-align: middle;" />
+        <a href="sd/sdk.7z" class="button">Donwload</a>
+    </div>
+    
+</div>

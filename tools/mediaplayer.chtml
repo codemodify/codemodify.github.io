@@ -1,0 +1,199 @@
+    <style type="text/css">
+        .Preformated{ white-space: pre; }
+        .AlignVerticalUp{ vertical-align: top; }
+        .AlignVerticalCenter{ vertical-align: middle; }
+        .AlignVerticalBottom{ vertical-align: bottom; }
+
+        .LeftMargin30{ margin-left: 30px; }
+        .RightMargin30{ margin-right: 30px; }
+
+        .ParagraphHeader
+        {
+            font-size: 16px;
+            font-weight: bold;
+            display: inline;
+        }
+
+        .ParagraphContent
+        {
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .Link        
+        {
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .CoolUnderline
+        {
+            border-bottom-width: thin;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(201, 215, 241);
+        }
+        
+        .Button{ display:block; float:left; border:1px solid #edd; text-align: left; cursor: pointer; width: 190px; }
+        .Button:hover{ border:1px solid #999; background:#eee; }
+        
+    </style>
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Media Player</p>
+    </div>
+
+    <div id="articleContent">
+        A project that provides a media player that has style and character. 
+        Uses Windows Presentation Foundation(WPF) and VLC as backend. 
+    </div>
+
+    <div id="articleContent">
+        <img src="tools/mediaplayer.png" style="vertical-align: middle;" />     
+        <a href="tools/mediaplayer.7z" class="button">Donwload srouces</a>
+    </div>
+
+    <!-- ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ -->
+    <br />
+    <div class="ParagraphHeader CoolUnderline LeftMargin30">
+        Media Player is a learning project I made up to assert the WPF muscles</div>
+
+    <div class="ParagraphContent Preformated LeftMargin30">
+        Along the way here you can find few things:
+        + VideoLan(VLC) .NET library that can be used to play video/audio files.
+        + Model-View-ViewModel pattern demonstration.
+        + A study of when and where to use Qt's Model View approach.</div>
+
+
+    <br /><br />
+    <div class="ParagraphHeader CoolUnderline LeftMargin30">
+        What I'm looking in a player</div>
+
+    <div class="ParagraphContent Preformated LeftMargin30">
+        The Personality Aspect.
+        
+        Basically software when it comes to interacting with a user it is not going to last 
+        for a long time if the UI does not provide few "Views" of the same functionality that will
+        correspond to different user's emotional affections or practical needs.
+        
+        This is a classic and perpetuing problem that makes the actors interchange within a time 
+        frame depending who brings in "the new fashion" that will die out eventually.
+        
+        Emotional Affections Ex:
+        There was winamp, it lasted because of its skinning system that could match different 
+        brains' optical filters, people's styles and just coolness of having a speaker-box on 
+        desktop jumping at every drum beat. Nothing practical, just the feeling of uniqueness.
+        
+        Practical Ex1:
+        iTunes is a heavy music files indexing and handling robot.
+
+        Practical Ex2:
+        Some times you have to do the work, and in the end after all the coolness of the apps you 
+        have installed you want them disappear out of the way to let you focus. But at the same 
+        time you have the need to know that in minimal instant of an 'action' they appear, you 
+        choose the next track and it must go away musch faster than it has appeared - you need to work.
+                
+                
+        Existing Actors.
+            ZoomPlayer - got on the podium because of its 'hackerish' set of options and untraditional
+            layout of the controls. That was the breaking moment that made the difference in raport 
+            with the std boring windows looking apps.
+
+            BsPlayer - cracked in for the podium because nobody fucks with 'cool' bs-plines math algorithms, 
+            even if it was not that fast as claimed, the idea that "it must be fast" kept its followers 
+            tight (a bit of linux spirit here).
+
+            Winamp - no alternative at the times for the combination of technical engine, skinning and 
+            approach of not getting in the way. That is the most, event to day, successful and correct 
+            approach to software.
+
+            Sonique - the stopper and eater of all peoples attentions because of some mixed approches found
+            in Winamp and ZoomPlayer. As intention and development at tehcnology level it was way ahead for 
+            5-7 year of anything that existed at the moment. This was the reason why it did not lasted. The 
+            crappy Win32/MFC dumb world did not understood it.
+
+            VLC - strong decoding backend.
+
+            MPlayer - strong decoding backend.
+
+            Windows Media Player - as purely player it is a poor commercial applicaiton, made to fill in the needs
+            to sell some other stuff based on its technologies, and those things come with heavy contracts...
+            As platform technology, it is quite well-thoughtout for the business.
+
+            iTunes - nicer to use, but the same story as Windows Media Player.
+    </div>
+
+
+    <br /><br />
+    <div class="ParagraphHeader CoolUnderline LeftMargin30">
+        What I see as Working Formula</div>
+
+    <div class="ParagraphContent Preformated LeftMargin30">
+            In media playing needs for a person there are 2 practically different tendencies.
+            One needs to have full control or the idea that it contols it without event thinking that this 
+            app just did something that imposes him to do some more action to achieve what he wanted.
+            
+            If we as users get to that situation then this is the begining of when at first oportunity
+            we will download an alternative. Which means the app failed. It is not important how cool it is
+            or what a heavy brand did it.
+            
+            Tendency One - Music.
+                Music is the base of humans even if we don't get it till the end. It is the vibrational waves
+                that crosses the vibrational field of our bodies to make us feel the music that has an impact
+                on the behaviour, inspiration, work capacity and disposition. It is a very thin and touchy 
+                combination of all the things around that decides for us if we like the music or not, 
+                we just follow that 'decistion' and enjoy the sound wave's interaction with our body.
+                
+                One of those things that are part of the decision is the modality to manipulate the music so it
+                can be better focused or adjusted for the rest parts of the process. If that modality to 
+                manipulate the music fails, everything else fails. The app is crap, we stop enjoying the music,
+                we start to hate the OS, we sell the PC and look for something else.
+                
+                So here if you're serious of not releasing any crappy software just for the sake to call 
+                yourself with a fashioned name 'senior developer' or more agravating 'engineer' then it is 
+                best to see the aspects profoundly.
+                
+                The - Music Player - needs to have no video playback. If it has then it will impose some 
+                architectural and functional additions that will impact the UI, which in turn will impact 
+                user's perception.
+                
+                It may be a single app with video and music playback capabilities, but in no case to have 
+                the UI elements present for both.
+                
+            Tendency Two - Video.
+                A wrong approach is to put all the options and capabilities on a toolbar in front of the 
+                user just to show off 'the muscles' of the player. This is wrong. Uninstall, delete the 
+                installation and add a low rank on the product's page.
+                
+                This is simple. A black stylish window in the center of the desktop. No controls. Only 
+                when right clicking they will appear, or when pressing space or something else. Exposing 
+                everyting from the start is bad and cheap.
+                
+                After all we want to see a video and not the colorfull buttons around the video window
+                that means nothing and disturbing for the process.
+    </div>
+
+
+    <br /><br />
+    <div class="ParagraphHeader CoolUnderline LeftMargin30">
+        Got Intrigued ?</div>
+
+    <div class="ParagraphContent Preformated LeftMargin30">
+        Please feel free to try it out and drop a message if you can, I'm curious just about 
+        anything that might strike your mind.</div>
+    <br /><br />
+
+
+    <div style="position:absolute; top:200px; right:0px; width: 220px;">
+
+        <div class="ParagraphHeader">
+            <img src="tools/mediaplayer-gears.png" alt="" />&nbsp;&nbsp;Sys Requirements</div>
+
+        <div class="ParagraphContent Preformated">
+            o Net 3.5 - will intall WPF
+            o VLC - playback backend</div>
+
+    </div>
+
+</div>

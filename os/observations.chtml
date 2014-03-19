@@ -1,0 +1,36 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Observations</p>
+    </div>
+
+<div id="articleContent"><pre>
+    
+<span class="withCoolUnderline">Requirements to be able to implement</span>
+    - cryptographic disk driver
+    - Linux Kernel Immune System - a Intrusion Prevention System
+    - Artificial Intelligence Operating System
+    - digital signature and verification for executables and libraries
+    - kernel module for traffic accounting
+    - handle different quality of service levels
+    - fault tollerance
+    - Elastic Quota FileSystem - allowing user to extend his quota prvided that space will be 
+      given back whenevr OS needs it.
+    - filesystem level snapshots
+
+<span class="withCoolUnderline">What you see on SF.net in a "brand new" OS description</span>
+    - a new operating system with a focus on being modular
+    - tiny kernel
+    - a highly modular operating system aimed towards providing the unified interface between 
+      user-space applications and all types of system objects
+    - next generation OS
+    - An Operating System Designed to be Fast and Stable.
+    - binaries from almost any operating system
+    - easy to understand and use interface, and everything will be customizable
+    - This OS will be easy to use, with numerous software versions
+    - system-level tracing facility for capturing and presenting diagnostic information and 
+      performance metrics
+
+    </pre></div>
+
+</div>

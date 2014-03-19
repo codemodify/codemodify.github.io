@@ -1,0 +1,21 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">permissions</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Change permissions recursively</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+# change permission only for folders from folder "privateDocs"
+find privateDocs -type d -exec chmod 755 {} \;
+
+# change permission only for files from folder "privateDocs"
+find privateDocs -type f -exec chmod 644 {} \;
+        </pre>
+    </div>
+
+</div>

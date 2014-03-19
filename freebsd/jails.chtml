@@ -1,0 +1,58 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Jails</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Virtualization with FreeBSD Jails</p>
+    </div>
+    <div id="articleContent">
+
+<span style="font-weight: bold;"><br>
+<br>
+</span>
+<h2 style="color: rgb(102, 102, 102);"><small>Building binaries for the
+Jail</small></h2>
+<small style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; o mkdir -p
+/usr/home/jails/free-blogging-service - (put your path here as you need)<br>
+&nbsp;&nbsp;&nbsp; o cd /usr/src<br>
+&nbsp;&nbsp;&nbsp; o make world
+DESTDIR=/usr/home/jails/free-blogging-service<br>
+&nbsp;&nbsp;&nbsp; o make distribution
+DESTDIR=/usr/home/jails/free-blogging-service<br>
+&nbsp;&nbsp;&nbsp; o mount_devfs devfs
+/usr/home/jails/free-blogging-service/dev</small><br
+ style="color: rgb(0, 0, 0);">
+<br>
+<h2><small style="color: rgb(102, 102, 102);">Starting the Jail for the
+first time configration</small><br>
+</h2>
+<small><span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; o ifconfig
+rl0 alias 192.168.3.124 - (put your IP as you need here)<br>
+&nbsp;&nbsp;&nbsp; o jail /usr/home/jails/free-blogging-service
+free-blogging-hostname 192.168.3.134 /bin/sh</span><br
+ style="color: rgb(0, 0, 0);">
+<span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; o <span
+ style="font-style: italic;">if there are no errors in previous steps,
+at this point you will be prompted with a </span></span><span
+ style="color: rgb(102, 102, 102); font-style: italic;"><span
+ style="color: rgb(0, 0, 0);">shell to configure the jailed system as
+you need.<br>
+</span></span><span style="color: rgb(102, 102, 102);"><span
+ style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; o one of the
+configuration steps would be:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; o mount_devfs <br
+ style="color: rgb(0, 0, 0);">
+</span></span><span
+ style="color: rgb(102, 102, 102); font-style: italic;"><span
+ style="color: rgb(0, 0, 0);"></span><br>
+</span></small>
+<h2><small><span style="color: rgb(102, 102, 102);">Starting the Jail
+for production usage</span></small></h2>
+<small><span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp; o jail
+/usr/home/jails/free-blogging-service free-blogging-hostname
+192.168.3.134 /bin/sh /etc/rc.d</span></small><br>
+    </div>
+
+</div>

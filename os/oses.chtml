@@ -1,0 +1,1754 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">The dig into OSES</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES ]</p>
+    </div>
+
+    <div id="articleContent">
+        <a href="http://visopsys.org/osdev/index.html">Visopsys</a>
+        <br/><a href="#">Singularity</a>
+        <br/><a href="http://web.syllable.org/pages/index.html">Syllable</a>
+        <br/><a href="http://atheos.syllable-norden.info">AtheOS</a>
+        <br/><a href="http://www.haiku-os.org">Haiku</a>
+        <br/><a href="http://aros.sourceforge.net">AROS</a>
+        <br/><a href="http://www.riscos.org">RISC OS</a>
+        <br/><a href="http://pdos.csail.mit.edu/exo.html">MIT Exokernel Operating System</a>
+        <br/><a href="http://www.hoozi.com/Articles/DynaOS.htm">Dynamic Operating System</a>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - On SourceForge ]</p>
+    </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/contiki">Contiki</a><br/>
+        Highly portable, networked, multi-tasking operating system for memory-constrained systems.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/jnode">JNode</a><br/>
+        JNode is a Java New Operating system Design Effort. JNode is a simple to use and install
+        Java operating system for personal use on modern devices. Any java application runs on it,
+        fast and safe. See our homepage for additional information.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/freedos">FreeDOS</a><br/>
+        FreeDOS is a free DOS-compatible operating system for IBM-PC compatible systems.
+        FreeDOS is made of up many different, separate programs that act as "packages" to the 
+        overall FreeDOS Project. FreeDOS is distributed under the GNU GPL.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nwos">New World OS</a><br/>
+        Exploring the possibilities of doing an Operating System completely different than all of 
+        the existing ones. Instead of basing it upon concepts that are 40 years old, design it 
+        from the ground up object oriented, peer-to-peer, and for security.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/losethos4">LoseThos 64-Bit PC O.S.</a><br/>
+        LoseThos, a free, 64-bit, multicore, PC operating system designed from scratch -- not a Unix. 
+        No bloat. Boots in 2 seconds. Comes with games, C compiler, tools and lots of demo's of the API! 
+        Test-drive or install -- it's a live CD.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/syllable">Syllable Desktop operating system</a><br/>
+        Syllable Desktop is a complete operating system that is easy to use, powerful, lightweight 
+        and extraordinarily fast and responsive. It has its own kernel, filesystem, GUI and applications.
+        Syllable Server is a matching small and efficient Linux server.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/thix">Thix</a><br/>
+        The Thix Operating System is fully functional at this time. Many free software packages have 
+        been succesfully compiled/run under it, including development tools such as the GNU C/C++ 
+        Compiler suite.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/emutos">EmuTOS</a><br/>
+        EmuTOS is a GEMDOS compatible operating system for Atari ST series computers. It is made 
+        from Digital Research's GPLed original sources and will be a free and open source replacement 
+        for common TOS images.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/aros">AROS Research Operating System</a><br/>
+        The AROS Research Operating System is an effort to implement an Open Source and portable 
+        operating system that is compatible with AmigaOS(TM) 3.1. Originally, it was meant as a direct 
+        reimplementation, but already has features not existing in AmigaOS.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/clicker">Clicker 32</a><br/>
+        Clicker is a project for a Multitasking Open-source operating system written from scratch.
+        Based on a modular micro kernel. We want to explore new way of designing and using OSes :)
+        
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/geekos">GeekOS</a><br/>
+        GeekOS is an tiny operating system kernel which runs on bare x86 PC hardware.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pdos">PDOS</a><br/>
+        Public Domain Operating System (currently x86 and 80386)
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/osso">OSSO</a><br/>
+        A Micro Kernel OS designed from scratch
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/trion">Trion Operating System</a><br/>
+        The Trion Object Oriented Operating system is an OS that is designed to meet the needs
+        for the 21st century, with a kernel written in C++ and modelled in UML, and lots of 
+        features. The project is run by a team of OSDev.org community members.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/toro">TORO OS</a><br/>
+        TORO is a kernel for architectures x86 and AMD64 . It uses multitasking , FileSytem , 
+        Stack TCP-IP and more . It is written in Pascal using the FreePascal . It is distributed 
+        under GNU/Linux General Public License .
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/minirighi">Minirighi</a><br/>
+        Minirighi is a multi-threading open-source operating system written for didactic purpose.
+        It has been written from scratch and it is compatible with POSIX.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nitros9">The NitrOS-9 Project</a><br/>
+        The NitrOS-9 Project provides an OS-9/6809 compatible operating system for TRS-80/Tandy
+        Color Computers and variations of the Dragon Computer.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xskernel">XSystem Kernel Project</a><br/>
+        XSystem Kernel Project - an object-oriented 32-bit protected-mode operating system
+        for IA32-architecture.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mattise">The Mattise Operating System</a><br/>
+        Mattise is a simple hobby operating system designed to run fast on 32-bit PCs. A newlib 
+        port will be released soon for developers to write their own programs for Mattise.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/patagoniaos">Patagonia OS</a><br/>
+        The Patagonia OS is intended to work with x86 computers. It is for general purposes
+        and can be modified easily and add drivers for other devices. The main idea of this 
+        kernel is transform PCs into research machines.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dinkit">The OS, make it your way</a><br/>
+        This project is intended for those who are interested in the workings of simple 
+        Operating System. It's made easy to understand. This project is a series of program packages.
+        The packages are progressive... from the simplest to a complete working OS.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/meos">2</a><br/>
+        2/OS is a freeware and open source under GNU GPL 2.0 license DOS-like and MS-DOS-compatible
+        operating system, with multitasking and 64 bit support.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/idyllaos">Idylla OS</a><br/>
+        IdyllaOS is simple operating system. System is based on monolithic kernel with drivers of 
+        devices loaded as kernel modules. As required for a modern operating system, it supports 
+        features like virtual memory, memory protection and multitasking.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/sweb">sweb</a><br/>
+        Sweb is an OS for the x86, designed to be used in education.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bos">Basic Operating System</a><br/>
+        The goal of the Basic Operating System (BOS) project is to write a new modular and fast
+        operating system in NASM and GCC.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/freedos-32">FreeDOS-32</a><br/>
+        A MultiBoot, modular, free operating system under development for i386, designed to be 
+        "a 32-bit DOS". Custom execution environments can be set up by loading appropriate modules 
+        or drivers. The first goal is to support DPMI applications made with DJGPP
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/proofos">ProofOS</a><br/>
+        This project aims to develop a prototype system that explores how we should re-invision
+        computer system design based on changes in how people get the software that they run, as
+        well as advances in static analysis of software.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/popcorn-os">Popcorn</a><br/>
+        Popcorn is a new 32-bit operating system kernel for x86-based computers. It currently 
+        features super-fast speed (no bloatware) and small size.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mkx86">Microkernel mkx86</a><br/>
+        Open Source microkernel for ia32 architecture. Basicly this is a full functional operating
+        system implementation using GNU C and nasm. Fully commented in spanish and with external 
+        documents explaining system calls, library functions, design, etc.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/zygomatic">The Zygomatic System</a><br/>
+        A computer operating system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tofus">tOfuS: the Framework OS</a><br/>
+        tOfuS is an OS kernel with framework capabilities, in order for everyone to experiment on it. 
+        (was: A Music-Production oriented Operating System, for use in recording studios and live 
+        performances as a mixing desk and user-programmable DSP).
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/posysos">POSYS Programmers Operating SYStem</a><br/>
+        POSYS: Programmers Operating SYStem. A small, fast, dynamic, secure OS project. 
+        (In development) Language: NASM + CC386.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/helloos">HelloOS</a><br/>
+        HelloOS is a free simple 32-bit operating system for Intel x86 platform
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/barbux">Barbux</a><br/>
+        Barbux, the bearded people OS
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/gemini">Gemini Nucleus</a><br/>
+        The Gemini Nucleus is a production quality micro kernel based on the latest findings in
+        operating system research.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/freedows">Freedows OS Project</a><br/>
+        The Freedows OS Project is creating an open source core Kernel architecture based on the 
+        Stanford Cache Kernel model, with the aim to create a stable platform for kernel-level
+        multi-platform emulation.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/awos">AWOS</a><br/>
+        AWOS: The Universal Operating System.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/jinix">jinix</a><br/>
+        A Free C++ OS: jinix, highly modurlar &amp; extension, support i386/arm, posix and lsb 
+        compatible, and have a graphics ui.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/aceos">Ace OS</a><br/>
+        Ace is a micro kernel for developers and researchers. The main goal is to create a 
+        very light and compact kernel from scratch with modern OS research concepts.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/isisos">Isis OS</a><br/>
+        The Isis OS Project Is a Controlled Project to Develop An Advanced Modern Operating System!
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/apostle">Apostle Project</a><br/>
+        The Apostle Project is a project seeking to provide a well-designed alternative to 
+        existing operating systems. The goal is to create an operating system that works - 
+        really works - because it's both appropriate and effective for the people who use it.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/wxfs">Wandering File System (WxFS)</a><br/>
+        WxFS is an extant-based file system intended for enterprise level computing.
+        It offers a new approach to file system logic.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/atlantisos">Atlantis Operating System</a><br/>
+        AtlantisOS - An operating system designed from scratch, implemented without using 
+        older code and made to be the best
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/lng">LUnix Next Generation</a><br/>
+        LUnix (little UNIX) is an operating system for the Commodore64 - a famous home computer
+        back in the 80s. It supports TCP/IP networking (SLIP or PPP using a RS232 interface).
+        LUnix aims to look and feel like UNIX.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cubeadvance">Cube Advanced</a><br/>
+        Cube Advanced is a Unix-Like OS with, modualarity, disaster-proof concept, portability
+        without performance loss and no limitations. Cube Advanced is currently developed for 
+        the following platforms: x86, x86-64, powerpc, arm, sparc/ultrasparc.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/kicer-kos">KOS</a><br/>
+        KOS is a hobbistic operating system, that should works on 32bit cpus, which are
+        compatible with Intel's.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/lainos">LainOS</a><br/>
+        LainOS is an OpenSource project that seeks to revolutionize the the user experience by
+        bridging the realm between "Alien Elegance" and Human Usability, and thus create a 
+        truly new and unique interface that is user savvy and beautiful.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/lornet-telos">Lornet - TELOS</a><br/>
+        TELOS is a specialized operating system on top of a computer network designed to 
+        support telelearning. LORNET is a network of expertise grouping over one hundred
+        researchers, research associates and professionals, and graduate students.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/abx">abx</a><br/>
+        This is simply a kernel written in C and assembly targeted to rebuild the majority 
+        of software, libraries and tools to create a stand alone software solution.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/eduos">EduOS - Educational OS Resource</a><br/>
+        EduOS is a GPL'ed, educational Operating System. Unlike most OSes currently in 
+        dev (i.e. Linux, Solaris, Unix, MacOSX) EduOS is desigend to be a educational 
+        resource for programmers new and interested in OS development. It's not designed 
+        for the end-us.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/venom-os">Venom OS</a><br/>
+        Venom Operating System. A protected mode kernel for 386+ PC's.
+        Designed for games and multimedia.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/zxos">zxos</a><br/>
+        an very simple operation system with strong network functions can carry on the usb
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/blinkos">BlinkenArea Operating System</a><br/>
+        BlinkOS is an Operating System for educational purposes that is based on GeekOS,
+        openly available documentations and code-snippets. It's main purpose is to run software
+        for BlinkenArea-projects. BlinkOS has its own non-POSIX SYSCALL-Interface.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/the-k-os">The K-OS</a><br/>
+        The K-OS (pronounced "Chaos"), an Operating System aimed at optimized end-user
+        (e.g., desktop) function.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/v2os">v2os</a><br/>
+        This project aim to make a free operating system (OS) as fast and small as possible.
+        To achieve this goal we use 32 bit assembly and single address space (SAS).
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/phios">PhiOS</a><br/>
+        PhiOS is a 1.44MB ! live operating system with Full graphical desktop, NTFS,FAT ve
+        ISO 9660 support, CD/DVD burning, USB HID and USB Storage support and Ethernet support.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nucle-os">nucleOS</a><br/>
+        nucleOS will be an 32-bit Operating System (perhaps we'll make it 64-bit later),
+        written in Pascal and Assembler. It will be based on the i386 architecture and will 
+        support multi-tasking later on. Project is dead since 2006-03-19.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/renovatio">Renovatio OS</a><br/>
+        This project was initiated as an educational project ("gnuWINix"). It should be used to
+        understand the startup process of a common PC and its different components. Our current goal 
+        ("Renovatio OS") is to use this kernel for own hardware components.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/drex">dr'ex</a><br/>
+        dr'ex is a GPLed exokernel written in C/asm for the IA32 architecture. Simple but powerful 
+        code, low level user interface and hardware resource management at user level are the main
+        architecture goals.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dus">The DuS operating system</a><br/>
+        DuS: new OS. Tiny kernel; drivers are ordinary processes; every process has its own set of
+        system functions given by its parent. Soft: C, asm, TeX, archives, images. Docs is in Russian;
+        see CVS and http://cherukhin.narod.ru/technical/dus/index.htm
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/apolloopsys">Apollo Operating System</a><br/>
+        ApolloOS is a 32-bit GUI kernel based on MikeOS and Bkerndev with the aim of being a teaching
+        aid to prospective OS developers and using a tiny amount of resources Please note that this is
+        only the kernel. Refer to the wiki for the reasons why!
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rockhopper">RockHopper</a><br/>
+        RockHopper is an Appliance OS designed exclusively for 64-bit AMD multi-core processor and
+        non-intel chipset. It is derived from Linux kernel and OpenSource software libraries.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/brix-os">BRiX - Operating System</a><br/>
+        fast single-privilege single-address-space preemptive-multithreading persistent data-centric
+        secure multiuser operating system with safe-language and reconfigurable graphical interface.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/hellcats">HellCat Project</a><br/>
+        HellCat Project: a new computer, a new OS, and much much more. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/asaac-openos">ASAAC OpenOS</a><br/>
+        OpenOS is an implementation of the ASAAC software standard to execute ASAAC applications.
+        Programming languages are limited to C and C++. ADA applications are planned.
+        The interface (ASAAC.h) is provided by the ASAAC specification.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/testoskernel">TestOs</a><br/>
+        TestOs is an open source project, founded to provide an educational and research Kernel,
+        with small components that can be used and modified by students to test their own new algorithms,
+        the TOS kernel can be used also for embedded systems.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mini-java-os">MiniJOS</a><br/>
+        MiniJOS is a micro operating system that will run java programs, will contain a JVM, a 
+        CVM and a VM. The o/s will be terminal and gui based. It will hopefully have the ability to
+        boot from the flash drive. NOTE: JVM is a Java Virtual Machine CVM is a C/C.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fsd-amoeba">FSD Amoeba</a><br/>
+        Fireball (FSD) Amoeba is a distributed operating system. It collects a huge varity of 
+        single machines connected over a (fast) network to one, huge computer.It's a full Operating 
+        System Distribution. Based on Amoeba,Vrije Universiteit.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/theosos">TheosOS</a><br/>
+        A "Theoretically Secure Operating System", focused on information protection, that is 
+        provably secure provided that a specific part of the kernel would be free of bugs. In particular, 
+        bugs in application can't be exploited to attack the system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/b-free">B-Free</a><br/>
+        B-Free project aims at creating a BTRON operating system. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/s3o">S3O (Object Oriented Operating System)</a><br/>
+        An Object Oriented Operating System written in C++
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/kenaxos">KenaxOS</a><br/>
+        KenaxOS, originally named AOS (An Operating System), is a project to design a new OS that is 
+        developer friendly (having an excellent interface for software development), written mainly 
+        in C and some Intel syntax Assembly.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cleanos">CleanOS</a><br/>
+        CleanOS is an operating system developed for educational purposes, initially to be an userspace
+        GNU/Linux application running its executables and simulating the operating system task scheduler
+        and IPC mechanisms. Now it supports a true i386 kernel.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cefarix">Cefarix Operating System</a><br/>
+        An open source operating system for x86.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/vitaxia">VitaXia - The next Generation OS</a><br/>
+        VitaXia will be an free available Open Source Textbased Operating System, like MSDOS. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nativeoberon">Native Oberon</a><br/>
+        Native Oberon Operating System
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/horizon">horizon</a><br/>
+        Horizon is a research project aimed at developing a 32-bit Operating System for the Intel 
+        architecture. It's written in C and assembler (GAS syntax) and one of its main characteristics is 
+        full network integration.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/blubos">B.lu BOS</a><br/>
+        BOS - B.lu operating System, is an operating system dedicated to small microcontrollers and CPUs 
+        without MMU. Actually is dedicated to Texas Instruments MSP430 microcontrollers (it can be ported 
+        to other CPUs without great changes) 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/themummy">The Mummy</a><br/>
+        This is a UAB university project about Artificial Inteligence
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/orangelin">OctaneOS</a><br/>
+        Project OctaneOS(Orange Linux) is currently a x86 Hobby operating system that is lightweight and 
+        contains standard operating system kernel modules.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mlxos">mlxos</a><br/>
+        learn how to write a hobby os kernel, this project is just for practice.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/anbu">ANBU</a><br/>
+        ANBU is an Open Source operating system combining what we like about Unix with new and interesting ideas.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/grindars-os">GrindarsOS</a><br/>
+        GrindarsOS - 32bit protect-mode one-task operating system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cybiko-reborn">Cybiko Reborn!</a><br/>
+        New Operating System for the Classic Cybiko V2.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nuwos">nuwos system</a><br/>
+        This project is an SO with a bootloader, a kernel, and posiblely modules
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mmos">MOS</a><br/>
+        An Operating System that is used for storing data like a database. The best way to communicate with
+        the system is over network.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mobius">The Möbius</a><br/>
+        Sets out to be an innovative new operating system while retaining compatibility with POSIX and Win32
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ifem-os">IFEM OS</a><br/>
+        IFEM (Industrial, Fault tolerant, EMbedded) is a modern OS with a hybrid kernel design benefitting
+        from ideas such as Pure Microkernel and Exokernel, aiming industrial application, fault-tolerance, 
+        embedded applications and perfect modularity.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/darwinsource">Darwin Source Repository</a><br/>
+        The Darwin Source repository is intended to fill a void left by the closure of the OpenDarwin project: 
+        providing a permanent and public repository for the open source components of Mac OS X.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dos-c">DOS-C: an MS-DOS compatible OS</a><br/>
+        DOS-C Kernel is an MS-DOS compatible kernel and the original FreeDOS kernel.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/scottsnewos">Scott'sNewOS</a><br/>
+        Scott'sNewOS is a totally new operating system not based on anything i have seen yet with full 
+        graphics surport although the screen can be totatly disabled ie headless mode i hope to include
+        servers and clients for all protocols using ports below 1024
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tonix">Tonix</a><br/>
+        Tonix is an x86 PC operating system totally out of personal interest. I'm expecting the day my 
+        Tonix can play music, Internet surfing, or even playing movies :P And I'm sure I can see this 
+        day coming :)
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/saturnkos">Saturn Kernel</a><br/>
+        The Saturn kernel is a operating system kernel being made from scratch. After the kernel is 
+        developed, a small operating system will be developed for it.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/jinx-linux">jinx linux</a><br/>
+        Jinx is a minimalistic graphical operating system for use on old computers with 64MB RAM.
+        Suitable for desktop,business,library use. Includes browser, office applications in 50MB ISO.
+        Optimized for tiny size.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fritzos">FritzOS</a><br/>
+        FritzOS is a (incomplete) OS. Ideas will be added to the OS as it's developed, and it will
+        run on the x86 platform. FritzOS will have have a GUI, be easy to use and understand. Right Now, 
+        FritzOS has a C++ kernel. Pk0.8 comming soon.
+        
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dipc-2">DIPC</a><br/>
+        Distributed Inter-Process Communication (DIPC) is a combination of a Linux kernel extension and 
+        user-space programs that allows the user to develop distributed applications very easily.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/abbey">Almende's Abbey Agent Kernel</a><br/>
+        This project provides a simple kernel for building distributed agent-based applications.
+        It is based on the idea that the principles underlying dataflow programming are well-suited to 
+        design a coordination language for multi-agent environments.
+        
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/sartoris">Sartoris Microkernel Project</a><br/>
+        The aim of our project is to create a portable microkernel and a set of OS services that allow 
+        good local performance, multiple concurrent operative system personalities (ie UNIX and a native 
+        interface) and easy integration of distributed components.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xmach">xMach</a><br/>
+        This project has not yet submitted a description.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/onyxos">OnyxOS</a><br/>
+        OnyxOS is a 32 bit protected mode operating written primarily in C with a small amount of ASM.
+        It aims to be a small OS useful for learning low-level OS development and provides a base for 
+        other hobby OSes to grow from. It features a shell called Slosh.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pro-os">Pro-OS, a OS model for the ProX kernel</a><br/>
+        A operating system built on the ProX micro-kernel. Currently this model is for the intel x86 processors.
+        
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fairsched">Fair CPU Scheduler for Linux</a><br/>
+        Fairsched is a hierarchical fair CPU scheduler. Processes are divided into groups and each group
+        receives guaranteed CPU time allocation proportional to its weight. The standard scheduler is used 
+        to schedule processes within a group.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/peace">PEACE</a><br/>
+        PEACE is another Win32 OS implemented on NetBSD/i386.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fdosx86">Floppy Disk Operating System</a><br/>
+        The FDOS Operaing System is 100% written in Assembler (NASM). It supports FAT 12, TSR and a 
+        small Multi Kernel System. The source is very good documentated (only in English). A German, 
+        russian and English Documentation (about 40 pages) are included.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/glider-kernel">Glider Operating System Kernel</a><br/>
+        An operating system kernel being developed in Free Pascal with the goal of creating a system based 
+        on process interoperation.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/agos">AGOS (OS for Agenda VR3)</a><br/>
+        Repository for the Kernel and tools sources for Agenda VR3. Including Gnu/Gcc, binutils, and kernel
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nucleuskl">Nucleus OS Kernel</a><br/>
+        Nucleus is an Operating system Kernel that is totally different from Linux and Windows. It is easy
+        to understand and implement. It will have native support, small architecture and full VGA support 
+        (no text mode).
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bricks-os">Bricks-OS</a><br/>
+        Bricks is an open source operating system for game consoles. It currently supports gba, nds, 
+        ngc, ps2, psp, ps2 and i386.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/hamsteros">HamsterOS</a><br/>
+        HamserOS is our attempt to build a cute and furry operating system from scratch. Just for fun and a 
+        love of hamsters.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/uuu">Unununium</a><br/>
+        Our mission is to explore and develop new operating system concepts aimed at producing a more 
+        efficient computing environment where both the machine and user time are taken in consideration.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/gazos">GazOS Operating System</a><br/>
+        GazOS is an open-source operating system written as an example for budding systems programmers.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/quarnos">Quarn OS</a><br/>
+        QUARN Operating System is a small OS. We want to make it using unique ideas. The most interesting
+        thing is our try to add modlues of artificial intelligence into it. Now we have only scheduler 
+        which use artificial neural network, but our plans are wider.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/unixlite">unixlite</a><br/>
+        a lightweight operating system written in c++
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ryux86">Ryu/x86 OS</a><br/>
+        Ryu/x86 OS is more or less an OS kernel, drivers, and shell for the x86 (386+) architecture.
+        Written mostly in C and assembly, it is targeted at OS enthusiasts who wish to have a simple 
+        framework on which to build larger, more functional OSes.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rmfdos">RMF-DOS - Reduced Memory Footprint DOS</a><br/>
+        RMF-DOS is a project to create a compact, 8086-compatible, free clone of MS-DOS. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rymos">RYMOS</a><br/>
+        Graphical OS compiled with gcc 3.3.x and nasm
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mazzanetos">MazzanetOS</a><br/>
+        MazzanetOS is a DOS/UNIX-like operating system writen in assembly language and C++. It currently 
+        runs off a floppy disk and includes a graphics demo. It will run (hopefully) on any PC.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/menuetbr">MenuetOS BR</a><br/>
+        MenuetOS is a fully 32 bit assembly written graphical operating system. Menuet supports 32 bit 
+        x86 assembly programming as a faster and smaller system footprint. Menuet has no unix roots and 
+        the basic system is meant to be a clean asm based structure.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/colonel">colonel</a><br/>
+        Colonel intends to be a simplistic microkernel offering capability protected ipc. It's main purpose 
+        is of educational nature, it is _not_ meant to be used as microkernel for a "real" OS.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/moprsys">EMM OS</a><br/>
+        A simple operating system made for educational purposes. It will be a 32 bit multitasking open 
+        source operating system. Latest release covers interrupt handling, device drivers and shell service.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/osamos">AMOS - Operating System</a><br/>
+        AMOS is an Operating System for the x86 architecture. It is an educational system with a modern 
+        kernel design and a clean efficient implementation. Features include a virtual memory manager, 
+        a virtual file system and fully preemptive multitasking.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/minios">minios</a><br/>
+        This is an Mini Operating System for intel protected mode. This OS is written to understand OS 
+        concepts such as paging, VM, multitasking, Interrupt handling. This project is mainly done for 
+        educational purpose.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/l4ka">L4KA microkernel</a><br/>
+        The L4Ka microkernel is an L4 compatible microkernel running on multiple platforms (x86, ARM, 
+        MIPS, PPC, 68K). Its official name is now L4Ka::Hazelnut. This kernel has been discontinued in 
+        favor of L4Ka::Pistachio. See http://l4ka.org/
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tizozos">TizOz OS : Operating System</a><br/>
+        TizOz OS is an operating system thought to learn how to develop operating systems. Coded in C 
+        its main objective is to reamin simple tough having a lot of capabilities.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/osz">OsZ</a><br/>
+        OsZ - microkernel operating sustem written in assembly language. Requires IBM-PC-compatible 
+        computer with at least 4mb or RAM and x386 (or better x86 compatible) processor.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dyknl">The Dynamo Kernel Project</a><br/>
+        The Dynamo Kernel Project intends to create a functional yet modular, powerful yet scalable 
+        microkernel for home, business and industry.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/modulos">Modular Operating System - ModulOS</a><br/>
+        The aim of this project is to develop a modular operating system for the i386 architecture, where 
+        each device driver, file system, etc, will be a module that can be loaded and unloaded at run-time 
+        from the system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dronix">MDF operating system</a><br/>
+        MDF is microkernel operating system. Module architecture minimalistic design.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/zoftos">ZoftOS, OS Development</a><br/>
+        ZoftOS is an educational operating system aimed to provide a case study on building an operating 
+        system that is similar to the *NIX and (most likely ) embedded configurations.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tyros">Tyros - an operating system</a><br/>
+        Tyros is a highly modular operating system aimed towards providing the unified interface between 
+        user-space applications and all types of system objects (i.e. threads, processes, users, computers, 
+        networks etc)
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/wisdom">WISDOM</a><br/>
+        WISDOM is a 32-bit operating system with a primitive shell implemented. It is copyrighted under 
+        GNU/GPL license. WISDOM is also a research into the field of design of operating system. 
+        Operating System Development has been in the shadow in recent times.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rdos">RDOS operating system</a><br/>
+        Fast, multi-threaded OS for PCs and 386+ based embedded systems. Runs many DOS, DPMI and Win32 
+        console programs. 100% assembly with segment protection.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/jimpos">jimpos</a><br/>
+        JimpOS - Java Implemented Operating System The main purpose of the JimpOS project is realisation 
+        of multitasking, platform independent operating system written in Java language.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/igos">IgOS</a><br/>
+        IgOS is an operating system introducing a set of new OS paradigms. It is fully object orientated 
+        on the user side, file-free, process-free and window-free. Enjoy a brand new computer feeling!
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/virtmos">VMOS - Virtual OS</a><br/>
+        VMOS - Virtual Multiprograming Operating System. It's not real OS, but OS model thad help understand 
+        OS conception.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/simtics">SIMTICS Isn't MULTICS</a><br/>
+        This project aims to do for MULTICS what Linux and GNU have done for UNIX - that is, to produce a 
+        totally free, totally unencumbered, and totally compliant OS that learns from prior work, rather
+        than copies it.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/perix">Perix Operating System</a><br/>
+        Perix is a free public domain MS-DOS compatible operating system written in Turbo Pascal and Assembly.
+        Multi tasking, parallel data transfer and extended memory support. All parts of system are distributed
+        under terms of the GNU General Public License.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/vortex-os">Vortex OS</a><br/>
+        The Vortex project consists of 2 things. The Vortex OS and VParse. The OS is multitasking and handles
+        a lot of features. VParse is a stand alone Vertex2 parser. Vertex is vortex's scripting language.
+        Pre 0.7 is QBasic and 0.7 is C++.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/numberfive">Codename Five</a><br/>
+        Codename Five is an operating system kernel, written as an experiment in learning assembler, written 
+        from scratch for x86. It is not (purposely) based on any previous operating system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bananakernel">Banana Kernel</a><br/>
+        The Banana Kernel is an open-source pedagogical operating system intended to provide useful means for 
+        teaching basic OS concepts, with the possibility of interaction with external modules developed by the 
+        teacher or student.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/delphine">DelphineOS</a><br/>
+        DelphineOS is a "unix-like" OS designed for i386 processors and higher. It uses 32bits, protected mode,
+        multitasking, virtual memory... The source code is written in PASCAL. If you want to HELP us, send 
+        e-mail to g_cavelier@yahoo.fr.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mados">MadOS</a><br/>
+        MadOS is an oporating system written in c for djgpp, and nasm assembler for the x86 platform.
+        Some good code to learn from.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/stormdos">SD (StormDos)</a><br/>
+        SD is a new operating system developed in the Pascal language (FreePascal, FPC/FPK) and NASM for 
+        IA-32. It's main purpose is to provide a fast and simple 32-bit multitasking OS. The OS must have 
+        several DOS, Windows and Linux features and maybe Win32 emu.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/chaos">The chaos Operating System</a><br/>
+        chaos is a new operating system - written from scratch by a young group of people. Unlike most other 
+        systems, we do not try to reimplement something else, but rather tries to do things in our own 
+        (hopefully better) way.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/vmx">Real VMX</a><br/>
+        Real time virtual memory operating system. Should support multiple hardware architectures.
+        Now only i386 is supported. It uses a partitioned memory system and can have multiple virtual 
+        memory contexts. Development is done on Linux with the gnu compiler.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cboot">Caracal Boot Loader</a><br/>
+        Caracal Boot Loader (cboot) is a second stage boot loader which takes over from GRUB (or
+        other multiboot compatible loader) and prepares the system for your higher-half kernel. It now 
+        also includes VESA mode setting support.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fortressos">Fortress Os</a><br/>
+        Fortress OS is an open source modern multitasking operating system. Intel IA-32 386 compatibility.
+        Fortress is clean implemented from scratch. Fortress is still in early stage ( current state at the
+        end of plan 2 ) and needs huge work.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/lseos">LSE/OS nano-kernel</a><br/>
+        The first true nanokernel for x86 that gives a unix prompt on a real bourne shell in respect
+        of all security rules!
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/eclipse-os">Eclipse OS</a><br/>
+        Eclipse OS is a C++ kernel that I am starting as a summer project. Right now it is fully bootable 
+        and can accept input from the keyboard. It can also do simple tasks like detect how much RAM a 
+        computer has, or tell time. I am hoping to port C++ compiler.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dreamos">DreamOS</a><br/>
+        IMPORTANT : pour des informations voyez la nouvelle page du projet sur 
+        http://savannah.gnu.org/projects/owl/
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/manrix">ManRiX:Microkernel Based Open Source OS</a><br/>
+        ManRiX is an open source microkernel based operating system with POSIX interface. It is written
+        from scratch using C and Assembly. Microkernel contains just few basic components of an Operating
+        System while others are implemented as user process.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mynos">MyNOS - My! Not another Operating System</a><br/>
+        The MyNOS project aims at developing a new and different operating system, based on high-level 
+        languages. MyNOS will be based on the OCaml bytecode interpreter. We'd like to explore microkernel
+        architecture and new language definition too. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/heavenos">HeavenOS</a><br/>
+        This project focus on creating an original alternative 32-bit operating system for Intel 80386
+        compatible processors made in NASM (The Netwide Assembler). The main goal is to be, a simple and
+        pratical plataform for developpment and plug in extra code
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/idioma">Idioma</a><br/>
+        Idioma is an open source object-oriented operation system. Main goals of Idioma project are 
+        simplicity and elegance. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/knasos">KnasOS</a><br/>
+        Tiny friendly OS in its early stage, running on x86 processors. Written in pure assembly.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/aqmicrokernel">aquaOS Micro-Kernel</a><br/>
+        The Open-Source aquaOS Micro-Kernel/Kernel, which features POSIX support, 64bit and 
+        backwards-compatability with processors and many other features to be added in disscussion 
+        with users and developers. It will be modular in design.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/zealos">ZealOS</a><br/>
+        Zealos is a new operating system with a focus on being modular
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/lsdkernel">LSD Kernel</a><br/>
+        A Unix-like (Not compleatly Unix-compatible) Kernel. Right now, we have (very limited support)
+        of 80486+ IBM-PC AT compatibles. Written in C, and assembly. No network support planned for 
+        the forseeable future.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/muos">Mu Operating System</a><br/>
+        MuOS is a Operating System for x86-compatible hardware.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/flick">Flick Operating System</a><br/>
+        The Flick project aims to create a stable, small and well understandable Operating System.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/linksos">Links OS: Swift, Secure, Straightforward</a><br/>
+        LinksOS is an effort to create a modern operating system for desktop and development usage.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/opengenesis">OpenGenesis</a><br/>
+        This project is derived from the the defunct OpenDarwin project, updated with current sources 
+        from Apple where possible, and intended primarily to facilitate easy development of the OS X 
+        port of D/ELTA.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/deos">D/OS</a><br/>
+        The D/OS Project aims to create a complete working operating system written in the D 
+        programming language.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tijos">tijOS</a><br/>
+        tijOS is an attempt to create a simple Operating System from scratch for educational purposes.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tesoro">Tesoro OS</a><br/>
+        Tesoro is an open source operating system project fully written in x86 Assembler language.
+        The architecture is partially based on some QNX ideas and some fresh ideas. It combines low 
+        level assembler coding (e.g. microkernel with extremely fast task switch
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ctdos">ITMOS</a><br/>
+        New microkernel OS
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nostradamus">nOStradamus</a><br/>
+        This project was previously oriented towards creating an AI based Operating System. We are in
+        the beginning stages of reviving this defunct project by porting over old code to the 
+        Cell Processor (i.e. PlayStation3),as well as redesigning major features.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/argante">Argante</a><br/>
+        Secure, effective and universal Virtual Operating System implementation; completely new 
+        VM design; simple but powerful rIPC mechanisms - see http://argante.sourceforge.net/advocacy.txt
+        for more information.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/smuglyos">SmuglyOS</a><br/>
+        SmuglyOS (Small and Ugly Operating System) is a simple os written in assembly that boots off 
+        a floppy.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xoa-dos">XOA-DOS</a><br/>
+        XOA-DOS is a simply OS based on a DOS model. It work in real mode and the language used is the 
+        assembler x86, syntax NASM. It is mainly an educational project but my goal is to make a serious thing.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/quarq">The Quarq Subnucleus Project</a><br/>
+        This project intends to develop an exokernel based OS incorporating concepts from the MIT exokernel, 
+        the Utah Flux Project Elysium and Eros. The resulting system will also be a platform for emulating 
+        linux and a platform for developing a 3d user interface
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/egovsh">eGovernment Operating System</a><br/>
+        Absence of unified government-citizen interfaces. Unified government interface eGovernment
+        introduces the best solution: Kernel library -sourceforge.net/projects/kerngen- egov wizard
+        -sourceforge.net/projects/egovge
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/wonderland">Wonderland</a><br/>
+        Wonderland is a free, microkernel based OS for 386 based systems.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/webbos">Webbsyte OS</a><br/>
+        Webbsyte OS is a UNIX derivitive. We will show the learning or expert developer how to use 
+        assembly and C/C++ to create a bootable OS.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/trinary">Trinary Operating System</a><br/>
+        The Trinary Operating System is a modern object-orientated Operating System. It focusses 
+        on functionality and flexibility instead of speed and compatibility.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pistrix">Pistrix</a><br/>
+        Pistrix (lat. Shark) is a Open Source project of Operation System, written on Assembly and 
+        C Languages. The OS model is microkernel, because the basic task of the Pistrix is Speed 
+        and Small Size.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/oppcos">OPPCOS</a><br/>
+        The orthogonally persistant pure capability operating system. Orthogonal persistancy means 
+        it preserves its entire system status across system reboots, replacing the concept of file 
+        systems for persistancy. This eliminates around half the code in applic
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/neomach">NeoMach</a><br/>
+        NeoMach is a project to design and implement new features into GNUMach and, in a more general 
+        scope, experiment about real microkernel systems. The intention is that some of the code developed 
+        here, enters into official GNUMach
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/advancedos">AdvancedOS</a><br/>
+        AVOS is an advanced Real-Time 32-bit operating system that will work in any 80386 and above 
+        architecture pc's. AVOS employs a message passing scheme. The project has two main parts - 
+        The booting phase and kernel development. It is written in C and 8086 ASM.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/compos">COS - Component Operating System</a><br/>
+        COS - Component-based Operating System
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/yourass">YourAss OS</a><br/>
+        Your Ass Os is an Operation system kernel. Whole written in C and assembly, need supporters. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tbaseos">T-BASE OS Kernel</a><br/>
+        The T-BASE OS Project aims on developing a new OS Kernel (BASE) with a brand new shell which 
+        will support many existing programs.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/yamit">Yamit - Scalable Open Source OS</a><br/>
+        Yamit - Scalable, Portable and High Performance POSIX complaint OS. Microkernel based Operating 
+        System designed for tightly or loosely coupled multiprocessor hardware.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cakeos">CakeOS</a><br/>
+        CakeOS is a hobby operating system started by Lukem_95. It is written in C with some partial 
+        ASM coding. Cake is a modern OS with portable functions and drivers. We are looking to keep a 
+        fairly small team size for this project.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/infinityos">Infinity OS</a><br/>
+        Infinity OS is going to be a fully featured, multithreaded, open-source operating system for 
+        the x86 architecture. It will utilize persistent objects and incorporate many features of other 
+        operating systems. We also aim for Win32 and UNIX compatibility.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nemesisrtkernel">Nemesis Real Time OS Kernel</a><br/>
+        Nemesis is a tiny real time operating system kernel based on x86 PCs. Its main purpose is to
+        serve as a simple but realistic example of an real time OS kernel running on real hardware..
+        the purpose of this is that it can be embedded in small devices lik
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/objex">The Objex project</a><br/>
+        The purpose of objex project resemles GNU project i.e. to develop a complete operating system 
+        which is free and open source software. In contrast to the GNU project we are going to build 
+        modern system which put together all recent progress in computer
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/labyrinthos">Labyrinth BSD</a><br/>
+        Labyrinth BSD is a stable BSD implementation intended for the average user.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/challengeos">ChallengeOS</a><br/>
+        The goal of this project is to provide an operating system with a native GUI, an interpreter 
+        for an object-oriented BASIC dialect and many more features to make life easier for normal users.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bozos">BozOS</a><br/>
+        BozOS is a simple 16-bit OS for x86 CPUs. It is designed to learn from.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/orleanmk">The Orlean Microkernel</a><br/>
+        The Orlean Microkernel for Desktop Computers.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xaosos">XAOS Operating System</a><br/>
+        XAOS is a brand new operating system written from scratch. The operating system currently runs 
+        on Intel 386+ and compatible processors.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/osnos">Open Source Network Operating System</a><br/>
+        OSNOS (Open Source Network Operating System) is an operating system desigend to meet the needs 
+        of small to medium networks. It will support server based applications, and will handle routing 
+        of packets through the network, and support multi-user logins.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bitos">bitOS</a><br/>
+        A small shell-like Operating System
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/viridis">Viridis OS</a><br/>
+        A project taking an operating system from Hello World to a fully functional, desktop worthy 
+        distribution.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/atrax">Atrax microkernel OS</a><br/>
+        Microkernel OS, based on own microkernel, able to run on PC/i386 and better.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/jazmyn">Jazmyn - A 32-bit Operating System</a><br/>
+        Jazmyn is a 32-bit, Protected mode, Multitasking OS which runs on i386 CPU`s. Its completely 
+        written in C++ &amp; a bit of 8086 assembly. Jazmyn has 4 major parts of an OS : Process management,
+        Memory management, Device management & File system driver.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/helenos">HelenOS</a><br/>
+        HelenOS supports SMP, multitasking and multithreading on both 32-bit and 64-bit, little-endian 
+        and big-endian, processor architectures, among wich are AMD64/EM64T (x86-64), IA-32, IA-64 (Itanium), 
+        32-bit MIPS, 32-bit PowerPC and SPARC V9.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/stagos">STAG OS</a><br/>
+        STAG OS est un OS s_curis_ sp_cialement cr__ pour le graphisme 3D et pour Internet. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/evros">ev/ros</a><br/>
+        Based on an architecture that is a mix of exokernel and micro-kernel, ev/ros shall be an 
+        innovative and revolutionary operating system that will support many platforms and provide 
+        conventional, distributed, and hard real time features.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/majos">MajOS micro kernel</a><br/>
+        A small micro operating system kernel written in C (and partly assembly). Planned features are: 
+        software based preemptive multitasking/threading, paging, kernel API, IPC, client/server, security
+        system. The code is designed to be clearly understandable.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/simdos">SImple Microkernel Distributed OS</a><br/>
+        SIMDOS stands for SImple Microkernel Distributed Operating System. SIMDOS is a micro-kernel based 
+        operating system which implements the concepts of Distributed Shared Memory at the kernel level to 
+        provide seemless addition on cluster nodes.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mgos3">Meganet OS-3</a><br/>
+        MGOS3 a small OS currently under development, MGOS3 is aimed at the IA-32 architecture, currently it 
+        is distributed in the form of .x COFF executables, which are used with a 1_44 floppy image for 
+        simulation or writing to a floppy disk for execution
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/aioros">aiorOS - Operating System</a><br/>
+        aiorOS is an educational purpose Operating System project based on IA386. aiorOS kernel provides 
+        support for: system calls, multitasking, paging (each process has 4GB space area). Supports binary 
+        programs to run as process. Osdev, kernel,Salvatore Iengo.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bootsectoros">512DevOS</a><br/>
+        512DevOS is a GPLed operating system that runs on 16 and 32 bit x86 compatible computers. The kernel 
+        and shell fit in 512 bytes and occupy only the first sector of a floppy disk.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ingenix">Ingenix</a><br/>
+        Ingenix is a novel approach to distributed computing and is an exiting attempt to alter the 
+        Operating Systems landscape that hasn't really changed much in over 30 years. It is based on an 
+        exokernel architecture and written from scratch.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/acos">AcOS</a><br/>
+        AcOS is an acronym for Assembly Constructed Operating System. As the name suggests AcOS is written 
+        in the assembly programming language and written for the Intel i386+ and compatible range of processors. 
+        Still in early development
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/simplicityos">SimplicityOS</a><br/>
+        SimplicityOS is a project designed to create a simple but powerful operating system for the pc. 
+        The kernel was designed from scrath to create a fast and stable base. The filsystem used by 
+        SimplicityOS was also designed from scratch for stability.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/miranda-os">Miranda - Operating System</a><br/>
+        The original project developers have moved to: http://www.sourceforge.net/projects/evros A 
+        new attempt will be started here, but don't expect anything for a while.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/janus86">janus86</a><br/>
+        An x86 kernel with inbuilt feature for loading other operating systems/ inspect 
+        harddrive/sectors / filesystems etc.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/funix">FUNIX</a><br/>
+        Funix is an educational operating system for IA-32 architecture. The main purpose of this
+        project is to provide a background for kernelnewbies and wannabies.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/blairos">blairOS</a><br/>
+        a new kind of OS. just an experimental and limited system to test a new concept based of user 
+        centric view, but nothing is done because it's "normal" in all OSes , everything is thinked again.
+        The aim is to manage information (represented as XML) wit
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/sonicosx">SonicOSX</a><br/>
+        SonicOSX is a revolutionary Operating System. Defining boundaries never thought breakable, 
+        SonicOSX will provide native support for all Operating System Programs available. With Built-in 
+        Security features, it is unlike many popular OS's today.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/eric">Eric</a><br/>
+        Eric is a new Operating system. If you would like to help email an admin.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/blueport">Blueport</a><br/>
+        Blueport is an italian Open Source 32-bit operating system ... This project has temporarly 
+        moved to Gna.org:     </div>
+
+    <div id="articleContent"><a href="http://gna.org/projects/blueport">Blueport project</a><br/>
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/freedomos">The Freedom OS</a><br/>
+        Freedom OS aims to be stable and free operating system, and include features like: latest stable 
+        linux kernel, GNU userland, tcsh as default shell, pkgsrc for easy packages management
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/urinel">Urinel</a><br/>
+        Urinel is a dynamic kernel-less operating system designed for maximum code reuse. This improves 
+        the efficiency and stability of the code and reduces the size of applications allowing a wide 
+        range of functionality to applications.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/yurix">Yurix Operating System</a><br/>
+        Yurix is a new operating system, developed by students at UFMS, Unicamp and USP (in Brazil). 
+        The system will be written from scratch. The main goal is make a system free, open, fast and reliabe.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/centanya">Centanya</a><br/>
+        Centanya Operating System is a Artificial Intelligence Operating System Project that will work 
+        on the development of a secure, stable and efficent AI operating sytem.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ppos">PowerProbe Operating System</a><br/>
+        The PowerProbeOS is intended to be easy and not really powerful when first booted. It's ment to 
+        become powerful, when other programs from others and myself are runned above. For example, I didn't 
+        program it to switch into protected mode. Well, someo
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/aquos">Aquos Operating System</a><br/>
+        Why do it the tradidtional way when you can do it a new way? Why use an existing wheel when you 
+        can reinvent it yourself? Why do it the easy way when a hard was exists? Why? Because we are 
+        professional geeks!
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/odin-os">Odin Operating System</a><br/>
+        High performance, assembler coded, both desktop and server operating system. Ease of use, ease 
+        of programming, joy of power.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/caracal32">Caracal</a><br/>
+        Caracal is an IA32 operating system which, once stable, will be used to create tutorials and 
+        therefore teach others the basics of writing system software for IA32 processors.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/gbios">GBIOS</a><br/>
+        Design of Graphical 16 bit OS for industry aplications,process automatization, where performance 
+        and UI should be well balanced it's coded under TC++ 3.0, currently on virtual machine design.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/anix">Anix</a><br/>
+        A operating system designed to be compatable with the linux and uinx software, that is capable 
+        of running as a modern operating system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/kerngen">kerngen</a><br/>
+        Kernel library is a complete set of interfaces of all the software components that constructs 
+        an operating system kernel, it is used to develop the os part of the e-government os 
+        (sourceforge.net/project/egovsh) sherifmagd@hotmail.com
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/babyos-china">BabyOS</a><br/>
+        NOTE: This page and the babyos code are no longer being actively maintained. (Sorry, just no 
+        time; I have to focus on other things.) BabyOS is a simple in-memory operating system kernel 
+        for educational purposes, far from a full-fledged system. For a deta
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/simosdev">SimOS</a><br/>
+        SimOS is an OS that will be based on the OSKIT function library. In addition we will 
+        be maintaining the oskit as a seperate release, updated as the core of the kernel. This 
+        OS will be easy to use, with numerous software versions on it.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nefinity">The Nefinity Project</a><br/>
+        An ambitious project being undertaken by the teens of the UK, accepting new members, to 
+        create a stable yet powerful OS targeted at webhosting. And our main aim is to keep it simple 
+        for the newbies out there. ;)
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bella">Bella Operating System</a><br/>
+        The Bella Operating System aims to use currently available source code as a bootstrap to 
+        create a new "Media Operating System" primarily aimed at mid to upperlevel emebbed devices, 
+        such as Set Top Boxes and Pocket PCs.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rumbler">Rumbler Operating System</a><br/>
+        Rumbler is a free 32-bit open-source Server operating system written entirely in ASM. 
+        We hope to have support for most networking hardware. Please join the project!
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fecundity">Fecundity Operating System</a><br/>
+        The Fecundity Project has the purpose of creating a streamlined AMD64 based Operating System. 
+        We will hopefully create a stable and secure operating environment, and to investigate 
+        orthogonal persistence.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/middleearth">Middle Earth OS</a><br/>
+        ME OS is a non-Linux OS built from scratch. Emphasis is on the interface and forward-looking 
+        features.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nerdsoft-os">llama-X Operating System</a><br/>
+        The goal of llama-X is to be a cutting-edge desktop operating system for the x86 architecture.
+        A new object-oriented filesystem, and a fresh new desktop paradigm, and an innovative multikernel
+        subsystem are main features of the system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/shadowk">Shadowk Kernel</a><br/>
+        shadowk kernel aim to be a clean portable object micro-kernel. Clean and extensible would be 
+        most too important directions for this development. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/plural">Plural Operating System</a><br/>
+        A multitasking, multithreaded operating system designed for SMP systems and developed based on 
+        the X/Open Single Unix Specifications Version 3.0.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/oranges">Orange'S</a><br/>
+        Orange'S is an Operating System running on IA-32 systems. The aim of this project is to help 
+        anyone who want to develop their own OS. It is like Minix, but the document will be much more 
+        detailed.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/liteos-project">LiteOS Operating System</a><br/>
+        This is a research project that aims to build a multi-threaded operating system environment 
+        for wireless sensor networks, called LiteOS, that implements a few novel features for wireless 
+        sensor network software development.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/osooos">osOOos</a><br/>
+        Open Source Object Oriented Operating System for Intel 32-bit architecture. 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xm-comps">XtratuM-Components</a><br/>
+        This project offers components for XtratuM Nano-Kernel System. XM-FIFO and XM-SHM are XtratuM 
+        IPC Components. They can used to communicate between real-time domains and non real-time domains.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/plato-os">Plato OS</a><br/>
+        Plato is an open-source operating system designed to run binaries from almost any operating system.
+        Plato is also desinged with the user in mind. It will have an enjoyable, easy to understand and use 
+        interface, and everything will be customizable.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/protical5">Protical5</a><br/>
+        Protical5 - A 32-bit hobby OS for the x86 processor. Coded in assembly and C, this project aims 
+        for no compliance with any OS standards or special performance. A project based solely on the ideas 
+        of having fun and learning.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pl0">PL- Kernel</a><br/>
+        PL- Kernel. The DP++ Kernel.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/robinos">rmOS</a><br/>
+        A multi-tasking, multi-threaded micro-kernel operating system for the x86 platform.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pexio">Pexio</a><br/>
+        Pexio is a public domain experimental hobby operating system for x86 systems. Not looking to 
+        break any barriers, but to provide something from which to learn for hobby developers or those 
+        interested in how their systems really work.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/lemonos">LemonOS</a><br/>
+        An Operating System Designed to be Fast and Stable.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bovineos">Bovine OS</a><br/>
+        An Operating System for the TI-83 Plus and TI-86 Graphing Calculators.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/hulos">HUL OS</a><br/>
+        THIS PROJECT IS INACTIVE!!
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/mycorp-os">MyCorp OS Series</a><br/>
+        MyCorp OS is an Operating System which is now made open source. This operating system 
+        is made for all types of computers.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xanacore">xanacore</a><br/>
+        an os for x86 meant to bring back the good sides of computers...aum be like Amiga. an 
+        easy approach to technical things throughout...and no hiding the way things work.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pencube">PenCube</a><br/>
+        PenCube, the ONLY kernel for otakus.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/evilos-kernel">EvilOS kernel</a><br/>
+        EvilOS is supposed to be a portable, object oriented micro kernel, used as a base for a 
+        general-purpose operating system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ianix">Ianix OS</a><br/>
+        Ianix will be an X/OPEN compliant OS, initially targeting 586+ systems. The code base may 
+        change often, as I'm on a steep learning curve /:]
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pjos">PJOS</a><br/>
+        A portable operating system based on the java virtual machine.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fusionlinux">fusionlinux</a><br/>
+        Fusion Linux is a small, secure, and fast Linux distribution for experienced Linux users.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/hwd">Linux Kernel HardWare Detection tool</a><br/>
+        Linux Kernel HardWare Detection tool 
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pecls">PECLS Operating System</a><br/>
+        This project has not yet submitted a description.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ncuros">ncurOS</a><br/>
+        ncurOS is a very secure OS, which is based on an UNIX (maybe linux) kernel. Many system tools
+        are integrated in the kernel. All of these tools are written with ncurses. All ncurOS-developers 
+        follow a coding standard.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/challangeos">ChallengeOS</a><br/>
+        This is the old project home, which is no longer maintained. The new project entry resides at 
+        http://sourceforge.net/projects/challengeos.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/robos">RobOS</a><br/>
+        RobOS is a high functionality operating system, using the 'Gnome' GUI. We are going to make this 
+        OS simple to use, but it packs a punch.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/aoos">AlfaOmega OS</a><br/>
+        A little operative system with File System, Process Manager, but without a Grafical User 
+        Interface :'(
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cjet-extreme-os">CJet eXTreme OS (Operating System)</a><br/>
+        CJet eXTreme OS is a new project to develop a cross platform operating system with a native 
+        application interface designed to make it easy to develop for several architectures at once.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ufos">uFos</a><br/>
+        OS for embedded and mobile devices based on tiny byte-code interpreter and FORTH language 
+        compiler (into platform-independent byte-code). In other word its smallest programming language 
+        realization works on any type computer with any OS
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/stos">Project Codename "Kudu"</a><br/>
+        Kudu is a free, open source operating system. It is being written in ASM/C++, using NASM and 
+        g++ as compilers. We should have v0.1 out by the end of January 2008. 0.1 will have a working 
+        kernel and several working shell commands, including a timer.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ominos">ominOS</a><br/>
+        ominOS is a small, simple, and lightweight kernel designed for educational purposes. It is 
+        designed to be simple and easy for someone to understand the source code powering the kernel.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/foshq">FOS - FOS is Operating System</a><br/>
+        FOS - open source 32-bit microkernel operating system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/firestormos">Firestorm Project</a><br/>
+        The Firestorm OS aims to create a Operating System that is small, stable, fast, secure and 
+        reliable all contained in a small package. It will be available for PC and any Specialized 
+        Hardware like robotics, etc.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/pasdos">PasDos</a><br/>
+        Aim is to be a DOS operating system clone written in PASCAL and compiled using either Borland 
+        Turbo Pascal 5.5 and / or Microsoft Quick Pascal 1.00 and /or Free Pascal
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tora-os">Tora OS</a><br/>
+        Tora OS is a 32-bit protected mode operating system. It is simple and easy to use.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ospine">OS Pine</a><br/>
+        Pascal Operating System, That will translate Freedos to Pascal --OSPine written in Turbo 
+        Pascal and NASM. I think now I will make all that useful before I release. Thank for Feedback (^_^)
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/sphinxoskernel">Sphinx OS</a><br/>
+        Sphinx Os is a 32-bit kernel with a simple GUI .... Developers are needed
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xis">Xis</a><br/>
+        Xis is an open-source operating system focused in correctness of design rather efficiency of
+        the application.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/keyos">KeyOS - An OS from scratch</a><br/>
+        An operating system from scratch/using existing code that with an eventual goal of POSIX compliance.
+        Written in Assembly and C.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rebecca">Rebecca OS</a><br/>
+        An operating system to be designed and implemented from the ground up. It will be totally Unix in 
+        nature, with POSIX compliance. Most of the core implementation will be in C and assembly, with the
+        C++ bits coming later.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nanos">Nanos, Microkernel OS</a><br/>
+        A Protected mode microkernel for the x86 system. With features like memory management, multitasking 
+        and protection will be included in the kernel, the rest will be added as drivers/software.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/newdos">NewDOS</a><br/>
+        A distribution of FreeDOS which strives for Ease-Of-Use and Stability, aiming to offer a 
+        regular release schedule, utilizing the wide range of DOS-APPS available.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cryogen">Cryogen Operating System</a><br/>
+        Cryogen is an experimental, distributed operating system.
+
+            </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/metasystem">metasystem</a><br/>
+        Metasystem is an operating system which tries to implement the best from already known 
+        operating systems
+
+    </div>
+    
+</div>

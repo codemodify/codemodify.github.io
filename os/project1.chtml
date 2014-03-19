@@ -1,0 +1,18 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Hellor World</p>
+        <p id="moto2">The classic</p>
+    </div>
+
+    <div id="articleContent">
+        When the image is inside a containing element however, there's an easier 
+        solution which works cross browser. You can use the css clip property to 
+        crop the image, and then apply a regular border. You can just move the clip 
+        of the image by the same amount of px as your border width. For instance 
+        if you have a 60x60 image, and you want a 1px border, you clip it at 1px left, 
+        1px top and give it a width and height of 58px (all done via the css clip property).
+    </div>
+
+</div>

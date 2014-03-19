@@ -1,0 +1,78 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Django</p>
+    </div>
+
+    <div id="articleContent">
+
+<br>
+<div style="text-align: right;"><span style="color: rgb(153, 153, 153);"><span
+ style="font-style: italic;"><span style="color: rgb(102, 102, 102);">This
+doc should be read only after you<br>
+read the documentation from the site.<br>
+It serves only as a reminder for a certain<br>
+action how ot do it or what it means.<br>
+</span></span></span></div>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+...Creating a project<br>
+<br>
+<tt class="docutils literal"><span style="color: rgb(153, 0, 0);"
+ class="pre">django-admin.py</span> <span
+ style="color: rgb(0, 0, 153);" class="pre">startproject</span> <span
+ style="color: rgb(51, 102, 102);">site_carabutnicolae</span><span
+ class="pre"></span></tt><br>
+<br>
+Result:<br>
+<pre class="literal-block">site_carabutnicolae/<br>    __init__.py		Empty file. Tells Python - directory is a Python package.<br>    manage.py<br>    settings.py<br>    urls.py</pre>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+...Development server<br>
+<br>
+<tt class="docutils literal"><span style="color: rgb(102, 0, 0);"
+ class="pre">python</span> <span style="color: rgb(153, 0, 0);"
+ class="pre">manage.py</span> <span style="color: rgb(0, 0, 153);"
+ class="pre">runserver<br>
+<br>
+</span></tt>Result:<br>
+<pre>Starta a Django development server, a lightweight Web server written<br>purely in Python. Use it only to develop things rapidly.<br><span
+ style="font-style: italic; color: rgb(204, 0, 0);">DON'T use this server in anything resembling a production environment.<br><br><br></span></pre>
+<hr style="width: 100%; height: 2px;">
+<pre><span style="font-style: italic; color: rgb(204, 0, 0);"><br></span></pre>
+<span style="color: rgb(0, 0, 0);">...Da</span>tabase setup<br>
+<pre><tt class="docutils literal"><span class="pre">settings.py - </span></tt>a normal Python module representing Django settings. Edit it and set db settings accordingly.<br><br>DATABASE_ENGINE = 'mysql'		# 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.<br>DATABASE_NAME = 'site_carabutnicolae'	# Or path to database file if using sqlite3.<br>DATABASE_USER = 'mysqluser'		# Not used with sqlite3.<br>DATABASE_PASSWORD = 'mysqluserpassword'	# Not used with sqlite3.<br>DATABASE_HOST = 'nicu_bsdbox'		# Set to empty string for localhost. Not used with sqlite3.<br>DATABASE_PORT = '3306'			# Set to empty string for default. Not used with sqlite3.<br><br><span
+ style="font-style: italic; color: rgb(102, 51, 0);">!!!-Make sure you have this DB by this time, the corresponding user and its password.<br><br><br></span></pre>
+The "settings.py" also has some entries that inlcude some Django
+applications identified by "<tt class="docutils literal"><span
+ class="pre">INSTALLED_APPS</span></tt>"<br>
+By default, <tt class="docutils literal"><span class="pre">"INSTALLED_APPS"</span></tt>
+contains the following apps, all of which come
+with Django:
+<blockquote>
+  <ul class="simple">
+    <li><tt class="docutils literal"><span class="pre">django.contrib.auth</span></tt>
+-- An authentication system.</li>
+    <li><tt class="docutils literal"><span class="pre">django.contrib.contenttypes</span></tt>
+-- A framework for content types.</li>
+    <li><tt class="docutils literal"><span class="pre">django.contrib.sessions</span></tt>
+-- A session framework.</li>
+    <li><tt class="docutils literal"><span class="pre">django.contrib.sites</span></tt>
+-- A framework for managing multiple sites
+with one Django installation.</li>
+  </ul>
+</blockquote>
+<br>
+<span style="font-style: italic; color: rgb(102, 51, 0);"></span><br>
+<pre><span style="font-style: italic; color: rgb(102, 51, 0);"></span></pre>
+<pre><span style="font-style: italic; color: rgb(102, 51, 0);"></span><span
+ style="color: rgb(102, 0, 0);">python </span><span
+ style="color: rgb(153, 0, 0);">manage.py</span> <span
+ style="color: rgb(0, 0, 153);">syncdb</span></pre>
+<span style="color: rgb(204, 0, 0);"></span>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,238 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v1.0 | 20080212
+---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q {	quotes: none; }
+
+blockquote:before, blockquote:after,q:before, q:after { content: ''; content: none; }
+
+/* remember to define focus styles!
+---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- */
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow!
+---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup
+---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* BASIC STYLES background: url(right-bg.jpg);background-color: rgb(34, 34, 34); background-image: none;
+---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- */
+/*
+body
+{
+    background-image: url(attachments-bg.png); background-repeat: repeat-x repeat-y; 
+    line-height: 20px; 
+    font-family: Arial, Verdana, sans-serif; 
+    font-size: 12px; 
+    color: #363636; 
+    background-attachment:fixed; 
+}
+    background-image: url(graphy_@2X.png); background-repeat: repeat-x repeat-y; 
+    
+    background-size: 80px 160px;
+*/
+body
+{
+    background-color: rgb(235, 235, 235);
+    line-height: 20px; 
+    font-family: Arial, Verdana, sans-serif; 
+    font-size: 12px; 
+    color: #363636; 
+    background-attachment:fixed; 
+}
+
+
+a { text-decoration: none; color: #5f5f5f; }
+a:hover { text-decoration: underline; }
+.clear { clear: both; }
+.ui-tabs-hide { display: none; }
+br.clear { margin: 0px; padding: 0px; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; padding-bottom: 5px; color: #000000; letter-spacing: -1px; line-height: 1em; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #000000; }
+h1 { font-size: 30px; }
+h2 { font-size: 24px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+p { padding-bottom: 10px; }
+strong { font-weight: bold; color: #1c1c1c; }
+cite, em, i { font-style: italic; }
+pre, code { font-family: Courier New, monospace; margin-bottom: 10px; }
+ins { text-decoration: none; }
+sup, sub { height: 0; line-height: 1; position: relative; vertical-align: baseline; }
+sup { bottom: 0.8em; }
+sub { top: 0.3em; }
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dd  { margin-left: 1.5em;}
+blockquote  { margin: 1.5em; padding: 1em; color: #666666; background: #e6e6e6; font-style: italic; border: 1px solid #dcdcdc; }
+	blockquote p { padding-bottom: 0px; }
+
+input[type=text],input.text, input.title, textarea, select { background-color:#fff; border:1px solid #bbb; padding: 2px; color: #4e4e4e; }
+input[type=text]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus { border-color:#2D3940; color: #3e3e3e; }
+input[type=text], input.text, input.title, textarea, select { margin:0.5em 0; }
+textarea { padding: 4px; }
+
+img#about-image { float: left; margin: 3px 8px 8px 0px; }
+
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+.debug
+{
+    border-style:solid;
+    border-width:2px;
+    border-color: red;
+}
+
+/* Layout
+---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- *//*background: url(categoryArea.bg.jpg); */
+#categoryArea                           { height: 2904px;   width: 210px;   background-color: rgb(40, 40, 40); color: rgb(217, 217, 217);   float:left; display: inline-block;  position: relative;                                             vertical-align: middle;                                         }
+#categoryArea #topbg                    { height: 26px;                     background: url(categoryArea.topbg.png) repeat-x;                                                                                                                                                                                   }
+#categoryArea #glow                     { height: 438px;    width: 415px;   background: url(categoryArea.glow.png) no-repeat;                                                   position: absolute; top: 0px;  left: -120px;    z-index: 4;                                                                     }
+#categoryArea #logo                     {                                                                                                                                       position: absolute; top: 12px; left:   12px;    z-index: 5;                                                                     }
+#categoryArea #yapc                     {                                                                                                                                       position: absolute; top: 35px; left:   35px;    z-index: 6;                                                                     }
+#categoryArea #photo                    {                                                                                                                                       position: absolute; top: 99px; left:   22px;    z-index: 7;                                                                     }
+#categoryArea #right-border             { height: 2904px;   width: 15px;    background: url(categoryArea.border.png) repeat-y;                                                  position: absolute; top: 0px;  right:   0px;                                                                                    }
+#categoryArea #activeMenuItemMark       { height: 24px;     width: 30px;    background: url(categoryArea.active-arrow.png) no-repeat;                   display: inline-block;  position: absolute; top:295px; right: -20px;    z-index: 100;   overflow: visible;                                              }
+                                                    
+#subCategoryArea                        { height: 2904px;   width: 210px;   background: url(subCategoryArea.bg.jpg);                        float:left; display: inline-block;  position: relative;                             z-index: 8;     vertical-align: middle;                                         }
+#subCategoryArea #right-border          { height: 2904px;   width: 15px;    background: url(subCategoryArea.border.png) repeat-y;                                               position: absolute; top:  0px; right:   0px;                                                                                    }
+#subCategoryArea #activeMenuItemMark    { height: 24px;     width: 30px;    background: url(subCategoryArea.active-arrow.png) no-repeat;                display: inline-block;  position: absolute; top:295px; right: -20px;    z-index: 100;   overflow: visible;                                              }
+#subCategoryArea #canvas                { height: 2904px;   width: 210px;                                                                   float:left; display: inline-block;  position: absolute; top:  0px; left :   0px;                    overflow: hidden;                                               }
+                    
+#contentArea                            { height: 2904px;   width: 210px;                                                                   float:left; display: inline-block;  position: absolute; top:  0px; left :   420px;                  overflow-x: hidden; overflow-y: scroll; word-wrap: break-word;  }
+
+
+
+
+ /* Menu
+ ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- */
+.menu                                   { position: absolute; top: 350px; right: 20px; text-align: right; z-index:1000; font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif; }
+.menu ul li                             { margin-bottom: 15px; }
+.menu ul li a                           { position: relative; color: #ffffff; font-size: 15px; text-shadow: 2px 2px 2px rgba(0,0,0,0.3); }
+.menu ul li a:hover                     { color: #ded28e; text-decoration: none; }
+.menu ul li a.activeMenuItem            { color: #ded28e; }
+
+.subMenu                                { position: absolute; top: 350px; right: 20px; text-align: right; z-index:1000; font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;  }
+.subMenu ul li                          { margin-bottom: 15px; }
+.subMenu ul li a                        { position: relative; color: #ffffff; font-size: 15px; text-shadow: 2px 2px 2px rgba(0,0,0,0.3); }
+.subMenu ul li a:hover                  { color: #ded28e; text-decoration: none; }
+.subMenu ul li a.activeMenuItem         { color: #ded28e; }
+
+
+ /* Article
+ ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- */
+#article                                { padding: 50px 0px 0px 0px; }
+#articleHeader                          { /*font-size: 18px; border-bottom: 1px solid #0a87c8; background: #16a2eb; color: #fff; margin-bottom: 30px; height: 80px;*/ }
+#articleHeader #moto1                   { padding: 20px 0px 20px 50px; color: #999999; font-size: 60px; text-transform: uppercase; }
+#articleHeader #moto2                   { padding:  5px 0px 20px 53px; color: #999999; font-size: 12px; font-style: italic; }
+#articleHeader #moto3                   { padding:  10px 0px 20px 53px; color: #999999; font-size: 18px; }
+#articleContent                         { color: #333333;
+                                          margin-left: 50px;
+                                          font-family: 'Segoe UI', helvetica, Tahoma, Arial, sans-serif; font-variant: normal; font-weight: normal; font-size: 15px;
+                                          line-height: 21px;
+                                          
+                                          /*padding-right: 10px;*/
+                                          /*border-top-color: rgb(133, 156, 230); border-top-style: solid; border-top-width: 1px; */
+                                          /*background-color: rgb(238, 238, 238); background-image: none;*/
+                                          line-height: 22px; width: 700px;
+                                          
+                                          padding-bottom: 20px;
+                                        }
+#articleContent pre                     { color: #333333;
+                                          font-family: 'Segoe UI', helvetica, Tahoma, Arial, sans-serif; font-variant: normal; font-weight: normal; font-size: 15px;
+                                          line-height: 21px;
+                                          
+                                          /*padding-right: 10px;*/
+                                          /*border-top-color: rgb(133, 156, 230); border-top-style: solid; border-top-width: 1px; */
+                                          /*background-color: rgb(238, 238, 238); background-image: none;*/
+                                          line-height: 22px; width: 700px;
+                                        }
+
+/*
+#articleHeader                          { width: 655px; height: 116px; background: url(tagline-bg.png) no-repeat; margin: 0px 0px 12px -8px; font-family: Georgia, serif; font-style: italic; text-shadow: 1px 1px 0px #ffffff; }
+#articleHeader #moto1                   { padding: 25px 46px 0px 51px; color: #9b9b9b; font-size: 32px; }
+#articleHeader #moto2                   { padding: 11px 46px 0px 51px; color: #757575; font-size: 16px; }
+
+#articleContent                         { margin-left: 50px; padding: 10px;
+                                          border-left-color: rgb(133, 156, 230); border-left-style: solid; border-left-width: 6px; 
+                                          background-color: rgb(238, 238, 238); background-image: none; 
+                                          line-height: 22px; width: 610px; 
+                                          font-family: 'Skolar Italic', 'Times New Roman', serif; font-size: 17px; font-style: italic; font-variant: normal; font-weight: normal;
+                                        }
+*/
+.image                                  { padding: 1px; border: 1px solid #021a40; background-color: #ff0; }
+
+.separator {
+	background: #101010;
+	width: 100%;
+	height: 5px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid #262626;
+	margin: 0 0 30px 0;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.imageframe
+{
+    border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
+    padding: 5px;
+}
+
+.button
+{
+    color: #fff;
+    padding: 12px 24px;
+    background: #007fbf;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-family: "Segoe UI", helvetica, Tahoma, Arial, sans-serif;
+    font-size: 18px;
+    border-bottom: 1px solid #005580;
+    display: inline-block;
+}
+a.button:hover
+{
+    text-decoration:  none;
+}
+
+.codebox {
+    /* Below are styles for the codebox (not the code itself) */
+    border:1px solid black;
+    background-color:#EEEEFF;
+    width:600px;
+    overflow:auto;    
+    padding:10px;
+}
+.codebox code {
+    /* Styles in here affect the text of the codebox */
+    font-size:0.9em;
+    /* You could also put all sorts of styling here, like different font, color, underline, etc. for the code. */
+}

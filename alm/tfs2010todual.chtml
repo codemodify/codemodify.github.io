@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">TFS 2010 Single To Dual</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Moving TFS 2010 from a Single-Server to a Dual-Server Deployment</p>
+    </div>    
+    
+    <div id="articleContent">
+        <img src="alm/tfs2010todual.png">
+        <a href="alm/tfs2010todual.pptx" class="button">Donwload PPT</a>
+    </div>
+
+</div>

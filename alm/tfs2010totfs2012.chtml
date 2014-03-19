@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">TFS 2010 To TFS 2012</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Migrate TFS 2010 to TFS 2012</p>
+    </div>    
+    
+    <div id="articleContent">
+        <img src="alm/tfs2010totfs2012.png">
+        <a href="alm/tfs2010totfs2012.pptx" class="button">Donwload PPT</a>
+    </div>
+
+</div>

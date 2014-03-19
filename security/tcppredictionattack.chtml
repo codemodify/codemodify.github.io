@@ -1,0 +1,91 @@
+<div id="article">
+
+    <div id="articleHeader">
+        <p id="moto3">TCP Sequence Prediction Attack(Extern Info)</p>
+    </div>
+    <div id="articleContent">
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;">TCP
+is a reliable connection-oriented layer 4 (Transport Layer) protocol.
+Packet transfer between hosts is accomplished by the layers below layer
+4 and TCP takes responsibility to making certain the packets are
+delivered to higher layers in the protocol stack in the correct order.
+To accomplish this reordering task, TCP uses the sequence number field.</span><br
+ style="font-style: italic;">
+<br style="font-style: italic;">
+<span style="font-style: italic;">To successfully mount a TCP sequence
+prediction attack, you must first listen to communications between two
+systems, one of which is your target system. Then, you issue packets
+from your system to the target system with the source IP address of the
+trusted system that is communicating with the target system.</span><br
+ style="font-style: italic;">
+<br style="font-style: italic;">
+<span style="font-style: italic;">The packets you issue must have the
+sequence numbers that the target system is expecting. In addition, your
+packets must arrive before the packets from the trusted system whose
+connection you are hijacking. To accomplish this, it is often necessary
+to flood the trusted system off of the network with some form of denial
+of service attack.</span><br>
+<br>
+<span style="font-style: italic;">Once you have taken over the
+connection, you can send data to allow you to access the target host
+using a normal TCP/IP connection. The most simple way to do this
+is:&nbsp; </span><span
+ style="color: rgb(204, 0, 0); font-weight: bold; font-style: italic;">echo
+"+ +" &gt; /.rhosts</span><span
+ style="color: rgb(204, 0, 0); font-style: italic;"> - (adds users to
+the system that can login with no password)<br>
+<br style="font-style: italic;">
+</span><span style="font-style: italic;">This specific technique relies
+upon inherent weaknesses in the BSD Unix `r` services. However, SunRPC,
+NFS, X-Windows, and many other services which rely upon IP address
+authentication can be exploited with a TCP sequence prediction attack.<br>
+</span>
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;"><br>
+<br>
+<span style="font-weight: bold;">Why are TCP Sequence Prediction
+Attacks Possible?<br>
+<br>
+</span>From <a href="http://www.faqs.org/rfcs/rfc793.html">RFC 793
+(Transmission Control Protocol)</a>&nbsp; we have the info about the
+generation of&nbsp; TCP sequence numbers:<br>
+</span>
+<div style="margin-left: 40px;"><span
+ style="text-decoration: underline; font-style: italic; color: rgb(153, 153, 153);">[...]&nbsp;&nbsp;
+When new connections are created, an initial sequence number (ISN)
+generator is employed which selects a new 32 bit ISN. The generator is
+bound to a (possibly fictitious) 32 bit clock whose low order bit is
+incremented roughly every 4 microseconds. Thus, the ISN cycles
+approximately every 4.55 hours. Since we assume that segments will stay
+in the network no more than the Maximum Segment Lifetime (MSL) and that
+the MSL is less than 4.55 hours we can reasonably assume that ISN's
+will be unique.&nbsp;&nbsp; [...]<br>
+<br>
+</span></div>
+<span style="font-style: italic;">The developers of the BSD Unix TCP/IP
+stack did not follow these recommendations. TCP/IP stacks based upon
+BSD Unix increase the sequence number by 128,000 every second and by
+64,000 for every new TCP connection. This is significantly more
+predictable than the algorithm specified in the RFC.<br>
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;"><br>
+<br>
+</span><span style="font-weight: bold; font-style: italic;">Defending
+Against TCP Sequence Prediction Attacks<br>
+</span><span style="font-style: italic;"><br>
+TCP sequence prediction attacks can be effectively stopped by any
+router or firewall that is configured <span
+ style="text-decoration: underline;">not to allow packets from an
+internal IP address to originate from an external interface</span>.<br>
+<br>
+These does not fix the TCP sequence prediction vulnerability, it simply
+prevents TCP sequence prediction attacks from being able to reach their
+targets.<br>
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;"><br>
+<br>
+</span>
+    </div>
+
+</div>

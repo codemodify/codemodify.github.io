@@ -1,0 +1,137 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">SSH - the secure shell</p>
+    </div>
+
+    <div id="articleContent">
+
+        <a target="_blank" href="http://openssh.org" class="button">Link</a> to the free version.
+        
+    </div>
+
+    
+    <div id="articleContent">
+    
+        <span style="font-family: Courier New;">
+        protocol to propose secure services over an insecure network<br>
+        <br>
+        SSH components:<br>
+        o Transport Layer Protocol(SSH-TRANS)<br>
+        &nbsp;&nbsp;&nbsp; o server authentication<br>
+        &nbsp;&nbsp;&nbsp; o confidentiality<br>
+        &nbsp;&nbsp;&nbsp; o integrity<br>
+        &nbsp;&nbsp;&nbsp; o compression<br>
+        &nbsp;&nbsp;&nbsp; o runs on top of a reliable data stream (TCP/IP for
+        now)<br>
+        <br>
+        o User Authentication Protocol (SSH-USERAUTH)<br>
+        &nbsp;&nbsp;&nbsp; o authenticates the client to the server<br>
+        &nbsp;&nbsp;&nbsp; o runs on top of 'SSH-TRANS'<br>
+        <br>
+        o Connetion Protocol (SSH-CONNECT)<br>
+        &nbsp;&nbsp;&nbsp; o splits the connection into multiple logical
+        channels<br>
+        &nbsp;&nbsp;&nbsp; o runs on top of 'SSH-USERAUTH'<br>
+        <br>
+        </span>
+        <hr style="width: 100%; height: 2px;">
+        <p style="font-family: Courier New;"><small><span lang="en-us">SSL
+        makes use of what is known as <b>asymmetric cryptography</b>, commonly
+        referred as <b>public key cryptography (PKI)</b>.</span></small><br>
+        <small><span lang="en-us">With public key cryptography, two keys are
+        created, one public, one private. </span></small><small><span
+         lang="en-us">Anything encrypted with either <br>
+        key can only be decrypted with its corresponding key. </span></small><small><span
+         lang="en-us">Thus if a message or data stream were encrypted with <br>
+        the server's private key, it can be decrypted only using its
+        corresponding public key, ensuring that the data<br>
+        only could have come from the server.</span></small></p>
+        <p style="font-family: Courier New;"><small> <span lang="en-us">If SSL
+        utilizes public key cryptography to encrypt the data stream traveling
+        over the Internet,why is a<br>
+        certificate necessary? The technical answer to that question is that a
+        certificate is not really necessary</span> - <br>
+        <span lang="en-us">the data is secure and cannot be be decrypted by a
+        third party.<br>
+        However, certificates do serve a crucial role in the communication
+        process. The certificate, signed by a<br>
+        trusted Certificate Authority (CA), ensures that the certificate holder
+        is really who he claims to be.<br>
+        Without a trusted signed certificate, your data may be encrypted,
+        however, the party you are communicating <br>
+        with may not be whom you think. Without certificates, impersonation
+        attacks would be much more common.<br>
+        </span></small></p>
+        <p style="font-family: Courier New;"><small><span lang="en-us"><span
+         style="color: rgb(102, 102, 102);">Step: generate private key <span
+         style="font-style: italic;">(requires a password)</span></span><br>
+        <span style="font-weight: bold;">openssl genrsa -des3 -out <span
+         style="font-style: italic; color: rgb(102, 0, 0);">id.rsa.pem.private.key</span>
+        4096</span><br>
+        </span></small></p>
+        <p style="font-family: Courier New;"><small><span lang="en-us"><span
+         style="color: rgb(102, 102, 102);">Step: generate public key </span></span></small><small
+         style="font-style: italic;"><span lang="en-us"><span
+         style="color: rgb(102, 102, 102);">(requires the password previous
+        step)</span></span></small><small><span lang="en-us"><span
+         style="color: rgb(102, 102, 102);"></span><br>
+        <span style="font-weight: bold;">openssl rsa -in <span
+         style="color: rgb(102, 0, 0); font-style: italic;">id.rsa.pem.private.key</span>
+        -pubout &gt; </span></span></small><small
+         style="font-weight: bold; color: rgb(102, 0, 0); font-style: italic;"><span
+         lang="en-us">id.rsa.pem.public.key</span></small></p>
+        <p class="normal"><small style="color: rgb(102, 102, 102);"><span
+         style="font-family: Courier New;">Step: generate
+        certificate-signing-request(CSR)<br>
+        </span></small><small
+         style="font-family: Courier New; font-weight: bold;"><span lang="en-us">openssl
+        req -new -key <span style="color: rgb(102, 0, 0); font-style: italic;">id.rsa.pem.private.key</span>
+        -out </span></small><small><span style="font-family: Courier New;"><span
+         style="font-weight: bold; font-style: italic; color: rgb(102, 0, 0);">id.rsa.pem.certificate.unsigned</span><br>
+        </span></small></p>
+        <p style="margin-left: 40px;" class="normal"><small><span
+         style="font-family: Courier New;">Once the private key is generated a
+        CSR can be generated.<br>
+        The CSR is then used in one of two ways: <br>
+        &nbsp;&nbsp;&nbsp; o the CSR will be sent to a CA who will verify the
+        identity of the requestor and issue a signed certificate.<br>
+        &nbsp;&nbsp;&nbsp; o t</span><span style="font-family: Courier New;">he
+        second option is to self-sign the CSR</span><span
+         style="font-family: Courier New;">.</span></small><br>
+        </p>
+        <p style="margin-left: 40px; font-family: Courier New;" class="normal"><small>During
+        the generation of the CSR, you will be prompted for several pieces of
+        information.<br>
+        These are the X.509 attributes of the certificate. One of the prompts
+        will be for "Common Name".<br>
+        It is important that this field be filled in with the fully qualified
+        domain name of the server <br>
+        to be protected by SSL. If the website to be protected will be
+        "https://public.akadia.com", then enter<br>
+        "public.akadia.com" at this prompt.<br>
+        </small></p>
+        <p style="font-family: Courier New;"><small><span
+         style="color: rgb(102, 102, 102);">Step: generating self-signed
+        certificate</span><br>
+        </small><small><b>openssl x509 -req -days 365 -in </b></small><small
+         style="font-style: italic; color: rgb(102, 0, 0);"><span
+         style="font-family: Courier New;"><span style="font-weight: bold;">id.rsa.pem.certificate.unsigned</span></span></small><small><b>
+        -signkey </b></small><small
+         style="font-family: Courier New; font-weight: bold; font-style: italic; color: rgb(102, 0, 0);"><span
+         lang="en-us">id.rsa.pem.private.key</span></small><small><b> -out </b></small><small
+         style="font-style: italic; color: rgb(102, 0, 0);"><span
+         style="font-family: Courier New;"><span style="font-weight: bold;">id.rsa.pem.certificate</span></span></small><small><br>
+        </small></p>
+        <div style="margin-left: 40px; font-family: Courier New;"><small>One
+        may need to generate a self-signed certificate because either isn't
+        planing on having the certificate <br>
+        signed by a CA, or wish to test his new SSL implementation. This
+        temporary certificate will generate an <br>
+        error in the client browser to the effect that the signing certificate
+        authority is unknown and not trusted.</small><br>
+        </div>
+
+    </div>
+
+</div>

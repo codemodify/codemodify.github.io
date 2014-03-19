@@ -1,0 +1,423 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">The dig into OSES 2</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - RealTime OS - On SourceForge ]</p>
+    </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/chibios">ChibiOS/RT</a><br/>
+        ChibiOS/RT is a compact and fast RTOS designed for embedded applications. It offers threads, 
+        mutexes, semaphores, messages, events, timers, flexible I/O with timeout capability. ARM7, 
+        Cortex-M3, AVR, MSP430 and x86 are currently supported.
+
+        </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nuttx">Nuttx</a><br/>
+        Nuttx is a real timed embedded operating system (RTOS). Its goals are: 
+        (1) small footprint usable in deeply embedded environments, 
+        (2) fully scalable from tiny (8-bit) to moderate (32-bit),
+        (3) standards compliance,
+        (4) real time, and 
+        (5) totally open.
+
+        </div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/freertos">FreeRTOS</a><br/>
+        Mini RTOS kernel for small embedded systems. Preconfigured demo programs are included for 
+        lots of microcontroller architectures - ARM7, ARM CORTEX M3, PIC32, PPC405, 8051, AVR (MegaAVR), 
+        x86, PIC18, PIC24, dsPIC, HCS12, H8S, RDC, ColdFire, Fujitsu, etc.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/prex">Prex</a><br/>
+        Prex is a portable real-time operating system for embedded systems. The small, reliable 
+        and low power kernel is written in C language based on micro kernel design. File system, 
+        UNIX process and networking features are provided by user mode tasks.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/aortos">Active Object real-time OS</a><br/>
+        AO-RTOS is a pure object-oriented small footprint real-time operating system for embedded devices. 
+        The project is using Active Object (AO) and hierarchical state machine (HSM) design templates 
+        as implementation base.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tinyos">TinyOS</a><br/>
+        TinyOS is an operating system for embedded sensor networks. This project explores a variety 
+        of system design issues on dust-sized, low power devices, with a few kilobytes of memory, 
+        and wireless communication.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/scmrtos">scmRTOS</a><br/>
+        scmRTOS is tiny Real-Time Preemptive Operating System intended for use with Single-Chip 
+        Microcontrollers. scmRTOS is capable to run on small uCs with as little amount of 
+        RAM as 512 bytes. The RTOS is written on C++ and supported various platforms.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/femtoos">Femto OS</a><br/>
+        The Femto OS is a very concise portable preemptive operating system for embedded devices 
+        with minimal ram and flash, up to say 16K flash, 1K ram. The main target is the AVR architecture,
+        such as the ATtiny861/461/261 series.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/picoos">pico]OS</a><br/>
+        pico]OS is a highly configurable and very fast real time operating system (RTOS). It targets
+        a wide range of architectures, from very small 8 bit processors and microcontrollers up to 
+        very huge platforms. Ports are available for ARM, AVR, PPC, 6502, 8086
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/xmk">e(X)treme (M)inimal (K)ernel</a><br/>
+        XMK is a preemptive multitasking kernel for microcontrollers. Its goal is to provide a RTOS 
+        small enough (RAM+ROM) to run on 8bit microcontrollers. XMK provides additional/optional 
+        features when scaling up to 16bit and 32bit platforms.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/eos-xc167-rtos">EOS</a><br/>
+        'EOS' is a fully-featured preemptive real time kernel developed for the Infineon XC167 
+        microcontroller. Performance summary: A typical context switch will take about 100[µs] 
+        at 40[MHz], when all tasks have a stack of 256 bytes.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/micro-os-plus">µOS++ (micro OS plus plus)</a><br/>
+        "µOS++" (micro OS plus plus) is an open source, royalty-free, real-time operating system 
+        intended for embedded systems. It is based on a preemptive scheduler originally developed 
+        for Atmel AVR devices and is written in C++. (more info in the Wiki)
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/tinker">Tinker</a><br/>
+        A Tiny Kernel for small embedded targets.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/sugatha">Sugatha</a><br/>
+        Sugatha is a Real Time (multi-tasking) Operating System to be used in embedded devices.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cubtrix">CubTrix a Cubical Real-Time Kernel</a><br/>
+        CubTrix is a graphical user interface with support for real-time applications.
+        Built on top of a small, fast and efficient real-time microkernel.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/agnix">Agnix Embedded Real-time OS Kernel</a><br/>
+        Agnix is an educational, network operating system kernel. It is ideal starting point 
+        to learn about operating systems. The main goal of the project is to provide a network 
+        kernel fully compatible with the Linux Kernel in the system call layer.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/embedded386">Embedded386</a><br/>
+        Change your desktop computer(just 386 and above right now) into a funny evolution board.
+        Some subprojects are a Real Time OS , home automation server,....
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/nxdos">NX-DOS Operating System</a><br/>
+        A real-time 16/32bit operating system for 80286 and higher CPU architectures.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/simpleavros">SimpleAVROS</a><br/>
+        SimpleAVROS is RTOS designed special for AVR microcontrollers. Supported Compiler - AVR Studio.
+        Language - Assembly. This is RTOS consist of source code. Supported microcontrollers - ATmega48;
+        In the future- ATmega88/168, ATmega164/324/644, AT90usb82/162
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/cgubios">CyberUbiOS</a><br/>
+        Network based operating system for embedded platforms.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/hadie">hadie</a><br/>
+        Hadie - Hardware Abstracting Device Independent Environment. Or just another micro kernel
+        for embedded devices. Supported architecture are i8051 (80515c), i166 (XC161CJ),
+        Tricore (TC1775B), m68k (m68332) and i386.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rtos167">RTOS167</a><br/>
+        Open source realtime multitasking system for C16x and derivatives (C167, XC167, ST10, etc.),
+        focussed on minimum resource usage.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/panagos/">PanagOS</a><br/>
+        PanagOS is an operating system for embedded systems that have only a few Kbytes
+        of program memory and less than 1 Kbyte of RAM memory.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/gtos">GTOS</a><br/>
+        The GTOS project is an effort to create a Real-Time Operating System which is capable of
+        running on multiple platforms and can support easy porting of applications developed on
+        other operating systems.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/artrealos">The ARO Project</a><br/>
+        The ARO project code-named ArtRealOs for short is an Artificial intelligence Real time 
+        Operating system. A client server environment, where the client is any IP connect device 
+        and server has the ARO operating system.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/fos">Fusion Operating System</a><br/>
+        Fusion OS is a Open Source Operating System, mainly licensed under the MPL 1.1.
+        Parts of it are licensed upder the GNU GPL or other open source licenses. Fusion OS is 
+        based on the ReactOS project, and we contribute any bugs found in ReactOS back to them.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/usmartx">uSmartX RTOS</a><br/>
+        uSmartx is a non-preemptive, multitasking, priority based kernel for use in embedded designs.
+        Its major features are task and time control over system resources, inter task communication
+        and simple memory management.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/orcos">ORCOS</a><br/>
+        ORCOS is an Organic Reconfigurable Operating System which is designed for embedded systems.
+        ORCOS could be seen as an operating system construction kit and was written with realtime, 
+        configurability, portability and security in mind.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/openmac">MeshNetics OpenMAC</a><br/>
+        OpenMAC is a TinyOS-based implementation of IEEE 802.15.4 MAC layer, which lies at the core
+        of MeshNetics ZigBee stack, and provides basic wireless networking (star,peer to peer) to WSN's.
+        Available for low-power ZigBit modules and Atmel AVR Z-Link Kits
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rome">ROME</a><br/>
+        ROME is a modular, multitasking, embedded operating system. The system is highly modular, with 
+        functionality split between multiple processes. ROME provides a zero copy architecture where 
+        references to data are passed around.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ivmuk-os">IvmukOS</a><br/>
+        Ivmuk-OS is small RTOS for microcontrollers with low resources. Microchip's PIC16F877A MCU uses 
+        about 70 bytes of RAM and 800 bytes Flash. Memory usage depends on number of tasks and messages 
+        defined. This should create competition to Salvo OS some day.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/jaluna">Jaluna Real-Time Component Suite</a><br/>
+        Components supporting real-time, reliability, high-availability, and security services in 
+        standard operating environments. Starting with the C5 modular microkernel, a RT-POSIX layer 
+        based on FreeBSD 4.1, and the CDE cross-development environment.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/emos">EMOS</a><br/>
+        EMOS is a real-time embedded operating system core derived/upgraded from ucOS/II; EMOS is a 
+        realtime embedded operating system derived from ucOS-II v2.0, with many modifications, But the 
+        core idea is the same;
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rtkerandatmega1">RTKER and ATMEGA128 Operating system</a><br/>
+        Media Lab Asia collaborated with IIT Delhi for development real-time kernel O/S named "RTKER OS"
+        portable on microprocessor based systems and a Multithreaded O/S for 8-bit microcontrollers (like 
+        8051 and ATMega128) as low cost embedded solution.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ertos">Emulated RTOS</a><br/>
+        Emulated RTOS ERTOS
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/liquorice">Liquorice</a><br/>
+        Liquorice is a multithreaded SASOS for use in embedded systems (8 bit and up). Includes a small 
+        but working IP/ARP/ICMP/UDP/TCP stack with SLIP, PPP and Ethernet support.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/flachsos">FlachsOS</a><br/>
+        FlachsOS is a realtime-multitasking Operating System. Coded in Assembler and C/C++.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/openspurs">OpenSPURS - A Cell SPU Runtime System</a><br/>
+        OpenSPURS is an open source implementation of an SPE micro-kernel and runtime system for the 
+        Cell microprocessor.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ebcs">Embedded Bathroom Control System</a><br/>
+        The Embedded Bathroom Control System is a small system to control the bathroom fan, other devices 
+        and report information on an LCD panel.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/butterflyos">Operation system for AVR Butterfly board</a><br/>
+        ButterflyOS is a very simple operation system for the Atmel AVR Butterfly board. It's based on 
+        the AvrX multitasking scheduler, created by Larry Barello. A byte-code program for ButterflyOS,
+        can be sent and managed through the serial interface.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/linav">LinAV - MediOS</a><br/>
+        The goal of the project is to create an OS for archos device (Jbmm, Av and Gmini series). We are 
+        now working on our own kernel on: www.archopen.org. This kernel can be used as a lib to create 
+        seperate apps. It also has a gui that is able to launch elf li
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/atos51">ATOS for 8051</a><br/>
+        A Trivial Operating System for 8051 (ATOS51). ATOS51 is a trivial operating system for 8051 
+        microcontroller. As its name, it provides only multitasking feature.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/kos57206">K Operating System</a><br/>
+        K OS is a small real-mode or protected mode opearting system. You can choose which mode in 
+        the bootmenu.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dc-dreamos">Dreamos: Truly Embedded</a><br/>
+        Dreamos is an operating system developed on Sega Dreamcast to be ported to an array of embedded 
+        devices. The goal of the project is to be able to run non-ported Unix programs on the Sega Dreamcast 
+        and other embedded devices with ease and POSIX compliance
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/avos">avOS</a><br/>
+        avOS Aims to be a replacement for the archos AV300 O/S firmware. This will either be achieved
+        by porting linux to the Archos, writing a custom O/S from scratch, or writing a custom JVM 
+        from scratch. The Archos AV300 uses a TMS320DSC25 ARM7 based DSP.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/ariadne">Ariadne Project</a><br/>
+        Soft-realtime operating system, based in a microkernel design and providing QoS and 
+        persistence capabilities.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/sdlreflex">SDL REFLEX</a><br/>
+        SDL REFLEX is the micro kernel of a real time operating system for the AVR microcontroller family.
+        The kernel is especially designed to implement systems described in SDL "The Specification and 
+        Description Language". Compiler GNU ANSI-C for AVR v.3.3
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/beeos">BeeOS: A small RTOS for the HC12 MCU</a><br/>
+        BeeOS: A multitasking RTOS for the MC68HC12 MCU
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/homeos">homeOS</a><br/>
+        homeOS is a small portable RTOS on IA32 arch. The objective of this operating system is 
+        to be a dedicated Meida operating system. User should be able to in future run Real-Time 
+        media applications on this OS instead of existing OSes for better performance.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/rusos">Russian real time OS</a><br/>
+        First of all it\'s gonna be microkernel-based full priority preemtive real time operating system.
+        It will be hard real time and it will use two scheduling algorithms: EDF or RMA. This operating 
+        system will be written using C and Asm, also it will be
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/myrtos">MyRTOS</a><br/>
+        SangMyung Univ. Graduate Project Project: MyRTOS Team name:Software Craftsmanship Description: 
+        pxa255 based RTOS. Preemptive Multi-threading,Priority-base,Round-Robin Scheduling, Thread, 
+        Semaphore,Message Mail Box,Message Queue Management Support.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/t-os">T-OS</a><br/>
+        T-OS is a real-time, preemptive, multitasking kernel designed for time-critical embedded application.
+        T-OS is optimized for ARM architecture to exploit higher performance.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/dynamos">DynamOS</a><br/>
+        DynamOS is a dynamic real-time operating system that can handle different quality of
+        service levels.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/bastkernel">Real Time Executive and Time Sharing</a><br/>
+        Develop your own Real Time Kernel. BastKernel is designed both for Hard Real Time Applications 
+        and Time Sharing. The BastKernel is compiled under Win32 environment. It's easy to install 
+        Bastkernel and useful for educational purpose.
+
+        </div>
+    <div id="articleContent"></div>
+
+    <div id="articleContent"><a href="http://sourceforge.net/projects/kiss">The KISS Realtime Kernel</a><br/>
+        The KISS Realtime Kernel is intended for use in deeply embedded applications such as consumer 
+        electronics. Being deterministic, small, readable and understandable, it is suitable for applications 
+        where deterministic response is primordial.
+
+</div>

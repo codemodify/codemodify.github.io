@@ -1,0 +1,30 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Device Detection</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - SourceForge ]</p>
+    </div>
+    
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/automodule">automodule</a><br/>
+        Small program for enumerate all the PCI and USB devices in system, check if the device is 
+        supported by the kernel, automatically load necessary modules for this devices. Used in small 
+        embedded systems with less disk space and stripped kernel features.
+    </div>
+        
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/ioports-scan">ioports-scan</a><br/>
+        read the start port address and end port address of a card installed in the pc. 
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/usde/">User-space System Device Enumeration</a><br/>
+        The User-space System Device Enumeration (uSDE) facility manages the devices attached to a 
+        computer system. It is responsible for creating, deleting and maintaining the devices and 
+        networking interfaces for the system that it is installed on.
+    </div>
+
+</div>

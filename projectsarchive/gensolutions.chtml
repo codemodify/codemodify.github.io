@@ -1,0 +1,67 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Gen Solutions</p>
+    </div>
+
+    <div id="articleContent">
+        GenSolutions has been an interesting experience. This is a startup I have created in 2011
+        with two more colleagues. During this time we have prototyped and made for the appstore 
+        few apps.
+    </div>
+
+    <br/><br/>
+    <div id="articleHeader">
+        <p id="moto3">iTongue</p>
+    </div>
+    <div id="articleContent">
+        The app that will extract your text from images and translate it into a language
+        of prefference. Everything is as simple as: "Point. Tap. Translate." Six major languages supported.
+
+        <br/><br/>
+        <img class="imageframe" src="projectsarchive/gensolutions-itongue1.png" />
+        <img class="imageframe" src="projectsarchive/gensolutions-itongue3.png" />
+        <img class="imageframe" src="projectsarchive/gensolutions-itongue2.png" />
+    </div>
+
+    <br/><br/>
+    <div id="articleHeader">
+        <p id="moto3">Gift Picker</p>
+    </div>
+    <div id="articleContent">
+        App that lets you sahre private advices with your friends for the gifts you would want to buy.
+
+        <br/><br/>
+        <img class="imageframe" src="projectsarchive/gensolutions-giftpicker1.png" />
+        <img class="imageframe" src="projectsarchive/gensolutions-giftpicker2.png" />
+    </div>
+
+    <br/><br/>
+    <div id="articleHeader">
+        <p id="moto3">Hot Story</p>
+    </div>
+    <div id="articleContent">
+        App that lets you share your fun and unusual moment with frinends.
+
+        <br/><br/>
+        <img class="imageframe" src="projectsarchive/gensolutions-hotstory1.png" />
+        <img class="imageframe" src="projectsarchive/gensolutions-hotstory2.png" />
+    </div>
+
+    <br/><br/>
+    <div id="articleHeader">
+        <p id="moto3">Chiedi Un Preventivo</p>
+    </div>
+    <div id="articleContent">
+        App oriented towards the italian search market. It helps people easily find things 
+        like door repair service providers.
+
+        <br/><br/>
+        <img class="imageframe" src="projectsarchive/gensolutions-chiedi1.png" />
+        <img class="imageframe" src="projectsarchive/gensolutions-chiedi2.png" />
+        <img class="imageframe" src="projectsarchive/gensolutions-chiedi3.png" />
+        <img class="imageframe" src="projectsarchive/gensolutions-chiedi4.png" />
+    </div>
+
+</div>

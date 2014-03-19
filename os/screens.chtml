@@ -1,0 +1,28 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Screens</p>
+    </div>
+
+    <div id="articleContent">
+        I'm very curious what screen-shots you expect to see in a kernel.
+        Any ways, here is the test tube where an OS starts.
+    </div>
+
+
+    <div id="articleContent">
+        1. Start BOCHS, and put a breakpoint when it will load our boot-loader.
+        <img src="os/1.png" alt="" />
+    </div>
+
+    <div id="articleContent">
+        2. See BOCHS breaking at the breakpoint.
+        <img src="os/2.png" alt="" />
+    </div>
+
+    <div id="articleContent">
+        3. Happy debugging.
+        <img src="os/3.png" alt="" /> 
+    </div>
+
+</div>

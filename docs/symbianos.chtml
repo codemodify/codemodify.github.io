@@ -1,0 +1,205 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Symbian S60</p>
+    </div>
+
+    <div id="articleContent">
+
+
+
+<div style="text-align: right;"><span style="font-style: italic;">This
+is Symbian-Guide/Help/Intro for C/C++ programmers.</span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">It is intended to be used as a quick
+bridge and turnaround for newcomers.</span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">It is a result of a direct study of
+the Symbian Press books,</span><br style="font-style: italic;">
+<span style="font-style: italic;">I have tried to explain as I have
+understood and learned.<br>
+<br>
+Information include materials studied from and not only but most
+notably:<br>
+"OS Internals Realtime Kernel Programming"<br>
+"The Accredited Symbian Developer"<br>
+"Effective C++ Programming for Smartphones"<br>
+<br>
+</span></div>
+<br>
+<h2>OS General Concepts</h2>
+<a target="_blank" href="docs/symbianos/general/What-is-an-OS.html">{ What is an OS }</a><br>
+<a target="_blank" href="docs/symbianos/general/OS-Types.html">{ OS Types }</a><br>
+<a target="_blank" href="docs/symbianos/general/Types-of-systems.html">{ Types of systems }</a><br>
+<a target="_blank" href="docs/symbianos/general/System-Structure.html">{ System Structure }</a><br>
+<br>
+<br>
+<h2>Symbian OS</h2>
+<a target="_blank" href="docs/symbianos/symbian/What-is-Symbian-OS.html">{ What is Symbian OS }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Kernel.html">{ Kernel }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Processes-Threads-ActiveObjects.html">{ Processes, Threads, Active Objects }</a><br>
+<br>
+<br>
+<a target="_blank" href="docs/symbianos/symbian/Code-Style-in-Symbian.html">{ Code Style in Symbian }</a>,
+Code style proposed: <a target="_blank" href="docs/symbianos/proposed-coding-styles/string-h.html">{ 1 }</a>
+<a target="_blank" href="docs/symbianos/proposed-coding-styles/string-cpp.html">{ 2 }</a> 
+<a target="_blank" href="docs/symbianos/proposed-coding-styles/main-cpp.html">{ 3 }</a>, 
+<a target="_blank" href="docs/symbianos/symbian/Built-in-Symbian-types.html">{ Built-in Symbian types }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Exception-handling-Leave-concept.html">{ Exception handling - "Leave concept" }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Cleanup-Stack.html">{ Cleanup Stack }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Symbian-Strings.html">{ Symbian Strings }</a>, 
+<a target="_blank" href="docs/symbianos/symbian/Visual-Approach-to-Descriptors.html">{ Visual Approach to Descriptors }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Dynamic-Arrays-and-Buffers.html">{ Dynamic Arrays and Buffers }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Active-Objects-and-Event-driven-Multitasking.html">{ Active Objects and Event-driven Multitasking }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Threads-and-Processes.html">{ Threads and Processes }</a><br>
+<a target="_blank" href="docs/symbianos/symbian/Client-Server-Framework.html">{ Client&#8211;Server Framework }</a><br>
+<br>
+<br>
+<a target="_blank" href="docs/symbianos/symbian-descriptors-explained.pdf">{ Symbian Strings Explained }</a><br>
+<br>
+<br>
+<br>
+<h2>Practical Area 1<br>
+</h2>
+As I was learning I made a series of small but powerfull guides, that
+are intented<br>
+to teach in a easy to take way the key moments in Symbian. The list is
+not final,<br>
+updates will be made along the time.<br>
+<br>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr style="background-color: #dddddd;">
+      <td style="vertical-align: top;">1<br>
+      </td>
+      <td style="vertical-align: top; width: 350px;"><a target="_blank" href="docs/symbianos/examples/1_consoleapplication.zip">{ consoleapplication  }</a></td>
+      <td style="vertical-align: top;">A simple console application
+done using Symbian's SDK but in a <br>
+manier that is very familliar to a C/C++ programer. This will <br>
+give a quick boot on Symbian for anybody.<br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">2<br>
+      </td>
+      <td style="vertical-align: top;"><a target="_blank" href="docs/symbianos/examples/2_consoleapplication_cleanupstack_wrong_way.zip">{ consoleapplication_cleanupstack_wrong_way }</a><br>
+      </td>
+      <td style="vertical-align: top;">Takes the previous sample as a
+base and moves a half step into<br>
+Symbian's world so that we don't loose the C developer on the way.<br>
+The app demonstrates how to not build Symbian apps at that level.<br>
+      <br>
+      </td>
+    </tr>
+    <tr style="background-color: #dddddd;">
+      <td style="vertical-align: top;">3<br>
+      </td>
+      <td style="vertical-align: top;"><a target="_blank" href="docs/symbianos/examples/3_consoleapplication_cleanupstack_good_way.zip">{ consoleapplication_cleanupstack_good_way }</a><br>
+      </td>
+      <td style="vertical-align: top;">Takes the previous sample as a
+base and moves a half step into<br>
+Symbian's world so that we don't loose the C developer on the way.<br>
+The app demonstrates how to correctly build Symbian apps at that level.<br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">4<br>
+      </td>
+      <td style="vertical-align: top;"><a target="_blank" href="docs/symbianos/examples/4_consoleapplication_threads_wrong_way.zip">{ consoleapplication_threads_wrong_way }</a><br>
+      </td>
+      <td style="vertical-align: top;">The same old base as in step
+(1), but moves towards the Symbian's <br>
+multithreading. And demonstrates how to not build threads.<br>
+      <span style="font-weight: bold;">(sample is not ready for
+learning)<br>
+      <br>
+      </span></td>
+    </tr>
+    <tr style="background-color: #dddddd;">
+      <td style="vertical-align: top;">5<br>
+      </td>
+      <td style="vertical-align: top;"><a target="_blank" href="docs/symbianos/examples/5_consoleapplication_threads_good_way.zip">{ consoleapplication_threads_good_way }</a><br>
+      </td>
+      <td style="vertical-align: top;">From step (4) we move towards
+the good way of multi threading.<br>
+And showing the difference.<br>
+      <span style="font-weight: bold;">(sample is not ready for
+learning)<br>
+      <br>
+      </span></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">6<br>
+      </td>
+      <td style="vertical-align: top;"><a target="_blank" href="docs/symbianos/examples/6_consoleapplication_activeobjects_wrong_way.zip">{ consoleapplication_activeobjects_wrong_way }</a><br>
+      </td>
+      <td style="vertical-align: top;">Same easy taking on corners, and
+showing the wrong way of Active Objects - one of the keys in light
+multithreading in Symbian.<br>
+      <br>
+      </td>
+    </tr>
+    <tr style="background-color: #dddddd;">
+      <td style="vertical-align: top;">7<br>
+      </td>
+      <td style="vertical-align: top;"><a target="_blank" href="docs/symbianos/examples/7_consoleapplication_activeobjects_good_way.zip">{ consoleapplication_activeobjects_good_way }</a><br>
+      </td>
+      <td style="vertical-align: top;">This one shows what is needed to
+make step (6) to be correct.<br>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>Practical Area 2</h2>
+As a real product I was working on a camera application with custom and
+extended functionalities based on additions<br>
+to the camera driver engineered at MM Solutions I'm working at.<br>
+<br>
+I made the <a target="_blank" href="docs/symbianos/mmsc.zip">{ camera application }</a> based on the
+support provided on Symbian and Nokia forums.<br>
+<br>
+As a study intention and help for others, here is published the
+application as it
+is present in samples with its basic features.<br>
+<br>
+I did a bit of redesign though. The redesign was possible because I did
+implemented a small SDK called "<a target="_blank" href="docs/symbianos/sdk-mini.zip">{ sdk-mini }</a>"
+that <br>
+implements an approach for UI elements found in Qt from Trolltech.<br>
+<br>
+The sdk-mini is present in the sample camera application above, so you
+don't need to download both archives.<br>
+The sdk-mini archive is put for convinience, so you can take it and
+use/extend for your needs.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>A good study is to take all the views into account</h2>
+<a target="_blank" href="docs/symbianos/WhyNotToSymbian.text">{ Here }</a> I have tried to explain the
+"why" you must look for alternatives if you plan to enter the mobile
+business.
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+    </div>
+
+</div>
+

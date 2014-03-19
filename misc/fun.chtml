@@ -1,0 +1,30 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Fun</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">What you can hear at interviews</p>
+    </div>
+    <div id="articleContent">
+        I have written very large well structured C programs, have extensive knowledge about C compilers, 
+        could describe differences between specific C standards, and would be capable of answering almost 
+        any question regarding C syntax.
+    </div>
+    <div id="articleContent">
+        I have written very large well structured C++ programs and am deeply familiar with the complexities 
+        of the C++ language. I have studied in depth topics such as design patterns.
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">X11</p>
+    </div>
+    <div id="articleContent">
+        <a href="http://xahlee.org/UnixResource_dir/_/The_X-Windows_Disaster.html">{ 1 }</a>
+        <a href="http://www.art.net/~hopkins/Don/unix-haters/x-windows/disaster.html">{ 2 }</a>
+        <a href="http://lists.slug.org.au/archives/slug-chat/2001/07/msg00054.html">{ 3 }</a>
+    </div>
+
+</div>

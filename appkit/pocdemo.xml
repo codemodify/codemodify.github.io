@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>                                          <!-- show that this is an XML file -->
+<?xml-stylesheet type="text/xsl" href="the-web-code/page-template/page.xslt"?>  <!-- show that this XML file needs a template processor -->
+
+<!-- defines the markup for the page start -->
+<page>
+
+    <!-- defines the markup for the page title -->
+    <title>Web 3.0 Usage Sample by nicu</title>
+
+    <!-- defines the markup for the page meta info -->
+    <metaInfo>
+        <author>Carabut Nicolae</author>
+        <description>Carabut Nicolae's Web 3.0 Page sample</description>
+        <keywords>Carabut Nicolae, Carabut, Nicolae, Nicu, Web 3.0</keywords>
+        <http-equiv>content-type="text/html; charset=UTF-8"</http-equiv>
+        <verify-v1>QlF5IDmezj2xsCZVJnNWDFN38Iyh/JIlyBrSl8dFjAU=</verify-v1>
+    </metaInfo>
+    
+    <!-- defines the markup for the skin package used by the page -->
+    <skin>sam</skin>
+
+    <!-- defines the markup for the style-sheets used by the page -->
+    <styleSheets>
+        <url>the-web-code/page-style/reset.css</url>
+        <url>the-web-code/page-style/grid.css</url>
+        <url>the-web-code/page-style/size.css</url>
+        <!-- url>site-skins/tabview.css</url -->
+    </styleSheets>
+
+    <!-- defines the markup for the style-sheets used by the page -->
+    <content>
+    
+        <!-- defines the markup for a grid based layouting -->
+        <grid decoration="width100Percent height100pixels">
+
+            <!-- defines the markup for a row within the grid -->
+            <row>
+                <!-- defines the markup for a cell within the grid -->
+                <cell>
+                    <text id="myTextLabel">This is a "Text"</text> <!-- defines the markup for a TEXT -->
+                </cell>
+            </row> <newLine /> <horizontalLine />
+
+            <!-- defines the markup for a TabView -->
+            <row><cell>
+                <text>This is a "TabView"</text> <newLine />
+                <tabView id="testTabView">
+                    <tab caption="tab1" icon=""><image url="http://www.google.com/logos/Logo_50wht.gif"/></tab>
+                    <tab caption="tab2" icon=""><text>tab 2 content</text></tab>
+                    <tab caption="tab3" icon=""><text>tab 3 content</text></tab>
+                    <tab caption="tab4" icon=""><text>tab 4 content</text></tab>
+                </tabView>
+            </cell></row> <newLine /> <horizontalLine />
+
+            <!-- defines the markup for a PushButton -->
+            <row><cell>
+                <text>This is a "PushButton"</text> <newLine />
+                <pushButton id="button1" text="button" icon="" onClick="" />
+            </cell></row> <newLine /> <horizontalLine />
+
+            <!-- defines the markup for a RadioGroup -->
+            <row><cell>
+                <text>This is a "RadioGroup"</text> <newLine />
+                <radioGroup id="testRadioGroup">
+                    <radio id="radio1" text="radio 1" />
+                    <radio id="radio2" text="radio 2" />
+                    <radio id="radio3" text="radio 3" />
+                    <radio id="radio4" text="radio 4" />
+                </radioGroup>
+            </cell></row> <newLine /> <horizontalLine />
+
+            <!-- defines the markup for a CheckBox -->
+            <row><cell>
+                <text>This is are "CheckBox"</text> <newLine />
+                <checkBox id="checkBox1" text="check box 1" />
+                <checkBox id="checkBox2" text="check box 2" />
+            </cell></row> <newLine /> <horizontalLine />
+
+            <!-- defines the markup for a ComboBox -->
+            <row><cell>
+                <text>This is are "ComboBox"</text> <newLine />
+                <comboBox id="comboBox1" defaultValue="value2">
+                    <item text="value 1" value="value1" />
+                    <item text="value 2" value="value2" />
+                    <item text="value 3" value="value3" />
+                    <item text="value 4" value="value4" />
+                </comboBox>
+            </cell></row>  <newLine /> <horizontalLine />
+            
+            <!-- defines the markup for a TextEdit -->
+            <row><cell>
+                <text>This is a "TextEdit"</text> <newLine />
+                <textEdit id="myTextEdit">
+                    asdasdasd
+                </textEdit>
+                
+                <textEdit id="myRichTextEdit" richText="true">
+                    asdasdasd
+                </textEdit>
+            </cell></row> <newLine /> <horizontalLine />
+
+            <!-- defines the markup for a DataGrid -->
+            <row><cell>
+                <text>This is a "DataGrid"</text> <newLine />
+                <dataGrid id="mydataGrid">
+                    <column id="column1" text="Column 1" /> <column id="column2" text="Column 2" /> <column id="column3" text="Column 3" />
+                    <line> <data>a</data> <data>b</data> <data>c</data> </line>
+                    <line> <data>d</data> <data>e</data> <data>f</data> </line>
+                    <line> <data>g</data> <data>h</data> <data>g</data> </line>
+                </dataGrid>
+            </cell></row> <newLine /> <horizontalLine />
+            
+            <!-- defines the markup for a DataGrid -->
+            <row><cell>
+                <text>This is a "DataGrid"</text> <newLine />
+                <dataGrid id="mydataGrid">
+                    <column id="column1" text="Column 1" /> 
+                    	<column id="column2" text="Column 2" /> 
+                    		<column id="column3" text="Column 3" />
+                    <line> <data>a</data> <data>b</data> <data>c</data> </line>
+                    <line> <data>d</data> <data>e</data> <data>f</data> </line>
+                    <line> <data>g</data> <data>h</data> <data>i</data> </line>
+                    <line> <data>j</data> <data>k</data> <data>l</data> </line>
+                    <line> <data>m</data> <data>n</data> <data>o</data> </line>
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>
+                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                    <line> <data>p</data> <data>q</data> <data>r</data> </line>                    
+                </dataGrid>
+            </cell></row> <newLine /> <horizontalLine />            
+
+        </grid>
+    </content>
+
+</page>

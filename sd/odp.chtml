@@ -1,0 +1,22 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">ODP</p>
+    </div>
+
+    <div id="articleContent">
+        Online Development Platform is an idea to have web-based development environment 
+        to cut spendings within an enterprise. I made concept demo as my diploma work in 2005.
+        It is based on .NET 1.0 + Flash (ActionScript 1.0) + RemoteObjects.
+    </div>
+
+    <div id="articleContent">
+        <a href="sd/odp.7z" class="button">Donwload</a>
+    </div>
+
+    <div id="articleContent">
+        <img src="sd/odp1.png" />
+        <img src="sd/odp2.png" />
+    </div>
+</div>

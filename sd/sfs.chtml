@@ -1,0 +1,15 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Search 4 Stuff</p>
+    </div>
+
+    <br/>
+    <div id="articleContent">
+        <img src="sd/sfs.png" style="vertical-align: middle;"/>
+        
+        Indexing engine. This is an R&D project for fun. Details later.
+    </div>
+
+</div>

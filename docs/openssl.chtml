@@ -1,0 +1,168 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Open SSL</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Generate Cryptic Info</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+// generate RSA private key
+// --- --- --- --- --- --- --- --- --- --- ---
+openssl genrsa -des3 -out id.rsa.pem.private 4096
+// generate RSA public key
+openssl rsa -in id.rsa.pem.private -pubout
+
+// generate DSA private key
+// --- --- --- --- --- --- --- --- --- --- ---
+openssl dsaparam -out id.dsa.pem 4096
+openssl gendsa -des3 -out id.dsa.pem.private.key dsaparam.pem
+// generate DSA public key
+
+// generate Certificate
+// --- --- --- --- --- --- --- --- --- --- ---
+openssl req -new -key id.rsa.pem.private -out id.certificate
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Practical Doc</p>
+    </div>
+    <div id="articleContent">
+        
+        <span style="font-weight: bold; font-family: Courier New;">Be your own
+        Certificate Authority (CA)
+        </span>
+        <hr style="width: 100%; height: 2px;"><small><span
+         style="font-family: Courier New;">about:<br>
+        - be your own CA, create and sign your own certificate requests<br>
+        &nbsp; (it is not the same as self signed certificates).<br>
+        <br>
+        circumstances when this is needed:<br>
+        - you have a secure site and plan to develop an infrastructure based on
+        your certificates<br>
+        - you don't want to pay to some "VeriSign" alike companies just to do
+        the same as you can<br>
+        <br>
+        ho to do it:<br>
+        # install OpenSSL<br>
+        # mkdirhier \<br>
+        &nbsp; /etc/pki_jungle/myCA/private \<br>
+        &nbsp; /etc/pki_jungle/myCA/certs \<br>
+        &nbsp; /etc/pki_jungle/myCA/newcerts \<br>
+        &nbsp; /etc/pki_jungle/myCA/crl<br>
+        </span></small><small><span style="font-family: Courier New;"># cp
+        /etc/ssl/openssl.cnf /etc/pki_jungle/myCA/openssl.config<br>
+        </span></small><small><span style="font-family: Courier New;"># touch </span></small><small><span
+         style="font-family: Courier New;">/etc/pki_jungle/myCA/index.txt<br>
+        # echo '01' &gt; /etc/pki_jungle/myCA/serial<br>
+        <br>
+        // At this step we create a self signed certificate that will be used
+        as our CA's certificate.<br>
+        // In other words we'll be using this certificate to sign other
+        certificate requests.<br>
+        // --- --- --- ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><small><span
+         style="font-family: Courier New;"> ---</span></small><br>
+        <small><span style="font-family: Courier New;"># cd </span></small><small><span
+         style="font-family: Courier New;">/etc/pki_jungle/myCA/<br>
+        # openssl req -config </span></small><small><span
+         style="font-family: Courier New;">openssl.config</span></small><small><span
+         style="font-family: Courier New;"> -new -x509 -extensions v3_ca \<br>
+        &nbsp;&nbsp;&nbsp; -keyout private/myca.key -out certs/myca.crt -days
+        1825<br>
+        </span></small><small><span style="font-family: Courier New;"><br>
+        </span><span style="font-weight: bold; font-family: Courier New;"></span></small><br>
+        <small><span style="font-family: Courier New;">notes:</span><br
+         style="font-family: Courier New;">
+        <strong style="font-weight: normal; font-family: Courier New;">o <span
+         style="font-weight: bold;">myCA</span></strong><span
+         style="font-family: Courier New;"> is our Certificate Authority’s
+        directory.</span><br style="font-family: Courier New;">
+        <strong style="font-weight: normal; font-family: Courier New;">o <span
+         style="font-weight: bold;">myCA/certs</span></strong><span
+         style="font-family: Courier New;"> - where our server certificates
+        will be placed.</span><br style="font-family: Courier New;">
+        <strong style="font-weight: normal; font-family: Courier New;">o <span
+         style="font-weight: bold;">myCA/newcerts</span></strong><span
+         style="font-family: Courier New;"> - where openssl puts the created
+        certificates in PEM (unencrypted), <br>
+        &nbsp;&nbsp;&nbsp; in the form of "<span style="font-style: italic;">cert_serial_number.pem"</span></span><span
+         style="font-family: Courier New;">. This folder is required by OpenSLL.</span><br
+         style="font-family: Courier New;">
+        <strong style="font-weight: normal; font-family: Courier New;">o <span
+         style="font-weight: bold;">myCA/crl</span></strong><span
+         style="font-family: Courier New;"> - where our certificate revokation
+        list is placed.</span><br style="font-family: Courier New;">
+        <strong style="font-weight: normal; font-family: Courier New;">o <span
+         style="font-weight: bold;">myCA/private</span></strong><span
+         style="font-family: Courier New;"> - where our private
+        keys are placed.<br>
+        &nbsp;&nbsp;&nbsp; Be sure that you set restrictive permissions to all
+        your private keys so that they <br>
+        &nbsp;&nbsp;&nbsp; can be read only by root, or the user
+        with whose priviledges a server runs.&nbsp;&nbsp; <br>
+        o </span></small><small style="font-weight: bold;"><span
+         style="font-family: Courier New;">myCA/index.txt</span></small><small><span
+         style="font-family: Courier New;"> - this file and next one serve as a
+        database for OpenSSL<br>
+        o </span></small><small style="font-weight: bold;"><span
+         style="font-family: Courier New;">myCA/serial</span></small><small><span
+         style="font-family: Courier New;"> - contains the next certificate's
+        serial number</span></small><br style="font-family: Courier New;">
+        <small><br style="font-family: Courier New;">
+        <span style="font-family: Courier New;">.</span></small><br
+         style="font-family: Courier New;">
+        <br>
+
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Links</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+
+http://www.securityfocus.com/infocus/1466
+http://www.openssl.org/docs/HOWTO/keys.txt
+http://openssl.org/docs/HOWTO/certificates.txt
+http://www.madboa.com/geek/openssl/
+http://www.mkssoftware.com/docs/man1/openssl_genrsa.1.asp
+http://ospkibook.sourceforge.net/docs/OSPKI-2.4.7/OSPKI-html/keygensign.htm
+http://www.mkssoftware.com/docs/man1/openssl_s_client.1.asp
+
+http://tools.ietf.org/html/rfc4252
+http://tools.ietf.org/html/rfc4253
+http://tools.ietf.org/html/rfc4251
+
+http://en.wikipedia.org/wiki/Digital_signature
+http://en.wikipedia.org/wiki/Message_authentication_code
+http://en.wikipedia.org/wiki/Encryption
+http://en.wikipedia.org/wiki/X.509
+
+http://www.geobytes.com/IpLocator.htm?GetLocation
+http://www.webyield.net/cgi-bin/ipwhois.cgi?addr=82.75.201.81
+        </pre>
+    </div>
+
+</div>

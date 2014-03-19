@@ -1,0 +1,4 @@
+#main-leftarea, #main-leftarea #right-border, #main-rightarea { min-height: 1024px; }
+#main-leftarea { float: left; width: 30%; background: url(leftarea-bg.jpg); position: fixed; }
+#main-leftarea .topbg { background: url(leftarea-topbg.png) repeat-x;
+#main-leftarea #glow { background: url(glow-bg.png) no-repeat; width: 415px; height: 438px; position: absolute; top: 20px; right: 0px; }

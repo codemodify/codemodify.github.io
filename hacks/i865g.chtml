@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">i865G widescreen</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Widescreen on intel based graphics</p>
+    </div>
+    <div id="articleContent">
+        - i865G <br/>
+        - if you use the 915 tool with the 'i810' driver then there can be performance issues <br/>
+        - if you use the the 'intel' driver then there are performance issues <br/>
+    </div>
+
+</div>

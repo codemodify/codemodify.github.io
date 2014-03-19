@@ -1,0 +1,126 @@
+From a Phone user point of view - there is never a difference the way it is made this little gadget.
+So just move on.
+
+
+From beauty of product point of view there is always a difference that actually builds its character.
+
+Who is Symbian for:
+- hardware people that wanted to have a more readable assembler code.
+
+Who is Symbian not for:
+- object oriented people that expect stuff to happen already, because the class name they use, says to do that.
+
+Why Not To Symbian:
+- have to manage the stack by hand:
+    a) cleanup stack - have to make sure that you push/pop correctly; 
+       to this archaic process add the complexity and error proneness of the combination with a TRAP() mechanism.
+
+    b) have to write by hand anything you do about variables and stuff-up you brain not with the task but
+       how to make the compiler happy by doing its job by hand.
+
+- the above point points to the thin intention of the designers to always say:
+    "We have a good system, you just need to understand how to use it."
+    in translation this would sound
+    "We have a useless system, and you're stupid because you do not make the compiler happy."
+    This way they have freed themselves from their direct dutty to manage programs.
+
+- there is no object orientation:
+    (a) The OO in Symbian is kind of having 20% OO intentions and 80% of assembler programing using C++
+        syntax. This leads to a sucky situation when you don't know where are you, and who got you into Symbian.
+    (b) I have heard that Symbian with ease can bring down about any high-flying C++ expert - with time I had
+        to realize that this happens because there is no OOP. The expert would instantly apply OO priciples - but 
+        the headaces as why it is not working is because you can't apply OOP thinkin in rigid linear programing.
+        It is not more than a hackish way to write technical code not in assembler or C - which becomes more worse.
+    (c) By the hardwre limitations - there can't be any OOP. If you want it then move on to a iPhone OS or
+        Windows Mobile - they use more resources - but they do provide OO - that is a direct consequence.
+    (d) The traditional C programing already is more abstract (more OO in Symbian's context, let's put it this way)
+        than Symbian's C++. Simply take the "string" and explain me why in a OO environement I need to spend time 
+        on re-learnign OO in Symbian's "OO" way to understand descriptors (array type of decriptors and pointer type 
+        of descriptors)? If this is OO then why they were not 'wrapped' in corresponding objects and use them by 
+        hiding the implementation ? I do care about memory spending in a program - that is why pointers were invented
+        and used from C to C++.
+        
+- it is a convenient platform to foul just about anybody:
+    The scam called Symbian supported by a series of books, is able to and did mislead technicians,
+    and they being convinced did convinced managers to buy into this. It is a good industry though.
+    Only by this it can be respected.
+
+- archaic ways to write code:
+    Sometimes is just easier to debug assembler code than Symbian's, simply because assembler is linear
+    programming - but wait, add to its complexity to debug the features or intentions of an OO paradigm
+    which you have to take into account - be it in thread context or everywhere else - and you'll get Symbian.
+
+- archaic syntax used:
+    Symbian's C++ is another try to fuck-up C++ and induce the idea that it is scary and unmasterable.
+    The only reason why I still not use Rubby is because I perceive it as a Perl version of Phyton.
+    Archaic things die usually or are less and less used: MFC, Win32, Perl, Php, different codding styles
+    invented inside the commercial companies where developer mostly are coming form MFC and the syntax
+    they use is based on such crap. Things that survived: Trolltech QT, Java, .NET .
+
+- no way to program smoothly:
+    Ex: If you are a windows programmer only, your feature is assured because it does not matter what
+    you did wrote the code for - it will run on a Windows Mobile too as well as on a desktop. This is an example
+    of a superior integration which is almost unique. Question: why I need to kill my brain and not be with my 
+    family in weekends ? to learn Symbian and patch it all the time so it can run with next version ?
+
+- it is a good start for an academic research, maybe less for high demands from people who want to look inside,
+  those people after some time of tryings and bottle-necking are turning back to linux and bsds. This is not 
+  because symbian is such a outstanding product that nobody can 'get it' - it is the opposite - it is some stuff 
+  with a weird design that managed to make money by having strong marketing force in the company.
+  (note: marketing - the process to try to sell something that nobody is buying.)
+  
+  
+  
+  
+Along the written code I made different comments on the code, so you can see its relevance depending on the 
+code/logic you have to write. Here is one of the quotes:
+  
+/**********************************************************
+*
+*	Note on why it is not used the designlessigness 
+* 	and uglyness of the "NewL()" stuff:
+*
+*	- because if it leaves then you leave anyway
+* 	  and you can't do a thing about it
+* 
+*	- because we do not want to do the job of system
+* 	  in every our program by managing some kind of
+* 	  stack definitions... The system is supposed to
+* 	  be preemtive multitasking who does not rely on the
+*	  user-space application's system-object manipulation,
+*	  right ? Otherwise there is no point in all the published
+* 	  books on symbian with obscured and distortioned information,
+* 	  and all the scam may fall down one day. 
+*
+* 	- because you're at the Doc creation stage only,
+* 	  and if the base of the program just crashed
+*	  you do not have reasons to recover from something,
+* 	  there is no such thing as "your program in the system".
+* 
+*	- why trap it ? just to show a stupid message
+*	  that you just crashed ? Write a log instead
+*	  and this way your program gets lighter as a 
+*     final product when you debug it using logs.
+* 	  Any way you can't do much about crashing here, here is why 
+* 	  and here is why you debug it using logs:
+* 	  o the panic messages are useless - as all the stuff else in the system - the level of qulity is achieved only because there is spent 5 times more time in a debut-state of the mind for a product. 
+* 	  o the live-bugs-world of resources system is an unique piece of 'art' that leaves questions at every corner.
+* 	  o there is no so much cofee around to go through the debug cycle again.
+* 
+* 	- it is lighter on money for your business to start considering
+* 	  alternatives as linux, qnx, bsd, windows mobile, iPhone. 
+* 	  The later 2 have superrior and unmatched integration and development cycle.
+* 
+*	- The "Symbian Portability" is a myth from old ages of dragons.
+* 	  This system hardly runs on the same hardware with slightly different
+* 	  release versions. The second "hardware" is a buggy and useless emulator wich runs on windows only.
+* 	  So to develop something reaaly breath taking you need at least:
+* 	  - windows licence - 400 euro,
+* 	  - a symbian licence - ( how much is the membership for the religious sect of the DDK ? )
+* 	  - carbide licence - 4000 euro ?
+* 
+* 	  Sumup: at minimum 5k euro for a developer to do what ? to strugle to draw a cube after you
+* 	  overcome some state-of-the-art uglyness of a framework that pretends to implement MVC.
+*
+**********************************************************/
+

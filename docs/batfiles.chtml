@@ -1,0 +1,16 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">BAT / CMD</p>
+    </div>
+
+    <div id="articleContent">
+        <div class="codebox">
+            <code>   
+                for /f %%f in ('dir /b C:\SqlFiles') do import.cmd C:\SqlFiles %%f 
+            </code>
+        </div>
+    </div>
+
+</div>

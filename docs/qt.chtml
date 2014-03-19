@@ -1,0 +1,14 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Qt</p>
+    </div>
+
+    <div id="articleContent">
+
+        <a target="_blank" href="docs/qt.pdf" class="button">Download</a> the manual.
+        
+    </div>
+
+</div>

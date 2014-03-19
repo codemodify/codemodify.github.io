@@ -1,0 +1,20 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">SBG</p>
+    </div>
+
+    <div id="articleContent">
+        A small platform and corresponding extensions to help small business market.
+    </div>
+
+    <div id="articleContent">
+        <img src="tools/sbg.png" />
+    </div>
+
+    <div id="articleContent">
+        <a href="tools/sbg.7z" class="button">Donwload</a> a glympse 
+    </div>
+
+</div>

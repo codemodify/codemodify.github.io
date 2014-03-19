@@ -1,0 +1,43 @@
+<div id="article">
+
+    <div id="articleHeader">
+        <p id="moto3">IP address spoofing (Extern Info)</p>
+    </div>
+    <div id="articleContent">
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-style: italic;">Is the creation of IP packets with a
+forged (spoofed) source IP address with the purpose to conceal the
+identity of the sender or impersonating another computing system.<br>
+<br>
+The basic protocol for sending data over the Internet and many other
+computer networks is the Internet Protocol ("IP"). The header of each
+IP packet contains, among other things, the numerical source and
+destination address of the packet. The source address is normally the
+address that the packet was sent from. By forging the header so it
+contains a different address, an attacker can make it appear that the
+packet was sent by a different machine.<br>
+<br style="text-decoration: underline;">
+<span style="text-decoration: underline;">Defense against spoofing:<br>
+</span><br>
+- Packet filtering - by doing:<br>
+<span style="font-weight: bold;">"ingress filtering" </span>- which is
+blocking of packets from outside the network with a source address
+inside the network. This prevents an outside attacker spoofing the
+address of an internal machine. <br>
+<span style="font-weight: bold;">"egress filtering"</span> on outgoing
+packets, which is blocking of packets from inside the network with a
+source address that is not inside. <br>
+<br>
+- Upper layers<br>
+Some upper layer protocols provide their own defence against IP
+spoofing. For example, Transmission Control Protocol (TCP) uses
+sequence numbers negotiated with the remote machine to ensure that
+arriving packets are part of an established connection. Since the
+attacker normally can't see any reply packets, he has to guess the
+sequence number in order to hijack the connection. The poor
+implementation in many older operating systems and network devices,
+however, means that TCP sequence numbers can be predicted.<br>
+</span>
+    </div>
+
+</div>

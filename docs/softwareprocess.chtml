@@ -1,0 +1,60 @@
+<html><head>
+
+
+<title>The Ways of Software Process</title>
+
+
+<body><pre>
+
+    The software process is defined by the complex way to take to produce a software product.
+    The complexity and success of the process is tied to one key moment:
+    - communication between people and sites.
+
+
+    Approaches
+
+        Offshore Development
+            o - Use Continuous Integration to Avoid Integration Headaches
+            o - Have Each Site Send Ambassadors to the Other Sites
+            o - Use Contact Visits to build trust
+            o - Don't Underestimate the Culture Change
+            o - Use wikis to contain common information
+            o - Use Test Scripts to Help Understand the Requirements
+            o - Use Regular Builds to Get Feedback on Functionality
+            o - Use Regular Short Status Meetings
+            o - Use Short Iterations
+            o - Use an Iteration Planning Meeting that's Tailored for Remote Sites
+            o - When Moving a Code Base, Bug Fixing Makes a Good Start
+            o - Separate teams by functionality not activity
+            o - Expect to need more documents.
+            o - Get multiple communication modes working early
+            
+            The weak spots of offshore development come from culture and distance with the business.
+            Because agile development works best with close communication and an open culture, agilists 
+            working offshore feel the pain much more than those using plan-driven approaches. But it's still 
+            less pain than the plan-driven methods themselves!
+
+
+
+    Build systems:
+        CruiseControl
+
+
+
+
+
+</pre>
+
+
+<pre>
+Sources:
+http://martinfowler.com/articles/agileOffshore.html
+http://www2.umassd.edu/SWPI/SWPIpage.html
+http://www.acm.org/crossroads/xrds6-4/software.html
+http://www.tantara.ab.ca/info.htm
+
+
+</pre>
+
+
+</body></html>

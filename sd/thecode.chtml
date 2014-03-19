@@ -1,0 +1,180 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">The Code</p>
+    </div>
+
+    <div id="articleContent">
+        A set of high quality components that implement different functionalaties.
+    </div>
+
+    <div id="articleContent">
+        <img src="sd/thecode.png" style="vertical-align: middle;" />
+        <a href="sd/thecode.7z" class="button">Donwload</a>
+    </div>
+
+
+    <div id="articleHeader">
+        <p id="moto3">The Vision 1</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+------------------------------------------------------------
+To have a set of components that are specialized to transform data from one format to another.
+They must be exposed in source code format only.
+They must adhere to a straighforward standard of their usage.
+They must be easy embeddable into applications as complete source tree, or libraries.
+
+What is needed to be able to create
+------------------------------------------------------------
+... software that you control,
+    software that is guaranteed to give you all of the freedoms you need to be in control ...        
+        </pre>
+    </div>
+
+    
+    <div id="articleHeader">
+        <p id="moto3">The Vision 2</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+To have a set of components that are specialized to transform data from one format
+to another. They must be stream-oriented. They must be exposed in source code format
+only. They must adhere to a straighforward standard of their usage. They must be 
+easy embeddable into applications as complete source tree, or libraries.
+They expose two things: encoder and a decoder for the corresponding format.
+
+Why stream oriented
+------------------------------------------------------------
+The current existing applications of the converting tools - exist because of a
+very narrow and speciffic needs. The most of them are implemented to operate 
+directly on files thus creating uneeded wrappers and unreusable components that 
+do not contribute to the technology progress and complicate the process of their
+usage in a wide spread way - thus contribting to the proprietary, inherently
+bad quality and civilization-blocking applications.
+
+What all these will give
+------------------------------------------------------------
+It does not matter what format the data is in. We assume that the input data is in
+plain/raw format and we apply a set of rules to encode the input data into a 
+'encoder' speciffic data format. The input data may be already in some of the 
+encoded formats, but we do not care about that. The sequences of applying the
+encoding/decoding is left to be enforced as an application functionality/policy.
+
+In the end what we'll have is a healthy and speeded up progress in encoding/decoding
+technologies. This is because this project can be used as a test framework, 
+benchmark framework, quality framework, comparison framework for the "ciphers"
+published by the engineers.
+
+It is intended that it will contribute to the benefit of both commercial and open software.
+Comercial - because they use and contribute to a repository of high quality components.
+Open - because the majority will learn and educate of how to write good software.
+There are smart people like mathematicians and sysadmins, but when they write some software
+it is verry obvious that there is a need to have a common practice of comprehencibility.
+The way they write software explains the "why" of the current satate of the software.
+
+One of the most strong points of what is the benefit for this project is:
+having at your choise ready to use components that you can combine the way you want
+gives unlimited ideas of where you can apply them. 
+Ex: want a dedicated app with archiver capabilities that can store meta info in your 
+special format ? Easy:
+1 - having your raw data apply the Zip encoder
+2 - having the raw+Zip data apply the Mp3 encoder
+3 - having the raw+Zip+Mp3 data apply the what ever you want on this stream
+.
+.
+.
+n - having the raw+Zip+Mp3+..+n-1 apply the Jpeg encoder then some stegano to hide data in it
+
+At the end you have a buffer that is a mess and which only you can say what it contains.
+The decoding is done in the oposite way.
+This is provided as a random of usage example, the application is left to enforece the decoder/encoder
+usage sequences. It must have knowlege that some encoders do drop bits of information (like mp3) and
+thus result into the data integrity loss.
+
+Why do it this way ?
+------------------------------------------------------------
+- because "File" object can be abstracted by using different toolkits or native API
+
+- because "engine" writters don't need to write the same thing to be able to expose
+  their creation. They can incorporate their work - the algo itself of doing the core job -
+  into this framework and use it as a test environement, while in the end they endup having 
+  high quality interfaces to their 'engine' that can be used instantly in a standard way.
+
+        Ex: the samples for "libmad" have build their own wrappers for the file 
+        I/O and thus making another "layer/obstacle" to overcome when trying to 
+        integrate this tool in applications.
+
+- because there are different types of existing libraries that implement encoders/decoders
+  and they build in different ways using different tools and languages. So a wrapper is 
+  is needed, and one that is to be a nice interface to the mess it wraps.
+
+- if there are many implementations for a format then it is let for the end user to enforce
+  which one is to be used as backend.
+  
+        Ex: for mp3 we have about 20 decoder implementations, they can be used as backend for
+        the wrapper by specifying so.
+        </pre>
+    </div>
+
+    
+    <div id="articleHeader">
+        <p id="moto3">How to contribute</p>
+    </div>
+    <div id="articleContent" style="font-family: monospace;">
+        <pre>
+In case you have a nice wrapper for something, and you wish to share your expertise,
+then here is what you need to provide in ordedr to adhere to a standard of maintenance and easy life:
+
+- format
+    |
+    | - format_backend
+            |
+            | - ....
+            
+    | - encoder h/cpp
+    | - decoder h/cpp
+    | - test
+         |
+         | - encoder_test.cpp
+         | - decoder_test.cpp
+
+
+Example for the "mp3":
+- mp3
+    |
+    | - format_backend
+            |
+            | - libmad (decoder)
+            | - lame   (encoder)
+            
+    | - encoder.h
+    | - encoder.cpp
+    | - decoder.h
+    | - decoder.cpp
+    | - test
+         |
+         | - encoder_test.cpp
+         | - decoder_test.cpp
+         </pre>
+    </div>
+    
+    
+    <div id="articleHeader">
+        <p id="moto3">Build hints</p>
+    </div>
+    <div id="articleContent">
+        The following is the list of compilers that can be used as a backend for your turnaround.
+    </div>
+    <div id="articleContent">
+        Micro IDE (http://www.micro-ide.com/)  - free C cross-compiler and IDE that works with AVR micro-controllers from ATMEL.
+        <br/>Code Composer (http://www.ti.com/) - compiler/debuger for the hardware from the same manufacturer, targeting ARM.
+        <br/>OnBoard Suite (http://onboardc.sourceforge.net/) - a C compiler, assembler, programmer's editor and a Palm-to-host porting tool.
+        <br/>HP-GCC (http://hpgcc.org/) - comprises the GNU C compiler targeted at the ARM processor of ARM-based HP devices.
+        <br/>The z88 Development Kit (http://www.z88dk.org/) - a z80 C cross compiler based on the Small C, supports features of ANSI C.
+        <br/>ANYC C Compiler (http://anyc.sourceforge.net/) - a retargetable C compiler intended for 8 bit RISC microcontrollers.
+        <br/>CC65 C Cross-Compiler (http://www.cc65.org/) - a derivative of the Small C, generates binaries for the Commodore C64, C128, C16, C116, Plus/4, 600/700 family of compilers.
+    </div>
+    
+</div>

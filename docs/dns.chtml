@@ -1,0 +1,57 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">DNS</p>
+    </div>
+
+    <div id="articleContent">
+        <pre>
+Domain Name System
+
+- associates various sorts of information with so-called "domain names".
+- it serves as the "phone book" for the Internet.
+- it translates human-readable computer hostnames like "www.wikipedia.org" into the IP addresses,
+  IP addresses are used by networking equipment for delivering information.
+
+- stores other information such as the list of "mail exchange servers" that accept e-mail for a given domain.
+
+- by providing keyword-based redirection service, DNS is an essential component of Internet.
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+Types of DNS records
+
+A     - or address record        - maps a hostname to a 32-bit IPv4 address.
+
+AAAA  - or IPv6 address record   - maps a hostname to a 128-bit IPv6 address.
+
+CNAME - or canonical name record - an alias of one name to another.
+                                   This is useful when running multiple services like FTP and WWW from a 
+                                   single IP address. Each service can then have its own entry in DNS like 
+                                   "ftp.example.com" and "www.example.com".
+
+MX    - or mail exchange record  - maps a domain name to a list of "mail exchange servers" for that domain.
+
+PTR   - or pointer record        - maps an IPv4 address to the canonical name for that host.
+                                   Setting up a PTR record for a hostname in the "in-addr.arpa" domain that 
+                                   corresponds to an IP address implements reverse DNS lookup for that address.
+                                   For example "www.icann.net" has the IP address "192.0.34.164", but a PTR record 
+                                   maps "164.34.0.192.in-addr.arpa" to its canonical name, "referrals.icann.org".
+        
+NS    - or name server record    - maps a domain name to a list of DNS servers authoritative for that domain.
+                                   Delegations depend on NS records.
+
+SOA   - or start of authority record - specifies the DNS server providing authoritative information about an 
+                                   Internet domain, the email of the domain administrator, the domain serial 
+                                   number, and several timers relating to refreshing the zone.
+        
+SRV   - generalized service location record. 
+        
+TXT   - allows an administrator to insert arbitrary text into a DNS record. 
+        For example, this record is used to implement the "Sender Policy Framework" and "DomainKeys" specifications. 
+        
+NAPTR - Naming Authority Pointer - are a newer type of DNS record that support regular expression based rewriting.        
+        </pre>
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">OpenSSH Config</p>
+    </div>
+
+    <div id="articleContent">
+        <pre style="font-family: monospace;">
+AddressFamily           "inet"
+AllowGroups             "site-owners"
+AllowTcpForwarding      "no"
+AuthorizedKeysFile      ".ssh/client.public.id"
+ChallengeResponseAuthentication "no"
+Ciphers                 "aes256-cbc,aes256-ctr,blowfish-cbc"
+ClientAliveCountMax     "3"
+ClientAliveInterval     "5"
+HostKey                 "/etc/ssh/server.private.id"
+KeyRegenerationInterval "120"
+ListenAddress           "0.0.0.0"
+LoginGraceTime          "30"
+MACs                    "hmac-sha1,hmac-ripemd160"
+MaxAuthTries            "1"
+PasswordAuthentication  "no"
+Port                    "50000"
+PrintLastLog            "no"
+PrintMotd               "no"
+Protocol                "2"
+PubkeyAuthentication    "yes"
+Subsystem               sftp /usr/libexec/sftp-server
+UsePAM                  "no"
+VersionAddendum         ""
+X11Forwarding           "no"
+        </pre>
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Automated WinSCP</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">The Problem</p>
+    </div>
+    <div id="articleContent">
+        So, you're saying that you're looking for a deployment package that will allow end users 
+        to WinSCP using keys authentication and will permit to SFTP to your site ?
+    </div>
+        
+    <div id="articleHeader">
+        <p id="moto3">The Solution 1</p>
+    </div>
+    <div id="articleContent">
+        Here is what I did: <br />
+        - I have donwloaded the WinSCP from the official site <br />
+        - have exctacted from "cygwin" the openssh's "ssh-keygen" plus all the .DLLs that it needs <br />
+        - have used the "OpenSSH to Putty" from above to convert key from putty to openssh format <br />
+        - have used the "uuidgen.exe" from MS Visual Studio, to generate random passwords for users
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">The Solution 2</p>
+    </div>
+    <div id="articleContent">
+        How it works together: <br />
+        - users gets the package by mail, and a small intro to what it is. <br />
+        - unpacks the tools using a 7zip for example, and runs the "activate account.cmd". <br />
+        - at this point the .cmd file will run any tools is needed to generate an openssh key and to convert it to putty. <br />
+        - at the end it informs the user that in order to activate the account he needs to send an email to the admin, <br />
+          the mail must have attached his public key (I named it cliend.id.pub) . <br />
+        - the admin gets the mail, copies the key into users account on server into "userhome/.ssh/client.id.pub" - this is activation. <br />
+        - client is ready to connect and upload/download files by running "upload data.cmd", this in turn will run WinSCP
+          configured to use keys for authentication, and configured to use the exact options for SHH that you need. <br />
+    </div>
+    
+    <div id="articleHeader">
+        <p id="moto3">Example how I was using this</p>
+    </div>
+    <div id="articleContent">
+        The custom set of tools that I use to allow users to SFTP on my servers to manage their sites is 
+        <a href="hacks/winscp-clean.tar.gz" class="button">here</a>
+    </div>
+
+</div>

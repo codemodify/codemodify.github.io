@@ -1,0 +1,199 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Interesting</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - Interesting - On SourceForge ]</p>
+    </div>
+    
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/tipc">TIPC - Cluster Communication Protocol</a>
+        The Transparent Inter Process Communication protocol allows applications in a clustered 
+        computer environment to communicate quickly and reliably with other applications, 
+        regardless of their location within the cluster.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/qpc">QP State Machine Frameworks</a>
+        QP is a family of ultra-light, state machine frameworks for embedded systems.
+        QP enables true event-driven programming with concurrent UML state machines in C or C++ 
+        without big tools. Runs on bare metal MCUs or with RTOS.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/squeaknos">Squeak No Operating System</a>
+        Squeak is an open, highly-portable Smalltalk-80 implementation, it runs on almost every 
+        operating system, and in bare hardware. What we gonna do with SqueakNOS is getting rid of 
+        the OS under Squeak, and we'll implement all the functionality in Smalltalk.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/genode">Genode OS framework</a>
+        The Genode operating-system framework extends existing kernels (e.g., microkernel or hypervisor)
+        and provides a uniform API for applications. Currently, L4/Fiasco and Linux are supported.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/view-os">View OS: a Process with a View</a>
+        View OS is a user configurable, modular process virtual machine, or system call hypervisor.
+        For each process the user is able to define a "view of the world" in terms of file system,
+        networking, devices, permissions, users, time and so on.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/brickos">BrickOS Alternative LEGO Mindstorms OS</a>
+        BrickOS is an alternative software environment for the LEGO(r) Mindstorms Robotic Invention System.
+        The intent is to allow developers to write C and/or C++ code for the RIS platform.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/uoa">OS patch for User-Oriented Addressing</a>
+        With the support of User-Oriented Addressing, IP addresses can be assigned to users instead of
+        to interfaces, which helps on port resource utilization, identity authentication, and quality
+        of service.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/freebios">FreeBIOS</a>
+        The FreeBIOS project aims to provide a replacement for any computer's firmware, and 
+        support advanced or custom features and configurations. Initial code supports Intel-based 
+        only, but other processors and chipsets will be supported.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/aquosa">Adaptive QUality Of Service Architecture</a>
+        AQuoSA is an open architecture for enhancing the Linux kernel with soft real-time capabilities.
+        A well-designed API allows applications to benefit of kernel-level timing guarantees and 
+        feedback-based QoS control (essential in multimedia applications).
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/kernelbook">Linux Kernel Architecture Book</a>
+        Functional and design specifications documents for Linux 2.4 kernel subsystems, services 
+        and the modules. This is a collaborative work by engineers in industry and in the open source
+        community, with open peer review.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/oslib">OSLib</a>
+        OSLib is a collection of low level functions aimed to help programmers in developing system 
+        software, ranging from small programs for embedded systems to complex Operating System kernels.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/sack">System Abstraction Component Kit</a>
+        This is a collection of libraries contained : Shared memory allocation, configuration script 
+        processor, containers (trees, lists, queues, stacks), file system abstraction, network library, 
+        timers/threads, Image library, Display libraries, and more.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/lak-ips">LAk Intrusion Prevention System</a>
+        A single compilation of source, binaries, scripts and whitepapers on Intrusion Prevention Systems.
+        Modified scripts available to get an IPS started in a matter of minutes. Comprehensive documentation 
+        and regular updates available to stay on the EDGE.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/lkis">Linux Kernel Immune System</a>
+        Linux Kernel Immune System (KIS). KIS is a immune-inspired Intrusion Prevention System (IPS) 
+        developed as part of the Linux kernel. It's a hybrid of anomaly and signature based approaches.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/lscr">Linux x86 Asm Software Development Kit</a>
+        LSCR is a compilation of helping resources for software development in Assembly language under Linux.
+        It includes system calls reference for kernel 2.6+, FASM include files, example applications,
+        and some utilities.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/oscreator">OS Creator</a>
+        An easy to use Development Environment for OS developers to design, write, compile, test, and 
+        publish new or existing OS projects with ease.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/comos">Fernando's Corner @ SF</a>
+        This was originally an OSdev group, but since as members disbanded, I'm continuing to provide 
+        various implemenatitions of software, hardware, operating systems, libraries, and some stuff 
+        related to math and physics.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/rainbow-v3">Rainbow, a simulator of processes</a>
+        A multilanguage simulator of processes and resources in a multitasking environment. It can simulate
+        lots of scheduling and assignment policies and view graphics and statistics. It is useful to 
+        understand and study how processes executes in a computer.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/vishnix">kiOSk Framework</a>
+        An operating system development framework for people who develop an OS in part or full. It can be
+        used to develop a particular portion of an OS
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/kaunet">KauNet</a>
+        KauNet is an emulation platform that can be used for evaluation of protocols and distributed 
+        applications with a high degree of control and reproducability. KauNet uses pattern files to 
+        control bit-error insertion, packet loss, bandwidth and delay.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/cognatio">cognatio</a>
+        Cognatio enables quick online process dump for carrier-grade systems. Typically online core dump 
+        creation requires to stop process for while, and this isn't enough for mission-critical systems. 
+        Cognation enables it by using Copy-On-Write approach.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/kgem">Kernel Generalized Event Management</a>
+        A generic facility that provides a mechanism for kernel events to be communicated to user space 
+        applications, both passively (to know when things happen) and actively (to control access to 
+        certain system resources).
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/ppacc">Precise Process Accounting</a>
+        PPA is a project intended to improve today's per/process accounting by summarizing overall CPU 
+        usage time based on detailed understanding of CPU utilization. Besides using this data for real
+        time decisions, it becomes extremely useful during performan
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/netkit">Netkit</a>
+        Netkit is a self-contained environment that makes it easy and costless to emulate complex network 
+        configurations on a single host machine. Netkit, in itself, is an open source project aiming at 
+        integrating different other open source products.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/weekenders">Unnamed Persistent Pipe</a>
+        Persistent Pipe is an extension of the existing Unnamed Pipe, but it ensures broadcasting of data 
+        to many related (child) processes. By using p-pipe a process can broadcast data to all the related 
+        reader process without any external synchronization
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/dipc">Distributed Inter-Process Comm</a>
+        DIPC stands for Distributed Inter-Process Communication. It enables you to build and program 
+        clusters of Linux computers very easily. It provides, among other things, Transparent Distributed 
+        Shared Memory (DSM). No special hardware required
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/openecc">OpenECC</a>
+        OpenECC enables memory ECC detecting, logging, and recovery in Linux's Kernel.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/linice">Linice - Linux kernel debugger</a>
+        Linice is a source-level kernel debugger for x86 systems with the look and feel of SoftIce 
+        for MS Windows. Break into a running kernel, use breakpoints, single step on modules, kernel, 
+        or user programs. Outputs to VGA, MDA, X Window, serial terminal.
+    </div>
+
+</div>

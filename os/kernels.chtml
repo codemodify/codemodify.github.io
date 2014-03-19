@@ -1,0 +1,35 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Kernel</p>
+    </div>
+
+    <div id="articleContent"><pre>
+is the central component of most OS.
+provide abstraction layer for the resources.
+responsable(system-calls for):
+    -memory management
+    -multitasking
+    -interprocess communication
+    -device management
+
+    --------------------------------------------
+    ...Kernel Types
+
+    - monolithic kernel
+        executes all the code in the same address space, this increases 
+        the performance of the system.
+        
+    - microkernel
+        run most of its services in user space, this improves maintainability 
+        and modularity of the codebase.
+
+    - exokernel
+
+    - multi Kernel
+        
+    - hybrid kernel
+    </pre></div>
+
+</div>
+

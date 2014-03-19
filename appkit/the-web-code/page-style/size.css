@@ -1,0 +1,88 @@
+
+/**********************************************************************
+*   Defines handyu sizes to be used
+**********************************************************************/
+
+.width05pixels      { width: 5px;   }
+.width10pixels      { width: 10px;  }
+.width15pixels      { width: 15px;  }
+.width20pixels      { width: 20px;  }
+.width25pixels      { width: 20px;  }
+.width30pixels      { width: 30px;  }
+.width35pixels      { width: 35px;  }
+.width40pixels      { width: 40px;  }
+.width45pixels      { width: 45px;  }
+.width50pixels      { width: 50px;  }
+.width55pixels      { width: 55px;  }
+.width60pixels      { width: 60px;  }
+.width65pixels      { width: 65px;  }
+.width70pixels      { width: 70px;  }
+.width75pixels      { width: 75px;  }
+.width80pixels      { width: 80px;  }
+.width85pixels      { width: 85px;  }
+.width90pixels      { width: 90px;  }
+.width95pixels      { width: 95px;  }
+.width100pixels     { width: 100px; }
+
+.width10percent     { width: 10%;   }
+.width15percent     { width: 15%;   }
+.width20percent     { width: 20%;   }
+.width25percent     { width: 25%;   }
+.width30percent     { width: 30%;   }
+.width35percent     { width: 35%;   }
+.width40percent     { width: 40%;   }
+.width45percent     { width: 45%;   }
+.width50percent     { width: 50%;   }
+.width55percent     { width: 55%;   }
+.width60percent     { width: 60%;   }
+.width65percent     { width: 65%;   }
+.width70percent     { width: 70%;   }
+.width75percent     { width: 75%;   }
+.width80percent     { width: 80%;   }
+.width85percent     { width: 85%;   }
+.width90percent     { width: 90%;   }
+.width95percent     { width: 95%;   }
+.width100Percent    { width: 100%;  }
+
+
+
+.height05pixels      { height: 5px;   }
+.height10pixels      { height: 10px;  }
+.height15pixels      { height: 15px;  }
+.height20pixels      { height: 20px;  }
+.height25pixels      { height: 20px;  }
+.height30pixels      { height: 30px;  }
+.height35pixels      { height: 35px;  }
+.height40pixels      { height: 40px;  }
+.height45pixels      { height: 45px;  }
+.height50pixels      { height: 50px;  }
+.height55pixels      { height: 55px;  }
+.height60pixels      { height: 60px;  }
+.height65pixels      { height: 65px;  }
+.height70pixels      { height: 70px;  }
+.height75pixels      { height: 75px;  }
+.height80pixels      { height: 80px;  }
+.height85pixels      { height: 85px;  }
+.height90pixels      { height: 90px;  }
+.height95pixels      { height: 95px;  }
+.height100pixels     { height: 100px; }
+
+.height10percent     { height: 10%;   }
+.height15percent     { height: 15%;   }
+.height20percent     { height: 20%;   }
+.height25percent     { height: 25%;   }
+.height30percent     { height: 30%;   }
+.height35percent     { height: 35%;   }
+.height40percent     { height: 40%;   }
+.height45percent     { height: 45%;   }
+.height50percent     { height: 50%;   }
+.height55percent     { height: 55%;   }
+.height60percent     { height: 60%;   }
+.height65percent     { height: 65%;   }
+.height70percent     { height: 70%;   }
+.height75percent     { height: 75%;   }
+.height80percent     { height: 80%;   }
+.height85percent     { height: 85%;   }
+.height90percent     { height: 90%;   }
+.height95percent     { height: 95%;   }
+.height100Percent    { height: 100%;  }

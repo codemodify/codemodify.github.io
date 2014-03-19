@@ -1,0 +1,51 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Intro</p>
+    </div>
+
+    <div id="articleContent">
+        What I'm trying to work on here are ideas based on hours of research and observations,
+        made on the currently existing OSes - at least those that are in the public domain - and
+        observations of how people work and react to what an OS can offer as a final product.
+    </div>
+
+    <div id="articleContent">
+        The project here also takes and incorporates a good part of the processes and behaviours
+        that I had observed while studying biology. That is a very important and probably a key moment
+        in the approach to create a 'ecosystem' - that as an instance can be an OS.
+    </div>
+
+    <div id="articleContent">
+        Why it is a key moment is because the whole strive of humans is to immitate a biological behaviour
+        using a network of universities where they study math,physics,chemistry,biology and apply those
+        'small' steps of discoveries into practice by using machines.
+    </div>
+
+    <div id="articleContent">
+        What also I try to illustrate here is an Operating System built around the ideas about what a
+        free and shapeless communication must offers. Often a free communication is blocked by commercials
+        whos only care are for money and big numbers in sales and market share. Therefore the computer
+        science is the same for last 20-30 years.
+    </div>
+
+    <div id="articleContent">
+        You may find here cases where are explored ideas of open and closed systems, and their interdependence,
+        as well here you can freely explore with no law penalties ideas of structures found in society such as:
+        mafia organisation, government organisation, democracy type of ruling, etc - taken as a policy and model
+        to manage and create the ecosystem where the internal apps must flourish. This can try to challenge 
+        different security models, time schedulling, resource managebility - against the hardware availability.
+        A pretty complex experiment to simulate for instance how prcessors are made available to the 'world'
+        in context of "mafia","democracy","comunism" or any other type of rulling. I expect the results 
+        to prove to be a pattern well known by 'many'; Possible solutions also may crack in.
+    </div>
+
+    <div id="articleContent">
+        Some pointers of what is the current maturity level of the project: <br/>
+
+        <img src="os/overview.png" />
+    </div>
+
+</div>
+

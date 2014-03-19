@@ -1,0 +1,193 @@
+<div id="article">
+    
+    <div id="articleContent">
+
+
+<div style="text-align: left; font-family: Courier New;"><small><span
+ style="font-weight: bold;">Sony-Ericsson
+W900i</span><small> + <span style="font-weight: bold;">USB
+Bluetooth Dongle</span></small><small> + <span
+ style="font-weight: bold;">FreeBSD<br>
+<br>
+<br>
+</span></small><small>
+</small></small>
+<div style="text-align: right;"><small><small><span
+ style="color: rgb(153, 153, 153); font-style: italic;">Note: freebsd
+6.1, bluetooth(soleil)<br>
+<br>
+</span><small>
+</small></small></small>
+<div style="text-align: left;"><small><br>
+<br>
+<small>
+</small></small>
+<ol>
+  <small><small> </small></small>
+  <li><small><small><a href="#Bluetooth_Manual_Setup"><big><span
+ style="font-weight: bold;">Bluetooth Manual Setup</span></big></a></small></small></li>
+  <small><small> </small></small>
+  <li><small><small><a href="#Get_the_devices_information"><big><span
+ style="font-weight: bold;">Get the device's information</span></big></a></small></small></li>
+  <small><small> </small></small>
+  <li><small><small><a style="font-weight: bold;" href="#Pairing"><big>Pairing</big></a></small></small></li>
+  <small><small> </small></small>
+  <li><small><small><a href="#File_Transfer_PC_as_a_client"><big
+ style="font-weight: bold;">File Transfer, PC as a client</big></a></small></small></li>
+  <small><small> </small></small>
+  <li><small><small><a href="#Sending_Files_from_W900i_to_PC"><big><span
+ style="font-weight: bold;">Sending Files from W900i to PC</span></big></a></small></small></li>
+  <small><small> </small></small>
+  <li><small><small><a href="#Bluetooth_Automatic_Setup"><big><span
+ style="font-weight: bold;">Bluetooth Automatic Setup</span></big></a></small></small></li>
+  <small><small></small></small>
+</ol>
+<small><small><br>
+<br>
+<br>
+</small></small>
+<hr style="width: 100%; height: 2px;"><small><br>
+<br>
+<span style="font-weight: bold;"><a name="Bluetooth_Manual_Setup"></a>Bluetooth
+Manual Setup<br>
+</span><br>
+#su<br>
+#kldload ng_ubt<br>
+#<span style="font-style: italic;">..............Insert_The_Bluetooth_Dongle_Into_Usb....................<br>
+</span>#dmesg<br>
+<span style="font-style: italic;">ubt0: vendor 0x1131 ISSCBTA, rev
+1.10/3.73, addr 2</span><br style="font-style: italic;">
+<span style="font-style: italic;">ubt0: vendor 0x1131 ISSCBTA, rev
+1.10/3.73, addr 2</span><br style="font-style: italic;">
+<span style="font-style: italic;">ubt0: Interface 0 endpoints:
+interrupt=0x81, bulk-in=0x82, bulk-out=0x2</span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">ubt0: Interface 1 (alt.config 5)
+endpoints: isoc-in=0x83, isoc-out=0x3; wMaxPacketSize=49; nframes=6,
+buffer size=294</span><br>
+<span style="font-style: italic;"><br>
+</span>#cp /usr/share/examples/netgraph/bluetooth/rc.bluetooth
+/etc/bluetooth/rc.bluetooth<br>
+#chmod 544 /etc/bluetooth/rc.bluetooth<br>
+#sh /etc/bluetooth/rc.bluetooth start ubt0<br>
+<span style="font-style: italic;">#......do_the_operations_you_need.......<br>
+</span>#sh /etc/bluetooth/rc.bluetooth
+stop ubt0<small><br>
+<span style="font-style: italic;"></span></small><br>
+<br>
+<small>
+</small></small>
+<hr style="width: 100%; height: 2px;"><small><br>
+<br>
+<span style="font-weight: bold;"><a name="Get_the_devices_information"></a>Get
+the device's information</span><br>
+<br>
+#hccontrol -n ubt0hci inquiry<br>
+<br>
+From what we get, we check only for a line like: "BD_ADDRD:
+00:12:ee:d5:4f:a2"<br>
+"BD_ADDRD" - is a kind of MAC for bluetooth devices. This
+address is used in further references<br>
+to the device when we want to work with it.&nbsp; To make it more easy,
+in "/etc/bluetooth/hosts" we add an alias to this address as follows:<br>
+<small style="font-style: italic; color: rgb(153, 153, 153);"><small>/etc/bluetooth/hosts</small><br>
+</small>00:12:ee:d5:4f:a2&nbsp;&nbsp; w900i<br>
+<br>
+At this point the next two commands are equal:<br>
+"hccontrol -n ubthci Remote_Name_Request 00:12:ee:d5:4f:a2"<br>
+"hccontrol -n ubthci Remote_Name_Request w900i"<br>
+<br>
+In both cases it will return "W900i".<br>
+<br>
+The same alias can be used with programs like:<br>
+l2ping - pings bluetooth devices<br>
+hcsecd - used at "pairing" - a mechanism to crypt the connection
+channel between the PC and the phone.<br>
+obexapp - /usr/ports/comms/obexapp - application used for filetransfer
+between PC and mobile phone.<br>
+<br>
+<br>
+<small>
+</small></small>
+<hr style="width: 100%; height: 2px;"><small><br>
+<br>
+<a name="Pairing"></a><span style="font-weight: bold;">Pairing</span><br>
+<br>
+#vim /etc/bluetooth/hcsecd.conf<br>
+&nbsp;&nbsp;&nbsp; device{<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; bdaddr&nbsp;&nbsp;&nbsp;
+00:12:ee:d5:4f:a2;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; name&nbsp;&nbsp;
+&nbsp;&nbsp; "Sony-Ericsson W900i";<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; key&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; nokey;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; pin&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; "1111";<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+#hcsecd<br>
+#.......In_The_Phone_At_The_Bluetooth_Options_Search_For_Devices_And_Add_The_Discovered_PC_enter_1111_as_a_pin_when_asked.............<br>
+<small><br>
+<br>
+</small><small>
+</small></small>
+<hr style="width: 100%; height: 2px;"><small><br>
+<br>
+<span style="font-weight: bold;"><a name="File_Transfer_PC_as_a_client"></a>File
+Transfer, PC as a client<br>
+<br>
+</span>#cd /usr/ports/comms/obexapp<br>
+#make install clean<br>
+#rehash<br>
+#obexapp -C FTRN -a w900i -f<br>
+obex&gt;cd, ls, get, put....&nbsp; <small>read the man for more help<br>
+</small><br>
+<br>
+<span style="font-weight: bold;"></span><small>
+</small></small>
+<hr style="width: 100%; height: 2px;"><small><span
+ style="font-weight: bold;"><br>
+<br>
+<a name="Sending_Files_from_W900i_to_PC"></a>Sending Files from W900i
+to PC<br>
+<br>
+</span>#mkdir /home/nicu/bluetooth<small><br>
+<span style="font-weight: bold;"></span></small>#obexapp -s -S -C 10 -u
+nicu -r /home/nicu/bluetooth/<br>
+#....Send_Files_From_W900i_To_PC_trhough_Bluetooth<br>
+<br>
+<span style="font-weight: bold;"></span><br>
+<small>
+</small></small>
+<hr style="width: 100%; height: 2px;"><small><br>
+<br>
+<span style="font-weight: bold;"><a name="Bluetooth_Automatic_Setup"></a>Bluetooth
+Automatic Setup </span><small>(first,
+it is best if you do <a href="#Bluetooth_Manual_Setup">this</a> first,
+this is needed to get such info as BD_ADDRD,</small><small>
+vendor, etc)<span style="font-weight: bold;"><br>
+<br>
+</span></small>/boot/loader.conf<br>
+&nbsp;&nbsp;&nbsp; ng_ubt_load="YES"<br>
+<br>
+/etc/usbd.conf<br>
+&nbsp;&nbsp;&nbsp; device "USB Bluetooth"<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+vendor 0x1131<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+product 0x0000<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+attach "/etc/bluetooth/rc.bluetooth start
+${DEVNAME}"<small><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; attach "</small>/etc/bluetooth/rc.bluetooth
+stop ${DEVNAME}"<small><br>
+<br>
+</small></small></div>
+<small><small><span style="font-weight: bold;"></span></small></small></div>
+<small><small></small></small></div>
+
+
+    </div>
+
+</div>

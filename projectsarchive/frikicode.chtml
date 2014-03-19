@@ -1,0 +1,24 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Friki Code</p>
+    </div>
+
+    <div id="articleContent">
+        Friki Code is an adhoc team of 2 people that wanted to take on some challenges that 
+        they were facing in their lives. So the BigHouse project was initiated to address 
+        those challenges.
+        
+        <br/><br/>
+        <img class="imageframe" src="projectsarchive/frikicode-bighouse1.png" />
+        <img class="imageframe" src="projectsarchive/frikicode-bighouse2.png" />
+        <img class="imageframe" src="projectsarchive/frikicode-bighouse3.png" />
+        
+        
+        <br/><br/>
+        We went to the Paris 2012 hackathon with this 
+        <a href="http://www.hackathon.io/719" target="_blank"><img src="projectsarchive/frikicode-angel.png" /></a>
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Serving System</p>
+    </div>
+
+<div id="articleHeader"><pre>
+
+        The server that currently is serving you this info is running:
+            Operating System: <a href="http://www.freebsd.org/about.html">{ FreeBSD }</a>
+            HTTP Server: Webserver module from <a href="/research-lab/computing/sd/mysd/server/internet-server-platform/docs/index.html">{ Internet Server Platform }</a>
+            FTP Server: <a href="http://vsftpd.beasts.org/#about">{ The most secure and fastest FTP server for UNIX systems }</a>
+
+        Development stations that I have been using, were powered by these OSes:
+            FreeBSD -        <-- past 1
+                    PCBSD,
+            Mac OS X,
+            OpenSolaris,
+            Linux - Gentoo,
+                    Ubuntu,
+                    Debian,  <-- past 2
+                    GOS,
+            FreeSpire,
+            Mandriva,
+                    Fedora,
+            Windows          <-- current
+
+        <span style="font-family: monospace;">
+        // ---- IP list that you probably will want to keep your SSH away from
+        
+            69.13.240.92,       85.190.0.3,         213.92.8.7,
+            78.159.139.21,      78.159.142.180,     89.186.207.1,
+            159.148.97.48,      78.159.142.218,     78.159.146.112,
+            88.191.15.122,      61.217.111.107,     211.22.160.131,
+            200.27.132.8,       212.112.232.92,     218.24.162.85,
+            125.46.50.77,       122.152.52.244,     116.38.112.243, 
+            78.37.170.222,      218.76.217.234,     78.83.154.2,
+            122.152.52.244,     222.124.169.163,    200.111.54.82,
+            190.24.131.35,      218.22.25.10,       221.204.251.32,
+            211.22.160.131,     218.108.10.118,     121.1.133.193,
+            200.62.152.196,     202.141.47.83,      200.62.152.196,
+            202.66.92.197,      125.131.121.232     218.104.164.138,
+            124.115.244.34,     210.5.162.42,       58.47.168.236,
+            200.55.210.220,     125.65.109.103,     85.187.185.18,
+            202.194.3.61,       211.21.28.238,      202.194.3.6,
+            203.130.216.47,     212.203.9.64,       202.53.76.66,
+            211.203.181.5
+        </span>
+
+</pre></div>
+
+
+</div>

@@ -1,0 +1,191 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Python</p>
+    </div>
+    
+    <div id="articleHeader">
+        <p id="moto3">Classes</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+# defining an empty class
+class EmptyClass:
+    __init__()
+    pass
+
+class TestClass( EmptyClass ):
+    """ this is a test class that inherits another class """
+    
+    __init__( self, someAditionalParametersIfNeeded ):
+        EmptyClass.__init__() 
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Comments</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+# this is a one line comment
+
+"""
+this is a multi-line comment, and the first line in comment
+this is the second line in the multi-line comment
+"""
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Data Types</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+""" ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+dictionaries ( C- std::map<> )
+"""
+
+dictionary = { "server":"mpilgrim", "database":"master", "uid":"sa", "pwd":"secret" }
+
+# access
+print dictionary["server"]
+
+# add
+dictionary["newKey"] = "newValue"
+dictionary["NewKey"] = "NewValue"
+
+# edit
+dictionary["newKey"] = "newValue2"
+
+# delelte
+del dictionary["newKey"]
+dictionary.clear()
+
+# mixed data types in a dictionary
+dictionary["stringKey"] = 41
+dictionary[3] = "stringValue"
+
+# 'keys()', 'values()', 'items()'
+dictionary.keys()   # ['server',  'uid', 'database', 'pwd']
+dictionary.values() # ['mpilgrim','sa',  'master',   'secret']
+dictionary.items()  # [ ('server','mpilgrim'), ('uid','sa'), ('database','master'), ('pwd','secret') ]
+
+
+""" ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+lists ( C- std::list<> )
+"""
+
+testList = [ "a", "b", "mpilgrim", "z", "example" ]
+
+# access
+print testList[-1] # from the end to the begin
+print testList[0]  
+print testList[3]
+print testList[0:3] # sublist of items from begin to end
+print testList[-1:-2] # sublist of items from the end to being
+
+# add
+testList.append( "newItem" )
+testList.insert( 2, "newItem" )
+testList.extend( ["item1","item2"] )
+
+# difference between append() and extend()
+testList = [ 'a', 'b', 'c' ]
+testList.extend( ['d','e','f'] ) # [ 'a', 'b', 'c',  'd','e','f'  ]  - 6 elements
+testList.append( ['d','e','f'] ) # [ 'a', 'b', 'c', ['d','e','f'] ]  - 4 elements
+
+# searching
+testList.index( "example" ) # 5
+if "example" in testList: # True or False
+
+# delete
+testList.remove( "example" )
+testList.pop() # removes and return the last element in the list
+
+# list operators
+testList = [1,2]
+testList = testList + [3,4]
+testList += [3,4]
+testList = [1,2]*3  # the repeater '*' puts n-times in the list existing values
+                # the result is: [1,2, 1,2, 1,2]
+
+
+""" ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+tuples ( C- std::list<> ) - an immutable list, 
+                            a tuple can not be changed in any way once it is created,
+                            a tuple can be used as a key for dictionary
+"""
+
+testTuple = ( "a", "b", "mpilgrim", "z", "example" )
+
+# access - is the same as for a list
+
+# converting from 'tuple' to 'list' and back
+testList = list( testTuple )
+testTuple = tuple( testList )
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Functions</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+def testFunction( parameter ):
+    """ 
+        this comment is called doc-comment.
+        the doc-string is available at runtime as an attribute of the
+        function as follows: testFunction.__doc__
+    """
+
+
+def isNumberPair( number ):
+    """ checks if a number is pair. returns true/false """
+    
+    return ( number % 2 )
+
+
+def fibonacci( number )
+    """ calculates the Fibonacci number """
+    
+    if n > 1 :
+        return n * fibonacci(n-1)
+    else
+        return 1
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Introspection</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+""" the posibility of python to find information about the objects, using their attributes """        </pre>
+        </pre>
+    </div>
+    
+    <div id="articleHeader">
+        <p id="moto3">Variables</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+# string formating
+%d - number
+%s - string
+%f - floating point numbers
+
+# example
+uid = "sa"
+pwd = "secret"
+
+pwd + " is not a good password for " + uid # secret is not a good password for sa
+"%s is not a good password for %s" % (pwd, uid) # secret is not a good password for sa
+
+userCount = 6
+"Users connected: %d" % (userCount, ) # Users connected: 6
+"Users connected: " + userCount       # errrorrrrr
+        </pre>
+    </div>
+
+</div>

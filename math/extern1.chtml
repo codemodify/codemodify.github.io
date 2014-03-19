@@ -1,0 +1,85 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">jsaka</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">source: http://perso.enst.fr/~jsaka/</p>
+    </div>
+    <div id="articleContent">
+
+<div style="margin-left: 40px;"><small><span style="font-weight: bold;">El&eacute;ments
+de th&eacute;orie des
+automates </span><br>
+<span style="color: rgb(102, 102, 102);">o Sommaire, introduction aux
+chapitres et table des mati&egrave;res (</span><a
+ style="color: rgb(102, 102, 102);"
+ href="_resources_/jsaka/intros-table_ext.pdf">pdf</a><span
+ style="color: rgb(102, 102, 102);">)</span><br
+ style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);">o Avant-propos (</span><a
+ style="color: rgb(102, 102, 102);"
+ href="_resources_/jsaka/avant-propos_ext.pdf">pdf</a><span
+ style="color: rgb(102, 102, 102);">)</span><br
+ style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);">o La machine &agrave; diviser
+de Monsieur Pascal (</span><a style="color: rgb(102, 102, 102);"
+ href="_resources_/jsaka/prologue_ext.pdf">pdf</a><span
+ style="color: rgb(102, 102, 102);">)<br>
+o Errata (14 Avril 2007, 17 p) (<a
+ href="_resources_/jsaka/eta-errata-070414.pdf">pdf</a>)<br>
+<br>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">On the
+decidability of bounded valuedness of transducers</span><span
+ style="color: rgb(0, 0, 0);"> (<a
+ href="_resources_/jsaka/DFV071101.pdf">pdf</a>)<br>
+</span></span><b>On a divisibility property of Fibonacci polynomials </b>(<a
+ href="_resources_/jsaka/DPFP.pdf">pdf</a>)<br>
+<b>Powers of rationals modulo 1 and rational base number systems </b>(<a
+ href="_resources_/jsaka/RBNS-rev.pdf">pdf</a>, <a
+ href="_resources_/jsaka/RBNS-abs.html">abstract</a>)<br>
+<b>On the Representation of Numbers in a Rational Base </b>(<a
+ href="_resources_/jsaka/TH-WORDS05.pdf">pdf</a>,<a
+ href="_resources_/jsaka/TH-WORDS05-abs.html">abstract</a>)<br>
+<b>The universal automaton</b>
+(<a href="_resources_/jsaka/TUA.pdf">pdf</a>)<br>
+<b>Conjugacy and equivalence of weighted automata and functional
+transducers </b>(<a href="_resources_/jsaka/CEWAFT.pdf">pdf</a>, <a
+ href="_resources_/jsaka/CEWAFT-abs.html">abstract</a>)<br>
+<b>Sequential ? </b>(<a href="_resources_/jsaka/SEQU.pdf">pdf</a>, <a
+ href="_resources_/jsaka/SEQU-abs.html">abstract</a>)<br>
+<b>The Language, the Expression and the (small) Automaton </b>(<a
+ href="_resources_/jsaka/LESA.pdf">pdf</a>, <a
+ href="_resources_/jsaka/LESA-abs.html">abstract</a>)<br>
+<b>Inside Vaucanson </b>(<a href="_resources_/jsaka/INS-VAUC.pdf">pdf</a>,
+<a href="_resources_/jsaka/INS-VAUC-abs.html">abstract</a>)<br>
+<b>The rational skimming theorem </b>(<a
+ href="_resources_/jsaka/RST.pdf">pdf</a>, <a
+ href="_resources_/jsaka/RST-abs.html">abstract</a>)<br>
+<b>On the equivalence of Z-automata </b>(<a
+ href="_resources_/jsaka/EZA.pdf">pdf</a>, <a
+ href="_resources_/jsaka/EZA-abs.html">abstract</a>)<br>
+<b>How expressions can code for automata </b>(<a
+ href="_resources_/jsaka/HECCA.pdf">pdf</a>, <a
+ href="_resources_/jsaka/HECCA-abs.html">abstract</a>)<br>
+<b>Derivatives of rational expressions with multiplicity </b>(<a
+ href="_resources_/jsaka/DWM.pdf">pdf</a>, <a
+ href="_resources_/jsaka/DWM-abs.html">abstract</a>)<br>
+<b>Introducing Vaucanson </b>(<a href="_resources_/jsaka/INT-VAUC.pdf">pdf</a>,<a
+ href="_resources_/jsaka/INT-VAUC-abs.html">abstract</a>)<br>
+<b>Conjugacy and equivalence of weighted automata </b>(<a
+ href="_resources_/jsaka/CEWA.pdf">pdf</a>)<br>
+<b>Representation of Numbers in Rational Base and the Mahler's Problem </b>(<a
+ href="_resources_/jsaka/RNRB.pdf">pdf</a>)<br>
+<a href="http://perso.enst.fr/%7Ejsaka/PROJ-VAUC/proj-vauc.html"><b>Projet
+Vaucanson</b></a><br>
+</small>
+<b><small><a href="http://perso.enst.fr/%7Ejsaka/ENSG/ensg.html">Enseignement</a><br>
+</small><br>
+</b></div>    
+    
+    </div>
+
+</div>

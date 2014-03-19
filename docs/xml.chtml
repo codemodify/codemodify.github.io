@@ -1,0 +1,55 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">XML</p>
+    </div>
+
+    <div id="articleContent"><pre>
+XML - eXtended Markup Language
+
+XML - uses markup tags as well as HTML, but unlike HTML, XML describes the content
+	instead of presentation of the content, as HTML do.
+	
+
+
+	
+####### Where does XML come from? What is its status?
+
+XML is a simplified subset of the Standard Generalized Markup Language (SGML). 
+SGML was standardized in 1986, based on the Generalized Markup Language invented by IBM in 1969. 
+XML was simplified for more general use on the Web and as a data interchange format.
+The simplifications don't detract from XML's extensibility, but make it easier for anyone to write valid XML. 
+It has also been simplified so that a parser can easily and quickly verify that documents are well-formed and valid.
+
+The XML specification is an accepted recommendation awaiting formal acceptance as a standard by the W3C. 
+The sister DOM specification, for programmatic access to XML documents is a proposed recommendation of the W3C. 
+The DOM specification has been more recently developed, but all or most XML parsers like the 
+IBM XML for Java (XML4J) Parser have been keeping up with and tracking the latest DOM specification.
+
+
+
+
+####### DTD
+
+If you do create new tags, you must define, or constrain, them by writing grammar rules -
+also called a Document Type Declaration (DTD), these grammar rules are defined in the XML specification. 
+
+They specify:
+	Which tags are allowed within certain other tags
+	Which tags and attributes are optional
+	
+With regard to a DTD, an XML document can do any of the following:
+	Refer to a DTD, using a URI.
+	Include a DTD inline as part of the XML document.
+	Omit a DTD altogether. Without a DTD, an XML document can be checked for well-formedness, but not for validity.
+
+Rule:
+An XML document is *VALID* if its content conforms to the rules in its DTD. Validity allows an application
+to make sure the XML data is complete, is formatted properly, and has appropriate attribute values. It
+also allows an application to construct valid XML that conforms to that DTD, which is a very powerful
+feature.
+
+    </pre>
+    </div>
+
+</div>

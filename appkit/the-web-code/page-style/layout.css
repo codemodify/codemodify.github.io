@@ -1,0 +1,44 @@
+
+/**********************************************************************
+*   Defines layout properties to be used by bape content
+**********************************************************************/
+.backgroundAttachmentScroll   { background-attachment: scroll;      }
+.backgroundAttachmentFixed    { background-attachment: fixed;       }
+.backgroundImageAtTopLeft     { background-position: top-left;      }
+.backgroundImageAtTopCenter   { background-position: top center;    }
+.backgroundImageAtTopRight    { background-position: top right;     }
+.backgroundImageAtCenterLeft  { background-position: center left;   }
+.backgroundImageAtCenterCenter{ background-position: center center; }
+.backgroundImageAtCenterRight { background-position: center right;  }
+.backgroundImageAtBottomLeft  { background-position: bottom left;   }
+.backgroundImageAtBottomCenter{ background-position: bottom center; }
+.backgroundImageAtBottomRight { background-position: bottom right;  }
+.backgroundImageRepeatOnXonly { background-repeat: repeat-x;        }
+.backgroundImageRepeatOnYonly { background-repeat: repeat-y;        }
+.backgroundImageRepeatOnXandY { background-repeat: repeat;          }
+.backgroundImageNoRepeat      { background-repeat: no-repeat;       }
+
+.outlineDashed         { outline-style: dashed; outline-width: 1px; }
+.outlineNormal         { outline-style: solid; outline-width: 1px;  }
+.outlineColorWhite     { outline-color: rgb(255,255,255);           }
+.outlineColorBlack     { outline-color: rgb(0,0,0);                 }
+.outlineClolorGrey     { outline-color: rgb(192,192,192);           }
+.outlineColorGoogleBlue{ outline-color: #c9d7f1;                    }
+
+.noPadding{ padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; }
+.noMargins{ margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;     }
+
+.alignHorizontalLeft  { text-align: left;       }
+.alignHorizontalRight { text-align: right;      }
+.alignHorizontalCenter{ text-align: center;     }
+.alignVerticalTop     { vertical-align: top;    }
+.alignVerticalBottom  { vertical-align: bottom; }
+.alignVerticalCenter  { vertical-align: middle; }
+
+/* .alignHorizontalLeft{ position: absolute; left: 0px; right: auto; }
+.alignHorizontalRight{ position: absolute; left: auto; right: 0px; }
+.alignHorizontalCenter{ position: absolute; left: 50%; right: auto; margin-left: -30%; }
+.alignVerticalTop{ position: absolute; top: 0px; bottom: auto; }
+.alignVerticalBottom{ position: absolute; top: auto; bottom: 0px; }
+.alignVerticalCenter{ position: absolute; top: 50%; bottom: auto; margin-top: -10%; }
+.alignVerticalCenter2{ vertical-align: middle; }  */

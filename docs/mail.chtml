@@ -1,0 +1,78 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Mail</p>
+    </div>
+
+    <div id="articleContent">
+        <pre>
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+Large all-in-one e-mail clients such as Mozilla Thunderbird and Microsoft Outlook 
+combine the operations of an MTA, MDA, MRA and MUA in one application.
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+
+MX Record - Mail Exchange Record
+- a type of resource record in the Domain Name System (DNS) specifying how Internet e-mail should be routed. 
+- MX records point to the servers that should receive an e-mail, and their priority relative to each other.
+- An MX record must contain a host name defined by an "A record".
+- In CNAME records aliases are not allowed to be used as MX record host names.
+  Nor is it allowed to have an MX record pointing to an IP address.
+  
+- When an e-mail message is sent through the Internet, the sending mail transfer agent makes a DNS query requesting 
+  the MX record for the recipient's domain name, which is the portion of the e-mail address following the "@".
+  This query returns a list of host names of mail exchange servers accepting incoming mail for that domain, 
+  together with a preference number. The sending agent then attempts to establish an SMTP connection to one of these servers, 
+  starting with the one with the smallest preference number, delivering the message to the first server with which a 
+  connection can be made. If no MX records were present, a second request is made for the A record of the domain instead.
+
+- The MX mechanism does not grant the ability to provide mail service on alternative ports, 
+  nor does it provide the ability to distribute mail delivery across a set of equal-priority mail servers by assigning a 
+  weighting value to each one. As of 2004, some mail transfer agents support the use of SRV records for publishing the 
+  IP addresses, ports, priority, and weights of mail servers.
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+
+MUA - Mail User Agent (mutt, pine)
+- functions by connecting to a mailbox into which e-mail has been fetched and stored in a particular format.
+- it typically presents a simple user interface to perform tasks with the mail.
+- an MUA by itself is incapable of sending or retrieving mail.
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+
+MSA - Mail Submission Agent
+- program that receives "electronic mail" messages from a MUA and contacts the MTA for delivery.
+
+(Many MTAs act as an MSA as well, but there are also programs that are specially designed as MSAs without full MTA functionality.
+ Historically in Internet mail, both MTA(acceptance of locally-destined mail from other domains) and 
+ MSA(acceptance of submitted mail from local users) functions were both performed by MTAs using the same protocol - SMTP. )
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+
+MTA - Mail Transfer Agent ( Sendmail, Postfix, Microsoft Exchange Server, Exim, qmail )
+- program that transfers "electronic mail" messages from one computer to another.
+- in context of DNS it is also called "mail transport agent", "message transfer agent", "mail server" or "mail exchanger".
+
+- it receives messages from: another MTA(relaying), MSA, MUA(acting as MSA itself)
+
+(many MTAs have basic MDA functionality built in)
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+
+MDA - Mail Delivery Agent ( procmail )
+- program that accepts incoming "electronic mail" messages and distributes them to: 
+  individual mail-boxes - if the destination account is on local machine, 
+  forwards to another SMTP server - if destination is on a remote server.
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+
+MRA - Mail Retrieval Agent ( fetchmail, getmail, retchmail )
+
+- program that fetches mail from a remote mail server and works with an MDA to deliver mail to a local inbox.
+
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo
+        </pre>
+    </div>
+
+</div>

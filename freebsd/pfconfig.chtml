@@ -1,0 +1,90 @@
+<div id="article">
+    
+    <div id="articleContent">
+        <pre>
+#####################################################################################
+# Macros.
+
+loopbackInterface = "lo0"
+externalInterface = "tun0"
+internalInterface = "bge0"
+
+localNetwork="192.168.1.0/24"
+
+
+
+
+#####################################################################################
+# Tables.
+
+table <guysAllowedToConnectToSSH> const {   }
+
+
+
+
+#####################################################################################
+# Options.
+
+set block-policy drop
+set debug none
+set fingerprints "/etc/pf.os"
+#set limit { frags 5000, src-nodes 10000, states 10000, tables, 1000, table-entries 200000 }
+set loginterface none
+set optimization normal
+#set ruleset-optimization none
+set skip on $loopbackInterface
+set skip on $internalInterface
+#set state-policay floating
+#set timeout
+
+
+
+
+#####################################################################################
+# Normalization.
+
+scrub in all
+
+
+
+
+#####################################################################################
+# Queueing: rule-based bandwidth control.
+#altq on $ext_if bandwidth 2Mb cbq queue { dflt, developers, marketing }
+#queue dflt bandwidth 5% cbq(default)
+#queue developers bandwidth 80%
+#queue marketing  bandwidth 15%
+
+
+
+
+#####################################################################################
+# Translation.
+
+#nat on $externalInterface from $internalInterface:network to any -> ($externalInterface)
+#nat on tun0 from 192.168.1.0/24 to any -> 83.97.26.87
+#nat on xl0 from 192.168.1.0/24 to any -> 83.97.26.87
+nat on $externalInterface from $localNetwork to any -> $externalInterface
+
+
+
+#####################################################################################
+# Filtering.
+
+pass in all
+pass out all
+
+pass out quick on lo0 from any to any
+pass in quick on lo0 from any to any
+
+pass out quick on $internalInterface from any to any
+pass in quick on $internalInterface from any to any
+
+
+pass out quick on $externalInterface from any to any
+pass in quick on $externalInterface from any to any
+
+        </pre>
+    </div>
+
+</div>

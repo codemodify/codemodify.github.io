@@ -1,0 +1,1323 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">PF</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">PF - The Packet Filter</p>
+    </div>
+    <div id="articleContent">
+
+<big><big><small><small><small><big><big> <big><big><small><small><small><big><big>
+<big><big><small><small> <big><big><small><small> </small></small></big></big></small></small></big></big></big></big></small></small></small></big></big></big></big></small></small></small></big></big>
+<div style="text-align: right;"><small><span
+ style="font-style: italic; color: rgb(153, 153, 153);">Server
+solutions based on <span style="font-weight: bold;">PF</span></span><br>
+</small></div>
+<small><br>
+<br>
+Packet Filtering (<span style="font-weight: bold;">Firewall</span>),
+Network Address Translation (<span style="font-weight: bold;">NAT</span>),<span
+ style="font-weight: bold;"> Load Balancing</span>,<br>
+<span style="font-weight: bold;">Antispam</span> Protection,
+Quality of Service control (<span style="font-weight: bold;">QoS</span>).<br>
+<br>
+<span style="font-style: italic; color: rgb(153, 153, 153);">secure
+networks, connect multiple hosts to an external network through a
+single network interface, </span><br
+ style="font-style: italic; color: rgb(153, 153, 153);">
+<span style="font-style: italic; color: rgb(153, 153, 153);">balance
+load between multiple servers, manage bandwidth, and keep logs of its
+activity.<br>
+</span><span style="color: rgb(0, 0, 0);"><br>
+</span></small>
+<hr style="width: 100%; height: 2px;"><small><span
+ style="color: rgb(0, 0, 0);"><br>
+<br>
+<br>
+<big><big><span style="font-weight: bold;">....Starting PF</span><br>
+</big></big><br>
+<span style="color: rgb(51, 51, 255);">manually:</span></span></small><small><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);"><br>
+</span></span></span></small>
+<table style="width: 400px; height: 86px;" border="0" cellpadding="0"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><small><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(153, 0, 0);">"pfctl
+-f /etc/pf.conf"<span style="color: rgb(0, 0, 0);"> - loads the config
+file<br>
+      </span></span></span></small></td>
+      <td style="vertical-align: top;">|<br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -nf /etc/pf.conf"<span
+ style="color: rgb(0, 0, 0);"> - parse but don't load </span></span></span></small></td>
+      <td>|<br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -Nf /etc/pf.conf"<span
+ style="color: rgb(0, 0, 0);"> - load only NAT rules </span></span></span></small></td>
+      <td> <small><big><span style="font-style: italic;">|</span></big><span
+ style="font-weight: bold; font-style: italic;"> Load</span></small></td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -Rf /etc/pf.conf"<span
+ style="color: rgb(0, 0, 0);"> - load only fiter rules </span></span></span></small></td>
+      <td>|<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="width: 539px; height: 1px;" border="0" cellpadding="0"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><small><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(153, 0, 0);">"pfctl
+-F nat"<span style="color: rgb(0, 0, 0);"> - flush the NAT rules<br>
+      </span></span></span></small></td>
+      <td style="vertical-align: top;">|<br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -F queue"<span
+ style="color: rgb(0, 0, 0);"> - flush the queue rules<br>
+      </span></span></span></small></td>
+      <td>|<br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -F rules"<span
+ style="color: rgb(0, 0, 0);"> - flush the filter rules </span></span></span></small></td>
+      <td> <small><big><span style="font-style: italic;">|</span></big><span
+ style="font-weight: bold; font-style: italic;"> Flush</span></small></td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -F all"<span
+ style="color: rgb(0, 0, 0);"> - flush everything that was loaded from
+config file<br>
+      </span></span></span></small></td>
+      <td>|<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="width: 656px; height: 38px;" border="0" cellpadding="0"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><small><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(153, 0, 0);">"pfctl
+-e"</span></span></small><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);"><span style="color: rgb(0, 0, 0);"> -
+enables the PF<br>
+      </span></span></span></small></td>
+      <td style="vertical-align: top;"><small>&nbsp;rules are not
+loaded. to
+load them, use commands above.<br>
+      </small></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><small><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(153, 0, 0);">"pfctl
+-d"</span></span></small><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);"><span style="color: rgb(0, 0, 0);"> -
+disables the PF</span></span></span></small></td>
+      <td style="vertical-align: top;"><small>&nbsp;rules are not
+unloaded.</small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);"><span style="color: rgb(0, 0, 0);"></span></span></span></small>
+<table style="width: 412px; height: 37px;" border="0" cellpadding="0"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -sn"<span
+ style="color: rgb(0, 0, 0);"> - show current NAT rules<br>
+      </span></span></span></small></td>
+      <td> |<br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -sr" <span
+ style="color: rgb(0, 0, 0);">- show current filter rules<br>
+      </span></span></span></small></td>
+      <td> |<br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -ss"<span
+ style="color: rgb(0, 0, 0);"> - show current state table<br>
+      </span></span></span></small></td>
+      <td> | <small style="font-weight: bold; font-style: italic;">Show</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -si" <span
+ style="color: rgb(0, 0, 0);">- show filter stats and counters<br>
+      </span></span></span></small></td>
+      <td> |<br>
+      </td>
+    </tr>
+    <tr>
+      <td><small><span style="color: rgb(0, 0, 0);"><span
+ style="color: rgb(153, 0, 0);">"pfctl -sa" </span></span></small><small><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);">- show all info possible<br>
+      </span></span></span></small></td>
+      <td> |<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<small><span style="color: rgb(51, 51, 255);">automatically:</span><br>
+<span style="color: rgb(153, 0, 0);">1) "vi /etc/rc.conf"<br>
+pf="YES"<br>
+pf_rules="/etc/pf.conf"<br>
+pf_flags=<br>
+<br>
+2) "reboot"<br>
+<br>
+</span></small>
+<hr style="width: 100%; height: 2px;"><small><span
+ style="color: rgb(153, 0, 0);"><br>
+<br>
+<br>
+</span></small><small><span style="color: rgb(0, 0, 0);"><big><big><span
+ style="font-weight: bold;">..../etc/pf.conf<br>
+<br>
+</span><small><small>Keywords: <span style="font-style: italic;"><span
+ style="font-weight: bold;">set</span>, <span
+ style="font-weight: bold;">scrub</span>, <span
+ style="font-weight: bold;">rdr</span>, <span
+ style="font-weight: bold;">nat</span>, <span
+ style="font-weight: bold;">binat</span>, <span
+ style="font-weight: bold;">block</span>, <span
+ style="font-weight: bold;">pass<br>
+</span></span><br>
+The file is divided into 7 sections (advised to keep them in this
+order):<br>
+<div
+ style="background-color: rgb(204, 204, 204); color: rgb(0, 0, 102);">#################################################################<br>
+# <span style="font-weight: bold;">Macros</span> - user defined
+variables that can hold
+IP-addresses, interface-names, ports, etc...<br>
+<br>
+#################################################################<br>
+# <span style="font-weight: bold;">Tables -</span> structures to hold
+lists of IP addresses<br>
+<br>
+#################################################################<br>
+# <span style="font-weight: bold;">Options</span> - "set" - various
+options to control how PF works<br>
+<br>
+#################################################################<br>
+# <span style="font-weight: bold;">Scrub</span> - "scrub" - rules for
+reprocessing the packets to normalize and defragment them<br>
+<br>
+#################################################################<br>
+# <span style="font-weight: bold;">Queueing</span> - bandwidth control
+and packet prioritization<br>
+<br>
+#################################################################<br>
+# <span style="font-weight: bold;">Translation</span> - "rdr", "nat",
+"binat" - controls NAT and packet redirection<br>
+<br>
+#################################################################<br>
+# <span style="font-weight: bold;">Filtering</span> -
+"antispoof", "block", "pass" - selective filtering or blocking of
+packets<br>
+</div>
+<br>
+<br>
+</small></small></big></big></span></small>
+<hr style="width: 100%; height: 2px;"><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><br>
+<span style="font-weight: bold;">Macros:</span><br>
+o - starts with a letter.<br>
+o - may contain letters, digits, underscore.<br>
+o - can't be a reserved word.<br>
+<br>
+</small></small></big></big></span></small>
+<table style="text-align: left; width: 438px; height: 38px;" border="0"
+ cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><small>&nbsp;Ex:</small><br>
+      </td>
+      <td style="vertical-align: top; color: rgb(153, 0, 0);"><small><big><big><small><small>&nbsp;
+internetInterface = "bcm0"</small></small></big></big></small></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>&nbsp;Usage:</small></small></big></big></span></small></td>
+      <td style="vertical-align: top;"><small
+ style="color: rgb(153, 0, 0);"><big><big><small><small>&nbsp; block in
+on $</small></small></big></big></small><small
+ style="color: rgb(153, 0, 0);"><big><big><small><small>internetInterface
+from any to any</small></small></big></big></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><br>
+      </small></small></big></big></span></small></td>
+    </tr>
+  </tbody>
+</table>
+<small><span style="color: rgb(0, 0, 0);"><big><big><small><small><br>
+</small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>Ex of macro as
+list:<br>
+<span style="color: rgb(153, 0, 0);">friends = "{ 192.168.1.1,
+10.0.2.5, 192.168.43.53 }"</span><br>
+<br>
+Ex of macro defined recursively:<br>
+<span style="color: rgb(153, 0, 0);">host1 = "192.168.1.1"</span><br
+ style="color: rgb(153, 0, 0);">
+</small></small></big></big></span></small><small
+ style="color: rgb(153, 0, 0);"><big><big><small><small>host2 =
+"192.168.1.2"<br>
+allHosts = "{" $host1, $host2 "}"<br>
+</small></small></big></big></small><br>
+<small><span style="color: rgb(0, 0, 0);"><big><big><small><small>$allHosts
+- expands to </small></small></big></big></span></small><small
+ style="color: rgb(153, 0, 0);"><big><big><small><small>192.168.1.2, </small></small></big></big></small><small
+ style="color: rgb(153, 0, 0);"><big><big><small><small>192.168.1.2</small></small></big></big></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small> <br>
+<br>
+<br>
+</small></small></big></big></span></small>
+<hr style="width: 100%; height: 2px;"><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><br>
+<span style="font-weight: bold;">Lists</span>:<br>
+o - are defined by specifying items between <span
+ style="font-weight: bold;">{</span> and <span
+ style="font-weight: bold;">}</span>.<br>
+o - permit to apply a rule to a set of items.<br>
+<br>
+Ex:<br style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">interface = "bcm0"</span><br
+ style="color: rgb(153, 0, 0);">
+<span style="color: rgb(153, 0, 0);">block out on $interface from {
+192.168.1.1, 10.5.32.6 } to any</span><br>
+<br>
+What happens - when <span style="font-weight: bold;">pfctl</span>
+encounters a list during the loading of the rulesets, it creates
+multiple<br>
+rules for each item in the list. This way the above expands to:<br>
+</small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="color: rgb(153, 0, 0);">block out on bcm0 from 192.168.1.1 to
+any</span><br>
+</small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="color: rgb(153, 0, 0);">block out on bcm0 from 10.5.32.6 to any</span><br>
+</small></small></big></big></span></small><br>
+<small><span style="color: rgb(0, 0, 0);"><big><big><small><small><br>
+</small></small></big></big></span></small>
+<hr style="width: 100%; height: 2px;"><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><br>
+<span style="font-weight: bold;">Tables:</span><br>
+o - used to hold a group if IP addresses, the lookup time is very fast.<br>
+<br>
+When to use:<br>
+o - source and/or destination address in <span
+ style="font-style: italic; color: rgb(0, 0, 153);">filter</span><span
+ style="color: rgb(0, 0, 153);">, </span><span
+ style="font-style: italic; color: rgb(0, 0, 153);">scrub</span><span
+ style="color: rgb(0, 0, 153);">, </span><span
+ style="font-style: italic; color: rgb(0, 0, 153);">NAT</span><span
+ style="color: rgb(0, 0, 153);">, </span><span
+ style="font-style: italic; color: rgb(0, 0, 153);">redirection</span>
+rules.<br>
+o - translation address in <span
+ style="font-style: italic; color: rgb(0, 0, 153);">NAT</span> rules.<br>
+o - redirection address in <span
+ style="font-style: italic; color: rgb(0, 0, 153);">redirection</span>
+rules.<br>
+o - destination address in <span
+ style="font-style: italic; color: rgb(0, 0, 153);">route-to, reply-to,
+dup-to</span> filter rule options.<br>
+<br>
+Prototype: <span style="font-weight: bold; color: rgb(0, 0, 153);">table</span>
+<span style="font-style: italic;">&lt;</span><span
+ style="color: rgb(204, 0, 0); font-style: italic;">tableName</span><span
+ style="font-style: italic;">&gt;</span> <span
+ style="color: rgb(0, 0, 153); font-weight: bold;">const/persist</span><span
+ style="font-style: italic; color: rgb(102, 51, 0);">&nbsp;</span> <span
+ style="font-style: italic;">{</span><span
+ style="color: rgb(51, 153, 153); font-style: italic;"> <span
+ style="color: rgb(51, 102, 102);">list_of_values</span></span><span
+ style="font-style: italic;"> }</span><br>
+o - <span style="color: rgb(0, 0, 153);">const</span> - the content
+can not be chaged once the table is created. If not specified then <br>
+the content can be modified at any time.<br>
+o - <span style="color: rgb(0, 0, 153);">persist</span> - causes the
+kernel to keep the table in memorym, even if no rules refer to it.
+Otherwire the kernel<br>
+will remove it when the last rule that reference it is flushed.<br>
+<br>
+Example:<br>
+<span style="color: rgb(0, 0, 153); font-weight: bold;">table</span> <span
+ style="color: rgb(204, 0, 0);">&lt;goodGuys&gt;</span> <span
+ style="color: rgb(51, 102, 102);">{ 192.0.2.0/24 }</span><br>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">table</span> <span
+ style="color: rgb(204, 0, 0);">&lt;rfc1918&gt;</span> <span
+ style="font-weight: bold; color: rgb(0, 0, 153);">const</span> <span
+ style="color: rgb(51, 102, 102);">{ 192.168.0.0/16, 172.16.0.0/12,
+10.0.0.0/8 }</span><br>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">table</span> <span
+ style="color: rgb(204, 0, 0);">&lt;spamers&gt;</span> <span
+ style="color: rgb(0, 0, 153); font-weight: bold;">persist</span><span
+ style="color: rgb(0, 0, 0);"> file</span> "/etc/spammers" - (the
+content is read from a file taht would contain a list of IP <br>
+addresses and/or CIDR network blocks, one per line. Any line beginning
+with # is treated as a comment and ignored.)<br>
+<br style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">block in on fxp0 from
+&lt;spammers&gt; to any</span><br>
+<br>
+Address matching:<br>
+<span style="color: rgb(102, 0, 0);">table &lt;goodguys&gt; {
+172.16.0.0/16, !172.16.1.0/24, 172.16.1.100 }</span><br>
+<span style="color: rgb(102, 0, 0);">block in on dc0 all</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">pass&nbsp; in on dc0 from
+&lt;goodguys&gt; to any<br>
+<br>
+</span><small><span style="font-style: italic;">Any packet coming in
+through dc0 will have its source address matched against the table
+&lt;goodguys&gt;:</span><br style="font-style: italic;">
+<span style="font-style: italic;">- 172.16.50.5 - narrowest match is
+172.16.0.0/16; packet matches the table and will be passed</span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">- 172.16.1.25 - narrowest match is
+!172.16.1.0/24; packet matches an entry in the table but that entry is
+negated (uses the "!" modifier); packet does not match the table and
+will be blocked</span><br style="font-style: italic;">
+<span style="font-style: italic;">- 172.16.1.100 - exactly matches
+172.16.1.100; packet matches the table and will be passed</span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">- 10.1.4.55 - does not match the
+table and will be blocked<br>
+<br>
+</span><big style="font-weight: bold;"><br>
+</big></small></small></small></big></big></span></small>
+<hr style="width: 100%; height: 2px;"><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big
+ style="font-weight: bold;"><br>
+Options</big><big>:<br>
+o - controls PF's operations<br>
+<br>
+<span style="color: rgb(102, 0, 0);">set block-policy [ drop | return ]</span>
+- sets the default behavior for <span style="font-style: italic;">filter</span>
+rules that specify the block action.<br>
+</big></small></small></small></big></big></span></small>
+<div style="margin-left: 40px;"><small>drop - packet is silently
+dropped.<br>
+return - a TCP RST packet is returned for blocked TCP packets and an
+ICMP Unreachable packet is returned for all others.<br>
+<small><span style="font-style: italic;">Note that individual filter
+rules can override the default response. The default is drop.</span></small><br
+ style="font-style: italic;">
+</small></div>
+<small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><br>
+<span style="color: rgb(102, 0, 0);">set debug [ none | urgent | misc |
+loud ] </span>- sets PF's debugging level. Default is <span
+ style="color: rgb(102, 0, 0);">urgent</span>.<br>
+</big></small></small></small></big></big></span></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(102, 0, 0);">none</span> - none<br>
+<span style="color: rgb(102, 0, 0);">urgent</span> - debug messages
+generated for serious errors(to see status from the packet
+normalizer/scrubber and for state <span style="color: rgb(102, 0, 0);">creation</span>
+failures).<br>
+<span style="color: rgb(102, 0, 0);">misc</span> - debug messages
+generated for various errors(to see status from the passive OS
+fingerprinter).<br>
+</small></div>
+<small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><br>
+<span style="color: rgb(102, 0, 0);">set fingerprints </span><span
+ style="font-style: italic;"><span style="color: rgb(102, 0, 0);">file</span>
+- </span>Sets the file to load operating system fingerprints from. For
+use with passive OS fingerprinting. The default is /etc/pf.os.<br>
+<br>
+</big><big><span style="color: rgb(102, 0, 0);">set limit [ frags |
+src-nodes | states | tables | table-entries ] </span><span
+ style="font-style: italic;"><span style="color: rgb(102, 0, 0);">value</span>
+- </span>Set various limits on pf's operation.<br>
+</big></small></small></small></big></big></span></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(102, 0, 0);">frags</span> - maximum number of
+entries in the memory pool used for packet reassembly (scrub rules).
+Default is 5000.<br>
+<span style="color: rgb(102, 0, 0);">src-nodes</span> - maximum number
+of entries in the memory pool used for tracking source IP addresses
+(generated by the sticky-address and source-track options). Default is
+10000.<br>
+</small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(102, 0, 0);">states - <span
+ style="color: rgb(0, 0, 0);">maximum number of entries in the memory
+pool used for state table entries (filter rules that specify keep
+state). Default is 10000.<br>
+</span></span></big></small></small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(102, 0, 0);">tables - <span
+ style="color: rgb(0, 0, 0);">maximum number of tables that can be
+created. The default is 1000.<br>
+</span></span></big></small></small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(102, 0, 0);">table-entries <span
+ style="color: rgb(0, 0, 0);">- the overall limit on how many addresses
+can be stored in all tables. The default is 200000. If the system has
+less than 100MB of physical memory, the default is set to 100000.</span></span></big></small></small></small></big></big></span></small><br>
+</div>
+<small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><br>
+<span style="color: rgb(102, 0, 0);">set loginterface </span><span
+ style="font-style: italic; color: rgb(102, 0, 0);">interface </span><span
+ style="color: rgb(0, 0, 0);">- Sets the interface for which PF should
+gather statistics such as bytes in/out and packets passed/blocked.
+Statistics can only be gathered for one interface at a time. Note that
+the match, bad-offset, etc., counters and the state table counters are
+recorded regardless of whether loginterface is set or not. To turn this
+option off, set it to none. The default is none.<br>
+<br>
+<span style="color: rgb(102, 0, 0);">set optimization [ normal |
+high-latency | aggressive | conservative ]</span> - Optimize PF for
+corresponding network environments.<br>
+</span></big></small></small></small></big></big></span></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(102, 0, 0);">normal
+- <span style="color: rgb(0, 0, 0);">suitable for almost all networks.</span><br>
+</span></span></big></small></small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(102, 0, 0);">high-latency
+- <span style="color: rgb(0, 0, 0);">high latency networks such as
+satellite connections.</span><br>
+</span></span></big></small></small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(102, 0, 0);">aggressive
+- <span style="color: rgb(0, 0, 0);">aggressively expires connections
+from the state table. This can greatly reduce the memory requirements
+on a busy firewall at the risk of dropping idle connections early.</span><br>
+</span></span></big></small></small></small></big></big></span></small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(0, 0, 0);"><span style="color: rgb(102, 0, 0);">conservative
+- <span style="color: rgb(0, 0, 0);">extremely conservative settings.
+This avoids dropping idle connections at the expense of greater memory
+utilization and slightly increased processor utilization.<br>
+<br>
+<small><span style="font-style: italic;">The default is normal.</span></small><br>
+</span></span></span></big></small></small></small></big></big></span></small></div>
+<small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><span
+ style="color: rgb(0, 0, 0);"><br>
+<span style="color: rgb(102, 0, 0);">set ruleset-optimization [ none |
+basic | profile ]</span> - Control operation of the PF ruleset
+optimizer. The default is <span style="font-style: italic;">none</span>.<br>
+</span></big></small></small></small></big></big></span></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(102, 0, 0);">none</span> - disable the optimizer
+altogether.<br>
+<span style="color: rgb(102, 0, 0);">basic</span> - enables the
+following ruleset optimizations:<br>
+</small>
+<div style="margin-left: 40px;"><small>o - remove duplicate rules<br>
+o - remove rules that are a subset of another rule<br>
+o - combine multiple rules into a table when advantageous<br>
+o - re-order the rules to improve evaluation performance<br>
+</small></div>
+</div>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(102, 0, 0);">profile</span> - uses the currently
+loaded ruleset as a feedback profile to tailor the ordering of quick
+rules to actual network traffic.<br>
+</small></div>
+<small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><br>
+<br>
+<big><big><span style="color: rgb(102, 0, 0);">set skip on </span><span
+ style="font-style: italic; color: rgb(102, 0, 0);">interface</span><span
+ style="color: rgb(102, 0, 0);"> -</span> Skip all PF processing on
+interface. This can be useful on loopback interfaces where filtering,
+normalization, queueing, etc, are not required. This option can be used
+multiple times. By default this option is not set.</big></big><br>
+<big><big><br>
+<br>
+<span style="color: rgb(102, 0, 0);">set state-policy</span> [ if-bound
+| group-bound | floating ] - Sets PF's
+behavior when it comes to keeping state. This behavior can be
+overridden on a per rule basis. The default is <span
+ style="font-style: italic;">floating</span>.<br>
+</big></big></small></small></small></big></big></span></small></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(102, 0, 0);">if-bound</span> - states are bound to
+the interface they're created on. If traffic matches a state table
+entry but is not crossing the interface recorded in that state entry,
+the match is rejected. The packet must then match a filter rule or will
+be dropped/rejected altogether.<br>
+<span style="color: rgb(102, 0, 0);">group-bound</span> - same behavior
+as if-bound except packets are allowed to cross interfaces in the same
+group, i.e., all ppp interfaces, etc.<br>
+<span style="color: rgb(102, 0, 0);">floating </span>- states can
+match packets on any interface. As long as the packet matches a state
+entry and is passing in the same direction as it was on the interface
+when the state was created, it does not matter what interface it's
+crossing, it will pass.<br>
+</small></div>
+<small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><big><br>
+<br>
+<span style="color: rgb(102, 0, 0);">set timeout [ interval | frag |
+src.track ] <span style="font-style: italic;">value</span></span> -
+Set various timeouts (in seconds).<br>
+</big></big></small></small></small></big></big></span></small></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(102, 0, 0);">interval</span> - seconds between
+purges of expired states and packet fragments. The default is 10.<br>
+<span style="color: rgb(102, 0, 0);">frag</span> - seconds before an
+unassembled fragment is expired. The default is 30.<br>
+<span style="color: rgb(102, 0, 0);">src.track</span> - seconds to keep
+a source tracking entry in memory after the last state expires. The
+default is 0 (zero).<br>
+</small></div>
+<small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><big><br>
+<br>
+Example:<br>
+<div style="background-color: rgb(192, 192, 192);">
+<span style="color: rgb(102, 0, 0);">set timeout interval 10</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set timeout frag 30</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set limit { frags 5000, states
+2500 }</span><br style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set optimization high-latency</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set block-policy return</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set loginterface dc0</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set fingerprints "/etc/pf.os.test"</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set skip on lo0</span><br
+ style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">set state-policy if-bound</span><br>
+</div>
+<br>
+<br>
+<br>
+</big></big></small></small></small></big></big></span></small></small>
+<hr style="width: 100%; height: 2px;"><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><big><br>
+<span style="font-weight: bold;">Scrub:<br>
+</span>http://www.openbsd.org/faq/pf/scrub.html<br>
+<br>
+<br>
+<br>
+</big></big></small></small></small></big></big></span></small></small>
+<hr style="width: 100%; height: 2px;"><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><big><br>
+</big></big></small></small></small></big></big></span></small></small><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;">Queueing:</span></small></small></big></big></span></small></small></small></big></big><br>
+<small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><big>http://www.openbsd.org/faq/pf/queueing.html<br>
+<br>
+</big></big></small></small></small></big></big></span></small></small>
+<hr style="width: 100%; height: 2px;"><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><small><big><big><br>
+</big></big></small></small></small></big></big></span></small></small><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;">Translation:</span></small></small></big></big></span></small></small></small></big></big><br>
+<small>o - NAT is a way to map an entire network (or networks) to a
+single IP address.<br>
+o - Typically, your internal network will be setup to use one or more
+of these network blocks. They are:<br>
+&nbsp;&nbsp;&nbsp; 10.0.0.0/8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(10.0.0.0 - 10.255.255.255)<br>
+&nbsp;&nbsp;&nbsp; 172.16.0.0/12&nbsp;&nbsp;&nbsp; (172.16.0.0 -
+172.31.255.255)<br>
+&nbsp;&nbsp;&nbsp; 192.168.0.0/16&nbsp;&nbsp; (192.168.0.0 -
+192.168.255.255)<br>
+o - for the packets to be able to travel between network interfaces, IP
+forwarding must be enabled:<br>
+</small>
+<div style="margin-left: 40px;"><small style="color: rgb(153, 51, 0);">host#
+sysctl net.inet.ip.forwarding=1<span style="color: rgb(0, 0, 0);"> -
+for runtime enabling<br>
+<span style="color: rgb(102, 0, 204);">host# vi /etc/rc.conf</span><br
+ style="color: rgb(102, 0, 204);">
+<span style="color: rgb(102, 0, 204);">gateway_enable="YES" - for
+permanent enabling<br>
+</span></span></small></div>
+<small>o - Checking NAT Status<br>
+<span style="color: rgb(204, 0, 0);">&nbsp;&nbsp; host# pfctl -s state</span><br
+ style="color: rgb(204, 0, 0);">
+<span style="color: rgb(204, 0, 0);">&nbsp;&nbsp; fxp0 TCP
+192.168.1.35:2132 -&gt; 24.5.0.5:53136 -&gt; 65.42.33.245:22
+TIME_WAIT:TIME_WAIT</span><br style="color: rgb(204, 0, 0);">
+<span style="color: rgb(204, 0, 0);">&nbsp;&nbsp; fxp0 UDP
+192.168.1.35:2491 -&gt; 24.5.0.5:60527 -&gt; 24.2.68.33:53&nbsp;&nbsp;
+MULTIPLE:SINGLE</span><br>
+<br>
+Syntax:<br>
+<span style="font-weight: bold;">nat</span> [<span
+ style="font-weight: bold;">pass</span> [<span
+ style="font-weight: bold;">log</span>]] <span
+ style="font-weight: bold;">on</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">interface</span>
+[<span style="font-style: italic;"></span></small><small
+ style="color: rgb(102, 102, 204);"><span style="font-style: italic;">af</span></small><small><span
+ style="font-style: italic;"></span>] <span style="font-weight: bold;">from</span>
+<span style="font-style: italic; color: rgb(102, 102, 204);">src_addr</span>
+[<span style="font-weight: bold;">port</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">src_port</span>]
+<span style="font-weight: bold;">to</span> <span
+ style="color: rgb(102, 102, 204); font-style: italic;">dst_addr</span>
+[<span style="font-weight: bold;">port</span> <span
+ style="color: rgb(102, 102, 204); font-style: italic;">dst_port</span>]
+-&gt; <span style="font-style: italic; color: rgb(102, 102, 204);">ext_addr</span>
+[<span style="font-style: italic; color: rgb(102, 102, 204);">pool_type</span>]
+[<span style="font-style: italic; color: rgb(102, 102, 204);">static-port</span>]<br>
+<br>
+o - <span style="font-weight: bold;">nat</span> - keyword that starts
+a NAT rule.<br>
+o - <span style="font-weight: bold;">pass</span> - causes translated
+packets to completely bypass the filter rules.<br>
+o - <span style="font-weight: bold;">log</span> - when <span
+ style="font-weight: bold;">pass</span> is specified, packets can be
+logged via <span style="font-style: italic;">pflogd(8)</span>.
+Normally only the first packet that matches will be logged. To log all
+matching packets, use <span style="font-weight: bold;">log all.<br>
+</span>o - </small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">interface </span><span
+ style="color: rgb(0, 0, 0);">- The name or group of the network
+interface to translate packets on.<br>
+o - <span style="font-style: italic; color: rgb(102, 102, 204);">af</span>
+- The address family, either <span style="font-weight: bold;">inet</span>
+for IPv4 or <span style="font-weight: bold;">inet6</span> for IPv6. PF
+is usually able to determine this parameter based on the
+source/destination address(es).<br>
+o - </span></small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">src_addr</span></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(0, 0, 0);">The source (internal) address of packets
+that will be translated. The source address can be specified as:</span></small><br>
+<ul>
+  <li><small><span style="color: rgb(0, 0, 0);">A single IPv4 or IPv6
+address.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">A CIDR network block.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">A fully qualified
+domain name that will be resolved via DNS when the ruleset is loaded.
+All resulting IP addresses will be substituted into the rule.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">The name or group of a
+network interface. Any IP addresses assigned to the interface will be
+substituted into the rule at load time.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">The name of a network
+interface followed by /netmask (e.g. /24). Each IP address on the
+interface is combined with the netmask to form a CIDR network block
+which is substituted into the rule.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">The name or group of a
+network interface followed by any one of these modifiers:</span></small></li>
+  <ul>
+    <li><small><span style="color: rgb(0, 0, 0);">:network -
+substitutes the CIDR network block (e.g., 192.168.0.0/24)</span></small></li>
+    <li><small><span style="color: rgb(0, 0, 0);">:broadcast -
+substitutes the network broadcast address (e.g., 192.168.0.255)</span></small></li>
+    <li><small><span style="color: rgb(0, 0, 0);">:peer - substitutes
+the peer's IP address on a point-to-point link</span></small></li>
+    <li><small><span style="color: rgb(0, 0, 0);">In addition, the :0
+modifier can be appended to either an interface name/group or to any of
+the above modifiers to indicate that PF should not include aliased IP
+addresses in the substitution. These modifiers can also be used when
+the interface is contained in parentheses. Example: fxp0:network:0</span></small></li>
+  </ul>
+  <li><small><span style="color: rgb(0, 0, 0);">A table.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">Any of the above but
+negated using the ! ("not") modifier.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">A set of addresses
+using a list.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">The keyword any meaning
+all addresse</span></small></li>
+</ul>
+</div>
+<small>o - </small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">src_port</span></small><br>
+<small>The source port in the Layer 4 packet header. Ports can be
+specified as:<br>
+</small>
+<ul>
+  <li><small>A number between 1 and 65535</small></li>
+  <li><small>A valid service name from /etc/services</small></li>
+  <li><small>A set of ports using a list</small></li>
+  <li><small>A range:</small></li>
+  <ul>
+    <li><small>!= (not equal)</small></li>
+    <li><small>&lt; (less than)</small></li>
+    <li><small>&gt; (greater than)</small></li>
+    <li><small>&lt;= (less than or equal)</small></li>
+    <li><small>&gt;= (greater than or equal)</small></li>
+    <li><small>&gt;&lt; (range)</small></li>
+    <li><small>&lt;&gt; (inverse range)</small></li>
+    <ul>
+      <li><small>The last two are binary operators (they take two
+arguments) and do not include the arguments in the range.</small></li>
+    </ul>
+    <li><small>: (inclusive range)</small></li>
+    <ul>
+      <li><small>The inclusive range operator is also a binary operator
+and does include the arguments in the range.</small></li>
+    </ul>
+  </ul>
+</ul>
+<div style="margin-left: 40px;"><small>The port option is not usually
+used in nat rules because the goal is usually to NAT all traffic
+regardless of the port(s) being used.</small><br>
+<br>
+</div>
+<small>o - </small><small><span
+ style="color: rgb(102, 102, 204); font-style: italic;">dst_addr - </span><span
+ style="color: rgb(102, 102, 204);"><span style="color: rgb(0, 0, 0);">The
+destination address of packets to be translated. The destination
+address is specified in the same way as the source address.</span></span><span
+ style="color: rgb(102, 102, 204); font-style: italic;"><br>
+<br>
+</span><span style="color: rgb(102, 102, 204);"><span
+ style="color: rgb(0, 0, 0);">o - </span></span></small><small><span
+ style="color: rgb(102, 102, 204); font-style: italic;">dst_port - </span><span
+ style="color: rgb(0, 0, 0);">The destination port in the Layer 4
+packet header. This port is specified in the same way as the source
+port.</span></small><small><span style="color: rgb(102, 102, 204);"><span
+ style="color: rgb(0, 0, 0);"></span></span><span
+ style="color: rgb(102, 102, 204); font-style: italic;"><br>
+</span></small><small><br>
+o - </small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">ext_addr<br>
+</span></small>
+<div style="margin-left: 40px;"><small><span
+ style="color: rgb(0, 0, 0);">The external (translation) address on the
+NAT gateway that packets will be translated to. The external address
+can be specified as:</span></small><br>
+<ul>
+  <li><small><span style="color: rgb(0, 0, 0);">A single IPv4 or IPv6
+address.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">A CIDR network block.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">A fully qualified
+domain name that will be resolved via DNS when the ruleset is loaded.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">The name of the
+external network interface. Any IP addresses assigned to the interface
+will be substituted into the rule at load time.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">The name of the
+external network interface in parentheses ( ). This tells PF to update
+the rule if the IP address(es) on the named interface changes. This is
+highly useful when the external interface gets its IP address via DHCP
+or dial-up as the ruleset doesn't have to be reloaded each time the
+address changes.</span></small></li>
+  <li><small><span style="color: rgb(0, 0, 0);">The name of a network
+interface followed by either one of these modifiers:</span></small></li>
+  <ul>
+    <li><small><span style="color: rgb(0, 0, 0);">:network -
+substitutes the CIDR network block (e.g., 192.168.0.0/24)</span></small></li>
+    <li><small><span style="color: rgb(0, 0, 0);">:peer - substitutes
+the peer's IP address on a point-to-point link</span></small></li>
+  </ul>
+</ul>
+</div>
+<div style="margin-left: 120px;"><small><span
+ style="color: rgb(0, 0, 0);">In addition, the :0 modifier can be
+appended to either an interface name or to any of the above modifiers
+to indicate that PF should not include aliased IP addresses in the
+substitution. These modifiers can also be used when the interface is
+contained in parentheses. Example: fxp0:network:0</span></small></div>
+<div style="margin-left: 40px;">
+<ul>
+  <li><small><span style="color: rgb(0, 0, 0);">A set of addresses
+using a list.</span><span
+ style="font-style: italic; color: rgb(102, 102, 204);"></span></small></li>
+</ul>
+<small><span style="font-style: italic; color: rgb(102, 102, 204);"></span></small></div>
+<small>o - </small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">pool_type </span><span
+ style="color: rgb(102, 102, 204);"><span style="color: rgb(0, 0, 0);">-
+Specifies the type of address pool to use for translation.</span></span><span
+ style="font-style: italic; color: rgb(102, 102, 204);"><br>
+<br>
+</span><span style="color: rgb(102, 102, 204);"><span
+ style="color: rgb(0, 0, 0);">o - </span></span></small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">static-port </span><span
+ style="color: rgb(102, 102, 204);"><span style="color: rgb(0, 0, 0);">-
+Tells PF not to translate the source port in TCP and UDP packets.</span></span></small><small><span
+ style="color: rgb(102, 102, 204);"><span style="color: rgb(0, 0, 0);"></span></span><span
+ style="font-style: italic; color: rgb(102, 102, 204);"><br>
+<br>
+<br>
+Example:<br>
+<span style="color: rgb(255, 102, 102);">nat on tl0 from 192.168.1.0/24
+to any -&gt; 24.5.0.5</span><br>
+This rule says to perform NAT on the tl0 interface for any packets
+coming from 192.168.1.0/24 and to replace the source IP address with
+24.5.0.5.<br>
+<br>
+While the above rule is correct, it is not recommended form. <br>
+Maintenance could be difficult as any change of the external or
+internal network numbers would require the line be changed. <br>
+Compare instead with this easier to maintain line (tl0 is external, dc0
+internal):<br>
+<span style="color: rgb(255, 102, 102);">nat on tl0 from dc0:network to
+any -&gt; tl0<br>
+<span style="color: rgb(153, 153, 255);">The advantage should be fairly
+clear: you can change the IP addresses of either interface without
+changing this rule.<br>
+<br>
+When specifying an interface name for the translation address as above,
+the IP address is determined at pf.conf load time, not on the fly. If
+you are using DHCP to configure your external interface, this can be a
+problem. If your assigned IP address changes, NAT will continue
+translating outgoing packets using the old IP address. This will cause
+outgoing connections to stop functioning. To get around this, you can
+tell PF to automatically update the translation address by putting
+parentheses around the interface name:<br>
+<span style="color: rgb(255, 102, 102);">nat on tl0 from dc0:network to
+any -&gt; (tl0)</span><br>
+This method works for translation to both IPv4 and IPv6 addresses.<br>
+<br>
+<br>
+</span></span></span><span style="color: rgb(102, 102, 204);"><span
+ style="color: rgb(255, 102, 102);"><span
+ style="color: rgb(153, 153, 255);"><span style="color: rgb(0, 0, 0);">Bidirectional
+Mapping:<br>
+<span style="color: rgb(255, 102, 102);">web_serv_int = "192.168.1.100"</span><br
+ style="color: rgb(255, 102, 102);">
+<span style="color: rgb(255, 102, 102);">web_serv_ext = "24.5.0.6"</span><br
+ style="color: rgb(255, 102, 102);">
+<br style="color: rgb(255, 102, 102);">
+<span style="color: rgb(255, 102, 102);">binat on tl0 from
+$web_serv_int to any -&gt; $web_serv_ext<br>
+<br>
+<span style="color: rgb(153, 153, 255);">A binat rule establishes a one
+to one mapping between an internal IP address and an external address.
+This can be useful, for example, to provide a web server on the
+internal network with its own external IP address. Connections from the
+Internet to the external address will be translated to the internal
+address and connections from the web server (such as DNS requests) will
+be translated to the external address. TCP and UDP ports are never
+modified with binat rules as they are with nat rules.<br>
+<br>
+<br>
+<span style="color: rgb(0, 0, 0);">Translation Rule Exceptions:</span><br>
+<span style="color: rgb(255, 102, 102);"><span
+ style="font-weight: bold;">no</span> nat on tl0 from 192.168.1.208 to
+any</span><br style="color: rgb(255, 102, 102);">
+<span style="color: rgb(255, 102, 102);">nat on tl0 from 192.168.1.0/24
+to any -&gt; 24.2.74.79<br>
+<br>
+</span>Then the entire 192.168.1.0/24 network would have its packets
+translated to the external address 24.2.74.79 except for 192.168.1.208.<br>
+Note that the first matching rule wins; if it's a no rule, then the
+packet is not translated. <br>
+The <span style="font-weight: bold;">no</span> keyword can also be
+used with binat and rdr rules.<br>
+</span></span></span></span></span></span><span
+ style="font-style: italic; color: rgb(102, 102, 204);"><span
+ style="color: rgb(255, 102, 102);"><span
+ style="color: rgb(153, 153, 255);"></span><br>
+<br>
+<br>
+<br>
+</span></span></small><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;"></span></small></small></big></big></span></small></small></small></big></big>
+<hr style="width: 100%; height: 2px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;"><br>
+Filtering:</span><br>
+o - Packet Filtering is the selective passing or blocking of data
+packets as they pass through a network interface. <br>
+The criteria that PF uses when inspecting packets are based on the
+Layer 3 (IPv4 and IPv6) and Layer 4 (TCP, UDP, ICMP, and ICMPv6)
+headers. The most often used criteria are source and destination
+address, source and destination port, and protocol.<span
+ style="font-weight: bold;"></span><br>
+o - Filter rules are evaluated in sequential order, first to last.
+Unless the packet matches a rule containing the <span
+ style="font-style: italic; color: rgb(102, 102, 204);">quick</span>
+keyword, <br>
+the packet will be evaluated against all filter rules before the final
+action is taken. <br>
+The last rule to match is the "winner" and will dictate what action to
+take on the packet. There is an implicit <span
+ style="text-decoration: underline;">pass all</span> at the beginning
+of a filtering ruleset meaning that if a packet does not match any
+filter rule the resulting action will be pass.<br>
+<br>
+Syntax:<br>
+<span style="font-style: italic; color: rgb(102, 102, 204);">action</span>
+[<span style="font-style: italic; color: rgb(102, 102, 204);">direction</span>]
+[<span style="font-weight: bold;">log</span>] [<span
+ style="font-weight: bold;">quick</span>] [<span
+ style="font-weight: bold;">on</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">interface</span>]
+[<span style="font-style: italic; color: rgb(102, 102, 204);">af</span>]
+[<span style="font-weight: bold;">proto</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">protocol</span>]
+[<span style="font-weight: bold;">from</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">src_addr</span>
+[<span style="font-weight: bold;">port</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">src_port</span>]]
+[<span style="font-weight: bold;">to</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">dst_addr</span>
+[<span style="font-weight: bold;">port</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">dst_port</span>]]
+\<br>
+[<span style="font-weight: bold;">flags</span> <span
+ style="font-style: italic; color: rgb(102, 102, 204);">tcp_flags</span>]
+[<span style="font-style: italic; color: rgb(102, 102, 204);">state</span>]<br>
+<br>
+<span style="color: rgb(102, 102, 204); font-style: italic;">action</span><br>
+</small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The action to be
+taken for matching packets, either <span style="font-weight: bold;">pass</span>
+or <span style="font-weight: bold;">block</span>. The pass action will
+pass the packet back to the kernel for further processing while the
+block action will react based on the setting of the block-policy
+option. The default reaction may be overridden by specifying either
+block drop or block return.<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">direction</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The direction the
+packet is moving on an interface, either <span
+ style="font-weight: bold;">in</span> or <span
+ style="font-weight: bold;">out</span>.<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;">log</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>Specifies that
+the packet should be logged via <span
+ style="text-decoration: underline;">pflogd</span>. If the rule creates
+state then only the packet which establishes the state is logged. To
+log all packets regardless, use <span style="font-weight: bold;">log
+(all)</span>.<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;">quick</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>If a packet
+matches a rule specifying quick, then that rule is considered the last
+matching rule and the specified action is taken.<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">interface</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The name or group
+of the network interface that the packet is moving through. Interfaces
+can be added to arbitrary groups using the <span
+ style="text-decoration: underline;">ifconfig</span> command. Several
+groups are also automatically created by the kernel:</small></small></big></big></span></small></small></small></big></big><br>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+<span style="font-style: italic; text-decoration: underline;">egress</span>
+group, which contains the interface(s) that holds the default route(s).</small></small></big></big></span></small></small></small></big></big><br>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>Interface
+family group for cloned interfaces. For example: ppp or carp.</small></small></big></big></span></small></small></small></big></big><br>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>This
+would cause the rule to match for any packet traversing any ppp or carp
+interface, respectively.<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">af</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The address
+family of the packet, either <span style="font-weight: bold;">inet</span>
+for IPv4 or <span style="font-weight: bold;">inet6</span> for IPv6. PF
+is usually able to determine this parameter based on the source and/or
+destination address(es).<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">protocol</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The Layer 4
+protocol of the packet:</small></small></big></big></span></small></small></small></big></big><br>
+<ul>
+  <li style="font-weight: bold;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>tcp</small></small></big></big></span></small></small></small></big></big></li>
+  <li style="font-weight: bold;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>udp</small></small></big></big></span></small></small></small></big></big></li>
+  <li style="font-weight: bold;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>icmp</small></small></big></big></span></small></small></small></big></big></li>
+  <li style="font-weight: bold;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>icmp6</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+valid protocol name from /etc/protocols</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+protocol number between 0 and 255</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+set of protocols using a list.</small></small></big></big></span></small></small></small></big></big></li>
+</ul>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">src_addr</span></small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>, </small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">dst_addr</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The
+source/destination address in the IP header. Addresses can be specified
+as:</small></small></big></big></span></small></small></small></big></big><br>
+<ul>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+single IPv4 or IPv6 address.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+CIDR network block.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+fully qualified domain name that will be resolved via DNS when the
+ruleset is loaded. All resulting IP addresses will be substituted into
+the rule.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+name of a network interface or group. Any IP addresses assigned to the
+interface will be substituted into the rule.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+name of a network interface followed by /netmask (i.e., /24). Each IP
+address on the interface is combined with the netmask to form a CIDR
+network block which is substituted into the rule.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+name of a network interface or group in parentheses ( ). This tells PF
+to update the rule if the IP address(es) on the named interface change.
+This is useful on an interface that gets its IP address via DHCP or
+dial-up as the ruleset doesn't have to be reloaded each time the
+address changes.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+name of a network interface followed by any one of these modifiers:</small></small></big></big></span></small></small></small></big></big></li>
+  <ul>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>:network -
+substitutes the CIDR network block (e.g., 192.168.0.0/24)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>:broadcast -
+substitutes the network broadcast address (e.g., 192.168.0.255)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>:peer -
+substitutes the peer's IP address on a point-to-point link</small></small></big></big></span></small></small></small></big></big></li>
+  </ul>
+</ul>
+<div style="margin-left: 80px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>In addition, the
+:0 modifier can be appended to either an interface name or to any of
+the above modifiers to indicate that PF should not include aliased IP
+addresses in the substitution. These modifiers can also be used when
+the interface is contained in parentheses. Example: fxp0:network:0</small></small></big></big></span></small></small></small></big></big></div>
+<ul>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+table.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+keyword urpf-failed can be used for the source address to indicate that
+it should be run through the uRPF check.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>Any
+of the above but negated using the ! ("not") modifier.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+set of addresses using a list.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+keyword any meaning all addresses</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>The
+keyword all which is short for from any to any.</small></small></big></big></span></small></small></small></big></big></li>
+</ul>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">src_port</span></small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>, </small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">dst_port</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The
+source/destination port in the Layer 4 packet header. Ports can be
+specified as:</small></small></big></big></span></small></small></small></big></big><br>
+<ul>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+number between 1 and 65535</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+valid service name from /etc/services</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+set of ports using a list</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small>A
+range:</small></small></big></big></span></small></small></small></big></big></li>
+  <ul>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>!= (not equal)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>&lt; (less than)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>&gt; (greater
+than)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>&lt;= (less than
+or equal)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>&gt;= (greater
+than or equal)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>&gt;&lt; (range)</small></small></big></big></span></small></small></small></big></big></li>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>&lt;&gt; (inverse
+range)</small></small></big></big></span></small></small></small></big></big></li>
+  </ul>
+  <ul>
+    <ul>
+      <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The last two are
+binary operators (they take two arguments) and do not include the
+arguments in the range.</small></small></big></big></span></small></small></small></big></big></li>
+    </ul>
+  </ul>
+  <ul>
+    <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>: (inclusive
+range)</small></small></big></big></span></small></small></small></big></big></li>
+    <ul>
+      <li><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>The inclusive
+range operator is also a binary operator and does include the arguments
+in the range.</small></small></big></big></span></small></small></small></big></big></li>
+    </ul>
+  </ul>
+</ul>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+</div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">tcp_flags</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>Specifies the
+flags that must be set in the TCP header when using <span
+ style="font-weight: bold;">proto tcp</span>. Flags are specified as <span
+ style="font-style: italic; text-decoration: underline;">flags
+check/mask</span>. For example: <span style="font-weight: bold;">flags
+S/SA</span> - this instructs PF to only look at the S and A (SYN and
+ACK) flags and to match if only the SYN flag is "on". In OpenBSD 4.1
+and later, the default flags S/SA are applied to all TCP filter rules.<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-style: italic; color: rgb(102, 102, 204);">state</span></small></small></big></big></span></small></small></small></big></big>
+<div style="margin-left: 40px;"><big><big><small><small><small><span
+ style="color: rgb(0, 0, 0);"><big><big><small><small>Specifies whether
+state information is kept on packets matching this rule.</small></small></big></big></span></small></small></small></big></big><br>
+<ul>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;">keep state</span> - works with TCP, UDP,
+and ICMP. In OpenBSD 4.1 and later, this option is the default for all
+filter rules.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;">modulate state</span> - works only with
+TCP. PF will generate strong Initial Sequence Numbers (ISNs) for
+packets matching this rule.</small></small></big></big></span></small></small></small></big></big></li>
+  <li><big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><span
+ style="font-weight: bold;">synproxy state</span> - proxies incoming
+TCP connections to help protect servers from spoofed TCP SYN floods.
+This option includes the functionality of keep state and modulate state.</small></small></big></big></span></small></small></small></big></big></li>
+</ul>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"></span></small></small></small></big></big></div>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small><br>
+<span style="color: rgb(255, 0, 0);">"Default deny" policy approach:</span><br>
+<br style="color: rgb(255, 102, 102);">
+<span style="color: rgb(255, 102, 102);">block in&nbsp; all</span><br
+ style="color: rgb(255, 102, 102);">
+<span style="color: rgb(255, 102, 102);">block out all</span><br
+ style="color: rgb(255, 102, 102);">
+<br>
+This will block all traffic on all interfaces in either direction from
+anywhere to anywhere.<br>
+That is, to deny everything and then selectively allow certain traffic
+through the firewall. This approach is recommended because it errs on
+the side of caution and also makes writing a ruleset easier.<br>
+<br>
+<br>
+Passing Traffic<br>
+<br>
+Traffic must now be explicitly passed through the firewall or it will
+be dropped by the default deny policy. This is where packet criteria
+such as source/destination port, source/destination address, and
+protocol come into play. Whenever traffic is permitted to pass through
+the firewall the rule(s) should be written to be as restrictive as
+possible. This is to ensure that the intended traffic, and only the
+intended traffic, is permitted to pass.<br>
+<br>
+Examples:<br>
+<div style="background-color: rgb(192, 192, 192);"><span
+ style="color: rgb(204, 0, 0);">
+# Pass traffic <span style="font-weight: bold;">in</span> on dc0 <span
+ style="font-weight: bold;">from</span> the local network,
+192.168.0.0/24,</span><span style="color: rgb(204, 0, 0);"> to the
+machine's IP address 192.168.0.1. <br>
+# Also, pass the</span><span style="color: rgb(204, 0, 0);"> return
+traffic out on dc0.</span><br style="color: rgb(204, 0, 0);">
+<span style="color: rgb(204, 0, 0);">pass in&nbsp; on dc0 from
+192.168.0.0/24 to 192.168.0.1</span><br style="color: rgb(204, 0, 0);">
+<span style="color: rgb(204, 0, 0);">pass out on dc0 from 192.168.0.1
+to 192.168.0.0/24</span><br style="color: rgb(204, 0, 0);">
+<br style="color: rgb(204, 0, 0);">
+<span style="color: rgb(204, 0, 0);"># Pass TCP traffic <span
+ style="font-weight: bold;">in</span> on fxp0 to the web server running
+on the</span><span style="color: rgb(204, 0, 0);"> machine. <br>
+# The interface name, fxp0, is used as the</span><span
+ style="color: rgb(204, 0, 0);"> destination address so that packets
+will only match this rule if</span><span style="color: rgb(204, 0, 0);">
+they're destined for this machine.</span><br
+ style="color: rgb(204, 0, 0);">
+<span style="color: rgb(204, 0, 0);">pass in on fxp0 proto tcp from any
+to fxp0 port www</span><br>
+</div>
+<br>
+<br>
+<br>
+<br>
+</small></small></big></big></span></small></small></small></big></big>
+<hr style="width: 100%; height: 2px;"><br>
+Troubles:<br>
+<ul>
+  <li><small>Some times ISPs are setting the TTL to 1, and after you
+build your router, the NAT might not work because it will change the
+packets and set the TTL to 0 and theese packets will be dropped by the
+ISP and you won't be able to access the internet from your local LAN.
+As a fix for this compile the kernel with <span
+ style="font-weight: bold;">"option IPSTEALTH"</span>, and set the <span
+ style="font-weight: bold;">net.inet.ip.stealth</span> to <span
+ style="font-weight: bold;">1.</span></small><br>
+  </li>
+</ul>
+<big><big><small><small><small><span style="color: rgb(0, 0, 0);"><big><big><small><small></small></small></big></big></span></small></small></small></big></big>
+
+    </div>
+
+</div>
+

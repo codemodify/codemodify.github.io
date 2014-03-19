@@ -1,0 +1,581 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Server Setup</p>
+    </div>
+
+    <div id="articleContent">
+<div style="text-align: right;"><span style="font-family: Verdana;">Controlling
+File Permissions &amp; Attributes:</span><br>
+</div>
+<small><small><span style="font-family: Verdana;"></span></small></small>
+<hr style="width: 100%; height: 2px;"><small><small><span
+ style="font-family: Verdana;">"Set-user-ID root" programs run as the </span><span
+ style="font-weight: bold; font-family: Verdana;">root</span><span
+ style="font-family: Verdana;"> user, regardless of who is executing
+them, and are a frequent cause of buffer overflows.</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Many programs are setuid and setgid
+to enable a normal user to perform operations that would otherwise
+require root, and can be removed if your users do not need such
+permission.</span><br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="color: rgb(102, 0, 0); font-family: Verdana;"><span
+ style="color: rgb(153, 0, 0);">"find / -type f -perm +6000 -ls"</span><span
+ style="color: rgb(0, 0, 0);"> - finds all <span
+ style="font-weight: bold;">setuid</span> and <span
+ style="font-weight: bold;">setgid</span> programs<br>
+</span></span></small></small>
+<hr style="width: 100%; height: 2px; font-family: Verdana;"><small><small><span
+ style="color: rgb(153, 0, 0); font-family: Verdana;">"find / -perm -2
+! -type l -ls"</span><span style="font-family: Verdana;"> - locates all
+world-writable files on your system</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">In the normal course of operation,
+several files will be world-writable, including some from /dev and </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">the /tmp directory itself.</span><br
+ style="font-family: Verdana;">
+</small></small>
+<hr style="width: 100%; height: 2px; font-family: Verdana;"><small><small><span
+ style="color: rgb(153, 0, 0); font-family: Verdana;">"find / -nouser
+-o -nogroup"</span><span style="font-family: Verdana;"> - locates all
+files that do not have an owner or belong to a group. </span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Unowned files may also be an
+indication an intruder has accessed your system.</span><br
+ style="font-family: Verdana;">
+</small></small>
+<hr style="width: 100%; height: 2px; font-family: Verdana;"><small><small><span
+ style="font-family: Verdana;">Using the </span><span
+ style="font-weight: bold; font-family: Verdana;">lsattr</span><span
+ style="font-family: Verdana;"> and </span><span
+ style="font-weight: bold; font-family: Verdana;">chattr</span><span
+ style="font-family: Verdana;"> commands, administrators can modify
+characteristics of files and </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">directories, including the ability
+to control deletion and modification above what normal chmod </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">provides.&nbsp; The use of </span><span
+ style="font-style: italic; font-family: Verdana;">&acirc;&#8364;&#339;append-only&acirc;&#8364;&#157;</span><span
+ style="font-family: Verdana;"> and </span><span
+ style="font-style: italic; font-family: Verdana;">&acirc;&#8364;&#339;immutable&acirc;&#8364;&#157;</span><span
+ style="font-family: Verdana;"> attributes can be particularly
+effective in </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">preventing log files from being
+deleted, or Trojan Horses from being placed on top of trusted </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">binaries. While not a guarantee a
+system file or log won&acirc;&#8364;&#8482;t be modified, only root has the ability
+to </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">remove this protection.&nbsp; The </span><span
+ style="font-weight: bold; font-family: Verdana;">chattr</span><span
+ style="font-family: Verdana;"> command is used to add or remove these
+properties, while the </span><br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">lsattr</span><span
+ style="font-family: Verdana;"> can be used to list them.</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Log files can be protected by only
+permitting appending to them.&nbsp; Once the data has been written, it </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">cannot be removed.&nbsp; While this
+will require modifications to your log rotation scripts, this can
+provide </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">additional protection from a
+cracker attempting to remove his tracks. Once rotated, they should be </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">changed to immutable. Files
+suitable for these modifications include </span><span
+ style="font-weight: bold; font-family: Verdana;">/bin/login</span><span
+ style="font-family: Verdana;">, </span><span
+ style="font-weight: bold; font-family: Verdana;">/bin/rpm</span><span
+ style="font-family: Verdana;">, </span><br
+ style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">/etc/shadow</span><span
+ style="font-family: Verdana;">, and others that should not change
+frequently.</span><br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">&nbsp;# chattr +i /bin/login </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">&nbsp;# chattr +a /var/log/messages
+</span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">&nbsp;# lsattr /bin/login
+/var/log/messages </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">&nbsp;----i--- /bin/login </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">&nbsp;-----a-- /var/log/messages </span><small><small><br
+ style="font-family: Verdana;">
+</small></small></small></small>
+<hr style="width: 100%; height: 2px; font-family: Verdana;"><small><small><span
+ style="font-family: Verdana;">There should never be a reason for
+user&acirc;&#8364;&#8482;s to be able to run <span style="font-weight: bold;">setuid</span>
+programs from their home </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">directories.&nbsp; Use the <span
+ style="font-weight: bold;">nosuid</span> option in <span
+ style="font-weight: bold;">/etc/fstab</span> for partitions that are
+writable by others than </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">root.&nbsp; You may also wish to
+use the <span style="font-weight: bold;">nodev</span> and <span
+ style="font-weight: bold;">noexec</span> on user&acirc;&#8364;&#8482;s home
+partitions, as
+well as <span style="font-weight: bold;">/var</span>, </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">which prohibits execution of
+programs, and creation of character or block devices, which should </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">never be necessary anyway. See the
+mount man page for more information.</span><br
+ style="font-family: Verdana;">
+</small></small>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: right;"><span style="font-family: Verdana;"><br>
+<br>
+<br>
+<br>
+Disable Unnecessary Services:<br>
+</span>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: left;"><small><small><span
+ style="font-family: Verdana;">If </span><span
+ style="font-weight: bold; font-family: Verdana;">inetd</span><span
+ style="font-family: Verdana;"> is used:</span><br
+ style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">/etc/inetd.conf</span><span
+ style="font-family: Verdana;"> -&nbsp; disable all services that you
+do not want to provide.</span><br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">/etc/rc*.d</span><span
+ style="font-family: Verdana;">&nbsp; or&nbsp; </span><span
+ style="font-weight: bold; font-family: Verdana;">/etc/rc.d/rc*</span><span
+ style="font-family: Verdana;"> - contains shell scripts that control
+the execution of network and system services during runlevels.</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">If you don&acirc;&#8364;&#8482;t understand
+what a
+particular service does, disable it until you find out.</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Use </span><span
+ style="font-weight: bold; font-family: Verdana;">netstat</span><span
+ style="font-family: Verdana;"> and </span><span
+ style="font-weight: bold; font-family: Verdana;">ps</span><span
+ style="font-family: Verdana;"> to confirm they have not been started
+after a reboot.</span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Use </span><span
+ style="font-weight: bold; font-family: Verdana;">/bin/netstat -a -p
+--inet</span><span style="font-family: Verdana;"> to determine which
+are available and the process ID associated with them.</span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">A port scanner should also be used
+to get a view of what remote hosts see.</span></small></small><br
+ style="font-family: Verdana;">
+<hr style="width: 100%; height: 2px; font-family: Verdana;"><span
+ style="font-family: Verdana;"></span></div>
+</div>
+<small><small><span style="font-family: Verdana;"><br>
+<br>
+<br>
+<br>
+<br>
+<br style="font-family: Verdana;">
+</span></small></small>
+<div style="text-align: right;"><small><small><span
+ style="font-family: Verdana;"><big><big><span
+ style="font-family: Verdana;">Checking Package Integrity: </span></big></big></span></small></small><br
+ style="font-family: Verdana;">
+<small><small><span style="font-family: Verdana;"></span></small></small></div>
+<small><small><span style="font-family: Verdana;"><br>
+</span></small></small>
+<hr style="width: 100%; height: 2px;"><small><small><span
+ style="font-family: Verdana;">The md5sum command is used to compute a
+128-bit fingerprint that is strongly dependant upon the contents of the
+file.<br>
+A nice idea will be to have a script that make the check-sum for all
+system files, and notify if something changed.<br>
+</span></small></small>
+<hr style="width: 100%; height: 2px;"><small><small><span
+ style="font-family: Verdana;"><br>
+<br>
+<br>
+<br>
+<br>
+</span></small></small>
+<div style="text-align: right;"><span style="font-family: Verdana;">Install
+and Configure OpenSSH<br>
+</span>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: left;"><small><small><span
+ style="font-family: Verdana;">OpenSSH uses public key cryptography to
+provide secure authorization. </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Generating the public key, which is
+shared with remote systems, and the privatekey which is kept on the
+local system, is done first to configure OpenSSH.</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">(1) </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">orion$&nbsp; <span
+ style="font-weight: bold;">ssh-keygen</span> </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Generating RSA keys:&nbsp;
+...ooooooO....ooooooO </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Key generation complete. </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Enter file in which to save the key
+(/home/dave/.ssh/identity): </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Created directory
+'/home/dave/.ssh'. </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Enter passphrase (empty for no
+passphrase): &lt;passphrase&gt; </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Enter same passphrase again:
+&lt;passphrase&gt; </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Your identification has been saved
+in /home/dave/.ssh/identity. </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Your public key has been saved in
+/home/dave/.ssh/identity.pub. </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">The key fingerprint is: </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">ac:42:11:c8:0d:b6:7e:b4:06:6a:a3:a7:e8:2c:b0:12</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">(2) </span><span
+ style="font-family: Verdana;">Copy Public Key to Remote Host:</span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">host2$ mkdir -m 700
+~dave/.ssh&nbsp; </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">host2$ cp /mnt/floppy/identity.pub
+~dave/.ssh/authorized_keys</span><br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">(3)</span><span
+ style="font-family: Verdana;"> Log in to Remote Host: </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">orion$ ssh host2 </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Enter passphrase for RSA key
+'user@orion': &lt;passphrase&gt; </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Last login: Sat Aug 15 17:13:01
+2000 from orion </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">No mail. </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">host2$ </span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">(4)</span><span
+ style="font-family: Verdana;">&nbsp; Copy Files to Remote Host:</span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">orion$ scp /tmp/file.tar.gz
+host2:/tmp </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Enter passphrase for RSA key
+'user@orion: </span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">file.tar.gz&nbsp; 100%
+|***************************| 98304 00:00</span></small></small><br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<br>
+<img style="width: 452px; height: 588px;" alt=""
+ src="freebsd/securityGlosary.png"><br>
+<hr style="width: 100%; height: 2px;"><br>
+<img style="width: 451px; height: 548px;" alt=""
+ src="freebsd/kernelSecurity.png"><br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<br>
+<small><small><br style="font-family: Verdana;">
+</small></small>
+<div style="text-align: right; font-family: Verdana;"><small><small><big><big><span
+ style="font-weight: bold;">General Security Tips</span></big></big><br>
+</small></small></div>
+<hr style="width: 100%; height: 2px; font-family: Verdana;">
+<small><small><span style="font-family: Verdana;">Ensure system clocks
+are accurate.</span><br style="font-family: Verdana;">
+<span style="font-family: Verdana;">The time stamps on log files must
+be accurate so security events can be correlated with remote
+systems.&nbsp; Inaccurate records make it impossible to build a
+timeline. For workstations, it is enough to add a crontab entry:
+&nbsp;0-59/30 * * * * root /usr/sbin/ntpdate -su time.timehost.com</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">Disable unused accounts using <span
+ style="font-weight: bold;">/usr/bin/passwd -1</span></span></small></small><br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<small><small><br style="font-family: Verdana;">
+</small></small>
+<div style="text-align: right;"><small><small><big><big><span
+ style="font-family: Verdana; font-weight: bold;">Network Intrusion
+Detection</span></big></big><br style="font-family: Verdana;">
+</small></small>
+<hr style="width: 100%; height: 2px; font-family: Verdana;">
+<div style="text-align: left;"><small><small><span
+ style="font-family: Verdana;">snortsnort - </span></small></small><br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<div style="text-align: right;"><small><small><big><big><span
+ style="font-family: Verdana; font-weight: bold;">Configuring Syslog</span></big></big><br
+ style="font-family: Verdana;">
+</small></small>
+<hr style="width: 100%; height: 2px; font-family: Verdana;">
+<div style="text-align: left;"><small><small><span
+ style="font-family: Verdana;">The </span><span
+ style="font-weight: bold; font-family: Verdana;">syslogd</span><span
+ style="font-family: Verdana;"> is responsible for capturing logging
+information generated by system processes.&nbsp;</span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">The </span><span
+ style="font-weight: bold; font-family: Verdana;">klogd</span><span
+ style="font-family: Verdana;"> is responsible for capturing logging
+information generated by the kernel. </span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">System logs provide the primary
+indication of a potential problem.</span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">(A)</span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Fine-tune the default </span><span
+ style="font-weight: bold; font-family: Verdana;">/etc/syslog.conf</span><span
+ style="font-family: Verdana;"> to send log information to specific
+files for easier analysis. </span><br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;# Monitor
+authentication attempts </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;auth.*;authpriv.*
+/var/log/authlog </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;# Monitor
+all kernel messages </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;kern.*
+/var/log/kernlog </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;# Monitor
+all warning and error messages </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;*.warn;*.err
+/var/log/syslog </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-family: Verdana;">(B)</span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Restrict access to log directory
+and syslog files for normal users using: </span><br
+ style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;# chmod
+751 /var/log /etc/logrotate.d </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;# chmod
+640 /etc/syslog.conf /etc/logrotate.conf </span><br
+ style="font-weight: bold; font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">&nbsp;# chmod
+640 /var/log/*log</span><br
+ style="font-weight: bold; font-family: Verdana;">
+</small></small>
+<hr style="width: 100%; height: 2px; font-family: Verdana;"><small><small><br
+ style="font-family: Verdana;">
+<br>
+<br style="font-family: Verdana;">
+</small></small>
+<div style="text-align: right; font-family: Verdana;"><small><small><big><big><span
+ style="font-weight: bold;">DNS Security</span></big></big><br>
+</small></small></div>
+<hr style="width: 100%; height: 2px;"><small><small><span
+ style="font-weight: bold; font-family: Verdana;">Zone transfers</span><span
+ style="font-family: Verdana;"> should only be permitted by master name
+servers to update the zone (domain) information in their slave
+servers.&nbsp; Failure to do so may result in IP numbers and hostnames
+being revealed to unauthorized users.</span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">Restrict queries to only public
+domains. Suitable for name servers with both public and private zones. </span><br
+ style="font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">//
+Allow transfer only to our slave name server. Allow queries only by
+hosts in the 192.168.1.0 network. </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">zone
+&#8220;mydomain.com&#8221; { </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;
+type master; </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;
+file &#8220;master/db.mydomain.com&#8221;; </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;
+allow-transfer { 192.168.1.6; }; </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;
+allow-query { 192.168.1.0/24; }; </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;};</span><br
+ style="font-style: italic; font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;"><br>
+Deny and log queries</span><span style="font-family: Verdana;"> for our
+version number except from the local host. The ability to determine the
+bind version enables an attacker to find the corresponding exploit for
+that version. </span><br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">//
+Disable the ability to determine the version of BIND running </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;zone
+&#8220;bind&#8221; chaos { </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;
+type master; </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;
+file &#8220;master/bind&#8221;; </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;
+allow-query { localhost; }; </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;};
+</span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span style="color: rgb(0, 0, 0); font-family: Verdana;">The
+./master/bind file should then contain: </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;$TTL
+1d </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;@&nbsp;&nbsp;&nbsp;&nbsp;
+CHAOS&nbsp;&nbsp; SOA&nbsp;&nbsp;&nbsp;&nbsp; localhost.
+root.localhost. ( </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; serial </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; refresh </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+15M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; retry </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; expire </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1D )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; minimum </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; localhost.<br>
+<br>
+</span><span style="color: rgb(0, 0, 0); font-family: Verdana;"><br>
+<span style="font-weight: bold;">Control which interfaces named listens
+on.</span>&nbsp; Restricting the interfaces on which named runs can
+limit the exposure to only the necessary networks. <br>
+&nbsp;<span style="font-style: italic; color: rgb(153, 0, 0);">listen-on
+{ 192.168.1.1; }; <br>
+<br>
+</span><span style="color: rgb(153, 0, 0);"><br>
+<span style="color: rgb(0, 0, 0);">Use Access Control Lists to classify
+groups of hosts with differing degrees of trust.&nbsp; The </span><span
+ style="color: rgb(0, 0, 0);">&#8220;internal&#8221; ACL label might be used to
+describe internal hosts that are permitted a greater </span><span
+ style="color: rgb(0, 0, 0);">degree of access to the information than
+other hosts might be.&nbsp; Before it can be used it </span><span
+ style="color: rgb(0, 0, 0);">must be defined: </span></span><span
+ style="font-style: italic; color: rgb(153, 0, 0);"><br>
+&nbsp;acl &#8220;internal&#8221; { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { 192.168.1.0/24;
+192.168.2.11; }; <br>
+&nbsp;}; <br>
+<br>
+</span><span style="color: rgb(0, 0, 0);">It can then be used in &#8220;zone&#8221;
+statements or the main &#8220;options&#8221; statement: </span><span
+ style="font-style: italic; color: rgb(153, 0, 0);"><br>
+&nbsp;zone &#8220;inside.mynet.com&#8221; { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type master; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file
+&#8220;master/inside.mynet.com&#8221;; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allow-query { &#8220;internal&#8221;; };
+<br>
+&nbsp;}; <br>
+</span></span></small></small></div>
+</div>
+<small><small><br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span style="font-weight: bold; font-family: Verdana;">Configure BIND
+to run as a normal user.</span><span style="font-family: Verdana;">
+Once BIND has been started, it has the ability to relinquish its
+privileges, and run as a user with limited abilities instead of root. </span><br
+ style="font-family: Verdana;">
+<br style="font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;#
+useradd -M -r -d /var/named -s /bin/false named </span><br
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">
+<span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">&nbsp;#
+groupadd -r named <br>
+<br style="font-style: italic; color: rgb(153, 0, 0);">
+</span><span style="font-family: Verdana;">This account should be used
+for nothing other than running the name server. Ensure the zone files
+are readable by the named user. It is then necessary to modify the
+default named init script, typically found in </span><span
+ style="font-style: italic; font-family: Verdana;">/etc/rc.d/init.d/named</span><span
+ style="font-family: Verdana;"> on Red Hat or </span><span
+ style="font-style: italic; font-family: Verdana;">/etc/init.d/named</span><span
+ style="font-family: Verdana;"> on Debian: </span><span
+ style="font-style: italic; color: rgb(153, 0, 0); font-family: Verdana;">/usr/sbin/named
+-u named -g named</span><span style="font-family: Verdana;"> </span><br
+ style="font-family: Verdana;">
+<span style="font-family: Verdana;">It is also possible to run named in
+a &#8220;chroot jail&#8221; which helps to restrict the damage that can be done
+should named be subverted.</span></small></small><br>
+<hr style="width: 100%; height: 2px;"><br>
+<img style="width: 468px; height: 404px;" alt=""
+ src="freebsd/criticalSystemdFiles.png"><br>
+<br>
+</div>
+</div>
+<span style="font-family: Verdana;"></span></div>
+<small><small><span style="font-family: Verdana;"></span></small></small></div>
+<small><small><span style="font-family: Verdana;"></span></small></small>
+<br style="font-family: Verdana;">
+<small style="font-family: Verdana;"><small><span
+ style="color: rgb(102, 0, 0);"></span></small></small>
+
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">SQL</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">SQL Server</p>
+    </div>
+    <div id="articleContent">
+        <div class="codebox">
+            <code>   
+                sqlcmd -S .\dev -E -d xemantix -Q "delete Table_1"
+            </code>
+        </div>
+    </div>
+
+</div>

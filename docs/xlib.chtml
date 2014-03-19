@@ -1,0 +1,4120 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">xlib basics</p>
+    </div>
+
+    <div id="articleContent">
+
+        <a target="_blank" href="docs/x-icccm.pdf" class="button">Download</a> the ICCCM manual.
+        <a target="_blank" href="docs/x-xlib.pdf" class="button">Download</a> the Xlib manual.
+        
+    </div>
+
+    
+    
+    <div id="articleHeader">
+        <p id="moto3">Mouse Cursor</p>
+    </div>
+    <div id="articleContent">
+        header: &lt;X11/cursorfont.h&gt;<br>
+        Each window can have own defined cursor.<br>
+        If no cursor was defined for the window then the cursor for parent window is used.<br>
+        A cursor consists of: source, mask, colors, hotspot.<br>
+        <div>How to talk to X11 to have this:<br>
+        <div style="text-align: left;"><br>
+        <span style="color: rgb(0, 0, 153);">Cursor </span><big><big><big><span style="font-weight: bold;"></span></big></big></big><span style="font-weight: bold;">XCreateFontCursor(</span> <span style="color: rgb(204, 0, 0);"><span style="color: rgb(0, 0, 153);">Display*</span> </span>display, <span style="color: rgb(0, 0, 153);">int</span> shape<span style="font-weight: bold;"> )</span><br>
+        <div style="margin-left: 40px;"><small>X provides a set of standard cursor shapes in a special font named cursor.<br>
+        </small><small>From that font, </small><small>this function creates a default cursor specified by shape.<br>
+        Return: <span style="color: rgb(204, 0, 0);">error</span> - <span style="text-decoration: underline;">BadAlloc</span>, <span style="text-decoration: underline;">BadValue.</span>&nbsp; <span style="color: rgb(0, 102, 0);">success </span>- <span style="text-decoration: underline;">Cursor</span>.<span style="text-decoration: underline;"><br>
+        </span></small></div>
+        <br>
+        <span style="color: rgb(0, 0, 153);">Cursor</span> <span style="font-weight: bold;">XCreateGlyphCursor( </span><span style="color: rgb(0, 0, 153);">Display*</span> display, <span style="color: rgb(0, 0, 153);">Font</span> sourceFont, <span style="color: rgb(0, 0, 153);">Font</span> maskFont, <span style="color: rgb(0, 0, 153);">unsigned&nbsp; int</span> sourceChar, <span style="color: rgb(0, 0, 153);">unsigned int</span> maskChar, <span style="color: rgb(0, 0, 153);">XColor*</span> foregroundColor, <span style="color: rgb(0, 0, 153);">XColor*</span> backgroundColor <span style="font-weight: bold;">)<br>
+        </span>
+        <div style="margin-left: 40px;"><small>"sourceChar" - must be a defined glyph in "sourceFont"<br>
+        "maskChar" - must be a defined glyph in "maskFont", if "maskFont" was defined<br>
+        The "maskFont" and "maskChar" are optional.<br>
+        The origins of the "sourceChar" and "maskChar" glyphs are positioned coincidentaly and define the hotspot.<br>
+        Return: <span style="color: rgb(204, 0, 0);">error </span>- <span style="text-decoration: underline;">BadAlloc</span>, <span style="text-decoration: underline;">BadFont</span>, <span style="text-decoration: underline;">BadValue</span>. <span style="color: rgb(0, 102, 0);">success</span> - <span style="text-decoration: underline;">Cursor</span>.<br>
+        <br>
+        </small></div>
+        <span style="font-weight: bold;">
+        <br>
+        </span><span style="color: rgb(0, 0, 153);">Cursor</span> <span style="font-weight: bold;">XCreatePixmapCursor(</span> <span style="color: rgb(0, 0, 153);">Display*</span> display, <span style="color: rgb(0, 0, 153);">Pixmap</span> source, <span style="color: rgb(0, 0, 153);">Pixmap</span> mask, <span style="color: rgb(0, 0, 153);">XColor*</span> foregroundColor, <span style="color: rgb(0, 0, 153);">XColor*</span> backgroundColor, <span style="color: rgb(0, 0, 153);">unsigned int</span> x, <span style="color: rgb(0, 0, 153);">unsigned int</span> y <span style="font-weight: bold;">)<br>
+        </span>
+        <div style="margin-left: 40px;"><small>"source", "mask" - must have a depth 1.<br>
+        "foregroundColor" - is used in "source" for pixels set to 1.<br>
+        "backgroundColor" - is used in "source" for pixels set to 0.<br>
+        "mask" - defined the shape of the cursor, pixels set to 1 define what will be visible. Should have the same size as "source".<br>
+        The hotspot must be a point within the "source".<br>
+        Return: </small><small><span style="color: rgb(204, 0, 0);">error </span>- <span style="text-decoration: underline;">BadAlloc</span>, <span style="text-decoration: underline;">BadPixmap</span>. <span style="color: rgb(0, 102, 0);">success</span> - <span style="text-decoration: underline;">Cursor</span>.</small></div>
+        <span style="font-weight: bold;">
+        <br>
+        XFreeCursor(</span> <span style="color: rgb(0, 0, 153);">Display*</span> display, <span style="color: rgb(0, 0, 153);">Cursor</span> cursor <span style="font-weight: bold;">)<br>
+        </span>
+        <div style="margin-left: 40px;"><small>Destroys resources used by a cursor.</small><br>
+        </div>
+        <span style="font-weight: bold;">
+        <br>
+        </span>
+        <div> what to do with a Cursor:<br>
+        <div style="text-align: left;"><span style="color: rgb(102, 102, 102);"><span style="color: rgb(0, 0, 0);"></span></span><span style="color: rgb(0, 0, 153);">int</span> <span style="font-weight: bold;">XDefineCursor(</span> <span style="color: rgb(0, 0, 153);">Display*</span> display, <span style="color: rgb(0, 0, 153);">Window</span> window, <span style="color: rgb(0, 0, 153);">Cursor</span> cursor <span style="font-weight: bold;">)<br>
+        </span>
+        <div style="margin-left: 40px;"><small>Defines a cursor for a window,
+        if this is the root window then for all other windows which do not have
+        a defined cursor will be used the same cursor.</small><span style="font-weight: bold;"></span><br>
+        <span style="font-weight: bold;"></span></div>
+        <span style="color: rgb(102, 102, 102);"><span style="font-style: italic;"></span></span></div>
+        <span style="font-weight: bold;"></span></div>
+        </div></div>
+    </div>
+    
+    
+    
+    <div id="articleHeader">
+        <p id="moto3">Pixmaps</p>
+    </div>
+    <div id="articleContent">
+        <div>
+        <div style="text-align: left;"><big><small>Pixmap can only be used on the screen on which they were created.<br>
+        Pixmap are off-screen resources used for operations like defining
+        cursors as tiling patterns or as the source for certain raster
+        operations.<br>
+        A bitmap is a single bit-plane pixmap.<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </small></big>
+        <div >how to talk to X11 to have this:<br>
+        <br>
+        <div style="text-align: left;"><span style="color: rgb(0, 0, 153);">Pixmap</span> <span style="font-weight: bold;">XCreatePixmap(</span> <span style="color: rgb(0, 0, 153);">Display*</span> display, <span style="color: rgb(0, 0, 153);">Drawable</span> drawable, <span style="color: rgb(0, 0, 153);">unsigned int</span> width, <span style="color: rgb(0, 0, 153);">unsigned int</span> height, <span style="color: rgb(0, 0, 153);">unsigned int</span> depth <span style="font-weight: bold;">)<br>
+        </span>
+        <div style="margin-left: 40px;"><small>The server uses the "drawable"
+        to determine on which screen to create the pixmap. It is valid to pass
+        an InputOnly widnow as a drawable argument.<br>
+        <br>
+        </small></div>
+        <span style="font-weight: bold;">XFreePixmap(</span> <span style="color: rgb(0, 0, 153);">Display*</span> display, <span style="color: rgb(0, 0, 153);">Pixmap</span> pixmap<span style="font-weight: bold;"> )<br>
+        </span>
+        <div style="margin-left: 40px;"><small>Free all resources associated with the pixmap.</small><br>
+        </div>
+        <span style="font-weight: bold;"><br>
+        <br>
+        </span></div>
+        </div>
+        <big><big><big><span style="font-weight: bold;"></span></big></big></big></div>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div id="articleHeader">
+        <p id="moto3">Xlib - C Language X Interface</p>
+    </div>
+
+    <div id="articleContent">
+        XEvent - it's a big union.
+        When a X event occures, it will contain info ragarding to the
+        speciffics of that kind of event.
+    </div>
+
+    <div id="articleContent">
+
+<hr style="width: 100%; height: 2px;"><br>
+<table
+ style="background-color: rgb(153, 153, 153); text-align: left; width: 467px; height: 1127px;"
+ border="1" cellpadding="5" cellspacing="1">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span
+ style="font-weight: bold;">int</span><br>
+      </td>
+      <td style="vertical-align: top;">type<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XAnyEvent"><span style="font-weight: bold;">XAny</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xany<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XKeyEvent"><span style="font-weight: bold;">XKey</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xkey<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XButtonEvent"><span style="font-weight: bold;">XButton</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xbutton<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XMotionEvent"><span style="font-weight: bold;">XMotion</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xmotion<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XCrossingEvent"><span style="font-weight: bold;">XCrossing</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xcrossing<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XFocusChangeEvent"><span style="font-weight: bold;">XFocusChange</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xfocus<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XExposeEvent"><span style="font-weight: bold;">XExpose</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xexpose<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XGraphicsExposeEvent"><span style="font-weight: bold;">XGraphicsExpose</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xgraphicsexpose<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XNoExposeEvent"><span style="font-weight: bold;">XNoExpose</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xnoexpose<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XVisibilityEvent"><span style="font-weight: bold;">XVisibility</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xvisibility<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XCreateWindowEvent"><span style="font-weight: bold;">XCreateWindow</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xcreatewindow<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XDestroyWindowEvent"><span style="font-weight: bold;">XDestroyWindow</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xdestroywindow<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XUnmapEvent"><span style="font-weight: bold;">XUnmap</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xunmap<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XMapEvent"><span style="font-weight: bold;">XMap</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xmap<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XMapRequestEvent"><span style="font-weight: bold;">XMapRequest</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xmaprequest<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XReparentEvent"><span style="font-weight: bold;">XReparent</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xreparent<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XConfigureEvent"><span style="font-weight: bold;">XConfigure</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xconfigure<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XGravityEvent"><span style="font-weight: bold;">XGravity</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xgravity<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XResizeRequestEvent"><span style="font-weight: bold;">XResizeRequest</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xresizerequest<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XConfigureRequestEvent"><span style="font-weight: bold;">XConfigureRequest</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xconfigrequest<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XCirculateEvent"><span style="font-weight: bold;">XCirculate</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xcirculate<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XCirculateRequestEvent"><span style="font-weight: bold;">XCirculateRequest</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xcirculaterequest<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XPropertyEvent"><span style="font-weight: bold;">XProperty</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xproperty<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XSelectionClearEvent"><span style="font-weight: bold;">XSelectionClear</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xselectionclear<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XSelectionRequestEvent"><span style="font-weight: bold;">XSelectionRequest</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xselectionrequest<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XSelectionEvent"><span style="font-weight: bold;">XSelection</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xselection<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XColormapEvent"><span style="font-weight: bold;">XColormap</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xcolormap<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XClientMessageEvent"><span style="font-weight: bold;">XClientMessage</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xclient<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XMappingEvent"><span style="font-weight: bold;">XMapping</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xmapping<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XErrorEvent"><span style="font-weight: bold;">XError</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xerror<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><a
+ href="#XKeyMapEvent"><span style="font-weight: bold;">XKeyMap</span></a>Event<br>
+      </td>
+      <td style="vertical-align: top;">xkeymap<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;"><span
+ style="font-weight: bold;">long</span><br>
+      </td>
+      <td style="vertical-align: top;">pad[24]<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<big><big><span style="font-weight: bold;">Event Categories:</span></big></big><br>
+<br>
+<table
+ style="background-color: rgb(153, 153, 153); text-align: left; width: 673px; height: 6px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Keyboard<br>
+      </td>
+      <td style="vertical-align: top;"><a href="#XKeyEvent"><small
+ style="font-weight: bold;">KeyPress</small></a>, <a href="#XKeyEvent"><small
+ style="font-weight: bold;">KeyRelease</small></a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Pointer<br>
+      </td>
+      <td style="vertical-align: top;"><a href="#XButtonEvent"><small
+ style="font-weight: bold;">ButtonPress</small></a>, <a
+ href="#XButtonEvent"><small style="font-weight: bold;">ButtonRelease</small></a>,
+      <a href="#XMotionEvent"><small style="font-weight: bold;">MapNotify</small></a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Window
+Crossing<br>
+      </td>
+      <td style="vertical-align: top;"><a href="#XCrossingEvent"><small
+ style="font-weight: bold;">EnterNotify</small></a>, <a
+ href="#XCrossingEvent"><small style="font-weight: bold;">LeaveNotify</small></a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Input Focus<br>
+      </td>
+      <td style="vertical-align: top;"><small style="font-weight: bold;">FocusIn</small>,
+      <small style="font-weight: bold;">FocusOut</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Keymap State
+Notification<br>
+      </td>
+      <td style="vertical-align: top;"><small style="font-weight: bold;">KeymapNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Exposure<br>
+      </td>
+      <td style="vertical-align: top;"><small style="font-weight: bold;">Expose</small>,
+      <small style="font-weight: bold;">GraphicsExpose</small>, <small
+ style="font-weight: bold;">NoExpose</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Structure
+Control<br>
+      </td>
+      <td style="vertical-align: top;"><small style="font-weight: bold;">CirculateRequest</small>,
+      <small style="font-weight: bold;">ConfigRequest</small>, <small
+ style="font-weight: bold;">MapRequest</small>,<br>
+      <small style="font-weight: bold;">ResizeRequest</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Window State
+Notification<br>
+      </td>
+      <td style="vertical-align: top;"><small style="font-weight: bold;">CirculateNotify</small>,
+      <small style="font-weight: bold;">ConfigureNotify</small>, <small
+ style="font-weight: bold;">CreateNotify</small>,<br>
+      <small style="font-weight: bold;">DestroyNotify</small>, <small
+ style="font-weight: bold;">GravityNotify</small>, <small
+ style="font-weight: bold;">MapNotify</small>,<br>
+      <small style="font-weight: bold;">MapPingNotify</small>, <small
+ style="font-weight: bold;">ReparentNotify</small>,<small
+ style="font-weight: bold;"> UnmapNotify</small>,<br>
+      <small style="font-weight: bold;">VisibilityNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Colormap
+State Notification<br>
+      </td>
+      <td style="vertical-align: top;"><small style="font-weight: bold;">ColormapNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: right;">Client
+Communication<br>
+      </td>
+      <td style="vertical-align: top;"><small style="font-weight: bold;">ClientMessage</small>,
+      <small style="font-weight: bold;">PropertyNotify</small>, <small
+ style="font-weight: bold;">SelectionClear</small>,<br>
+      <small style="font-weight: bold;">SelectionNotify</small>, <small
+ style="font-weight: bold;">SelectionRequest</small><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<big><big><span style="font-weight: bold;">To receive events a client
+must "subscribe" for them.<br>
+To subscribe for desired events for a window,<br>
+a client must use the masks below:<br>
+</span><small><small><br>
+</small></small><span style="font-weight: bold;"></span></big></big>&nbsp;&nbsp;<span
+ style="text-decoration: underline; font-weight: bold;"></span>
+<table
+ style="background-color: rgb(51, 102, 102); width: 1312px; height: 773px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; font-weight: bold; text-decoration: underline; background-color: rgb(255, 255, 255);">EventMask</td>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 255, 255);"><span
+ style="text-decoration: underline; font-weight: bold;">Circumstances</span></td>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 255, 255);"><span
+ style="font-weight: bold; text-decoration: underline;">Event Type</span><br>
+      </td>
+      <td
+ style="vertical-align: top; font-weight: bold; text-decoration: underline; background-color: rgb(255, 255, 255);">Structure</td>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 255, 255);"><span
+ style="font-weight: bold; text-decoration: underline;">Generic
+Structure</span><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right;">NoEventMask</td>
+      <td style="vertical-align: top; text-align: center;">No events
+wanted<br>
+      </td>
+      <td style="vertical-align: top; text-align: right;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: right;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(255, 204, 153);">KeyPressMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(255, 204, 153);">Keyboard
+down events wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 204, 153);">KeyPress<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 204, 153);">XKeyPressedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 204, 153);">XKeyEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(255, 204, 153);">KeyReleaseMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(255, 204, 153);">Keyboard
+up events wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 204, 153);">KeyRelease<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 204, 153);">XKeyReleasedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 204, 153);">XKeyEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(102, 51, 102);">ButtonPressMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(102, 51, 102);">Pointer
+button down events wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 51, 102);">ButtonPress<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 51, 102);">XButtonPressedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 51, 102);">XButtonEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(102, 51, 102);">ButtonReleaseMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(102, 51, 102);">Pointer
+button up events wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 51, 102);">ButtonRelease<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 51, 102);">XButtonReleasedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 51, 102);">XButtonEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(51, 51, 255);">EnterWindowMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(51, 51, 255);">Pointer
+window entry events wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 255);">EnterNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 255);">XEnterWindowEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(51, 51, 255);">XCrossingEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(51, 51, 255);">LeaveWindowMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(51, 51, 255);">Pointer
+window leave events wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 255);">LeaveNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 255);">XLeaveWindowEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(51, 51, 255);">XCrossingEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(51, 51, 51);">PointerMotionHintMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(51, 51, 51);">Pointer
+motion hints wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 51);"><br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 51);"><br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(51, 51, 51);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 204, 204);">PointerMotionMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 204, 204);">Pointer
+motion events wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">MotionNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">XPointerMovedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">XMotionEvent</td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 204, 204);">Button1MotionMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 204, 204);">Pointer
+motion while button 1 down</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">MotionNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">XPointerMovedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">XMotionEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 204, 204);">Button2MotionMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 204, 204);">Pointer
+motion while button 2 down</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">MotionNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">XPointerMovedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">XMotionEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 204, 204);">Button3MotionMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 204, 204);">Pointer
+motion while button 3 down</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">MotionNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">XPointerMovedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">XMotionEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 204, 204);">Button4MotionMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 204, 204);">Pointer
+motion while button 4 down</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">MotionNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">XPointerMovedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">XMotionEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 204, 204);">Button5MotionMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 204, 204);">Pointer
+motion while button 5 down</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">MotionNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">XPointerMovedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">XMotionEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 204, 204);">ButtonMotionMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 204, 204);">Pointer
+motion while any button down</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">MotionNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 204, 204);">XPointerMovedEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">XMotionEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(255, 204, 0);">KeymapStateMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(255, 204, 0);">Keyboard
+state wanted at window entry and focus in<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 204, 0);">KeymapNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 204, 0);">XKeymapEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 204, 0);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(0, 153, 0);">ExposureMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(0, 153, 0);">Any
+exposure wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(0, 153, 0);">Expose<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(0, 153, 0);">XExposeEvent<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(0, 153, 0);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(153, 255, 153);">GCGraphicsExposures<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(153, 255, 153);"><br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(153, 255, 153);">GraphicsExpose<br>
+NoExpose</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(153, 255, 153);">XGraphicsExposeEvent<br>
+XNoExposeEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(153, 255, 153);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(255, 0, 0);">VisibilityChangeMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(255, 0, 0);">Any
+change in visibility wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 0, 0);">VisibilityNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(255, 0, 0);">XVisibilityEvent<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(255, 0, 0);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(102, 255, 255);">StructureNotifyMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(102, 255, 255);">Any
+change in window structure wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 255, 255);">CirculateNotify<br>
+ConfigureNotify<br>
+DestroyNotify<br>
+GravityNotify<br>
+MapNotify<br>
+ReparentNotify<br>
+UnmapNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 255, 255);">XCirculateEvent<br>
+XConfigureEvent<br>
+XDestroyWindowEvent<br>
+XGravityEvent<br>
+XMapEvent<br>
+XReparentEvent<br>
+XUnmapEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 255, 255);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(102, 0, 0);">ResizeRedirectMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(102, 0, 0);">Redirect
+resize of this window</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 0, 0);">ResizeRequest<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 0, 0);">XResizeRequestEvent<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(102, 0, 0);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 153, 51);">SubstructureNotifyMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 153, 51);">Substructure
+notification wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">CirculateNotify<br>
+ConfigureNotify<br>
+CreateNotify<br>
+DestroyNotify<br>
+GravityNotify<br>
+MapNotify<br>
+ReparentNotify<br>
+UnmapNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">XCirculateEvent<br>
+XConfigureEvent<br>
+XCreateWindowEvent<br>
+XDestroyWindowEvent<br>
+XGravityEvent<br>
+XMapEvent<br>
+XReparentEvent<br>
+XUnmapEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="text-align: right; background-color: rgb(204, 255, 255);">SubstructureRedirectMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(204, 255, 255);">Redirect
+structure requests on children</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 255, 255);">CirculateRequest<br>
+ConfigureRequest<br>
+MapRequest<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 255, 255);">XCirculateRequestEvent<br>
+XConfigureRequestEvent<br>
+XMapRequestEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 255, 255);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(102, 102, 0);">FocusChangeMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(102, 102, 0);">Any
+change in input focus wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 0);">FocusIn<br>
+FocusOut<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 0);">XFocusInEvent<br>
+XFocusOutEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 0);">XFocusChangeEvent<br>
+XFocusChangeEvent<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(153, 0, 0);">PropertyChangeMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(153, 0, 0);">Any
+change in property wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(153, 0, 0);">PropertyNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(153, 0, 0);">XPropertyEvent<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(153, 0, 0);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(51, 0, 153);">ColormapChangeMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(51, 0, 153);">Any
+change in colormap wanted</td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 0, 153);">ColormapNotify<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 0, 153);">XColormapEvent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(51, 0, 153);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; background-color: rgb(51, 51, 51);">OwnerGrabButtonMask</td>
+      <td
+ style="vertical-align: top; text-align: center; background-color: rgb(51, 51, 51);">Automatic
+grabs should activate with owner_events set to True<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 51);"><br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(51, 51, 51);"><br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(51, 51, 51);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">ClientMessage</td>
+      <td style="vertical-align: top; text-align: right;">XClientMessageEvent<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">MappingNotify<br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">XMappingEvent<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">SelectionClear<br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">XSelectionClearEvent<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">SelectionNotify<br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">XSelectionEvent<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">SelectionRequest<br>
+      </td>
+      <td style="vertical-align: top; text-align: right;">XSelectionRequestEvent<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<br>
+<big style="font-weight: bold;"><big><big>Structures that correspond to
+events:</big><br>
+<br>
+</big></big><br>
+<span style="font-weight: bold;"><a name="XAnyEvent"></a>XAny</span>Event&nbsp;
+-&nbsp; the common part for all event structures<br>
+<br>
+<br>
+<table
+ style="background-color: rgb(153, 153, 153); text-align: left; width: 792px; height: 182px;"
+ border="1" cellpadding="5" cellspacing="1">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">int</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">unsigned
+long</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; white-space: nowrap; color: rgb(153, 0, 0); font-weight: bold;">Bool</td>
+      <td
+ style="vertical-align: top; white-space: nowrap; color: rgb(153, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; white-space: nowrap; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Display*</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Window</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>)</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XKeyEvent"></a>XKey</span>Event&nbsp;
+-&nbsp; <br>
+<br>
+<br>
+<table
+ style="background-color: rgb(153, 153, 153); text-align: left; width: 930px; height: 393px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">int</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">KeyPress</small> or <small><span
+ style="font-weight: bold;">KeyRelease</span></small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Bool</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Display*</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Window</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>)<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">root
+window the event occurred on</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">subwindow</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">child
+window</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">time
+when the event occured (in milliseconds)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to event window (0 if "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">same_screen</span>"
+is false )</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x_root,
+y_root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to root window</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">unsigned
+int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">state</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+the logical state of the pointer buttons and modifier keys.<br>
+it is the bitwise inclusive OR of one or more of the button or modifier
+key masks:<br>
+      <small style="font-weight: bold;">Button1Mask, Button2Mask,
+Button3Mask, Button4Mask, Button5Mask,<br>
+ShiftMask, LockMask, ControlMask,<br>
+Mod1Mask, Mod2Mask, Mod3Mask, Mod4Mask, Mod5Mask.</small> </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">unsigned
+int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">keycode</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">key-code
+of the pressed keyboard key<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">same_screen</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+if "<span
+ style="color: rgb(0, 0, 0); text-decoration: underline; font-style: italic; font-weight: bold;">window</span>"
+is on the same Screen as "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">root</span>"
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(102, 51, 0);"><span style="color: rgb(153, 0, 0);">XKeyEvent</span>
+</span><span style="color: rgb(51, 153, 153);">XKeyPressedEvent;</span><br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XKeyEvent</span> <span
+ style="color: rgb(51, 153, 153);">XKeyReleasedEvent;<br>
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><span
+ style="color: rgb(51, 153, 153);"><br>
+</span><br>
+<a name="XButtonEvent"></a><span style="font-weight: bold;">XButton</span>Event&nbsp;
+-&nbsp; <br>
+<br>
+<table
+ style="background-color: rgb(102, 102, 102); text-align: left; width: 947px; height: 361px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">int</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">ButtonPress</small> or <small
+ style="font-weight: bold;">ButtonRelease</small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">unsigned
+long</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Bool</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Display*</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Window</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">root
+window the event occurred on</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">subwindow</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">child
+window</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">time
+when the event occured (in milliseconds)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to event window (0 if "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">same_screen</span>"
+is false )</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x_root,
+y_root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to root window</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">unsigned
+int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">state</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+the logical state of the pointer buttons and modifier keys.<br>
+it is the bitwise inclusive OR of one or more of the button or modifier
+key masks:<br>
+      <small style="font-weight: bold;">Button1Mask, Button2Mask,
+Button3Mask, Button4Mask, Button5Mask,<br>
+ShiftMask, LockMask, ControlMask,<br>
+Mod1Mask, Mod2Mask, Mod3Mask, Mod4Mask, Mod5Mask.</small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">unsigned
+int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">button</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">the
+pressed mouse button: <small style="font-weight: bold;">Button1,
+Button2, Button3, Button4, Button5</small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">same_screen</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+if "<span
+ style="color: rgb(0, 0, 0); text-decoration: underline; font-style: italic; font-weight: bold;">window</span>"
+is on the same Screen as "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">root</span>"</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XButtonEvent</span> <span
+ style="color: rgb(51, 153, 153);">XButtonPressedEvent;</span><br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XButtonEvent</span> <span
+ style="color: rgb(51, 153, 153);">XButtonReleasedEvent;<br>
+<br style="color: rgb(51, 153, 153);">
+</span>
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-weight: bold;"><a name="XMotionEvent"></a>XMotion</span>Event&nbsp;
+-&nbsp; <br>
+<br>
+<table
+ style="background-color: rgb(102, 102, 102); text-align: left; width: 953px; height: 400px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">int</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204); font-weight: bold;"><small>MotionNotify</small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">unsigned
+long</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Bool</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Display*</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Window</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">root
+window the event occurred on</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">subwindow</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">child
+window</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">time
+when the event occured (in milliseconds)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to event window (0 if "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">same_screen</span>"
+is false )</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x_root,
+y_root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to root window<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">unsigned
+int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">state</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+the logical state of the pointer buttons and modifier keys.<br>
+it is the bitwise inclusive OR of one or more of the button or modifier
+key masks:<br>
+      <small style="font-weight: bold;">Button1Mask, Button2Mask,
+Button3Mask, Button4Mask, Button5Mask,<br>
+ShiftMask, LockMask, ControlMask,<br>
+Mod1Mask, Mod2Mask, Mod3Mask, Mod4Mask, Mod5Mask.</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">char</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">is_hint</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">NotifyNormal, NotifyHint</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">same_screen</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+if "<span
+ style="color: rgb(0, 0, 0); text-decoration: underline; font-style: italic; font-weight: bold;">window</span>"
+is on the same Screen as "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">root</span>"<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XMotionEvent</span> <span
+ style="color: rgb(51, 153, 153);">XPointerMovedEvent;</span><br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-weight: bold;"><a name="XCrossingEvent"></a>XCrossing</span>Event&nbsp;
+-&nbsp; if the pointer is caused to be in a different window than
+before.<br>
+<br>
+<table
+ style="background-color: rgb(102, 102, 102); text-align: left; width: 953px; height: 400px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">int</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">EnterNotify</small> or <small
+ style="font-weight: bold;">LeaveNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">unsigned
+long</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Bool</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Display*</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Window</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">root
+window the event occurred on</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">subwindow</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">child
+window</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">time
+when the event occured (in milliseconds)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to event window (0 if "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">same_screen</span>"
+is false )</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x_root,
+y_root</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">pointer
+coordinates relative to root window<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">unsigned
+int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">mode</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204); font-weight: bold;"><small>NotifyNormal,
+NotifyGrab, NotifyUnGrab </small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">char</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">detail</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">NotifyAncestor, NotifyVirtual,
+NotifyInferior, NotifyNonlinear,NotifyNonlinearVirtual</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">same_screen</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+if "<span
+ style="color: rgb(0, 0, 0); text-decoration: underline; font-style: italic; font-weight: bold;">window</span>"
+is on the same Screen as "<span
+ style="font-weight: bold; font-style: italic; text-decoration: underline;">root</span>"<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: left; background-color: rgb(204, 153, 51);">focus<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">boolean
+focus<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">unsigned
+int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">state<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">indicates
+the logical state of the pointer buttons and modifier keys.<br>
+it is the bitwise inclusive OR of one or more of the button or modifier
+key masks:<br>
+      <small style="font-weight: bold;">Button1Mask, Button2Mask,
+Button3Mask, Button4Mask, Button5Mask,<br>
+ShiftMask, LockMask, ControlMask,<br>
+Mod1Mask, Mod2Mask, Mod3Mask, Mod4Mask, Mod5Mask.</small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XCrossingEvent</span> <span
+ style="color: rgb(51, 153, 153);">XEnterWindowEvent;</span><br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XCrossingEvent</span> <span
+ style="color: rgb(51, 153, 153);">XLeaveWindowEvent;<br>
+<br>
+</span>
+<hr style="width: 100%; height: 2px;"><span
+ style="color: rgb(51, 153, 153);"><br>
+<br>
+</span><span style="font-weight: bold;"><a name="XFocusChangeEvent"></a>XFocusChange</span>Event&nbsp;
+-&nbsp; when one window is loosing/gaining focus.<br>
+<br>
+<table
+ style="background-color: rgb(102, 102, 102); text-align: left; width: 953px; height: 31px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">int</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">FocusIn</small> or <small
+ style="font-weight: bold;">FocusOut</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">unsigned
+long</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Bool</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Display*</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Window</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">mode</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204); font-weight: bold;"><small>NotifyNormal,
+NotifyGrab, NotifyUngrab </small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">detail</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">NotifyAncestor, NotifyVirtual,
+NotifyInferior, NotifyNonlinear,NotifyNonlinearVirtual,<br>
+NotifyPointer, NotifyPointerRoot, NotifyDetailNone<br>
+      </span></small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XFocusChangeEvent</span> <span
+ style="color: rgb(51, 153, 153);">XFocusInEvent;</span><br>
+<span style="color: rgb(153, 102, 51);">typedef</span> <span
+ style="color: rgb(153, 0, 0);">XFocusChangeEvent</span> <span
+ style="color: rgb(51, 153, 153);">XFocusOutEvent;</span><br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XExposeEvent"></a>XExpose</span>Event&nbsp;
+-&nbsp; when the conten of a window region is lost, clients are
+notified about this.<br>
+<br>
+<br>
+<table
+ style="background-color: rgb(102, 102, 102); text-align: left; width: 953px; height: 135px;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">int</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">Expose</small><small
+ style="font-weight: bold;"></small> </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">unsigned
+long</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Bool</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Display*</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(153, 0, 0); font-weight: bold;">Window</td>
+      <td
+ style="vertical-align: top; color: rgb(153, 0, 0); font-weight: bold;">window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>)</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x,y</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204); font-weight: bold;"><small>
+      </small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">width,
+height</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">count<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">if
+!= 0, then at least this many more<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XGraphicsExposeEvent"></a>XGraphicsExpose</span>Event,
+<a name="XNoExposeEvent"></a><span style="font-weight: bold;">XNoExpose</span>Event<br>
+<br>
+<table style="text-align: left; width: 793px; height: 293px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">GraphicsExpose</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Drawable<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">drawable<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x,y<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">width,
+height<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">count<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">if
+nonzero, at least this many more<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">major_code<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">core
+is CopyArea or CopyPlane<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">minor_code<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">not
+defined in the core<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<table style="text-align: left; width: 793px; height: 65px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">NoExpose</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Drawable<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">drawable<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">count<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">if
+nonzero, at least this many more<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">major_code<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">core
+is CopyArea or CopyPlane<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">minor_code<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">not
+defined in the core<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-weight: bold;"><br>
+<a name="XVisibilityEvent"></a>XVisibility</span>Event&nbsp; -&nbsp;
+changes made to window's visibility<br>
+<br>
+<table style="text-align: left; width: 895px; height: 145px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">VisibilityNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); font-weight: bold; color: rgb(102, 0, 0);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); font-weight: bold; color: rgb(102, 0, 0);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+where the event occured (<span style="color: rgb(0, 153, 0);">event
+window</span>) </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">state<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">VisibilityUnobscured</small>, <small
+ style="font-weight: bold;">VisibilityPartiallyObscured,
+VisibilityFullyObscured</small> </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XCreateWindowEvent"></a>XCreateWindow</span>Event&nbsp;
+-&nbsp; notifications about windows creation<br>
+<br>
+<table style="text-align: left; width: 793px; height: 65px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">CreateNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">parent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">parent
+of the window<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window-id
+that was created<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+location<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">width,
+height<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+size<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">border_width<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">border
+width<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">override_redirect<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">creation
+should be overridden<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<small>The <span
+ style="text-decoration: underline; font-style: italic;">override_redirect</span>
+member is set to the override-redirect attribute of the window. </small><br>
+<small><span style="text-decoration: underline;">Window manager clients
+normally should ignore this window if the override_redirect member is
+True.<br>
+<br>
+</span></small>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XDestroyWindowEvent"></a>XDestroyWindow</span>Event&nbsp;
+-&nbsp; notifications about the window was destroyed<br>
+<br>
+<table style="text-align: left; width: 835px; height: 209px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">DestroyNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">event<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set either to the destroyed window or to its parent, <br>
+depending on whether <small style="font-weight: bold;">StructureNotify</small>
+or <small style="font-weight: bold;">SubstructureNotify</small> <br>
+was selected.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that is destroyed<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XUnmapEvent"></a>XUnmap</span>Event&nbsp;
+-&nbsp; notification about a window was unmapped. <br>
+mapping/unmapping - is marking/unmarking a window that it is valid to
+be displayed.<br>
+<br>
+<table style="text-align: left; width: 951px; height: 310px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">UnmapNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">event<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set either to the destroyed window or to its parent, <br>
+depending on whether <small style="font-weight: bold;">StructureNotify</small>
+or <small style="font-weight: bold;">SubstructureNotify</small> <br>
+was selected. This is the window used by the X server<br>
+to report the event.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that is unmapped<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">from_configure<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">True
+if the event was generated as a result of a resizing of the<br>
+window's parent when the window itself had a <small
+ style="font-weight: bold;">win_gravity</small> of <small
+ style="font-weight: bold;">UnmapGravity.</small><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XMapEvent"></a>XMap</span>Event&nbsp;
+-&nbsp; notification about a window was mapped.<br>
+<br>
+<table style="text-align: left; width: 952px; height: 310px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">MapNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">event<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set either to the destroyed window or to its parent, <br>
+depending on whether <small style="font-weight: bold;">StructureNotify</small>
+or <small style="font-weight: bold;">SubstructureNotify</small> <br>
+was selected. This is the window used by the X server<br>
+to report the event.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that is mapped<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">override_redirect<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;"></small>Window manager clients normally
+should ignore this window if the<br>
+override-redirect attribute is <small style="font-weight: bold;">True,&nbsp;
+      </small>because these events usually are<br>
+generated from pop-ups, which override structure control.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-weight: bold;"><a name="XMapRequestEvent"></a>XMapRequest</span>Event&nbsp;
+-&nbsp; information about different client's desire to map a window.<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">MapRequest</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">parent<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">parent
+window<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that is mapped<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XReparentEvent"></a>XReparent</span>Event&nbsp;
+-&nbsp; notification about changing window parent.<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">MapRequest</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">event<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">reparented
+window or old or new parent, <br>
+depending on whether StructureNotify or SubstructureNotify was selected.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that was reparented<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">parent<br>
+      </td>
+      <td style="vertical-align: top;">new parent window<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y<br>
+      </td>
+      <td style="vertical-align: top;">reparented window's coordinates
+relative to new parent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">override_redirect<br>
+      </td>
+      <td style="vertical-align: top;">is set to the override-redirect
+attribute of the window <br>
+specified by the <small style="font-weight: bold;">window</small>.
+Window manager clients normally should<br>
+ignore this window if the override_redirect is True.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XConfigureEvent"></a>XConfigure</span>Event&nbsp;
+-&nbsp; window's configuration notifications<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">ConfigureNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">event<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to either reconfigured window ot to its parent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that was reconfigured<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window's
+coordinates relative to new parent<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">width,
+height<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window's
+size not including the border<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">border_width<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window's
+border width</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">above<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the sibling window and is used for stacking operations</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">override_redirect<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the override-redirect attribute of the window <br>
+specified by the <small style="font-weight: bold;">window</small>.
+Window manager clients normally should<br>
+ignore this window if the override_redirect is True.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XGravityEvent"></a>XGravity</span>Event&nbsp;
+-&nbsp; information about when a window is moved<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">ConfigureNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; color: rgb(0, 0, 0); background-color: rgb(204, 153, 51);">event<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to either moved window or to its parent,<br>
+depending on whether <small style="font-weight: bold;">StructureNotify</small>
+or <small style="font-weight: bold;">SubstructureNotify</small> was
+selected.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">child
+window
+that was moved<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">x, y<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window's
+coordinates relative to the parent<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XResizeRequestEvent"></a>XResizeRequest</span>Event&nbsp;
+-&nbsp; notification that a client requested to resize a window<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">ConfigureNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that was attempted to resize<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">width,
+height<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window's
+size without border<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XConfigureRequestEvent"></a>XConfigureRequest</span>Event<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XCirculateEvent"></a>XCirculate</span>Event<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><span
+ style="font-weight: bold;"></span><small style="font-weight: bold;">CirculateNotify</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">event<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">set
+to restacked window or to its parent, <br>
+depending on whether <small style="font-weight: bold;">StructureNotify</small>
+or <small style="font-weight: bold;">SubstructureNotify</small> was
+selected<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+that was restacked </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">place<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">PlaceOnTop,</small> <small
+ style="font-weight: bold;">PlaceOnBottom</small><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<span style="font-weight: bold;"><a name="XCirculateRequestEvent"></a>XCirculateRequest</span>Event<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XPropertyEvent"></a>XProperty</span>Event&nbsp;
+-&nbsp; property of a window was changed<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">PropertyNotify</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">window
+whos property was changed </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;"></small>set to property's atom and
+indicates what property was changed<br>
+or desired<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">set
+to the server time when the property was changed<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">state<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small
+ style="font-weight: bold;">PropertyNewValue, PropertyDelete</small><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XSelectionClearEvent"></a>XSelectionClear</span>Event&nbsp;
+-&nbsp; X server reports SelectionClear events to the client <br>
+losing ownership of a selection<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">SelectionClear</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"> is
+the window that was specified by the current owner <br>
+(the owner losing the selection) in its XSetSelectionOwner call<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">selection<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">set
+to selectio atom<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">set
+to the last change time recorded for the selection<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XSelectionRequestEvent"></a>XSelectionRequest</span>Event&nbsp;
+-&nbsp; The X server reports SelectionRequest events to the owner of a
+selection.<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">SelectionRequest</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">owner<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the window that was specified by the current owner in its <br>
+      <small style="font-weight: bold;">XSetSelectionOwner</small> call.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">requestor<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">set
+to the window requesting the selection<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">selection<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the atom that names the selection<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">target<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the atom that indicates the type the selection is desired in.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">property<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">can
+be a property name or None<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the timestamp or <small style="font-weight: bold;">CurrentTime</small>
+value from the <br>
+      <small style="font-weight: bold;">ConvertSelection</small>
+request.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XSelectionEvent"></a>XSelection</span>Event&nbsp;
+-&nbsp; <br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">SelectionNotify</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">requestor<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the window associated with the requestor of the selection<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">selection<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the atom that indicates the selection.<br>
+For example, PRIMARY is used for the primary selection.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">target<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">The
+target member is set to the atom that indicates the converted type.<br>
+For example, PIXMAP is used for a pixmap.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">property<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the atom that indicateswhich property the result was stored on. <br>
+If the conversion failed, the property member is set to <small
+ style="font-weight: bold;">None.</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">time<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"> is
+set to the time the conversion took place and can be a timestamp or<br>
+      <small style="font-weight: bold;">CurrentTime.</small><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XColormapEvent"></a>XColormap</span>Event&nbsp;
+-&nbsp;&nbsp; information about when the colormap changes and <br>
+when a colormap is installed or uninstalled.<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">ColormapNotify</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to the window whose associated colormap is changed, <br>
+installed or uninstalled<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Colormap<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">colormap<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">For
+a colormap that is changed, installed, or uninstalled, <br>
+the colormap is set to the colormap associated with the window.<br>
+For a colormap that is changed by a call to XFreeColormap, <br>
+the colormap member is set to <small style="font-weight: bold;">None.</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">new<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to indicate whether the colormap for the specified window <br>
+was changed or installed or uninstalled and can be <small
+ style="font-weight: bold;">True</small> or <small
+ style="font-weight: bold;">False.</small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">state<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+always set to indicate whether the colormap is installed or uninstalled
+      <br>
+and can be <small style="font-weight: bold;">ColormapInstalled</small>
+or <small style="font-weight: bold;">ColormapUninstalled.</small><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XClientMessageEvent"></a>XClientMessage</span>Event&nbsp;
+-&nbsp; X server generates ClientMessage events only when a client <br>
+calls the function XSendEvent.<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">ClientMessage</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Atom<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">message_type<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to an atom that indicates how the data should <br>
+be interpreted by the receiving client. </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">format<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">is
+set to 8, 16, or 32 and specifies whether the data<br>
+should be viewed as a list of bytes, shorts, or longs.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">union<br>
+&nbsp;{<br>
+      <span style="color: rgb(51, 51, 255);">char</span> b[20]<br>
+      <span style="color: rgb(51, 51, 255);">short</span> s[10]<br>
+      <span style="color: rgb(51, 51, 255);">long</span> l[5]<br>
+}<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">data<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">The
+b, s, and l members represent data of twenty 8-bit values, ten 16-bit<br>
+&nbsp;values, and five 32-bit values. Particular message types might
+not make <br>
+use of all these values. The X server places no interpretation on the <br>
+values in the window, message_type, or data members. </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XMappingEvent"></a>XMapping</span>Event&nbsp;
+-&nbsp;&nbsp; X server reports MappingNotify events to all clients. <br>
+There is no mechanism to express disinterest in this event.<br>
+X server generates this event type whenever a client application
+successfully calls:<br>
+<ul>
+  <li><small style="font-weight: bold;">XSetModifierMapping</small> to
+indicate which KeyCodes are to be used as modifiers</li>
+  <li><small style="font-weight: bold;">XChangeKeyboardMapping</small>
+to change the keyboard mapping</li>
+  <li><small style="font-weight: bold;">XSetPointerMapping</small> to
+set the pointer mapping<br>
+  </li>
+</ul>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">MappingNotify</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">unused<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">request<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"> is
+set to indicate the kind of mapping change that occurred and can be:<br>
+      <small style="font-weight: bold;">MappingModifier,
+MappingKeyboard, MappingPointer. </small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">first_keycode<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">
+set only if the request member was set to <small
+ style="font-weight: bold;">MappingKeyboard.</small><br>
+represents the first number in the range of the altered mapping<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">count<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">
+set only if the request member was set to <small
+ style="font-weight: bold;">MappingKeyboard.</small><br>
+represents the number of keycodes altered<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XErrorEvent"></a>XError</span>Event<br>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<span style="font-weight: bold;"><a name="XKeyMapEvent"></a>XKeyMap</span>Event&nbsp;
+-&nbsp;&nbsp; X server can report KeymapNotify events to clients that
+want information about changes in their keyboard state.<br>
+<br>
+<table style="text-align: left; width: 952px; height: 103px;" border="1"
+ cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">int<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">type</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"><small><span
+ style="font-weight: bold;">MappingNotify</span></small><br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">unsigned
+long<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">serial</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">#
+of last request processed by server</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Bool<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">send_event</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">true
+if this came from a SendEvent request</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">Display*<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(102, 102, 102); color: rgb(102, 0, 0); font-weight: bold;">display</td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">Display
+the event was read from</td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">Window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">window<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);">not
+used but is present to aid some toolkits.<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: right; background-color: rgb(204, 153, 51);">char<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 153, 51);">key_vector[32]<br>
+      </td>
+      <td
+ style="vertical-align: top; background-color: rgb(204, 204, 204);"> <small
+ style="font-weight: bold;"></small>set to the bit vector of the
+keyboard.<br>
+The vector is represented as 32 bytes. Byte N (from 0) contains the
+bits <br>
+for keys 8N to 8N + 7 with the least significant bit in the byte
+representing <br>
+key 8N.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    </div>
+
+</div>

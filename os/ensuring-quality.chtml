@@ -1,0 +1,47 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Ensuring Quality</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - Ensuring Quality - On SourceForge ]</p>
+    </div>
+    
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/stp">Scalable Test Platform</a><br/>
+        Automating the QA testing process for the Linux Kernel as well as automating benchmarking
+        and regression testing.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/kgdb">kgdb</a><br/>
+        Source level debugging for linux kernel. Allows debugging of linux kernel using gdb over 
+        a serial line.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/cspm">System Performance Monitor 2 by hp</a><br/>
+        Complete System Performance Monitor 2 for Linux has evolved into System Performance Monitor 2 by hp.
+        This program is being released to opensource. Community involment is encouraged and appreciated.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/mkdump">Mini Kernel Dump</a><br/>
+        Mini Kernel Dump - High reliable capturing crash dump
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/yasa">YASA - Yet another scheduling analyzer</a><br/>
+        YASA is a framework to simulate and analyze real time scheduling applications on different 
+        platforms. These platforms are called Executives. You can define own tasksets, own schedulers 
+        and own synchronization protocols to describe your target environment.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/fault-injection">Fault Injection Test Harness</a><br/>
+        The Fault Injection Test Harness provides a uniform mechanism for writing reliable test case to 
+        validate a Linux device driver can gracefully handle software and hardware fault conditions.
+    </div>
+
+</div>

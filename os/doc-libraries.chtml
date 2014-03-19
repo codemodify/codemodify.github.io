@@ -1,0 +1,34 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Refferences</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES Literature ]</p>
+    </div>
+
+    <div id="articleContent">
+             <a href="http://citeseerx.ist.psu.edu" target="_blank">Scientific Literature Digital Library and Search Engine</a>
+
+        <br/><a href="http://www.brokenthorn.com/Resources/OSDevIndex.html">BrokenThorn</a>
+        <br/><a href="http://www.osdever.net/documents.php">BonaFide</a>
+        <br/><a href="http://www.usenix.org/publications/library/proceedings/sf94/full_papers/minshall.a">
+            An Overview of the NetWare Operating System
+        </a>
+        <br/><a href="http://wiki.debian.org">Debian Wiki</a>
+        <br/><a href="http://kernelnewbies.org">Linux Kernel Newbies</a>
+        <br/><a href="http://freevideolectures.com/computerscience.html">FreeVideoLectures</a>
+        <br/><a href="http://citeseer.ist.psu.edu/articles.html">Most cited articles in Computer Science</a>
+        <br/><a href="http://www.cs.rutgers.edu/tmp/webarchives/ZmdgIBGXEwUXUpAXaXxQ">
+            20 Years of the ACM SIGPLAN Conference on Programming Language Design and Implementation
+        </a>
+        <br/><a href="http://en.wikipedia.org/wiki/List_of_operating_systems">List of operating systems</a>
+        <br/><a href="http://www.dmoz.org/Computers/Software/Operating_Systems">Operating Systems</a>
+        <br/><a href="http://freshmeat.net/browse/144">Operating System Kernels</a>
+        <br/><a href="http://www.cbi.umn.edu/iterations/haigh.html">Multicians.org and the History of Operating Systems</a>
+        <br/><a href="http://www.iterating.com/productclasses/Operating-Systems">Operating Systems</a>
+        <br/><a href="http://www.operating-system.org">Review of Operating Systems</a>
+    </div>
+
+</div>

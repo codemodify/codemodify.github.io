@@ -1,0 +1,15 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Handy Info</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Install ports as precompiled binaries</p>
+    </div>
+    <div id="articleContent">
+        pkg_add -r -v mysql5-server
+    </div>
+
+</div>

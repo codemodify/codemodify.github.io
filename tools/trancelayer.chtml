@@ -1,0 +1,29 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Trance Layer</p>
+    </div>
+
+    <div id="articleContent">
+        <img src="tools/trancelayerlogo.png" />
+    </div>
+    
+    <div id="articleContent">
+        TranceLayer is a fast and flexible logging or diagnostics framework for .Net.
+        It allows you to plug it into an existing or new application with minimal changes to the code.
+        Or it can be used as in classic scenarios of logging things along the way at different levels.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://trancelayer.codeplex.com" class="button" target="_blank">Get latest sources</a> 
+        <a href="tools/trancelayer.docx" class="button" target="_blank">Get the DOC</a> 
+        <a href="tools/trancelayer.vsd" class="button" target="_blank">Get the VSD</a> 
+    </div>
+
+    <div id="articleContent">
+        <img src="tools/trancelayerdoc2.png" />
+        <img src="tools/trancelayerdoc1.png" />
+    </div>
+
+</div>

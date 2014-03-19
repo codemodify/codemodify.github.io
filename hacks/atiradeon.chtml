@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">ATI Radeon TVOUT</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">ATI Radeon Mobility 9700 TV-OUT for FreeBSD</p>
+    </div>
+    <div id="articleContent">
+        Have been trying to port the linux version to freebsd. 
+        You can find some code <a href="hacks/ati_radeon_svideo_out.tar.gz" class="button">here</a> but I think it is obsolete now because lately the x.org have been
+        taking some wise decisions. Please don't try to run this in any ways. It is just for learning.
+    </div>
+
+</div>

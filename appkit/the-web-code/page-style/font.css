@@ -1,0 +1,19 @@
+
+/**********************************************************************
+*   Defines handy text attributes
+**********************************************************************/
+.fontMonospace       { font-family: "Courier New"; font-size: 12px; }
+.fontSansSerifArial  { font-family: "Arial"; font-size: 12px;       }
+.fontSansSerifVerdana{ font-family: "Verdana"; font-size: 10px;     }
+
+
+.textAlignLeft            { text-align: left;              }
+.textAlignRight           { text-align: right;             }
+.textAlignCenter          { text-align: center;            }
+.noTextDecoration         { text-decoration: none;         }
+.textDecorationItalic     { font-style: italic;            }
+.textDecorationBold       { font-weight: bold;             }
+.textDecorationUnderline  { text-decoration: underline;    }
+.textDecorationOverline   { text-decoration: overline;     }
+.textDecorationLineThrough{ text-decoration: line-through; }
+.textDecorationBlink      { text-decoration: blink;        }

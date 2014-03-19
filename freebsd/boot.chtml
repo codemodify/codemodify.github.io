@@ -1,0 +1,142 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Boot</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">BIOS (firmware) messages</p>
+    </div>
+    <div id="articleContent">
+        may vary
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">boot0 stage messages</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+F1    FreeBSD
+F2    BSD
+F5    Disk 2
+
+
+What happens:
+
+/boot/boot0 - is a small 512-byte file, and it is exactly what FreeBSD's installation procedure wrote to your harddisk's MBR. 
+ During the POST the INT 0x19 instruction loads an MBR, i.e. the /boot/boot0 content, into the memory at address 0x7c00. The source code for boot0 is under sys/boot/i386/boot0/boot0.s - this can give a guess at what is happening - this is the boot manager.
+
+The boot manager scans the partition table and prints the menu on the screen so the user can select what disk and what slice to boot. On the very first sector of a bootable partition (slice) should reside the  boot2.
+ So the boot0 loads it and run.
+        </pre>
+    </div>
+    
+    <div id="articleHeader">
+        <p id="moto3">boot2 stage messages</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+>>FreeBSD/i386 BOOT
+Default: 1:ad(1,a)/boot/loader
+boot:
+
+
+What Happens:
+
+ why boot2 comes after boot0, and not boot1 ? - there is a 512-byte file called boot1 in the directory /boot as well. It is used for booting from a floppy. When booting from a floppy, boot1 plays the same role as boot0 for a harddisk: it locates boot2 and runs it.
+
+ The code implementing boot2 resides in sys/boot/i386/boot2/.
+The files boot0 and boot2 that are in /boot are not used by the bootstrap, but by utilities such as boot0cfg. The actual position for boot0 is in the MBR. For boot2 it is the beginning of a bootable FreeBSD slice. These locations are not under the filesystem's control, so they are invisible to commands like ls.
+
+ The main task for boot2 is to load the file /boot/loader, which is the third stage in the bootstrapping procedure. The code in boot2 cannot use any services like open() and read(), since the kernel is not yet loaded. It must scan the harddisk, knowing about the filesystem structure, find the file /boot/loader, read it into memory using a BIOS service, and then pass the execution to the loader's entry point.
+
+
+The boot2 binary is created in special way:
+sys/boot/i386/boot2/Makefile
+boot2: boot2.ldr boot2.bin ${BTX}/btx/btx
+    btxld -v -E ${ORG2} -f bin -b ${BTX}/btx/btx -l boot2.ldr \
+        -o boot2.ld -P 1 boot2.bin
+
+This Makefile snippet shows that btxld(8) is used to link the binary. BTX, which stands for BooT eXtender, is a piece of code that provides a protected mode environment for the program, called the client, that it is linked with. So boot2 is a BTX client, i.e. it uses the service provided by BTX.
+
+
+boot0 passes the execution to BTX's entry point. BTX then switches the processor to protected mode, and prepares a simple environment before calling the client.
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">loader stage</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+BTX loader 1.0 BTX version is 1.01
+BIOS drive A: is disk0
+BIOS drive C: is disk1
+BIOS 639kB/64512kB available memory
+FreeBSD/i386 bootstrap loader, Revision 0.8
+Console internal video/keyboard
+(jkh@bento.freebsd.org, Mon Nov 20 11:41:23 GMT 2000)
+/kernel text=0x1234 data=0x2345 syms=[0x4+0x3456]
+Hit [Enter] to boot immediately, or any other key for command prompt
+Booting [kernel] in 9 seconds..._
+
+
+What Happens:
+
+ "man loader"
+
+The main task for the loader is to boot the kernel. When the kernel is loaded into memory, it is being called by the loader:
+sys/boot/common/boot.c:
+    /* Call the exec handler from the loader matching the kernel */
+    module_formats[km->m_loader]->l_exec(km)
+        </pre>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">kernel initialization</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+Copyright (c) 1992-2002 The FreeBSD Project.
+Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+        The Regents of the University of California. All rights reserved.
+FreeBSD 4.6-RC #0: Sat May  4 22:49:02 GMT 2002
+    devnull@kukas:/usr/obj/usr/src/sys/DEVNULL
+Timecounter "i8254"  frequency 1193182 Hz
+
+
+What Happens:
+
+
+ First, the kernel is an ELF dynamically linked binary, but the dynamic linker for kernel is /red/herring, which is definitely a bogus file.
+ Reading through the first few lines of  sys/conf/ldscript.i386  we see that a kernel's entry point is the symbol `btext'.
+
+btext calls the routines recover_bootinfo(), identify_cpu(), create_pagetables() - all these are defined in 
+ sys/i386/i386/locore.s.
+
+The next steps are enabling VME, and paging.
+
+Next we have:
+sys/i386/i386/locore.s:
+    movl    physfree, %esi
+    pushl   %esi                /* value of first for init386(first) */
+    call    _init386            /* wire 386 chip for unix operation */
+    call    _mi_startup         /* autoconfiguration, mountroot etc */
+    hlt     /* never returns to here */
+
+The function init386() is called, with a pointer to the first free physical page, next is mi_startup(). 
+init386 is an architecture dependent initialization function, and mi_startup() is an architecture independent one (the 'mi_'prefix stands for Machine Independent). 
+The kernel never returns from mi_startup(), and by calling it, the kernel finishes booting.
+
+
+During Kernel initialization the first user process, called "init", is created by the SYSINIT Framework's object init.    
+        </pre>
+    </div>
+    
+    <div id="articleContent">
+        Note:  The boot0 and boot2 stages are also referred to as bootstrap stages 1 and 2 
+        in boot(8) as the first steps in FreeBSD's 3-stage bootstrapping procedure. 
+     </div>
+    
+</div>

@@ -1,0 +1,21 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">The big boys</p>
+    </div>
+
+    <div id="articleContent"><pre>
+    <a href="http://www.minix3.org">Minix 3</a>
+    <a href="http://plan9.bell-labs.com/plan9/">Plan 9</a>
+    <a href="http://www.gnu.org/software/hurd/hurd.html">GNU Hurd</a>
+    <a href="http://www.nikushor.eu/research-lab/computing/smartdevices/symbianos/index.html">Symbian</a>
+
+    <a href="http://www.freebsd.org">FreeBSD</a>
+    <a href="http://developer.apple.com/documentation/MacOSX/Conceptual/OSX_Technology_Overview">Mac OS X Technology</a>
+    <a href="http://www.kernel.org">Linux</a>
+    <a href="http://www.opensolaris.org/os/">OpenSolaris</a>
+    <a href="http://en.wikipedia.org/wiki/Windows_CE">Windows CE</a>
+    </pre></div>
+
+</div>
+

@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Agere AC97 Modem</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Agere Systems AC97 Modem</p>
+    </div>
+    <div id="articleContent">
+        Ever had these win-modems not working in BSD ? Yeah, they still don't.
+        Was tring to play on my laptop to make it work by porting the linux version.
+        You can find it <a href="hacks/agere_systems_ac97_modem.tar.gz" class="button">here</a> but still don't run it.
+    </div>
+
+</div>

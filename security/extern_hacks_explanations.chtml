@@ -1,0 +1,61 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto3">Hacks Explanations (Extern Info)</p>
+    </div>
+    <div id="articleContent">
+        <pre>
+
+#############################################################################
+Symptoms:
+>>    kernel: arplookup 169.254.176.148 failed host is not on local network
+
+Reason: 
+This message is trying to tell you that something cheesy is happening on your 
+interface, and it might be an intruder trying to spoof an address which is not 
+recognized by the os. ( http://en.wikipedia.org/wiki/Spoofing_attack ).
+
+In most cases this means that system have received ARP reply for a host,that doesn't belong to an attached network.
+
+It looks like some "Ethernet cool hacker" does ARP spoofing in your network.May be he spoofs your ARP cache or cache of your gateway. You can solve theproblem by finding him, or by setting static ARP entries on your box andon gateway.
+
+
+#############################################################################
+Symptoms:
+>>    bge0: promiscous mode enabled
+
+Reason:
+Promiscuous mode is a special reception mode where an adapter will receive all
+frames on the ring, not just frames are addressed to that adapter. 
+This functionality is used by network traffic monitoring agents.
+
+Programs that might do this: dhcpd, tcpdump
+
+If you were not running tcpdump or something similar, it's possible that 
+a sniffer has been planted on your machine - and right now you're owned.
+
+
+
+
+#############################################################################
+Symptoms:
+>>    kernel: Limiting icmp ping response from 256 to 200 packets/sec
+
+Reasons:
+What you're seeing is the kernel limiting ICMP responses to 200/second.
+If there are more than 200 ICMP requests per second, and you have
+net.inet.icmp.icmplim set to 200 via sysctl (the default value), thisoccurs.It could be a ping flood, but if its happening after named dies, its morelikely your kernel sending back messages to all the hosts asking for DNSrequests. i.e. since named is dead, you had 231 DNS requests coming in persecond. The kernel, limits its response to the first 200 hosts, sendingback a message saying there is nothing listening on that port.
+
+TCP issues a tcp reset packet when the prot is unavailable -UDP can't do that, so it issues an ICMP port unreachable (which is whathe was limiting). It wasn't an ICMP echo response, which would be thetypical response to a ping flood. 
+
+If 'named' dies, and net.inet.udp.blackhole=0,then the kernel will be generating ICMP error responses for UDPpackets sent to port 53.
+
+
+#############################################################################
+Symptoms:
+>>    
+
+        </pre>
+    </div>
+
+</div>

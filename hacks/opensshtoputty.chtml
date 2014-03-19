@@ -1,0 +1,54 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">OpenSSH to Putty</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">Theory</p>
+    </div>
+    <div id="articleContent">
+        Here is a scenario where sysadmins might need to automate the conversion of openssh key format to putty.
+        They have a server with sftp only capabilities, and they want to propose to users their own made
+        set of tools that will allow users to connect and change their sites at their will.
+    </div>
+        
+    <div id="articleHeader">
+        <p id="moto3">The Problem</p>
+    </div>
+    <div id="articleContent">
+        In this process I met a dificulty: the application that I want users to use for this is WinSCP and it 
+        uses keys in Putty format. So to use it, one is forced to use putty's keykeg and to manually convert 
+        them to openssh by selecting corresponding menu items from putty's GUI. That was kind of annoying and 
+        you would have to write 30 pages of docs to explain to users what and when to press and for what reason.
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto3">The Solution</p>
+    </div>
+    <div id="articleContent">
+        I did little investigation in putty's code and extracted the code that does the converting, 
+        made another project and added new commandline parameters that will permit you to do this from 
+        a batch process without user's intervention.
+    </div>
+
+    <div id="articleContent">
+        The source code for patched putty-suite is <a href="hacks/putty-0.60.zip" class="button">here</a>, 
+        it contains the patched converting engine. The archive is a full source code of the putty.
+    </div>
+        
+    <div id="articleContent">
+        To do it by yourself with a newer version of the PuTTY follow this: <br/>
+        - download the latest putty sources <br/>
+        - copy the "windows/automation-feature.c" from the archive above into newly downloaded putty source <br/>
+        - modify the "windows/winpgen.c" from your putty source as in "windows/winpgen.c" from the archive above. <br/>
+        - to compile open the "windows/MSVC/putty.dsw" <br/>
+        - now you must have a working "puttygen.exe" that will do only the converting from putty -> openssh DSA key format. <br/>
+
+        <br/>
+        Note: I have to say that the author of the putty-suite really has lots of time. The apps work, but the code is
+        one of the best examples of how to not develop. All the respect though.
+    </div>
+
+</div>

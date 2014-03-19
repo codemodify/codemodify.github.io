@@ -1,0 +1,43 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Initialization</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - SourceForge ]</p>
+    </div>
+    
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/einit">eINIT</a><br/>
+        eINIT is an Init System for POSIX-compliant operating systems. The primary focus is on speed 
+        and modularity and, unlike other init systems, this one can be used in combination with others.
+        Benchmarks suggest that einit is faster than initng and upstart.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/sysinit">sysinit</a><br/>
+        "sysinit" is a system initialization scheme, written in BASH, based on the sysvinit 
+        implementation in many Linux distributions and a daemon-management scheme (also in BASH) for 
+        use with runit or daemontools.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/cinit">cinit - fast and intelligent init system</a><br/>
+        cinit is a fast, parallel booting, true dependency supporting init system with support for
+        profiles.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/pinit">pinit</a><br/>
+        pinit is a sysvinit alternative. It's a different way of booting linux. Keywords are: xml 
+        configuration, fast and parallel booting of services, modular design, dependecy based booting 
+        of services. It's intented to be more robust and faster than sysvini
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/parboot">Parallel Init</a><br/>
+        Simple solution for booting your Linux faster by parallelizing services startup.
+    </div>
+
+</div>

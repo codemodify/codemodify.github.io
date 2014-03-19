@@ -1,0 +1,31 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Quick mysql</p>
+    </div>
+
+    <div id="articleContent">
+        <pre>
+# install mysql
+make install clean
+
+# setup the db folder strucuture (into /var/db/mysql)
+/usr/local/bin/mysql_install_db
+
+# set the permissions
+chown -R mysql /var/db/mysql
+
+# start the server
+/usr/local/bin/mysqld_safe
+>>> Starting mysqld daemon with databases from /var/db/mysql
+
+# set the root password
+/usr/local/bin/mysqladmin -u root password qwerty
+
+# enable root access to the mysql server from other hosts
+GRANT ALL ON *.* TO root@'xxx.xxx.xxx.xxx' IDENTIFIED BY 'ROOT PASSWORD';
+        </pre>
+    </div>
+
+</div>

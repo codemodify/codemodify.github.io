@@ -1,0 +1,45 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">JsKit</p>
+    </div>
+
+    <div id="articleContent">
+        <pre style="font-family: monospace;">
+The Vision
+------------------------------------------------------------
+The vision is verry simple, I want to be able to write the code below,
+and be able to have an interactive app that exchanges data with server.
+
+
+// app speciffic header files
+include( "CentralWidget.js" );
+
+// define an entry point into the app
+function main()
+{
+    var centralWidget = new CentralWidget();
+
+    var mainWindow = new JsKit.Gui.MainWindow();
+        mainWindow.setDefaultLayoutManagers();
+        mainWindow.setTitle( "JS Application" );
+        mainWindow.getCentralArea().appendWidget( centralWidget );
+
+    var application = new JsKit.Core.Application();
+        application.setMainWindow( mainWindow );
+        application.run();
+}
+
+// run the app
+main();
+        </pre>
+    </div>
+
+    <div id="articleContent">
+        <img src="appkit/jskit.png" style="vertical-align: middle;" />
+        <a href="appkit/JsKit.7z" class="button">Donwload a glympse</a> 
+        <a href="appkit/JsKitDemo/index.html" class="button" target="_blank">Demo</a> 
+    </div>
+
+</div>

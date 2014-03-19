@@ -1,0 +1,64 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Schedulers</p>
+    </div>
+
+    <div id="articleHeader">
+        <p id="moto2">[ REFERENCES - Schedulers - On SourceForge ]</p>
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/helium">Helium Real-Time Kernel</a><br/>
+        Helium is a minimalistic real-time scheduler for 8-Bit microcontrollers.
+        Its memory footprint is less than 900 bytes. Currently, the Freescale 9S08 core is 
+        supported only, but other MCUs will be added in the future.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/sos-linux">SOS</a><br/>
+        SOS (service oriented scheduler) is a platform aimed to assign a service to offloaded processor.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/linux-hls">Hierarchical Loadable Schedulers</a><br/>
+        The Hierarchical Loadable Schedulers (HLS) framework is a scheduling infrastructure for 
+        hierarchically composing soft real-time schedulers. Each scheduler only communicates with 
+        other schedulers and the HLS infrastructure according to a well defined interface.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/rtsched">real-time-scheduler</a><br/>
+        This project is to develop a real time scheduler. We currently have a scheduler patch 
+        for the linux kernel that separates the ready real time tasks into MAX_PRI lists.
+        This allows very fast insertion and basically flat dispatch times for real time tasks.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/tiros">TiROS</a><br/>
+        TiROS (Tickless Real-Time Operating System) is a pre-emptive priority based real-time scheduler
+        (RTOS) that is suitable for use in embedded systems with very limited resources. It provides hard
+        priorities and prevents priority inversion.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/dynsched">dynsched - dynamic cpu scheduler</a>
+        This project is aimed to switch the linux cpu-scheduler at runtime. You can even run different 
+        schedulers on each cpu on an SMP System.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/swap-sched">SWAP Scheduling</a>
+        Tasks often depend on each other because of inter-process communication/synchronization.
+        Task dependency have significant impact on performance. swap-sched solves the problem by 
+        dynamically detects dependency and use it for scheduling.
+    </div>
+
+    <div id="articleContent">
+        <a href="http://sourceforge.net/projects/triosched">Trio</a>
+        Trio extends the existing Linux scheduler to support proportional-share scheduling using a 
+        scheduling algorithm, called Distributed Weighted Round-Robin (DWRR). It allows users to control 
+        shares of CPU time for any thread or group of threads.
+    </div>
+
+</div>

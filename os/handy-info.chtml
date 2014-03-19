@@ -1,0 +1,72 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Handy Info</p>
+    </div>
+
+    <div id="articleContent">
+        <br/>// create an empty floppy image of 1.44 MB
+        <br/>dd if=/dev/zero of=floppy-image.img bs=512 count=2880
+    </div>
+
+    <div id="articleContent">
+        <br/>// write a binary file to the begining of the floppy image {<a href="__resources__/scripts/write-to-floppy.shell">get script</a>}
+        <br/>mdconfig -a -t vnode -f floppy-image.img  (this will ouput the newly created device ex: /dev/md0)
+        <br/>cat loader.bin > /dev/md0
+        <br/>mdconfig -d -u /dev/md0
+    </div>
+
+    <div id="articleContent">
+        <br/>// format a floppy image file
+        <br/>mdconfig -a -t vnode -f floppy-image.img (this will ouput the newly created device ex: /dev/md0)
+        <br/>newfs_msdos -f 1440 /dev/mdXX
+        <br/>mdconfig -d -u /dev/mdXX
+    </div>
+
+    <div id="articleContent">
+        <br/>// assemble a binary file
+        <br/>o - Method A (so far did not worked for me) :
+        <br/>as loader.asm -o loader.obj
+        <br/>ld loader.obj -o loader.executable -Ttext 0x0 
+        <br/>objcopy -R .note -R .comment -S -O binary loader.executable loader.bin
+    </div>
+
+    <div id="articleContent">
+        <br/>o - Method B {<a href="__resources__/scripts/assemble-binary-file.shell">get script</a>}
+        <br/>as loader.asm -o loader.obj
+        <br/>ld -o loader.bin -Ttext 0x0 --oformat binary loader.obj
+    </div>
+
+    <div id="articleContent">
+        <br/>// debug your OS with QEMU, note you must have a kernel/bootloader that speaks GDB language
+        <br/>qemu -fda floppy-image.img -boot a -s -S (informs qemu to wait for debugger to connect)
+        <br/>gdb
+        <br/>file loader.bin
+        <br/>set disassembly-flavor intel
+        <br/>target remote localhost:1234 (connects to qemu)
+        <br/>info functions (to get a list of available functions that GDB sees)
+        <br/>c (inform qemu to continue simulation)
+    </div>
+
+    <div id="articleContent">
+        <br/>Might be handy at some point: How to debug linux kernel with qemu and gdb
+        <br/>1. Host kernel - download the kernel tarball from www.kernel.org and apply the patch file of kgdb.
+        <br/>2. Configuration - Turn on the serial port debugging
+        <br/>3. qemu -s -nographic -hda linux.img -kernel ./2.6.15.5-kgdb/vmlinuz-2.6.15.5-kgdb -serial pty -append 
+        <br/>        "kgdbwait c onsole=vc root=/dev/hda sb=0x220,5,1,5 ide2=noprobe ide3=noprobe ide4=noprobe ide5=noprobe"
+        <br/>4. gdb vmlinux, target remote /dev/pts/XX, XX will be given once you launched the qemu.
+    </div>
+
+    <div id="articleContent">
+        <br/>// use BOCHS to debug your bootloader(does not speak GDB language) by executing step by step asm opcodes
+        <br/>cd /usr/ports/emulators/bochs; make config;
+        <br/>at this step ENABLE the debuger and everything else you feel like helping you
+        <br/>make install clean;
+        <br/>configure "bochsrc" file for your needs
+        <br/>now on command line:
+        <br/>o - bochs -q (will start it in debug mode because this is how you compiled it)
+        <br/>o - break 0x0000:0x7c00 (put a breakpoint at the moment when BIOS starts loading your bootloader)
+        <br/>o - c (continue simulation and let bochs load your brand new bootloader)
+    </div>
+
+</div>

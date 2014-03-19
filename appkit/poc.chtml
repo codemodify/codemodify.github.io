@@ -1,0 +1,17 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">POC</p>
+    </div>
+
+    <div id="articleContent">
+        Here is a demo, this is basic stuff at the UI level. What is cool here is the source code ;)
+        Right click and view source after launching the demo.
+    
+        <br/><br/>
+        <a href="appkit/pocdemo.xml" class="button" target="_blank">Launch Demo</a>
+        
+    </div>
+
+</div>

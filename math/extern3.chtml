@@ -1,0 +1,56 @@
+
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto1">Multi Agent Systems</p>
+    </div>
+
+    <div id="articleContent">
+        Go To: <a href="http://www.limsi.fr/~jps/online/diva/wildhome/wildhome.main.htm" target="_blank">{ WILD Simulatior }</a>
+    </div>
+
+    <div id="articleContent">
+
+        This multi agent simulator proposes an environment in "debug" mode so to speak,
+        where nothing happens till the command "WILDexecute[ n ]" is executed.
+        Once executed, all the agents execute their tasks during "WILDCLOCK*n" time.
+        This period of time can be interpreted as a life interval of the agents on which
+        the user has possibity to run it or pause and examine what happened.
+        
+        <br/>
+        <br/>
+        For test we logged in with cu 2 users: "testuser" & "abraka"<br>
+
+<table style="text-align: left; width: 100&#37;;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><small><small>"testuser"</small></small></td>
+      <td style="vertical-align: top; text-align: center;"><small><small>"abraka"</small></small></td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; background-color: rgb(153, 153, 153);"><small><small>agent creation<br>
+      </small></small></td>
+      <td
+ style="vertical-align: top; background-color: rgb(153, 153, 153);"><small><small>agent creation<br>
+      </small></small></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><small><small>WILDcreate[
+"testuserAgent1", "*", {age=0}, {}, (age++)&amp; ]</small></small></td>
+      <td style="vertical-align: top;"><small><small>WILDcreate[
+"abrakaAgent1", "*", {age=0}, {}, (age++)&amp; ]</small></small></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><small><small>WILDcreate[
+"testuserAgent2", "*", {age=0}, {}, (age++)&amp; ]</small></small></td>
+      <td style="vertical-align: top;"><small><small>WILDcreate[
+"abrakaAgent2", "*", {age=0}, {}, (age++)&amp; ]</small></small></td>
+    </tr>
+  </tbody>
+</table>
+<small><small><br>
+    
+    </div>
+</div>

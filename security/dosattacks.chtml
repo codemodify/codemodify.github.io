@@ -1,0 +1,295 @@
+<div id="article">
+    
+    <div id="articleHeader">
+        <p id="moto3">DoS Attacks (Extern Info)</p>
+    </div>
+    <div id="articleContent">
+
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;">A
+Denial of Service (DoS) attack is:<br>
+- an attack which attempts to prevent the victim from being able to use
+all or part of their network connection.<br>
+- an attempt to make a computer resource unavailable to its legitimate
+users.<br>
+<br>
+One common method of attack involves saturating the target (victim)
+machine with external communications requests, such that it cannot
+respond to legitimate traffic. <br>
+<br>
+In general terms, DoS attacks are implemented by:&nbsp; forcing the
+targeted computer(s) to reset, or consume its resources such that it
+can no longer provide its intended service; and/or, obstructing the
+communication media between the intended users and the victim so that
+they can no longer communicate adequately.<br>
+<br>
+<span style="text-decoration: underline;">Symptoms:</span><br>
+</span>
+<div style="margin-left: 40px;">(*) <span style="font-style: italic;">unusually
+slow network performance (opening files or accessing web sites)</span><br>
+(*) <span style="font-style: italic;">unavailability of a particular
+web site</span><br>
+(*) <span style="font-style: italic;">inability to access any web site</span><br>
+(*) <span style="font-style: italic;">dramatic increase in the number
+of spam emails received<br>
+<br style="font-style: italic; text-decoration: underline;">
+</span></div>
+<span style="font-style: italic; text-decoration: underline;">The Logic
+of Attacks:<br>
+</span><span style="font-style: italic;">Attacks can be directed at any
+network device, including attacks on routing devices and Web,
+electronic mail, or Domain Name System servers.&nbsp; A DoS attack can
+be perpetrated in a number of ways. <br>
+<br>
+There are three basic types of attack:<br>
+</span>
+<div style="margin-left: 40px;"><span style="font-style: italic;">(*)
+consumption of computational resources, such as bandwidth, disk space,
+or CPU time;</span><br>
+<span style="font-style: italic;"></span></div>
+<div style="margin-left: 40px;"><span style="font-style: italic;">(*)
+disruption of configuration information, such as routing information;</span><br>
+<span style="font-style: italic;">(*) disruption of physical network
+components.</span><br>
+<br>
+<span style="font-style: italic;"></span></div>
+<span style="font-style: italic;">A DoS attack may include execution of
+malware intended to:<br>
+</span>
+<div style="margin-left: 40px;"><span style="font-style: italic;">(*)
+max out the CPU's usage, preventing any work from occurring;</span><br>
+<span style="font-style: italic;"></span><span
+ style="font-style: italic;">(*) </span><span
+ style="font-style: italic;">trigger errors in the microcode of the
+machine;</span><br>
+<span style="font-style: italic;"></span><span
+ style="font-style: italic;">(*) </span><span
+ style="font-style: italic;">trigger errors in the sequencing of
+instructions, so as to force the computer into an unstable state or
+lock-up;</span><br>
+<span style="font-style: italic;"></span><span
+ style="font-style: italic;">(*) </span><span
+ style="font-style: italic;">exploits errors in the operating system to
+cause resource starvation and/or thrashing, i.e. to use up all
+available facilities so no real work can be accomplished;</span><br>
+<span style="font-style: italic;"></span><span
+ style="font-style: italic;">(*) </span><span
+ style="font-style: italic;">crash the operating system itself.</span><br>
+<span style="font-style: italic;"></span></div>
+<span style="font-style: italic; text-decoration: underline;"></span>
+<div style="margin-left: 40px;"><span style="font-style: italic;"></span></div>
+<hr style="width: 100%; height: 2px;"><span
+ style="font-weight: bold; font-style: italic;"><br>
+<br>
+<br>
+Types of Denial of Service (DoS) attacks<br>
+</span>
+<div style="margin-left: 40px;"><br>
+<span style="font-style: italic;"></span><span
+ style="text-decoration: underline; font-style: italic;"></span><span
+ style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="text-decoration: underline; color: rgb(0, 0, 0);"><br>
+ICMP Flood Attack<br>
+</span><span style="color: rgb(0, 0, 0);"></span><span
+ style="text-decoration: underline; color: rgb(0, 0, 0);"><br>
+</span></span></span>
+<div style="margin-left: 40px;"><span style="font-style: italic;"><span
+ style="color: rgb(153, 0, 0);"><span style="color: rgb(0, 0, 0);"><span
+ style="text-decoration: underline;">Smurf Attack</span></span></span></span><br>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);">In the Smurf Attack, the attacker sends a
+ping request to a broadcast
+address at a third-party on the network. This ping request is spoofed
+to appear to come from the victims network address. Every system within
+the broadcast domain of the third-party will then send ping responses
+to the victim.</span></span></span><br style="font-style: italic;">
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);"></span></span></span></div>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);"></span></span></span><br
+ style="font-style: italic;">
+<div style="margin-left: 40px;"><span style="font-style: italic;"><span
+ style="text-decoration: underline;">Ping flood</span><br>
+A ping flood is a simple Denial of service attack where the attacker
+overwhelms the victim with ICMP Echo Request (ping) packets. It only
+succeeds if the attacker has more bandwidth than the victim.<br>
+The attacker hopes that the victim will respond with ICMP Echo Reply
+packets, thus consuming outgoing bandwidth as well as incoming server
+bandwidth.<br>
+Defending:&nbsp;&nbsp;&nbsp; To reduce the effects of a ping flood, a
+victim can use a firewall to filter the incoming ICMP Echo Request
+packets entirely, or if a large number of requests are received at one
+time to refuse to send ICMP Echo Reply packets. This produces two
+benefits: (a)less bandwidth is wasted by not answering these packets.<br>
+(b)it is more difficult for the attacker to measure the effectiveness
+of the attack.<br>
+However, such a filter will also prevent the measuring of latency from
+legitimate users which may be undesirable. A compromise solution may be
+to only filter large ICMP Echo Request packets, or to limit the rate at
+which your firewall will pass ICMP Echo Request packets.<br>
+</span></div>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;"><br>
+</span></span></span>
+<div style="margin-left: 40px;"><span
+ style="text-decoration: underline; font-style: italic;">Ping of Death
+Attack</span><br>
+<span style="text-decoration: underline; font-style: italic;"></span><span
+ style="font-style: italic;">The Ping of Death attack
+relied on a bug in the Berkeley TCP/IP stack which also existed on most
+systems which copied the Berkeley network code. The ping of death was
+simply sending ping packets larger than 65,535 bytes to the victim.
+This denial of service attack was as simple as:&nbsp;&nbsp;<span
+ style="color: rgb(153, 0, 0);"> ping -l 86600 victim.org</span></span><br>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"></span></span></div>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"></span></span><br>
+<br style="font-style: italic; text-decoration: underline;">
+<span style="font-style: italic; text-decoration: underline;"><br>
+<br>
+UDP Flood Attack<br>
+<br>
+</span>
+<div style="margin-left: 40px;"><span style="font-style: italic;"><span
+ style="color: rgb(153, 0, 0);"><span style="color: rgb(0, 0, 0);"><span
+ style="text-decoration: underline;">Fraggle attack</span></span></span></span><br>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);">An attacker sends a large amount of UDP
+echo traffic to IP broadcast
+addresses, all of it having a fake source address. This is a simple
+rewrite of the smurf attack code.&nbsp; This traffic is aimed at ports
+7
+(echo) and 19 (chargen).</span></span></span><br>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);"></span></span></span></div>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);"></span></span></span><br>
+<br>
+<br>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0); text-decoration: underline;"><br>
+SYN Flood Attack<br>
+</span><span style="color: rgb(0, 0, 0);">Conforming to TCP protocol, a
+connection between a client and server starts with messages exchange
+like:<br>
+- <span style="color: rgb(204, 0, 0);">client
+-------SYN-------------&gt; server</span> (server allocates some
+resources for the feature connection)<br>
+- <span style="color: rgb(204, 0, 0);">client
+&lt;-----SYN-ACK-------&nbsp; server</span> (keeps the allocated
+resources till it will receive the "ACK" response from client)<br>
+- <span style="color: rgb(204, 0, 0);">client
+-------ACK------------&gt;&nbsp; server</span> (here the previously
+allocated resources start to be used)<br>
+- .....at this moment the connection is established! and they can start
+talk....<br>
+<span style="font-weight: bold;">But</span> in attacker's case he does
+not respond with the "ACK" message when server sends the "SYN-ACK",
+this way the server keeps the allocated resources for the intented
+connection without to release them. At this point what an attacker will
+do is to send more "SYN" requests so the server will keep allocate
+resources till it will run out of resources.<br>
+One moment here is important: because of TCP we can detect who is
+sending these amount of requests, that is why attakers usually don't
+use their real addresses to initiate this kind of attacks and use one
+two: a foreign computer that was hacked and now is owned by them, or
+they use a spoofed IP address - this way the "invented and nonexistent
+IP address" will never respond with "ACK".<br>
+<br>
+Defending Technics:<br>
+(*) limiting the number of new connections from a source per timeframe<br>
+(*) SYN Cookies - "particular choices of initial TCP sequence numbers
+by TCP servers" - In particular, the use of SYN Cookies allows a server
+to avoid dropping connections when the SYN queue fills up. Instead, the
+server behaves as if the SYN queue had been enlarged. The server sends
+back the appropriate SYN+ACK response to the client but discards the
+SYN queue entry. If the server then receives a subsequent ACK response
+from the client, the server is able to reconstruct the SYN queue entry
+using information encoded in the TCP sequence number.<br>
+<br>
+</span></span></span><span
+ style="color: rgb(153, 0, 0); font-style: italic; text-decoration: underline;"><span
+ style="color: rgb(0, 0, 0);"></span><span style="color: rgb(0, 0, 0);"><br>
+<br>
+<br>
+Teardrop Attack</span></span><span style="font-style: italic;"><span
+ style="color: rgb(153, 0, 0);"><span style="color: rgb(0, 0, 0);"><br>
+The Teardrop Attack uses IP's packet fragmentation algorithm to send
+corrupted packets to the victim machine. This confuses the victim
+machine and may hang it. The Teardrop attack involved sending IP
+fragments with overlapping payloads to the target machine. A bug in the
+TCP/IP fragmentation re-assembly code caused the fragments to be
+improperly handled, crashing the operating system as a result. Affects
+the Microsoft Windows 3.1x, Windows 95, and Windows NT operating
+systems, as well as versions of Linux prior to 2.0.32 and 2.1.63.<br>
+<br>
+<span style="text-decoration: underline;"><br>
+<br>
+<br>
+Land Attack<br>
+</span>Some implementations of TCP/IP are vulnerable to packets that
+are crafted in a particular way (a SYN packet in which the source
+address and port are the same as the destination--i.e., spoofed). Any
+remote user that can send spoofed packets to a host can crash or "hang"
+that host.&nbsp;&nbsp;&nbsp; A LAND attack involves sending a spoofed
+TCP/SYN packet (connection initiation) with the target host's IP
+address with an open port as both source and destination. The attack
+causes the targeted machine to reply to itself continuously and
+eventually crash.<br>
+Defending Technics: Packet Filtering.
+(ftp://ftp.isi.edu/in-notes/rfc2267.txt)<br>
+<span style="text-decoration: underline;"></span><br>
+<br>
+<span style="text-decoration: underline;"></span><br>
+<br>
+<span style="text-decoration: underline;"></span><br>
+<br>
+<br>
+</span></span></span></div>
+<span style="font-style: italic;"><span style="color: rgb(153, 0, 0);"><span
+ style="color: rgb(0, 0, 0);"><span style="font-weight: bold;">Distributed
+Denial of Service (DDoS) attacks<br>
+<br>
+</span></span></span></span>
+<div style="margin-left: 40px;"><span style="font-style: italic;"><span
+ style="color: rgb(153, 0, 0);"><span style="color: rgb(0, 0, 0);">A
+Distributed Denial of Service (DDoS) attack is a denial of service
+attack which is mounted from a large number of locations across the
+network.<br>
+<br>
+DDoS attacks are usually mounted from a large number of compromised
+systems. These systems may have been compromised by a trojan horse or a
+worm, or they might have been compromised by being hacked manually.<br>
+<br>
+These compromised systems are usually controlled with a fairly
+sophisticated piece of client-server software such as Trinoo, Tribe
+Flood Network, Stacheldraht, TFN2K, Shaft, and Mstream.<br>
+<br>
+DDoS attacks can be very difficult to defend against.<br>
+<br>
+<br>
+<br>
+</span><span style="color: rgb(0, 0, 0); text-decoration: underline;"></span></span></span><span
+ style="text-decoration: underline; font-style: italic;"></span></div>
+<span style="font-style: italic;"></span><span
+ style="font-weight: bold; font-style: italic;">Distributed Reflected
+Denial of Service attacka (DRDoS)</span><br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">A
+'DRDoS' (Distributed Reflection Denial of Service) is much like a DDoS,
+only, the attack's source is 'spoofed'.</span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">In normal operation, a server
+receiving a SYN packet to establish a connection will respond with a
+SYN/ACK (acknowledgement) packet. A malicious user may fake the source
+IP address of the original SYN packet, causing the server to send the
+SYN/ACK packet to a victim host. A single malicious user can send the
+same SYN packet to many servers, which will then presumably overwhelm
+the victim with SYN/ACK packets. DRDoS is preferable to simple DOS
+attacks due to the distribution of sources for the attack, and simpler
+than DDOS because infected hosts are not required; any host will
+perform as necessary. A DRDoS attack may occur on any port, making many
+traditional firewall defenses useless.</span><br
+ style="font-style: italic;">
+</div>
+
+    </div>
+
+</div>
